@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="az">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Super GB</title>
+<style>
+*{box-sizing:border-box}
+body{margin:0;font-family:Arial,sans-serif;background:#071536;color:#fff}
+.app{max-width:520px;min-height:100vh;margin:auto;padding:28px 18px 35px;background:radial-gradient(circle at 50% 15%,#1d3b80 0,#10265b 30%,#071536 75%)}
+.logo{width:82px;height:82px;margin:0 auto 18px;border-radius:25px;background:#203d76;border:1px solid #42629b;display:flex;align-items:center;justify-content:center;font-weight:800;color:#62a8ff;box-shadow:0 10px 35px #0005}
+h1{text-align:center;font-size:40px;margin:0 0 20px}
+.badge{width:max-content;margin:auto;padding:10px 20px;border:1px solid #16bda4;border-radius:30px;color:#5de5c7;background:#123c49;font-weight:bold}
+.sub{text-align:center;color:#9eacc8;font-size:19px;margin:22px 0 28px;line-height:1.4}
+.steps{display:flex;justify-content:space-between;position:relative;margin-bottom:30px}
+.steps:before{content:"";position:absolute;top:25px;left:35px;right:35px;height:2px;background:#263754}
+.step{position:relative;text-align:center;color:#7785a1;font-size:13px;font-weight:bold}
+.circle{width:51px;height:51px;border:2px solid #34435f;border-radius:50%;display:flex;align-items:center;justify-content:center;margin:auto;background:#102452;font-size:18px}
+.active{color:#5ee5ff}.active .circle{border-color:#31d8ff;color:#63e8ff;box-shadow:0 0 18px #22d8ff66}.step.done{color:#5ee5ff}.step.done .circle{border-color:#31d8ff;color:#63e8ff;background:#123b62}.step.clickable{cursor:pointer}
+.card{background:#14294fdd;border:1px solid #30466c;border-radius:28px;padding:30px 28px;box-shadow:0 20px 45px #0004}
+h2{font-size:28px;margin:5px 0 6px}
+.desc{color:#9caac4;font-size:17px;margin-bottom:25px}
+.operator{padding:22px 16px;border:1px solid #344b73;border-radius:25px;background:#1b3157;margin:18px 0;display:flex;align-items:center;gap:18px;cursor:pointer;transition:.2s}
+.operator:hover{transform:scale(1.02);border-color:#58cfff}
+.icon{width:80px;height:80px;border-radius:20px;display:flex;align-items:center;justify-content:center;font-size:32px;font-weight:bold}
+.az{background:linear-gradient(135deg,#8650ff,#5d3de8)}
+.nar{background:linear-gradient(135deg,#ffad13,#ff6500)}
+.bak{background:linear-gradient(135deg,#ff4054,#df1936)}
+.name{font-size:23px;font-weight:bold}.codes{color:#9baac5;font-size:17px;margin-top:5px}.arrow{margin-left:auto;font-size:32px;color:#7f8ca5}
+.footer{text-align:center;color:#7887a2;text-decoration:underline;margin-top:34px}
+.hidden{display:none}
+input,select{width:100%;padding:17px;border-radius:16px;border:1px solid #405477;background:#0d2043;color:white;font-size:17px;margin:9px 0 15px;outline:none}
+button{width:100%;border:0;border-radius:17px;padding:17px;background:linear-gradient(90deg,#23c9ff,#6965ff);color:white;font-size:18px;font-weight:bold;margin-top:8px}
+.back{background:#263957}
+.package{padding:18px;border:1px solid #3a527a;border-radius:18px;margin:10px 0;cursor:pointer}
+.package b{font-size:20px}.package span{float:right;color:#62e5c9}
+.success{text-align:center;padding:25px 0}.check{font-size:70px}
+</style>
+</head>
+<body>
+<div class="app">
+  <div class="logo">SUPER<br>GB</div>
+  <h1>Super GB</h1>
+  <div class="badge">● Kampaniya aktivdir</div>
+  <div class="sub">Balansınızı bir neçə addımda artırın — sürətli və rahat.</div>
+
+  <div class="steps">
+    <div class="step active"><div class="circle">1</div>Operator</div>
+    <div class="step"><div class="circle">2</div>Nömrə</div>
+    <div class="step"><div class="circle">3</div>Paket</div>
+    <div class="step"><div class="circle">4</div>Ödəniş</div>
+    <div class="step"><div class="circle">5</div>Hazır</div>
+  </div>
+
+  <div id="page1" class="card">
+    <h2>Operatoru seçin</h2>
+    <div class="desc">Balans artırmaq istədiyiniz şəbəkəni seçin</div>
+    <div class="operator" onclick="choose('Azercell','050 • 051 • 010')"><div class="icon az">A</div><div><div class="name">Azercell</div><div class="codes">050 • 051 • 010</div></div><div class="arrow">›</div></div>
+    <div class="operator" onclick="choose('Nar','070 • 077')"><div class="icon nar">N</div><div><div class="name">Nar</div><div class="codes">070 • 077</div></div><div class="arrow">›</div></div>
+    <div class="operator" onclick="choose('Bakcell','055 • 099')"><div class="icon bak">B</div><div><div class="name">Bakcell</div><div class="codes">055 • 099</div></div><div class="arrow">›</div></div>
+  </div>
+
+  <div id="page2" class="card hidden">
+    <h2 id="selected">Nömrənizi daxil edin</h2>
+    <div class="desc">Seçdiyiniz operator üçün mobil nömrənizi yazın.</div>
+    <input id="phone" type="tel" placeholder="050 123 45 67">
+    <button onclick="next(3)">Davam et →</button>
+    <button class="back" onclick="back(1)">← Geri</button>
+  </div>
+
+  <div id="page3" class="card hidden">
+    <h2>Paket seçin</h2>
+    <div class="desc">Sizə uyğun internet paketini seçin.</div>
+    <div class="package" onclick="selectPackage('3 AZN — 5 GB')"><b>5 GB</b><span>3 AZN</span></div>
+    <div class="package" onclick="selectPackage('7 AZN — 10 GB')"><b>10 GB</b><span>7 AZN</span></div>
+    <div class="package" onclick="selectPackage('10 AZN — 15 GB')"><b>15 GB</b><span>10 AZN</span></div>
+    <div class="package" onclick="selectPackage('20 AZN — 40 GB')"><b>40 GB</b><span>20 AZN</span></div>
+    <div class="package" onclick="selectPackage('30 AZN — 80 GB')"><b>80 GB</b><span>30 AZN</span></div>
+    <button class="back" onclick="back(2)">← Geri</button>
+  </div>
+
+  <div id="page4" class="card hidden">
+    <h2>Ödəniş</h2>
+    <div class="desc">Kartdan-karta ödəniş edin və qəbzi göndərin.</div>
+    <p>Operator: <b id="op"></b></p>
+    <p>Nömrə: <b id="num"></b></p>
+    <p>Paket: <b id="pack"></b></p>
+    <div style="background:#0d2043;border:1px solid #3b5278;border-radius:20px;padding:20px;margin:18px 0">
+      <div style="color:#91a0bb;font-size:14px;margin-bottom:8px">Ödəniş kartı</div>
+      <div style="font-size:23px;font-weight:bold;letter-spacing:2px">•••• •••• •••• 6081</div>
+      <button onclick="copyPaymentCard()" style="margin-top:15px">📋 Kart nömrəsini kopyala</button>
+    </div>
+    <div style="background:#102a36;border:1px solid #1f786f;border-radius:18px;padding:16px;color:#b8f4e5;margin-bottom:15px">
+      📸 Ödəniş etdikdən sonra qəbzin şəklini seçin və göndərin.
+    </div>
+    <label style="display:block;margin:10px 0 7px;color:#aebbd1">Ödəniş qəbzi</label>
+    <input id="receiptFile" type="file" accept="image/*,.pdf"
+      style="padding:13px;background:#0d2043;border:1px dashed #4b648d">
+    <div id="receiptName" style="font-size:13px;color:#8fa0ba;margin:5px 0 12px"></div>
+    <button onclick="submitReceipt()">📤 Qəbzi göndər</button>
+    <button class="back" onclick="back(3)">← Geri</button>
+  </div>
+
+  <div id="page5" class="card hidden success">
+    <div class="check">✓</div>
+    <h2>Sifariş qəbul edildi</h2>
+    <div class="desc">Qəbziniz qəbul edildi. Sifariş statusu: <b style="color:#5de5c7">Yoxlanılır</b></div>
+    <button onclick="location.reload()">Yeni sifariş</button>
+  </div>
+
+  <div class="footer">Sifarişin statusunu yoxla</div>
+</div>
+
+<script>
+let operator='',phone='',pack='',currentStep=1;
+
+function updateSteps(){
+  document.querySelectorAll('.step').forEach((el,i)=>{
+    const n=i+1;
+    el.classList.toggle('active',n===currentStep);
+    el.classList.toggle('done',n<currentStep);
+    el.classList.toggle('clickable',n<=currentStep);
+  });
+}
+function choose(o,c){
+  operator=o;
+  document.getElementById('selected').innerText=o+' — nömrənizi daxil edin';
+  next(2);
+}
+function selectPackage(p){
+  pack=p;
+  document.getElementById('op').innerText=operator;
+  document.getElementById('num').innerText=document.getElementById('phone').value;
+  document.getElementById('pack').innerText=p;
+  next(4);
+}
+function copyPaymentCard(){
+  const card='5315992127616081';
+  // Clipboard API can be blocked when the local HTML file is opened directly.
+  if(navigator.clipboard && window.isSecureContext){
+    navigator.clipboard.writeText(card).then(()=>{
+      alert('✅ Kart nömrəsi kopyalandı: 5315 9921 2761 6081');
+    }).catch(()=>fallbackCopy(card));
+  } else {
+    fallbackCopy(card);
+  }
+}
+function fallbackCopy(card){
+  const area=document.createElement('textarea');
+  area.value=card;
+  area.setAttribute('readonly','');
+  area.style.position='fixed';
+  area.style.left='-9999px';
+  document.body.appendChild(area);
+  area.focus();
+  area.select();
+  area.setSelectionRange(0,area.value.length);
+  try{
+    const ok=document.execCommand('copy');
+    document.body.removeChild(area);
+    alert(ok ? '✅ Kart nömrəsi kopyalandı: 5315 9921 2761 6081' : 'Kart nömrəsini seçib Kopyala edin.');
+  }catch(e){
+    document.body.removeChild(area);
+    alert('Kart nömrəsini seçib Kopyala edin.');
+  }
+}
+function submitReceipt(){
+  const file=document.getElementById('receiptFile').files[0];
+  if(!file){
+    alert('Zəhmət olmasa ödəniş qəbzinin şəklini və ya PDF faylını seçin.');
+    return;
+  }
+  document.getElementById('receiptName').innerText='Seçilən qəbz: '+file.name;
+  alert('✅ Qəbz seçildi. Demo rejimində fayl serverə göndərilmir.');
+  next(5);
+}
+document.getElementById('receiptFile').addEventListener('change',function(){
+  const file=this.files[0];
+  document.getElementById('receiptName').innerText=file ? 'Seçilən qəbz: '+file.name : '';
+});
+function next(n){
+  if(n===2 && !operator) return;
+  if(n===3 && !document.getElementById('phone').value.trim()){
+    alert('Əvvəlcə nömrəni daxil edin.');
+    return;
+  }
+  document.querySelectorAll('[id^="page"]').forEach(x=>x.classList.add('hidden'));
+  document.getElementById('page'+n).classList.remove('hidden');
+  currentStep=n;
+  updateSteps();
+  window.scrollTo(0,0);
+}
+function back(n){next(n)}
+document.querySelectorAll('.step').forEach((el,i)=>{
+  el.addEventListener('click',()=>{
+    const n=i+1;
+    if(n<=currentStep) next(n);
+  });
+});
+updateSteps();
+</script>
+</body>
+</html>
