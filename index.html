@@ -3,7 +3,6 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
 <title>SUPER GB</title>
 
 <style>
@@ -14,42 +13,37 @@
 }
 
 body{
-    font-family:Arial,Helvetica,sans-serif;
+    font-family:Arial,sans-serif;
     min-height:100vh;
-    color:#fff;
+    color:white;
     background:
     radial-gradient(circle at 10% 10%,#123d5c,transparent 30%),
     radial-gradient(circle at 90% 15%,#351a58,transparent 30%),
     #06101c;
 }
 
-/* SUPER GB LOQOSU */
+/* LOGO */
 
 .header{
     text-align:center;
-    padding:25px 15px 28px;
-    background:rgba(4,15,27,.94);
+    padding:25px 15px;
+    background:rgba(4,15,27,.95);
 }
 
 .logo{
-    display:inline-flex;
-    align-items:center;
-    gap:8px;
     font-size:42px;
     font-weight:1000;
     letter-spacing:2px;
-    animation:logoPulse 1.8s ease-in-out infinite;
+    animation:logoPulse 1.8s infinite;
 }
 
 .super{
-    color:#fff;
-
+    color:white;
     text-shadow:
-        0 0 5px #fff,
-        0 0 10px #00ffff,
-        0 0 20px #00ffff,
-        0 0 40px #00ffcc,
-        0 0 60px #00ffff;
+    0 0 5px white,
+    0 0 10px #00ffff,
+    0 0 20px #00ffff,
+    0 0 40px #00ffcc;
 }
 
 .gbLogo{
@@ -68,22 +62,16 @@ body{
     -webkit-text-fill-color:transparent;
 
     animation:
-        neonColors 3s linear infinite,
-        gbGlow 1.4s ease-in-out infinite;
+    neonColors 3s linear infinite,
+    gbGlow 1.4s infinite;
 }
 
 @keyframes neonColors{
-    0%{
-        background-position:0% center;
-    }
-
-    100%{
-        background-position:300% center;
-    }
+    0%{background-position:0% center;}
+    100%{background-position:300% center;}
 }
 
 @keyframes gbGlow{
-
     0%,100%{
         filter:
         brightness(1)
@@ -101,20 +89,17 @@ body{
 }
 
 @keyframes logoPulse{
-
     0%,100%{
         transform:scale(1);
-        filter:brightness(1);
     }
 
     50%{
         transform:scale(1.04);
-        filter:brightness(1.35);
     }
 }
 
 .logoSub{
-    margin-top:6px;
+    margin-top:7px;
     font-size:11px;
     letter-spacing:5px;
     color:#91a5b8;
@@ -125,11 +110,9 @@ body{
 .stepsWrap{
     position:sticky;
     top:0;
-    z-index:999;
+    z-index:1000;
     padding:12px 7px;
     background:rgba(5,15,26,.97);
-    backdrop-filter:blur(15px);
-    border-bottom:1px solid rgba(255,255,255,.08);
 }
 
 .steps{
@@ -138,18 +121,12 @@ body{
     display:flex;
     align-items:center;
     justify-content:center;
-    overflow-x:auto;
-    scrollbar-width:none;
-}
-
-.steps::-webkit-scrollbar{
-    display:none;
 }
 
 .step{
-    flex:0 0 35px;
     width:35px;
     height:35px;
+    flex:0 0 35px;
     border-radius:50%;
     display:flex;
     align-items:center;
@@ -157,7 +134,6 @@ body{
     background:#17283a;
     border:2px solid #30465b;
     color:#8092a5;
-    font-size:13px;
     font-weight:900;
 }
 
@@ -165,17 +141,17 @@ body{
     background:#35dfc5;
     border-color:#35dfc5;
     color:#031916;
-    box-shadow:0 0 20px rgba(53,223,197,.4);
+    box-shadow:0 0 20px rgba(53,223,197,.5);
 }
 
 .step.done{
     background:#168f82;
     border-color:#35dfc5;
-    color:#fff;
+    color:white;
 }
 
 .line{
-    flex:0 0 27px;
+    width:28px;
     height:3px;
     background:#263c50;
 }
@@ -233,10 +209,9 @@ body{
     border:1px solid #273d52;
     border-radius:27px;
     padding:22px;
-    box-shadow:0 15px 40px rgba(0,0,0,.2);
 }
 
-/* OPERATORLAR */
+/* OPERATOR */
 
 .operators{
     display:grid;
@@ -260,7 +235,7 @@ body{
 
 .operator.selected{
     border-color:#35dfc5;
-    box-shadow:0 0 25px rgba(53,223,197,.18);
+    box-shadow:0 0 25px rgba(53,223,197,.2);
 }
 
 .operatorLogo{
@@ -275,20 +250,20 @@ body{
 }
 
 .azercell{
-    background:#fff;
+    background:white;
     color:#58328d;
-    font-size:14px;
+    font-size:13px;
 }
 
 .bakcell{
     background:#e50046;
-    color:#fff;
-    font-size:16px;
+    color:white;
+    font-size:15px;
 }
 
 .nar{
     background:#b8004c;
-    color:#fff;
+    color:white;
     font-size:23px;
 }
 
@@ -306,14 +281,20 @@ body{
     border-radius:17px;
     border:1px solid #30475c;
     background:#071521;
-    color:#fff;
+    color:white;
     outline:none;
     text-align:center;
-    font-size:20px;
+    font-size:22px;
+    letter-spacing:1px;
 }
 
 .phone:focus{
     border-color:#35dfc5;
+    box-shadow:0 0 15px rgba(53,223,197,.15);
+}
+
+.phone::placeholder{
+    color:#718396;
 }
 
 .error{
@@ -349,7 +330,7 @@ body{
     opacity:.4;
 }
 
-/* PAKETLƏR */
+/* PAKET */
 
 .package{
     display:flex;
@@ -362,17 +343,11 @@ body{
     border:1px solid #293f54;
     border-radius:21px;
     cursor:pointer;
-    transition:.2s;
-}
-
-.package:hover{
-    transform:translateY(-2px);
 }
 
 .package.selected{
     border:2px solid #35dfc5;
     background:rgba(53,223,197,.08);
-    box-shadow:0 0 20px rgba(53,223,197,.12);
 }
 
 .packageLeft{
@@ -407,7 +382,6 @@ body{
     color:#4fe2c9;
     font-size:21px;
     font-weight:1000;
-    white-space:nowrap;
 }
 
 /* ÖDƏNİŞ */
@@ -418,34 +392,16 @@ body{
     gap:15px;
 }
 
-/* KART */
-
 .bankCard{
     position:relative;
     overflow:hidden;
     min-height:285px;
     padding:23px;
     border-radius:28px;
-
     background:
-    radial-gradient(
-        circle at 90% 15%,
-        rgba(58,230,210,.35),
-        transparent 30%
-    ),
-
-    radial-gradient(
-        circle at 5% 90%,
-        rgba(113,70,255,.3),
-        transparent 35%
-    ),
-
-    linear-gradient(
-        135deg,
-        #293e56,
-        #101d2c
-    );
-
+    radial-gradient(circle at 90% 15%,rgba(58,230,210,.35),transparent 30%),
+    radial-gradient(circle at 5% 90%,rgba(113,70,255,.3),transparent 35%),
+    linear-gradient(135deg,#293e56,#101d2c);
     box-shadow:0 20px 40px rgba(0,0,0,.3);
 }
 
@@ -464,22 +420,7 @@ body{
 
 .cardBrand{
     font-weight:1000;
-
-    animation:cardGlow 1.5s ease-in-out infinite;
-}
-
-@keyframes cardGlow{
-
-    0%,100%{
-        text-shadow:0 0 5px #00ffff;
-    }
-
-    50%{
-        text-shadow:
-        0 0 10px #00ffff,
-        0 0 25px #39ff14;
-    }
-
+    text-shadow:0 0 10px #00ffff;
 }
 
 .cardNumber{
@@ -495,13 +436,9 @@ body{
     border:0;
     border-radius:12px;
     background:rgba(255,255,255,.14);
-    color:#fff;
+    color:white;
     font-weight:900;
     cursor:pointer;
-}
-
-.copyButton:hover{
-    background:rgba(53,223,197,.25);
 }
 
 .ownerLabel{
@@ -571,18 +508,19 @@ body{
     background:linear-gradient(90deg,#20d9bd,#4b9cff);
     color:#041719;
     font-weight:1000;
-    font-size:15px;
     cursor:pointer;
 }
 
 /* TƏSDİQ */
 
-.receiptAccepted{
+.receiptAccepted,
+.confirm{
     text-align:center;
     padding:35px 20px;
 }
 
-.receiptAcceptedIcon{
+.receiptAcceptedIcon,
+.confirmIcon{
     width:85px;
     height:85px;
     margin:auto;
@@ -594,26 +532,6 @@ body{
     color:#06201e;
     font-size:42px;
     font-weight:1000;
-}
-
-.confirm{
-    text-align:center;
-    padding:35px 20px;
-}
-
-.confirmIcon{
-    width:90px;
-    height:90px;
-    margin:auto;
-    border-radius:50%;
-    display:flex;
-    align-items:center;
-    justify-content:center;
-    background:#35dfc5;
-    color:#06201e;
-    font-size:46px;
-    font-weight:1000;
-    box-shadow:0 0 35px rgba(53,223,197,.35);
 }
 
 .confirmTitle{
@@ -640,26 +558,18 @@ body{
 .summaryRow{
     display:flex;
     justify-content:space-between;
-    gap:15px;
     padding:9px 0;
     color:#8fa1b2;
 }
 
 .summaryRow strong{
-    color:#fff;
+    color:white;
 }
-
-/* MOBİL */
 
 @media(max-width:600px){
 
     .paymentGrid{
         grid-template-columns:1fr;
-    }
-
-    .bankCard,
-    .receiptBox{
-        min-height:auto;
     }
 }
 
@@ -669,35 +579,15 @@ body{
         font-size:36px;
     }
 
-    .step{
-        flex-basis:32px;
-        width:32px;
-        height:32px;
-    }
-
-    .line{
-        flex-basis:17px;
-    }
-
     .cardNumber{
         font-size:15px;
-        letter-spacing:1.5px;
-    }
-
-    .operators{
-        gap:7px;
     }
 
     .operatorLogo{
         width:55px;
         height:55px;
     }
-
-    .operatorName{
-        font-size:12px;
-    }
 }
-
 </style>
 </head>
 
@@ -706,15 +596,8 @@ body{
 <header class="header">
 
     <div class="logo">
-
-        <span class="super">
-            SUPER
-        </span>
-
-        <span class="gbLogo">
-            GB
-        </span>
-
+        <span class="super">SUPER</span>
+        <span class="gbLogo">GB</span>
     </div>
 
     <div class="logoSub">
@@ -724,28 +607,25 @@ body{
 </header>
 
 
+<!-- MƏRHƏLƏLƏR -->
+
 <div class="stepsWrap">
 
     <div class="steps">
 
         <div id="s1" class="step active">1</div>
-
         <div id="l1" class="line"></div>
 
         <div id="s2" class="step">2</div>
-
         <div id="l2" class="line"></div>
 
         <div id="s3" class="step">3</div>
-
         <div id="l3" class="line"></div>
 
         <div id="s4" class="step">4</div>
-
         <div id="l4" class="line"></div>
 
         <div id="s5" class="step">5</div>
-
         <div id="l5" class="line"></div>
 
         <div id="s6" class="step">✓</div>
@@ -758,7 +638,7 @@ body{
 <div class="container">
 
 
-<!-- 1 -->
+<!-- 1. OPERATOR -->
 
 <section id="stage1" class="stage active">
 
@@ -822,7 +702,7 @@ body{
 </section>
 
 
-<!-- 2 -->
+<!-- 2. NÖMRƏ -->
 
 <section id="stage2" class="stage">
 
@@ -831,7 +711,7 @@ body{
     </div>
 
     <div class="subtitle">
-        10 rəqəmli nömrənizi daxil edin
+        Operator seçiminizə uyğun nömrəni daxil edin
     </div>
 
     <div class="box">
@@ -842,7 +722,7 @@ body{
             type="tel"
             maxlength="13"
             inputmode="numeric"
-            placeholder="050-123-45-67"
+            placeholder="Operator seçin"
         >
 
         <div id="phoneError"
@@ -851,9 +731,7 @@ body{
 
         <div id="phoneSuccess"
              class="success">
-
             ✓ Nömrə düzgündür
-
         </div>
 
         <button
@@ -869,7 +747,7 @@ body{
 </section>
 
 
-<!-- 3 -->
+<!-- 3. PAKET -->
 
 <section id="stage3" class="stage">
 
@@ -894,9 +772,7 @@ body{
 
                 <div>
 
-                    <div class="gb">
-                        15 GB
-                    </div>
+                    <div class="gb">15 GB</div>
 
                     <div class="details">
                         📅 30 gün •
@@ -925,9 +801,7 @@ body{
 
                 <div>
 
-                    <div class="gb">
-                        20 GB
-                    </div>
+                    <div class="gb">20 GB</div>
 
                     <div class="details">
                         📅 30 gün •
@@ -956,9 +830,7 @@ body{
 
                 <div>
 
-                    <div class="gb">
-                        60 GB
-                    </div>
+                    <div class="gb">60 GB</div>
 
                     <div class="details">
                         📅 30 gün •
@@ -987,9 +859,7 @@ body{
 
                 <div>
 
-                    <div class="gb">
-                        80 GB
-                    </div>
+                    <div class="gb">80 GB</div>
 
                     <div class="details">
                         📅 30 gün •
@@ -1018,9 +888,7 @@ body{
 
                 <div>
 
-                    <div class="gb">
-                        100 GB
-                    </div>
+                    <div class="gb">100 GB</div>
 
                     <div class="details">
                         📅 30 gün •
@@ -1053,7 +921,7 @@ body{
 </section>
 
 
-<!-- 4 -->
+<!-- 4. ÖDƏNİŞ -->
 
 <section id="stage4" class="stage">
 
@@ -1064,7 +932,6 @@ body{
     <div class="subtitle">
         Ödənişi etdikdən sonra qəbzi göndərin
     </div>
-
 
     <div class="paymentGrid">
 
@@ -1081,11 +948,9 @@ body{
 
             </div>
 
-
             <div class="cardNumber">
                 5315 9921 2761 6081
             </div>
-
 
             <button
                 id="copyButton"
@@ -1095,7 +960,6 @@ body{
 
             </button>
 
-
             <div class="ownerLabel">
                 ÖDƏNİŞ KARTI
             </div>
@@ -1103,7 +967,6 @@ body{
             <div class="owner">
                 SUPER GB
             </div>
-
 
             <div id="amount"
                  class="amount">
@@ -1124,12 +987,9 @@ body{
             </div>
 
             <div class="receiptText">
-
                 Ödənişi etdikdən sonra
                 qəbzin şəklini seçin.
-
             </div>
-
 
             <input
                 id="receipt"
@@ -1137,7 +997,6 @@ body{
                 type="file"
                 accept="image/*"
             >
-
 
             <button
                 id="sendReceipt"
@@ -1147,10 +1006,8 @@ body{
 
             </button>
 
-
-            <div
-                id="receiptError"
-                class="error">
+            <div id="receiptError"
+                 class="error">
             </div>
 
         </div>
@@ -1160,7 +1017,7 @@ body{
 </section>
 
 
-<!-- 5 -->
+<!-- 5. QƏBZ -->
 
 <section id="stage5" class="stage">
 
@@ -1171,7 +1028,6 @@ body{
     <div class="subtitle">
         Son təsdiq üçün məlumatları yoxlayın
     </div>
-
 
     <div class="box receiptAccepted">
 
@@ -1187,12 +1043,9 @@ body{
             color:#91a3b5;
             margin-top:10px;
         ">
-
             Məlumatları təsdiqləmək
             üçün aşağıdakı düyməyə basın.
-
         </p>
-
 
         <button
             id="confirmButton"
@@ -1207,7 +1060,7 @@ body{
 </section>
 
 
-<!-- 6 -->
+<!-- 6. SON -->
 
 <section id="stage6" class="stage">
 
@@ -1225,50 +1078,26 @@ body{
             Məlumatlarınız uğurla qəbul edildi.
         </div>
 
-
         <div class="summary">
 
             <div class="summaryRow">
-
                 <span>Operator</span>
-
-                <strong id="confirmOperator">
-                    —
-                </strong>
-
+                <strong id="confirmOperator">—</strong>
             </div>
 
-
             <div class="summaryRow">
-
                 <span>Nömrə</span>
-
-                <strong id="confirmPhone">
-                    —
-                </strong>
-
+                <strong id="confirmPhone">—</strong>
             </div>
 
-
             <div class="summaryRow">
-
                 <span>Paket</span>
-
-                <strong id="confirmPackage">
-                    —
-                </strong>
-
+                <strong id="confirmPackage">—</strong>
             </div>
 
-
             <div class="summaryRow">
-
                 <span>Məbləğ</span>
-
-                <strong id="confirmPrice">
-                    —
-                </strong>
-
+                <strong id="confirmPrice">—</strong>
             </div>
 
         </div>
@@ -1287,8 +1116,20 @@ const CARD_NUMBER =
 "5315 9921 2761 6081";
 
 let selectedOperator = "";
-
 let selectedPackage = null;
+
+
+/* OPERATOR KODLARI */
+
+const operatorPrefixes = {
+
+    azercell: "050",
+
+    bakcell: "055",
+
+    nar: "070"
+
+};
 
 
 /* MƏRHƏLƏ */
@@ -1303,7 +1144,6 @@ function goToStage(number){
 
     }
 
-
     document
     .getElementById("stage"+number)
     .classList.add("active");
@@ -1316,7 +1156,6 @@ function goToStage(number){
 
         step.classList.remove("active");
         step.classList.remove("done");
-
 
         if(i < number){
             step.classList.add("done");
@@ -1347,11 +1186,10 @@ function goToStage(number){
         top:0,
         behavior:"smooth"
     });
-
 }
 
 
-/* OPERATOR */
+/* OPERATOR SEÇİMİ */
 
 document
 .querySelectorAll(".operator")
@@ -1371,17 +1209,48 @@ document
 
             });
 
-
             this.classList.add(
                 "selected"
             );
-
 
             selectedOperator =
             this.dataset.operator;
 
 
+            /*
+              SEÇİLƏN OPERATORUN
+              KODU AVTOMATİK GƏLİR
+            */
+
+            const prefix =
+            operatorPrefixes[selectedOperator];
+
+
+            const phone =
+            document.getElementById("phone");
+
+
+            phone.value =
+            prefix + "-";
+
+
+            phone.placeholder =
+            prefix + "-___-__-__";
+
+
+            document
+            .getElementById("phoneError")
+            .style.display="none";
+
+
+            document
+            .getElementById("phoneSuccess")
+            .style.display="none";
+
+
             goToStage(2);
+
+            phone.focus();
 
         }
     );
@@ -1391,44 +1260,83 @@ document
 
 /* NÖMRƏ */
 
-document
-.getElementById("phone")
-.addEventListener(
+const phoneInput =
+document.getElementById("phone");
+
+
+phoneInput.addEventListener(
     "input",
     function(){
 
-        let n =
+        let numbers =
         this.value.replace(/\D/g,"");
 
 
-        if(n.length > 10){
+        const prefix =
+        operatorPrefixes[selectedOperator];
 
-            n =
-            n.substring(0,10);
+
+        if(!prefix){
+            this.value="";
+            return;
+        }
+
+
+        /*
+          Operator kodunun dəyişdirilməsinə
+          icazə vermirik
+        */
+
+        if(!numbers.startsWith(prefix)){
+
+            numbers =
+            prefix +
+            numbers.replace(
+                new RegExp("^0*"),
+                ""
+            );
 
         }
 
 
-        let f = "";
+        numbers =
+        numbers.substring(0,10);
 
 
-        if(n.length > 0)
-            f += n.substring(0,3);
+        let formatted =
+        numbers.substring(0,3);
 
 
-        if(n.length > 3)
-            f += "-" + n.substring(3,6);
+        if(numbers.length > 3){
+
+            formatted +=
+            "-" +
+            numbers.substring(3,6);
+
+        }
 
 
-        if(n.length > 6)
-            f += "-" + n.substring(6,8);
+        if(numbers.length > 6){
+
+            formatted +=
+            "-" +
+            numbers.substring(6,8);
+
+        }
 
 
-        if(n.length > 8)
-            f += "-" + n.substring(8,10);
+        if(numbers.length > 8){
+
+            formatted +=
+            "-" +
+            numbers.substring(8,10);
+
+        }
 
 
-        this.value = f;
+        this.value =
+        formatted;
+
 
         checkPhone();
 
@@ -1440,10 +1348,8 @@ document
 
 function checkPhone(){
 
-    const n =
-    document
-    .getElementById("phone")
-    .value
+    const numbers =
+    phoneInput.value
     .replace(/\D/g,"");
 
 
@@ -1462,27 +1368,47 @@ function checkPhone(){
     success.style.display="none";
 
 
-    if(n.length === 10){
+    if(!selectedOperator){
 
-        success.style.display="block";
-
-        return true;
+        return false;
 
     }
 
 
-    if(n.length > 0){
+    const prefix =
+    operatorPrefixes[selectedOperator];
+
+
+    if(!numbers.startsWith(prefix)){
+
+        error.textContent =
+        "Nömrə seçilmiş operatorun kodu ilə başlamalıdır.";
+
+        error.style.display="block";
+
+        return false;
+
+    }
+
+
+    if(numbers.length < 10){
 
         error.textContent =
         "Nömrə 10 rəqəmdən ibarət olmalıdır.";
 
         error.style.display="block";
 
+        return false;
+
     }
 
 
-    return false;
+    success.textContent =
+    "✓ Nömrə düzgündür";
 
+    success.style.display="block";
+
+    return true;
 }
 
 
@@ -1559,8 +1485,9 @@ document
     "click",
     function(){
 
-        if(!selectedPackage)
+        if(!selectedPackage){
             return;
+        }
 
 
         document
@@ -1665,39 +1592,50 @@ document
         let operatorName="";
 
 
-        if(selectedOperator==="azercell")
+        if(selectedOperator==="azercell"){
             operatorName="Azercell";
+        }
 
-        if(selectedOperator==="bakcell")
+        if(selectedOperator==="bakcell"){
             operatorName="Bakcell";
+        }
 
-        if(selectedOperator==="nar")
+        if(selectedOperator==="nar"){
             operatorName="Nar";
+        }
 
 
         document
-        .getElementById("confirmOperator")
+        .getElementById(
+            "confirmOperator"
+        )
         .textContent=operatorName;
 
 
         document
-        .getElementById("confirmPhone")
+        .getElementById(
+            "confirmPhone"
+        )
         .textContent=
-        document
-        .getElementById("phone")
-        .value;
-
-
-        document
-        .getElementById("confirmPackage")
-        .textContent=
-        selectedPackage.gb+" GB";
+        phoneInput.value;
 
 
         document
-        .getElementById("confirmPrice")
+        .getElementById(
+            "confirmPackage"
+        )
         .textContent=
-        selectedPackage.price+" AZN";
+        selectedPackage.gb +
+        " GB";
+
+
+        document
+        .getElementById(
+            "confirmPrice"
+        )
+        .textContent=
+        selectedPackage.price +
+        " AZN";
 
 
         goToStage(6);
