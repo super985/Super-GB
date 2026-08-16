@@ -59,18 +59,12 @@ body{
 }
 
 @keyframes rainbow{
-  to{
-    background-position:300%;
-  }
+  to{background-position:300%}
 }
 
 @keyframes glow{
-  from{
-    filter:brightness(1);
-  }
-  to{
-    filter:brightness(1.5);
-  }
+  from{filter:brightness(1)}
+  to{filter:brightness(1.5)}
 }
 
 .logoSub{
@@ -79,6 +73,9 @@ body{
   font-size:10px;
   letter-spacing:5px;
 }
+
+
+/* YUXARI MƏRHƏLƏLƏR */
 
 .steps{
   position:sticky;
@@ -204,7 +201,6 @@ body{
 .operator.selected{
   border-color:#35dfc5;
   box-shadow:0 0 25px rgba(53,223,197,.4);
-  transform:translateY(-3px);
 }
 
 .oplogo{
@@ -242,54 +238,30 @@ body{
 
 /* NÖMRƏ */
 
-.prefixTitle{
-  text-align:center;
-  color:#9badbd;
-  font-size:13px;
-  margin-bottom:12px;
-}
-
-.prefixes{
-  display:flex;
-  flex-wrap:wrap;
-  justify-content:center;
-  gap:9px;
-}
-
-.prefix{
-  border:1px solid #385067;
-  background:#122638;
-  color:#fff;
-  padding:12px 18px;
-  border-radius:13px;
-  font-weight:bold;
-  cursor:pointer;
-}
-
-.prefix.selected{
-  background:#35dfc5;
-  color:#031916;
-  border-color:#35dfc5;
-  box-shadow:0 0 15px rgba(53,223,197,.4);
-}
-
 .phone{
   width:100%;
-  height:60px;
-  margin-top:18px;
+  height:62px;
+  margin-top:5px;
   background:#07131f;
   border:1px solid #30485d;
   border-radius:17px;
   color:#fff;
   text-align:center;
-  font-size:21px;
-  letter-spacing:1px;
+  font-size:22px;
+  letter-spacing:2px;
   outline:none;
 }
 
 .phone:focus{
   border-color:#35dfc5;
-  box-shadow:0 0 15px rgba(53,223,197,.2);
+  box-shadow:0 0 18px rgba(53,223,197,.25);
+}
+
+.phoneHint{
+  text-align:center;
+  color:#7f93a5;
+  font-size:12px;
+  margin-top:12px;
 }
 
 .error{
@@ -338,7 +310,7 @@ body{
 }
 
 
-/* DÜYMƏ */
+/* DÜYMƏLƏR */
 
 .buttons{
   display:flex;
@@ -373,7 +345,6 @@ body{
 
 .payment{
   display:grid;
-  grid-template-columns:1fr;
   gap:18px;
 }
 
@@ -521,25 +492,64 @@ body{
 }
 
 
-/* TƏSDİQ */
+/* QƏBZ TƏSDİQ */
+
+.receiptSuccess{
+  display:none;
+  margin-top:18px;
+  padding:18px;
+  border-radius:18px;
+  text-align:center;
+  background:rgba(53,223,197,.10);
+  border:1px solid #35dfc5;
+  color:#35dfc5;
+  font-weight:1000;
+  box-shadow:0 0 25px rgba(53,223,197,.15);
+}
+
+.receiptSuccess.show{
+  display:block;
+}
+
+
+/* SON TƏSDİQ */
 
 .confirm{
   text-align:center;
 }
 
 .confirmIcon{
-  width:85px;
-  height:85px;
+  width:90px;
+  height:90px;
   border-radius:50%;
   margin:auto;
   display:flex;
   align-items:center;
   justify-content:center;
-  font-size:40px;
+  font-size:42px;
   font-weight:bold;
   background:#35dfc5;
   color:#03201c;
-  box-shadow:0 0 35px rgba(53,223,197,.4);
+  box-shadow:
+    0 0 25px #35dfc5,
+    0 0 60px rgba(53,223,197,.35);
+  animation:confirmPulse 1.5s infinite alternate;
+}
+
+@keyframes confirmPulse{
+  from{
+    transform:scale(1);
+  }
+  to{
+    transform:scale(1.06);
+  }
+}
+
+.confirmTitle{
+  margin-top:20px;
+  font-size:25px;
+  font-weight:1000;
+  color:#35dfc5;
 }
 
 .summary{
@@ -557,6 +567,16 @@ body{
   color:#fff;
 }
 
+.finalMessage{
+  margin-top:18px;
+  padding:15px;
+  border-radius:16px;
+  background:rgba(53,223,197,.08);
+  color:#35dfc5;
+  border:1px solid rgba(53,223,197,.3);
+  font-weight:bold;
+}
+
 
 @media(max-width:600px){
 
@@ -566,6 +586,10 @@ body{
 
   .cardNumber{
     font-size:16px;
+  }
+
+  .logo{
+    font-size:38px;
   }
 
 }
@@ -590,7 +614,7 @@ body{
 </header>
 
 
-<!-- YUXARIDA SOLDAN-SAĞA MƏRHƏLƏLƏR -->
+<!-- MƏRHƏLƏLƏR -->
 
 <div class="steps">
 
@@ -614,7 +638,7 @@ body{
 <div class="container">
 
 
-<!-- 1. OPERATORU MÜŞTƏRİ SEÇİR -->
+<!-- 1 OPERATOR -->
 
 <section id="stage1" class="stage active">
 
@@ -630,7 +654,7 @@ body{
 
     <div class="operators">
 
-      <div class="operator" data-op="azercell">
+      <div class="operator" data-op="Azercell">
 
         <div class="oplogo azercell">
           Azercell
@@ -643,7 +667,7 @@ body{
       </div>
 
 
-      <div class="operator" data-op="bakcell">
+      <div class="operator" data-op="Bakcell">
 
         <div class="oplogo bakcell">
           Bakcell
@@ -656,7 +680,7 @@ body{
       </div>
 
 
-      <div class="operator" data-op="nar">
+      <div class="operator" data-op="Nar">
 
         <div class="oplogo nar">
           nar
@@ -675,7 +699,7 @@ body{
 </section>
 
 
-<!-- 2. NÖMRƏ -->
+<!-- 2 NÖMRƏ -->
 
 <section id="stage2" class="stage">
 
@@ -684,26 +708,24 @@ body{
   </div>
 
   <div class="desc">
-    Operator kodunu və nömrənizi daxil edin
+    Operator kodu artıq ayrıca seçilmir
   </div>
 
   <div class="box">
-
-    <div class="prefixTitle">
-      Operator kodunu seçin
-    </div>
-
-    <div id="prefixes" class="prefixes"></div>
 
     <input
       id="phone"
       class="phone"
       type="tel"
       inputmode="numeric"
-      maxlength="13"
-      placeholder="050-123-45-67"
+      maxlength="10"
+      placeholder="0501234567"
       autocomplete="tel"
     >
+
+    <div class="phoneHint">
+      10 rəqəm daxil edin
+    </div>
 
     <div id="error" class="error"></div>
 
@@ -731,7 +753,7 @@ body{
 </section>
 
 
-<!-- 3. PAKET -->
+<!-- 3 PAKET -->
 
 <section id="stage3" class="stage">
 
@@ -875,7 +897,7 @@ body{
 </section>
 
 
-<!-- 4. ÖDƏNİŞ -->
+<!-- 4 ÖDƏNİŞ -->
 
 <section id="stage4" class="stage">
 
@@ -957,6 +979,16 @@ body{
         Qəbzi göndər
       </button>
 
+      <!-- QƏBZ GÖNDƏRİLDİKTƏN SONRA -->
+
+      <div
+        id="receiptSuccess"
+        class="receiptSuccess">
+
+        ✓ QƏBZ TƏSDİQ EDİLDİ
+
+      </div>
+
     </div>
 
   </div>
@@ -976,16 +1008,16 @@ body{
 </section>
 
 
-<!-- 5. TƏSDİQ -->
+<!-- 5 SON TƏSDİQ -->
 
 <section id="stage5" class="stage">
 
   <div class="title">
-    Təsdiq
+    Sifariş təsdiqi
   </div>
 
   <div class="desc">
-    Məlumatları yoxlayın və təsdiqləyin
+    Məlumatlar uğurla qəbul edildi
   </div>
 
   <div class="box confirm">
@@ -994,24 +1026,14 @@ body{
       ✓
     </div>
 
+    <div class="confirmTitle">
+      TƏSDİQ EDİLDİ
+    </div>
+
     <div id="summary" class="summary"></div>
 
-    <div class="buttons">
-
-      <button
-        id="back5"
-        class="btn back"
-        type="button">
-        ← Geri
-      </button>
-
-      <button
-        id="confirm"
-        class="btn"
-        type="button">
-        Təsdiq et ✓
-      </button>
-
+    <div class="finalMessage">
+      ✓ Qəbz göndərildi və sifariş təsdiq üçün qəbul edildi.
     </div>
 
   </div>
@@ -1025,35 +1047,14 @@ body{
 <script>
 
 let operator = "";
-let prefix = "";
 let phone = "";
 let packageData = null;
 
 
-const operatorPrefixes = {
+/* OPERATOR */
 
-  azercell: [
-    "010",
-    "050",
-    "051"
-  ],
-
-  bakcell: [
-    "055",
-    "099"
-  ],
-
-  nar: [
-    "070",
-    "077"
-  ]
-
-};
-
-
-/* OPERATOR SEÇİMİ */
-
-document.querySelectorAll(".operator")
+document
+.querySelectorAll(".operator")
 .forEach(function(item){
 
   item.addEventListener("click",function(){
@@ -1061,14 +1062,14 @@ document.querySelectorAll(".operator")
     operator = this.dataset.op;
 
     document
-      .querySelectorAll(".operator")
-      .forEach(function(x){
-        x.classList.remove("selected");
-      });
+    .querySelectorAll(".operator")
+    .forEach(function(x){
+
+      x.classList.remove("selected");
+
+    });
 
     this.classList.add("selected");
-
-    showPrefixes();
 
     go(2);
 
@@ -1077,150 +1078,53 @@ document.querySelectorAll(".operator")
 });
 
 
-/* OPERATOR KODLARI */
+/* NÖMRƏ */
 
-function showPrefixes(){
-
-  const area =
-    document.getElementById("prefixes");
-
-  area.innerHTML = "";
-
-  prefix = "";
-
-  document.getElementById("phone").value = "";
-
-  document.getElementById("next2").disabled = true;
-
-  operatorPrefixes[operator]
-  .forEach(function(code){
-
-    const btn =
-      document.createElement("button");
-
-    btn.type = "button";
-
-    btn.className = "prefix";
-
-    btn.textContent = code;
-
-    btn.addEventListener("click",function(){
-
-      document
-        .querySelectorAll(".prefix")
-        .forEach(function(x){
-          x.classList.remove("selected");
-        });
-
-      btn.classList.add("selected");
-
-      prefix = code;
-
-      document.getElementById("phone").value =
-        code + "-";
-
-      document.getElementById("phone").focus();
-
-      checkPhone();
-
-    });
-
-    area.appendChild(btn);
-
-  });
-
-}
+const phoneInput =
+  document.getElementById("phone");
 
 
-/* NÖMRƏNİ DAXİL ET */
+phoneInput.addEventListener(
+  "input",
+  function(){
 
-document
-.getElementById("phone")
-.addEventListener("input",function(){
+    let numbers =
+      this.value.replace(/\D/g,"");
 
-  let numbers =
-    this.value.replace(/\D/g,"");
+    if(numbers.length > 10){
 
-  if(numbers.length > 10){
-    numbers =
-      numbers.substring(0,10);
-  }
+      numbers =
+        numbers.substring(0,10);
 
-  let formatted = "";
+    }
 
-  if(numbers.length <= 3){
+    this.value = numbers;
 
-    formatted = numbers;
+    checkPhone();
 
   }
-
-  else if(numbers.length <= 6){
-
-    formatted =
-      numbers.substring(0,3) +
-      "-" +
-      numbers.substring(3);
-
-  }
-
-  else if(numbers.length <= 8){
-
-    formatted =
-      numbers.substring(0,3) +
-      "-" +
-      numbers.substring(3,6) +
-      "-" +
-      numbers.substring(6);
-
-  }
-
-  else{
-
-    formatted =
-      numbers.substring(0,3) +
-      "-" +
-      numbers.substring(3,6) +
-      "-" +
-      numbers.substring(6,8) +
-      "-" +
-      numbers.substring(8,10);
-
-  }
-
-  this.value = formatted;
-
-  checkPhone();
-
-});
+);
 
 
-/* NÖMRƏ YOXLAMASI */
+/* YOXLAMA */
 
 function checkPhone(){
 
-  const input =
-    document.getElementById("phone");
+  const numbers =
+    phoneInput.value.replace(/\D/g,"");
 
-  const button =
+  const next =
     document.getElementById("next2");
 
   const error =
     document.getElementById("error");
 
-  const numbers =
-    input.value.replace(/\D/g,"");
-
-  button.disabled = true;
+  next.disabled = true;
 
   error.style.display = "none";
 
 
-  if(!prefix){
-
-    error.textContent =
-      "Əvvəlcə operator kodunu seçin.";
-
-    error.style.display = "block";
+  if(numbers.length === 0){
 
     return false;
 
@@ -1230,30 +1134,17 @@ function checkPhone(){
   if(numbers.length !== 10){
 
     error.textContent =
-      "Nömrə 10 rəqəm olmalıdır.";
+      "Nömrə tam 10 rəqəm olmalıdır.";
 
-    error.style.display = "block";
-
-    return false;
-
-  }
-
-
-  /* KOD SEÇİLƏN KODLA EYNİDİR */
-
-  if(numbers.substring(0,3) !== prefix){
-
-    error.textContent =
-      "Seçdiyiniz operator kodu ilə nömrə uyğun gəlmir.";
-
-    error.style.display = "block";
+    error.style.display =
+      "block";
 
     return false;
 
   }
 
 
-  button.disabled = false;
+  next.disabled = false;
 
   return true;
 
@@ -1264,20 +1155,23 @@ function checkPhone(){
 
 document
 .getElementById("next2")
-.addEventListener("click",function(){
+.addEventListener(
+  "click",
+  function(){
 
-  if(!checkPhone()){
-    return;
+    if(!checkPhone()){
+
+      return;
+
+    }
+
+    phone =
+      phoneInput.value;
+
+    go(3);
+
   }
-
-  phone =
-    document
-      .getElementById("phone")
-      .value;
-
-  go(3);
-
-});
+);
 
 
 /* PAKET */
@@ -1286,29 +1180,38 @@ document
 .querySelectorAll(".pack")
 .forEach(function(item){
 
-  item.addEventListener("click",function(){
+  item.addEventListener(
+    "click",
+    function(){
 
-    document
+      document
       .querySelectorAll(".pack")
       .forEach(function(x){
-        x.classList.remove("selected");
+
+        x.classList.remove(
+          "selected"
+        );
+
       });
 
-    this.classList.add("selected");
+      this.classList.add(
+        "selected"
+      );
 
-    packageData = {
+      packageData = {
 
-      gb:this.dataset.gb,
+        gb:this.dataset.gb,
 
-      price:this.dataset.price
+        price:this.dataset.price
 
-    };
+      };
 
-    document
+      document
       .getElementById("next3")
       .disabled = false;
 
-  });
+    }
+  );
 
 });
 
@@ -1317,47 +1220,54 @@ document
 
 document
 .getElementById("next3")
-.addEventListener("click",function(){
+.addEventListener(
+  "click",
+  function(){
 
-  if(packageData){
-    go(4);
+    if(packageData){
+
+      go(4);
+
+    }
+
   }
-
-});
+);
 
 
 /* GERİ */
 
 document
 .getElementById("back2")
-.addEventListener("click",function(){
+.onclick = function(){
+
   go(1);
-});
+
+};
+
 
 document
 .getElementById("back3")
-.addEventListener("click",function(){
+.onclick = function(){
+
   go(2);
-});
+
+};
+
 
 document
 .getElementById("back4")
-.addEventListener("click",function(){
+.onclick = function(){
+
   go(3);
-});
 
-document
-.getElementById("back5")
-.addEventListener("click",function(){
-  go(4);
-});
+};
 
 
-/* KARTI KOPYALA */
+/* KART KOPYALA */
 
 document
 .getElementById("copy")
-.addEventListener("click",function(){
+.onclick = function(){
 
   const card =
     "5315 9921 2761 6081";
@@ -1367,7 +1277,7 @@ document
   .then(()=>{
 
     this.textContent =
-      "✓ Kopyalandı";
+      "✓ KOPYALANDI";
 
     setTimeout(()=>{
 
@@ -1386,122 +1296,165 @@ document
 
   });
 
-});
+};
 
 
-/* QƏBZ */
+/* QƏBZ GÖNDƏR */
 
 document
 .getElementById("receiptBtn")
-.addEventListener("click",function(){
+.addEventListener(
+  "click",
+  function(){
 
-  const file =
-    document
+    const file =
+      document
       .getElementById("receipt")
       .files[0];
 
-  if(!file){
 
-    alert(
-      "Zəhmət olmasa qəbzi seçin."
-    );
+    if(!file){
 
-    return;
+      alert(
+        "Zəhmət olmasa qəbzi seçin."
+      );
+
+      return;
+
+    }
+
+
+    /* QƏBZ TƏSDİQ EDİLDİ */
+
+    const success =
+      document
+      .getElementById(
+        "receiptSuccess"
+      );
+
+    success.classList.add("show");
+
+
+    this.textContent =
+      "✓ Qəbz göndərildi";
+
+
+    this.disabled = true;
+
+
+    setTimeout(function(){
+
+      const operatorName =
+        operator;
+
+
+      document
+      .getElementById("summary")
+      .innerHTML =
+
+        "<b>Operator:</b> " +
+        operatorName +
+        "<br>" +
+
+        "<b>Nömrə:</b> " +
+        phone +
+        "<br>" +
+
+        "<b>Paket:</b> " +
+        packageData.gb +
+        " GB" +
+        "<br>" +
+
+        "<b>Məbləğ:</b> " +
+        packageData.price +
+        " AZN" +
+        "<br>" +
+
+        "<b>Qəbz:</b> " +
+        file.name;
+
+
+      go(5);
+
+    },1200);
 
   }
-
-
-  const operatorName =
-    operator === "azercell"
-      ? "Azercell"
-      : operator === "bakcell"
-        ? "Bakcell"
-        : "Nar";
-
-
-  document
-    .getElementById("summary")
-    .innerHTML =
-
-    "<b>Operator:</b> " +
-    operatorName +
-    "<br>" +
-
-    "<b>Nömrə:</b> " +
-    phone +
-    "<br>" +
-
-    "<b>Paket:</b> " +
-    packageData.gb +
-    " GB" +
-    "<br>" +
-
-    "<b>Məbləğ:</b> " +
-    packageData.price +
-    " AZN" +
-    "<br>" +
-
-    "<b>Qəbz:</b> " +
-    file.name;
-
-
-  go(5);
-
-});
-
-
-/* SON TƏSDİQ */
-
-document
-.getElementById("confirm")
-.addEventListener("click",function(){
-
-  alert(
-    "Məlumatlar təsdiqləndi."
-  );
-
-});
+);
 
 
 /* MƏRHƏLƏ */
 
 function go(number){
 
-  for(let i=1;i<=5;i++){
+  for(
+    let i=1;
+    i<=5;
+    i++
+  ){
 
     document
-      .getElementById("stage"+i)
-      .classList.remove("active");
+    .getElementById(
+      "stage"+i
+    )
+    .classList.remove(
+      "active"
+    );
 
     document
-      .getElementById("s"+i)
-      .classList.remove("active");
+    .getElementById(
+      "s"+i
+    )
+    .classList.remove(
+      "active"
+    );
 
   }
 
 
   document
-    .getElementById("stage"+number)
-    .classList.add("active");
+  .getElementById(
+    "stage"+number
+  )
+  .classList.add(
+    "active"
+  );
 
 
   document
-    .getElementById("s"+number)
-    .classList.add("active");
+  .getElementById(
+    "s"+number
+  )
+  .classList.add(
+    "active"
+  );
 
 
-  for(let i=1;i<number;i++){
+  for(
+    let i=1;
+    i<number;
+    i++
+  ){
 
-    const step =
-      document.getElementById("s"+i);
+    document
+    .getElementById(
+      "s"+i
+    )
+    .classList.add(
+      "done"
+    );
 
-    step.classList.add("done");
 
     const line =
-      document.getElementById("l"+i);
+      document.getElementById(
+        "l"+i
+      );
 
     if(line){
-      line.classList.add("done");
+
+      line.classList.add(
+        "done"
+      );
+
     }
 
   }
