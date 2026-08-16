@@ -1,5 +1,3 @@
-SUPER GB — Tam sayt kodu
-
 <!DOCTYPE html>
 <html lang="az">
 <head>
@@ -39,10 +37,7 @@ body{
 
 .super{
   color:#fff;
-  text-shadow:
-    0 0 6px #fff,
-    0 0 15px #00ffff,
-    0 0 30px #00ffff;
+  text-shadow:0 0 6px #fff,0 0 15px #00ffff,0 0 30px #00ffff;
 }
 
 .gb{
@@ -70,8 +65,6 @@ body{
   color:#8fa3b5;
   margin-top:6px;
 }
-
-/* MƏRHƏLƏLƏR */
 
 .stepsWrap{
   position:sticky;
@@ -125,8 +118,6 @@ body{
   background:#35dfc5;
 }
 
-/* ƏSAS */
-
 .container{
   max-width:720px;
   margin:auto;
@@ -173,8 +164,6 @@ body{
   border-radius:27px;
   padding:22px;
 }
-
-/* OPERATORLAR */
 
 .operators{
   display:grid;
@@ -230,8 +219,6 @@ body{
   font-weight:bold;
 }
 
-/* PREFİKSLƏR */
-
 .prefixTitle{
   margin:22px 0 12px;
   text-align:center;
@@ -262,8 +249,6 @@ body{
   border-color:#35dfc5;
   box-shadow:0 0 15px rgba(53,223,197,.4);
 }
-
-/* TELEFON */
 
 .phone{
   width:100%;
@@ -300,8 +285,6 @@ body{
   margin-top:10px;
 }
 
-/* DÜYMƏLƏR */
-
 .buttons{
   display:flex;
   gap:10px;
@@ -328,8 +311,6 @@ body{
 .button:disabled{
   opacity:.4;
 }
-
-/* PAKETLƏR */
 
 .package{
   display:flex;
@@ -381,8 +362,6 @@ body{
   font-size:20px;
   font-weight:1000;
 }
-
-/* ÖDƏNİŞ */
 
 .paymentGrid{
   display:grid;
@@ -450,8 +429,6 @@ body{
   font-weight:900;
 }
 
-/* QƏBZ */
-
 .receiptBox{
   min-height:280px;
   padding:25px 18px;
@@ -496,8 +473,6 @@ body{
   font-weight:1000;
   cursor:pointer;
 }
-
-/* TƏSDİQ */
 
 .confirm{
   text-align:center;
@@ -570,7 +545,6 @@ body{
 <body>
 
 <header class="header">
-
   <div class="logo">
     <span class="super">SUPER</span>
     <span class="gb">GB</span>
@@ -579,14 +553,9 @@ body{
   <div class="logoSub">
     SÜRƏTLİ • SADƏ • RAHAT
   </div>
-
 </header>
 
-
-<!-- MƏRHƏLƏLƏR -->
-
 <div class="stepsWrap">
-
   <div class="steps">
 
     <div id="s1" class="step active">1</div>
@@ -607,20 +576,13 @@ body{
     <div id="s6" class="step">✓</div>
 
   </div>
-
 </div>
-
 
 <div class="container">
 
-
-<!-- 1. OPERATOR -->
-
 <section id="stage1" class="stage active">
 
-  <div class="title">
-    Operatoru seçin
-  </div>
+  <div class="title">Operatoru seçin</div>
 
   <div class="subtitle">
     Mobil operatorunuzu seçin
@@ -631,30 +593,18 @@ body{
     <div class="operators">
 
       <div class="operator" data-operator="azercell">
-        <div class="operatorLogo azercell">
-          Azercell
-        </div>
-        <div class="operatorName">
-          Azercell
-        </div>
+        <div class="operatorLogo azercell">Azercell</div>
+        <div class="operatorName">Azercell</div>
       </div>
 
       <div class="operator" data-operator="bakcell">
-        <div class="operatorLogo bakcell">
-          Bakcell
-        </div>
-        <div class="operatorName">
-          Bakcell
-        </div>
+        <div class="operatorLogo bakcell">Bakcell</div>
+        <div class="operatorName">Bakcell</div>
       </div>
 
       <div class="operator" data-operator="nar">
-        <div class="operatorLogo nar">
-          nar
-        </div>
-        <div class="operatorName">
-          Nar
-        </div>
+        <div class="operatorLogo nar">nar</div>
+        <div class="operatorName">Nar</div>
       </div>
 
     </div>
@@ -662,9 +612,6 @@ body{
   </div>
 
 </section>
-
-
-<!-- 2. NÖMRƏ -->
 
 <section id="stage2" class="stage">
 
@@ -684,12 +631,13 @@ body{
 
     <div id="prefixes" class="prefixes"></div>
 
+    <!-- BURADA 13 QALDI -->
     <input
       id="phone"
       class="phone"
       type="tel"
       inputmode="numeric"
-      maxlength="12"
+      maxlength="13"
       placeholder="050-123-45-67"
       autocomplete="tel"
     >
@@ -702,18 +650,11 @@ body{
 
     <div class="buttons">
 
-      <button
-        id="back2"
-        class="button back"
-        type="button">
+      <button id="back2" class="button back" type="button">
         ← Geri
       </button>
 
-      <button
-        id="phoneNext"
-        class="button"
-        type="button"
-        disabled>
+      <button id="phoneNext" class="button" type="button" disabled>
         İrəli →
       </button>
 
@@ -723,14 +664,9 @@ body{
 
 </section>
 
-
-<!-- 3. PAKET -->
-
 <section id="stage3" class="stage">
 
-  <div class="title">
-    Paket seçin
-  </div>
+  <div class="title">Paket seçin</div>
 
   <div class="subtitle">
     Sizə uyğun internet paketini seçin
@@ -738,160 +674,78 @@ body{
 
   <div class="box">
 
-    <div
-      class="package"
-      data-gb="15"
-      data-price="5">
-
+    <div class="package" data-gb="15" data-price="5">
       <div class="packageLeft">
-
         <div class="packageIcon">⚡</div>
-
         <div>
-          <div class="packageGB">
-            15 GB
-          </div>
-
+          <div class="packageGB">15 GB</div>
           <div class="details">
             📅 30 gün • 📞 400 dəqiqə • 💬 100 SMS
           </div>
         </div>
-
       </div>
-
-      <div class="price">
-        5 AZN
-      </div>
-
+      <div class="price">5 AZN</div>
     </div>
 
-
-    <div
-      class="package"
-      data-gb="20"
-      data-price="10">
-
+    <div class="package" data-gb="20" data-price="10">
       <div class="packageLeft">
-
         <div class="packageIcon">🚀</div>
-
         <div>
-          <div class="packageGB">
-            20 GB
-          </div>
-
+          <div class="packageGB">20 GB</div>
           <div class="details">
             📅 30 gün • 📞 600 dəqiqə • 💬 200 SMS
           </div>
         </div>
-
       </div>
-
-      <div class="price">
-        10 AZN
-      </div>
-
+      <div class="price">10 AZN</div>
     </div>
 
-
-    <div
-      class="package"
-      data-gb="60"
-      data-price="20">
-
+    <div class="package" data-gb="60" data-price="20">
       <div class="packageLeft">
-
         <div class="packageIcon">🔥</div>
-
         <div>
-          <div class="packageGB">
-            60 GB
-          </div>
-
+          <div class="packageGB">60 GB</div>
           <div class="details">
             📅 30 gün • 📞 1000 dəqiqə • 💬 300 SMS
           </div>
         </div>
-
       </div>
-
-      <div class="price">
-        20 AZN
-      </div>
-
+      <div class="price">20 AZN</div>
     </div>
 
-
-    <div
-      class="package"
-      data-gb="80"
-      data-price="25">
-
+    <div class="package" data-gb="80" data-price="25">
       <div class="packageLeft">
-
         <div class="packageIcon">💎</div>
-
         <div>
-          <div class="packageGB">
-            80 GB
-          </div>
-
+          <div class="packageGB">80 GB</div>
           <div class="details">
             📅 30 gün • 📞 1200 dəqiqə • 💬 400 SMS
           </div>
         </div>
-
       </div>
-
-      <div class="price">
-        25 AZN
-      </div>
-
+      <div class="price">25 AZN</div>
     </div>
 
-
-    <div
-      class="package"
-      data-gb="100"
-      data-price="30">
-
+    <div class="package" data-gb="100" data-price="30">
       <div class="packageLeft">
-
         <div class="packageIcon">👑</div>
-
         <div>
-          <div class="packageGB">
-            100 GB
-          </div>
-
+          <div class="packageGB">100 GB</div>
           <div class="details">
             📅 30 gün • 📞 1500 dəqiqə • 💬 500 SMS
           </div>
         </div>
-
       </div>
-
-      <div class="price">
-        30 AZN
-      </div>
-
+      <div class="price">30 AZN</div>
     </div>
-
 
     <div class="buttons">
 
-      <button
-        id="back3"
-        class="button back"
-        type="button">
+      <button id="back3" class="button back" type="button">
         ← Geri
       </button>
 
-      <button
-        id="packageNext"
-        class="button"
-        type="button"
-        disabled>
+      <button id="packageNext" class="button" type="button" disabled>
         İrəli →
       </button>
 
@@ -901,14 +755,9 @@ body{
 
 </section>
 
-
-<!-- 4. ÖDƏNİŞ -->
-
 <section id="stage4" class="stage">
 
-  <div class="title">
-    Ödəniş
-  </div>
+  <div class="title">Ödəniş</div>
 
   <div class="subtitle">
     Ödənişi etdikdən sonra qəbzi göndərin
@@ -916,47 +765,33 @@ body{
 
   <div class="paymentGrid">
 
-
     <div class="bankCard">
 
       <div class="cardTop">
-
         <div class="chip"></div>
 
         <div class="cardBrand">
           SUPER GB
         </div>
-
       </div>
-
 
       <div class="cardNumber">
         5315 9921 2761 6081
       </div>
 
-
-      <button
-        id="copyButton"
-        class="copyButton"
-        type="button">
+      <button id="copyButton" class="copyButton" type="button">
         📋 Kopyala
       </button>
 
-
-      <div
-        id="amount"
-        class="amount">
+      <div id="amount" class="amount">
         0 AZN
       </div>
 
     </div>
 
-
     <div class="receiptBox">
 
-      <div class="receiptIcon">
-        📤
-      </div>
+      <div class="receiptIcon">📤</div>
 
       <div class="receiptTitle">
         Qəbzi göndər
@@ -973,29 +808,19 @@ body{
         accept="image/*"
       >
 
-      <button
-        id="sendReceipt"
-        class="sendButton"
-        type="button">
+      <button id="sendReceipt" class="sendButton" type="button">
         Qəbzi göndər və təsdiqlə
       </button>
 
-      <div
-        id="receiptError"
-        class="error">
-      </div>
+      <div id="receiptError" class="error"></div>
 
     </div>
 
   </div>
 
-
   <div class="buttons">
 
-    <button
-      id="back4"
-      class="button back"
-      type="button">
+    <button id="back4" class="button back" type="button">
       ← Geri
     </button>
 
@@ -1003,14 +828,9 @@ body{
 
 </section>
 
-
-<!-- 5. TƏSDİQ -->
-
 <section id="stage5" class="stage">
 
-  <div class="title">
-    Təsdiq
-  </div>
+  <div class="title">Təsdiq</div>
 
   <div class="subtitle">
     Məlumatları yoxlayın və təsdiqləyin
@@ -1018,9 +838,7 @@ body{
 
   <div class="box confirm">
 
-    <div class="confirmIcon">
-      ✓
-    </div>
+    <div class="confirmIcon">✓</div>
 
     <h2 style="margin-top:20px">
       Qəbz göndərildi
@@ -1029,7 +847,6 @@ body{
     <p style="color:#91a3b5;margin-top:10px">
       Məlumatlarınızı təsdiqləyin.
     </p>
-
 
     <div class="summary">
 
@@ -1055,20 +872,13 @@ body{
 
     </div>
 
-
     <div class="buttons">
 
-      <button
-        id="back5"
-        class="button back"
-        type="button">
+      <button id="back5" class="button back" type="button">
         ← Geri
       </button>
 
-      <button
-        id="confirmButton"
-        class="button"
-        type="button">
+      <button id="confirmButton" class="button" type="button">
         Təsdiq et ✓
       </button>
 
@@ -1078,16 +888,11 @@ body{
 
 </section>
 
-
-<!-- 6. SON -->
-
 <section id="stage6" class="stage">
 
   <div class="box confirm">
 
-    <div class="confirmIcon">
-      ✓
-    </div>
+    <div class="confirmIcon">✓</div>
 
     <div class="confirmTitle">
       Sifariş təsdiqləndi!
@@ -1096,7 +901,6 @@ body{
     <div class="confirmText">
       Məlumatlar uğurla qəbul edildi.
     </div>
-
 
     <div class="summary">
 
@@ -1128,7 +932,6 @@ body{
 
 </div>
 
-
 <script>
 
 let selectedOperator = "";
@@ -1137,598 +940,373 @@ let selectedPackage = null;
 
 const CARD_NUMBER = "5315 9921 2761 6081";
 
-
-/* OPERATOR KODLARI */
-
 const prefixes = {
-
-  azercell: [
-    "010",
-    "050",
-    "051"
-  ],
-
-  bakcell: [
-    "055",
-    "099"
-  ],
-
-  nar: [
-    "070",
-    "077"
-  ]
-
+  azercell:["010","050","051"],
+  bakcell:["055","099"],
+  nar:["070","077"]
 };
-
-
-/* MƏRHƏLƏYƏ KEÇİD */
 
 function goToStage(number){
 
   for(let i=1;i<=6;i++){
-
-    document
-      .getElementById("stage"+i)
+    document.getElementById("stage"+i)
       .classList.remove("active");
-
   }
 
-
-  document
-    .getElementById("stage"+number)
+  document.getElementById("stage"+number)
     .classList.add("active");
-
 
   for(let i=1;i<=6;i++){
 
-    const step =
-      document.getElementById("s"+i);
+    const step=document.getElementById("s"+i);
 
     step.classList.remove("active");
     step.classList.remove("done");
 
-    if(i < number){
-      step.classList.add("done");
-    }
-
-    if(i === number){
-      step.classList.add("active");
-    }
-
+    if(i<number) step.classList.add("done");
+    if(i===number) step.classList.add("active");
   }
-
 
   for(let i=1;i<=5;i++){
 
-    const line =
-      document.getElementById("l"+i);
+    const line=document.getElementById("l"+i);
 
-    if(i < number){
+    if(i<number){
       line.classList.add("done");
     }else{
       line.classList.remove("done");
     }
-
   }
 
   window.scrollTo({
     top:0,
     behavior:"smooth"
   });
-
 }
 
+document.querySelectorAll(".operator")
+.forEach(function(item){
 
-/* OPERATOR SEÇİMİ */
+  item.addEventListener("click",function(){
 
-document
-  .querySelectorAll(".operator")
-  .forEach(function(item){
-
-    item.addEventListener("click",function(){
-
-      document
-        .querySelectorAll(".operator")
-        .forEach(function(x){
-          x.classList.remove("selected");
-        });
-
-
-      this.classList.add("selected");
-
-      selectedOperator =
-        this.dataset.operator;
-
-      selectedPrefix = "";
-
-      document.getElementById("phone").value = "";
-
-      showPrefixes();
-
-      goToStage(2);
-
+    document.querySelectorAll(".operator")
+    .forEach(function(x){
+      x.classList.remove("selected");
     });
 
+    this.classList.add("selected");
+
+    selectedOperator=this.dataset.operator;
+    selectedPrefix="";
+
+    document.getElementById("phone").value="";
+
+    showPrefixes();
+
+    goToStage(2);
   });
-
-
-/* PREFİKSLƏRİ GÖSTƏR */
+});
 
 function showPrefixes(){
 
-  const box =
-    document.getElementById("prefixes");
+  const box=document.getElementById("prefixes");
 
-  box.innerHTML = "";
+  box.innerHTML="";
 
+  prefixes[selectedOperator].forEach(function(prefix){
 
-  prefixes[selectedOperator]
-    .forEach(function(prefix){
+    const btn=document.createElement("button");
 
-      const btn =
-        document.createElement("button");
+    btn.className="prefix";
+    btn.type="button";
+    btn.textContent=prefix;
 
-      btn.className = "prefix";
-      btn.type = "button";
-      btn.textContent = prefix;
+    btn.addEventListener("click",function(){
 
-
-      btn.addEventListener("click",function(){
-
-        document
-          .querySelectorAll(".prefix")
-          .forEach(function(x){
-            x.classList.remove("selected");
-          });
-
-
-        this.classList.add("selected");
-
-        selectedPrefix = prefix;
-
-        document.getElementById("phone").value =
-          prefix + "-";
-
-
-        document.getElementById("phone").focus();
-
-        checkPhone();
-
+      document.querySelectorAll(".prefix")
+      .forEach(function(x){
+        x.classList.remove("selected");
       });
-
-
-      box.appendChild(btn);
-
-    });
-
-}
-
-
-/* TELEFON */
-
-const phone =
-  document.getElementById("phone");
-
-
-phone.addEventListener("input",function(){
-
-  let numbers =
-    this.value.replace(/\D/g,"");
-
-
-  /*
-    Maksimum 10 rəqəm.
-    İlk 3 rəqəm prefiksdir.
-  */
-
-  if(numbers.length > 10){
-    numbers =
-      numbers.substring(0,10);
-  }
-
-
-  /*
-    Əgər prefiks seçilibsə,
-    müştərinin yazdığı prefiks
-    seçilən prefikslə uyğunlaşdırılır.
-  */
-
-  if(selectedPrefix){
-
-    const typedPrefix =
-      numbers.substring(0,3);
-
-
-    if(
-      typedPrefix.length === 3 &&
-      typedPrefix !== selectedPrefix
-    ){
-
-      /*
-        Müştəri prefiksi dəyişmək istəyirsə,
-        əvvəlcə prefiks düymələrindən
-        yenisini seçə bilər.
-      */
-
-      numbers =
-        selectedPrefix +
-        numbers.substring(3);
-
-    }
-
-  }
-
-
-  let formatted = "";
-
-
-  if(numbers.length > 0){
-    formatted +=
-      numbers.substring(0,3);
-  }
-
-
-  if(numbers.length > 3){
-    formatted +=
-      "-" +
-      numbers.substring(3,6);
-  }
-
-
-  if(numbers.length > 6){
-    formatted +=
-      "-" +
-      numbers.substring(6,8);
-  }
-
-
-  if(numbers.length > 8){
-    formatted +=
-      "-" +
-      numbers.substring(8,10);
-  }
-
-
-  this.value = formatted;
-
-  checkPhone();
-
-});
-
-
-/* TELEFON YOXLAMA */
-
-function checkPhone(){
-
-  const numbers =
-    phone.value.replace(/\D/g,"");
-
-  const error =
-    document.getElementById("phoneError");
-
-  const success =
-    document.getElementById("phoneSuccess");
-
-  const next =
-    document.getElementById("phoneNext");
-
-
-  error.style.display = "none";
-  success.style.display = "none";
-
-  next.disabled = true;
-
-
-  if(!selectedPrefix){
-
-    error.textContent =
-      "Əvvəlcə nömrə kodunu seçin.";
-
-    error.style.display = "block";
-
-    return false;
-  }
-
-
-  /*
-    DƏQİQ 10 RƏQƏM
-  */
-
-  if(numbers.length !== 10){
-
-    error.textContent =
-      "Nömrə tam 10 rəqəm olmalıdır.";
-
-    error.style.display = "block";
-
-    return false;
-  }
-
-
-  if(
-    !numbers.startsWith(selectedPrefix)
-  ){
-
-    error.textContent =
-      "Seçilmiş kod nömrə ilə uyğun deyil.";
-
-    error.style.display = "block";
-
-    return false;
-  }
-
-
-  success.style.display = "block";
-
-  next.disabled = false;
-
-  return true;
-
-}
-
-
-/* GERİ — 2 */
-
-document
-  .getElementById("back2")
-  .addEventListener("click",function(){
-
-    goToStage(1);
-
-  });
-
-
-/* GERİ — 3 */
-
-document
-  .getElementById("back3")
-  .addEventListener("click",function(){
-
-    goToStage(2);
-
-  });
-
-
-/* GERİ — 4 */
-
-document
-  .getElementById("back4")
-  .addEventListener("click",function(){
-
-    goToStage(3);
-
-  });
-
-
-/* GERİ — 5 */
-
-document
-  .getElementById("back5")
-  .addEventListener("click",function(){
-
-    goToStage(4);
-
-  });
-
-
-/* NÖMRƏ → PAKET */
-
-document
-  .getElementById("phoneNext")
-  .addEventListener("click",function(){
-
-    if(checkPhone()){
-      goToStage(3);
-    }
-
-  });
-
-
-/* PAKET SEÇİMİ */
-
-document
-  .querySelectorAll(".package")
-  .forEach(function(item){
-
-    item.addEventListener("click",function(){
-
-      document
-        .querySelectorAll(".package")
-        .forEach(function(x){
-          x.classList.remove("selected");
-        });
-
 
       this.classList.add("selected");
 
+      selectedPrefix=prefix;
 
-      selectedPackage = {
+      document.getElementById("phone").value=prefix+"-";
 
-        gb:this.dataset.gb,
+      document.getElementById("phone").focus();
 
-        price:this.dataset.price
-
-      };
-
-
-      document
-        .getElementById("packageNext")
-        .disabled = false;
-
+      checkPhone();
     });
 
+    box.appendChild(btn);
   });
+}
 
+const phone=document.getElementById("phone");
 
-/* PAKET → ÖDƏNİŞ */
+phone.addEventListener("input",function(){
 
-document
-  .getElementById("packageNext")
-  .addEventListener("click",function(){
+  let numbers=this.value.replace(/\D/g,"");
 
-    if(!selectedPackage){
-      return;
+  /*
+   * 10 rəqəmdən artıq qəbul etmir.
+   * Format isə 13 simvoldur:
+   * 050-123-45-67
+   */
+
+  if(numbers.length>10){
+    numbers=numbers.substring(0,10);
+  }
+
+  if(selectedPrefix){
+
+    const typedPrefix=numbers.substring(0,3);
+
+    if(
+      typedPrefix.length===3 &&
+      typedPrefix!==selectedPrefix
+    ){
+      numbers=
+        selectedPrefix+
+        numbers.substring(3);
     }
+  }
 
+  let formatted="";
 
-    document
-      .getElementById("amount")
-      .textContent =
-      selectedPackage.price + " AZN";
+  if(numbers.length>0){
+    formatted+=numbers.substring(0,3);
+  }
 
+  if(numbers.length>3){
+    formatted+="-"+numbers.substring(3,6);
+  }
 
-    goToStage(4);
+  if(numbers.length>6){
+    formatted+="-"+numbers.substring(6,8);
+  }
 
+  if(numbers.length>8){
+    formatted+="-"+numbers.substring(8,10);
+  }
+
+  this.value=formatted;
+
+  checkPhone();
+});
+
+function checkPhone(){
+
+  const numbers=
+    phone.value.replace(/\D/g,"");
+
+  const error=
+    document.getElementById("phoneError");
+
+  const success=
+    document.getElementById("phoneSuccess");
+
+  const next=
+    document.getElementById("phoneNext");
+
+  error.style.display="none";
+  success.style.display="none";
+  next.disabled=true;
+
+  if(!selectedPrefix){
+
+    error.textContent=
+      "Əvvəlcə nömrə kodunu seçin.";
+
+    error.style.display="block";
+
+    return false;
+  }
+
+  if(numbers.length!==10){
+
+    error.textContent=
+      "Nömrə tam 10 rəqəm olmalıdır.";
+
+    error.style.display="block";
+
+    return false;
+  }
+
+  if(!numbers.startsWith(selectedPrefix)){
+
+    error.textContent=
+      "Seçilmiş kod nömrə ilə uyğun deyil.";
+
+    error.style.display="block";
+
+    return false;
+  }
+
+  success.style.display="block";
+  next.disabled=false;
+
+  return true;
+}
+
+document.getElementById("back2")
+.addEventListener("click",function(){
+  goToStage(1);
+});
+
+document.getElementById("back3")
+.addEventListener("click",function(){
+  goToStage(2);
+});
+
+document.getElementById("back4")
+.addEventListener("click",function(){
+  goToStage(3);
+});
+
+document.getElementById("back5")
+.addEventListener("click",function(){
+  goToStage(4);
+});
+
+document.getElementById("phoneNext")
+.addEventListener("click",function(){
+
+  if(checkPhone()){
+    goToStage(3);
+  }
+
+});
+
+document.querySelectorAll(".package")
+.forEach(function(item){
+
+  item.addEventListener("click",function(){
+
+    document.querySelectorAll(".package")
+    .forEach(function(x){
+      x.classList.remove("selected");
+    });
+
+    this.classList.add("selected");
+
+    selectedPackage={
+      gb:this.dataset.gb,
+      price:this.dataset.price
+    };
+
+    document.getElementById("packageNext")
+      .disabled=false;
   });
+});
 
+document.getElementById("packageNext")
+.addEventListener("click",function(){
 
-/* KARTI KOPYALA */
+  if(!selectedPackage) return;
 
-document
-  .getElementById("copyButton")
-  .addEventListener("click",function(){
+  document.getElementById("amount")
+    .textContent=
+    selectedPackage.price+" AZN";
 
-    const button = this;
+  goToStage(4);
+});
 
+document.getElementById("copyButton")
+.addEventListener("click",function(){
 
-    if(navigator.clipboard){
+  const button=this;
 
-      navigator.clipboard
-        .writeText(CARD_NUMBER)
-        .then(function(){
+  if(navigator.clipboard){
 
-          button.textContent =
-            "✓ Kopyalandı";
+    navigator.clipboard
+    .writeText(CARD_NUMBER)
+    .then(function(){
 
-          setTimeout(function(){
+      button.textContent="✓ Kopyalandı";
 
-            button.textContent =
-              "📋 Kopyala";
+      setTimeout(function(){
+        button.textContent="📋 Kopyala";
+      },2000);
+    });
 
-          },2000);
+  }else{
 
-        });
+    alert(
+      "Kart nömrəsi: "+CARD_NUMBER
+    );
+  }
+});
 
-    }else{
+document.getElementById("sendReceipt")
+.addEventListener("click",function(){
 
-      alert(
-        "Kart nömrəsi: " +
-        CARD_NUMBER
-      );
+  const file=
+    document.getElementById("receipt")
+    .files[0];
 
-    }
+  const error=
+    document.getElementById("receiptError");
 
-  });
+  error.style.display="none";
 
+  if(!file){
 
-/* QƏBZ */
+    error.textContent=
+      "Əvvəlcə qəbz şəklini seçin.";
 
-document
-  .getElementById("sendReceipt")
-  .addEventListener("click",function(){
+    error.style.display="block";
 
-    const file =
-      document
-        .getElementById("receipt")
-        .files[0];
+    return;
+  }
 
-    const error =
-      document.getElementById("receiptError");
+  goToStage(5);
+});
 
+document.getElementById("confirmButton")
+.addEventListener("click",function(){
 
-    error.style.display = "none";
+  let operatorName="";
 
+  if(selectedOperator==="azercell"){
+    operatorName="Azercell";
+  }
 
-    if(!file){
+  if(selectedOperator==="bakcell"){
+    operatorName="Bakcell";
+  }
 
-      error.textContent =
-        "Əvvəlcə qəbz şəklini seçin.";
+  if(selectedOperator==="nar"){
+    operatorName="Nar";
+  }
 
-      error.style.display = "block";
+  document.getElementById("confirmOperator")
+    .textContent=operatorName;
 
-      return;
+  document.getElementById("confirmPhone")
+    .textContent=phone.value;
 
-    }
+  document.getElementById("confirmPackage")
+    .textContent=selectedPackage.gb+" GB";
 
+  document.getElementById("confirmPrice")
+    .textContent=selectedPackage.price+" AZN";
 
-    goToStage(5);
+  document.getElementById("finalOperator")
+    .textContent=operatorName;
 
-  });
+  document.getElementById("finalPhone")
+    .textContent=phone.value;
 
+  document.getElementById("finalPackage")
+    .textContent=selectedPackage.gb+" GB";
 
-/* TƏSDİQ */
+  document.getElementById("finalPrice")
+    .textContent=selectedPackage.price+" AZN";
 
-document
-  .getElementById("confirmButton")
-  .addEventListener("click",function(){
-
-    let operatorName = "";
-
-
-    if(selectedOperator === "azercell"){
-      operatorName = "Azercell";
-    }
-
-    if(selectedOperator === "bakcell"){
-      operatorName = "Bakcell";
-    }
-
-    if(selectedOperator === "nar"){
-      operatorName = "Nar";
-    }
-
-
-    document
-      .getElementById("confirmOperator")
-      .textContent =
-      operatorName;
-
-
-    document
-      .getElementById("confirmPhone")
-      .textContent =
-      phone.value;
-
-
-    document
-      .getElementById("confirmPackage")
-      .textContent =
-      selectedPackage.gb + " GB";
-
-
-    document
-      .getElementById("confirmPrice")
-      .textContent =
-      selectedPackage.price + " AZN";
-
-
-    document
-      .getElementById("finalOperator")
-      .textContent =
-      operatorName;
-
-
-    document
-      .getElementById("finalPhone")
-      .textContent =
-      phone.value;
-
-
-    document
-      .getElementById("finalPackage")
-      .textContent =
-      selectedPackage.gb + " GB";
-
-
-    document
-      .getElementById("finalPrice")
-      .textContent =
-      selectedPackage.price + " AZN";
-
-
-    goToStage(6);
-
-  });
+  goToStage(6);
+});
 
 </script>
 
