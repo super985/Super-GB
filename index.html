@@ -1,550 +1,568 @@
+SUPER GB — Tam sayt kodu
+
 <!DOCTYPE html>
 <html lang="az">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>SUPER GB</title>
 
 <style>
-*{box-sizing:border-box;margin:0;padding:0}
+*{
+  box-sizing:border-box;
+  margin:0;
+  padding:0;
+}
 
 body{
-font-family:Arial,sans-serif;
-min-height:100vh;
-color:#fff;
-background:
-radial-gradient(circle at 10% 10%,#123d5c,transparent 30%),
-radial-gradient(circle at 90% 15%,#351a58,transparent 30%),
-#06101c;
+  font-family:Arial,sans-serif;
+  min-height:100vh;
+  color:#fff;
+  background:
+    radial-gradient(circle at 10% 10%,#123d5c,transparent 30%),
+    radial-gradient(circle at 90% 15%,#351a58,transparent 30%),
+    #06101c;
 }
 
 .header{
-text-align:center;
-padding:24px 15px;
-background:rgba(4,15,27,.96);
+  text-align:center;
+  padding:24px 15px;
+  background:rgba(4,15,27,.96);
 }
 
 .logo{
-font-size:42px;
-font-weight:1000;
-letter-spacing:2px;
-animation:pulse 1.7s infinite;
+  font-size:42px;
+  font-weight:1000;
+  letter-spacing:2px;
+  animation:pulse 1.7s infinite;
 }
 
 .super{
-color:#fff;
-text-shadow:
-0 0 6px #fff,
-0 0 15px #00ffff,
-0 0 30px #00ffff;
+  color:#fff;
+  text-shadow:
+    0 0 6px #fff,
+    0 0 15px #00ffff,
+    0 0 30px #00ffff;
 }
 
 .gb{
-background:linear-gradient(
-90deg,#00ffff,#39ff14,#fff000,#ff00ff,#00ffff);
-background-size:300% auto;
--webkit-background-clip:text;
--webkit-text-fill-color:transparent;
-animation:colors 3s linear infinite;
+  background:linear-gradient(
+    90deg,#00ffff,#39ff14,#fff000,#ff00ff,#00ffff
+  );
+  background-size:300% auto;
+  -webkit-background-clip:text;
+  -webkit-text-fill-color:transparent;
+  animation:colors 3s linear infinite;
 }
 
 @keyframes colors{
-0%{background-position:0%}
-100%{background-position:300%}
+  0%{background-position:0%}
+  100%{background-position:300%}
 }
 
 @keyframes pulse{
-50%{transform:scale(1.04)}
+  50%{transform:scale(1.04)}
 }
 
 .logoSub{
-font-size:10px;
-letter-spacing:5px;
-color:#8fa3b5;
-margin-top:6px;
+  font-size:10px;
+  letter-spacing:5px;
+  color:#8fa3b5;
+  margin-top:6px;
 }
 
-/* STEPS */
+/* MƏRHƏLƏLƏR */
 
 .stepsWrap{
-position:sticky;
-top:0;
-z-index:99;
-padding:12px 6px;
-background:rgba(5,15,26,.98);
+  position:sticky;
+  top:0;
+  z-index:99;
+  padding:12px 6px;
+  background:rgba(5,15,26,.98);
 }
 
 .steps{
-display:flex;
-justify-content:center;
-align-items:center;
-max-width:750px;
-margin:auto;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  max-width:750px;
+  margin:auto;
 }
 
 .step{
-width:34px;
-height:34px;
-border-radius:50%;
-display:flex;
-align-items:center;
-justify-content:center;
-background:#17283a;
-border:2px solid #30465b;
-color:#8092a5;
-font-weight:bold;
+  width:34px;
+  height:34px;
+  border-radius:50%;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  background:#17283a;
+  border:2px solid #30465b;
+  color:#8092a5;
+  font-weight:bold;
 }
 
 .step.active{
-background:#35dfc5;
-border-color:#35dfc5;
-color:#031916;
-box-shadow:0 0 20px #35dfc5;
+  background:#35dfc5;
+  border-color:#35dfc5;
+  color:#031916;
+  box-shadow:0 0 20px #35dfc5;
 }
 
 .step.done{
-background:#168f82;
-border-color:#35dfc5;
-color:#fff;
+  background:#168f82;
+  border-color:#35dfc5;
+  color:#fff;
 }
 
 .line{
-height:3px;
-width:27px;
-background:#263c50;
+  height:3px;
+  width:27px;
+  background:#263c50;
 }
 
 .line.done{
-background:#35dfc5;
+  background:#35dfc5;
 }
 
-/* CONTAINER */
+/* ƏSAS */
 
 .container{
-max-width:720px;
-margin:auto;
-padding:28px 16px 60px;
+  max-width:720px;
+  margin:auto;
+  padding:28px 16px 60px;
 }
 
 .stage{
-display:none;
-animation:slide .3s ease;
+  display:none;
+  animation:slide .3s ease;
 }
 
 .stage.active{
-display:block;
+  display:block;
 }
 
 @keyframes slide{
-from{opacity:0;transform:translateX(25px)}
-to{opacity:1;transform:translateX(0)}
+  from{
+    opacity:0;
+    transform:translateX(25px);
+  }
+  to{
+    opacity:1;
+    transform:translateX(0);
+  }
 }
 
 .title{
-text-align:center;
-font-size:28px;
-font-weight:1000;
-margin-bottom:8px;
+  text-align:center;
+  font-size:28px;
+  font-weight:1000;
+  margin-bottom:8px;
 }
 
 .subtitle{
-text-align:center;
-color:#8fa1b2;
-font-size:14px;
-margin-bottom:22px;
+  text-align:center;
+  color:#8fa1b2;
+  font-size:14px;
+  margin-bottom:22px;
 }
 
 .box{
-background:rgba(12,28,44,.94);
-border:1px solid #273d52;
-border-radius:27px;
-padding:22px;
+  background:rgba(12,28,44,.94);
+  border:1px solid #273d52;
+  border-radius:27px;
+  padding:22px;
 }
 
-/* OPERATORS */
+/* OPERATORLAR */
 
 .operators{
-display:grid;
-grid-template-columns:repeat(3,1fr);
-gap:12px;
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:12px;
 }
 
 .operator{
-padding:18px 7px;
-text-align:center;
-background:#101f31;
-border:2px solid #263b50;
-border-radius:22px;
-cursor:pointer;
-transition:.2s;
+  padding:18px 7px;
+  text-align:center;
+  background:#101f31;
+  border:2px solid #263b50;
+  border-radius:22px;
+  cursor:pointer;
+  transition:.2s;
 }
 
 .operator.selected{
-border-color:#35dfc5;
-box-shadow:0 0 25px rgba(53,223,197,.25);
-transform:translateY(-3px);
+  border-color:#35dfc5;
+  box-shadow:0 0 25px rgba(53,223,197,.25);
+  transform:translateY(-3px);
 }
 
 .operatorLogo{
-width:64px;
-height:64px;
-margin:auto;
-border-radius:18px;
-display:flex;
-align-items:center;
-justify-content:center;
-font-weight:1000;
+  width:64px;
+  height:64px;
+  margin:auto;
+  border-radius:18px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  font-weight:1000;
 }
 
 .azercell{
-background:#fff;
-color:#57328c;
+  background:#fff;
+  color:#57328c;
 }
 
 .bakcell{
-background:#e50046;
-color:#fff;
+  background:#e50046;
+  color:#fff;
 }
 
 .nar{
-background:#b90050;
-color:#fff;
-font-size:23px;
+  background:#b90050;
+  color:#fff;
+  font-size:23px;
 }
 
 .operatorName{
-margin-top:11px;
-font-weight:bold;
+  margin-top:11px;
+  font-weight:bold;
 }
 
-/* PREFIX */
+/* PREFİKSLƏR */
 
 .prefixTitle{
-margin:22px 0 12px;
-text-align:center;
-color:#9db0c0;
-font-size:13px;
+  margin:22px 0 12px;
+  text-align:center;
+  color:#9db0c0;
+  font-size:13px;
 }
 
 .prefixes{
-display:flex;
-flex-wrap:wrap;
-gap:9px;
-justify-content:center;
+  display:flex;
+  flex-wrap:wrap;
+  gap:9px;
+  justify-content:center;
 }
 
 .prefix{
-padding:12px 17px;
-border-radius:13px;
-background:#14283b;
-border:1px solid #31485d;
-color:#fff;
-font-weight:900;
-cursor:pointer;
+  padding:12px 17px;
+  border-radius:13px;
+  background:#14283b;
+  border:1px solid #31485d;
+  color:#fff;
+  font-weight:900;
+  cursor:pointer;
 }
 
 .prefix.selected{
-background:#35dfc5;
-color:#031916;
-border-color:#35dfc5;
-box-shadow:0 0 15px rgba(53,223,197,.4);
+  background:#35dfc5;
+  color:#031916;
+  border-color:#35dfc5;
+  box-shadow:0 0 15px rgba(53,223,197,.4);
 }
 
-/* PHONE */
+/* TELEFON */
 
 .phone{
-width:100%;
-height:60px;
-margin-top:17px;
-border-radius:17px;
-border:1px solid #30475c;
-background:#071521;
-color:#fff;
-outline:none;
-text-align:center;
-font-size:21px;
-letter-spacing:1px;
+  width:100%;
+  height:60px;
+  margin-top:17px;
+  border-radius:17px;
+  border:1px solid #30475c;
+  background:#071521;
+  color:#fff;
+  outline:none;
+  text-align:center;
+  font-size:21px;
+  letter-spacing:1px;
 }
 
 .phone:focus{
-border-color:#35dfc5;
-box-shadow:0 0 15px rgba(53,223,197,.2);
+  border-color:#35dfc5;
+  box-shadow:0 0 15px rgba(53,223,197,.2);
 }
 
 .error{
-display:none;
-color:#ff7185;
-text-align:center;
-font-size:13px;
-margin-top:10px;
+  display:none;
+  color:#ff7185;
+  text-align:center;
+  font-size:13px;
+  margin-top:10px;
 }
 
 .success{
-display:none;
-color:#48e0c5;
-text-align:center;
-font-size:13px;
-margin-top:10px;
+  display:none;
+  color:#48e0c5;
+  text-align:center;
+  font-size:13px;
+  margin-top:10px;
 }
 
-/* BUTTONS */
+/* DÜYMƏLƏR */
 
 .buttons{
-display:flex;
-gap:10px;
-margin-top:18px;
+  display:flex;
+  gap:10px;
+  margin-top:18px;
 }
 
 .button{
-width:100%;
-height:55px;
-border:0;
-border-radius:16px;
-background:linear-gradient(90deg,#20d9bd,#4b9cff);
-color:#041719;
-font-size:16px;
-font-weight:1000;
-cursor:pointer;
+  width:100%;
+  height:55px;
+  border:0;
+  border-radius:16px;
+  background:linear-gradient(90deg,#20d9bd,#4b9cff);
+  color:#041719;
+  font-size:16px;
+  font-weight:1000;
+  cursor:pointer;
 }
 
 .back{
-background:#182b3d;
-color:#b7c5d1;
+  background:#182b3d;
+  color:#b7c5d1;
 }
 
 .button:disabled{
-opacity:.4;
+  opacity:.4;
 }
 
-/* PACKAGES */
+/* PAKETLƏR */
 
 .package{
-display:flex;
-align-items:center;
-justify-content:space-between;
-padding:17px;
-margin-bottom:11px;
-background:#101f31;
-border:1px solid #293f54;
-border-radius:21px;
-cursor:pointer;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  padding:17px;
+  margin-bottom:11px;
+  background:#101f31;
+  border:1px solid #293f54;
+  border-radius:21px;
+  cursor:pointer;
 }
 
 .package.selected{
-border:2px solid #35dfc5;
-background:rgba(53,223,197,.08);
+  border:2px solid #35dfc5;
+  background:rgba(53,223,197,.08);
 }
 
 .packageLeft{
-display:flex;
-align-items:center;
-gap:12px;
+  display:flex;
+  align-items:center;
+  gap:12px;
 }
 
 .packageIcon{
-width:48px;
-height:48px;
-border-radius:15px;
-display:flex;
-align-items:center;
-justify-content:center;
-background:linear-gradient(135deg,#21d9bd,#4b91ff);
-font-size:21px;
+  width:48px;
+  height:48px;
+  border-radius:15px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  background:linear-gradient(135deg,#21d9bd,#4b91ff);
+  font-size:21px;
 }
 
 .packageGB{
-font-size:22px;
-font-weight:1000;
+  font-size:22px;
+  font-weight:1000;
 }
 
 .details{
-color:#8c9eaf;
-font-size:12px;
-margin-top:5px;
+  color:#8c9eaf;
+  font-size:12px;
+  margin-top:5px;
 }
 
 .price{
-color:#4fe2c9;
-font-size:20px;
-font-weight:1000;
+  color:#4fe2c9;
+  font-size:20px;
+  font-weight:1000;
 }
 
-/* PAYMENT */
+/* ÖDƏNİŞ */
 
 .paymentGrid{
-display:grid;
-grid-template-columns:1fr 1fr;
-gap:15px;
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:15px;
 }
 
 .bankCard{
-position:relative;
-min-height:280px;
-padding:23px;
-border-radius:28px;
-background:
-radial-gradient(circle at 90% 15%,rgba(58,230,210,.35),transparent 30%),
-radial-gradient(circle at 5% 90%,rgba(113,70,255,.3),transparent 35%),
-linear-gradient(135deg,#293e56,#101d2c);
-box-shadow:0 20px 40px rgba(0,0,0,.3);
-overflow:hidden;
+  position:relative;
+  min-height:280px;
+  padding:23px;
+  border-radius:28px;
+  background:
+    radial-gradient(circle at 90% 15%,rgba(58,230,210,.35),transparent 30%),
+    radial-gradient(circle at 5% 90%,rgba(113,70,255,.3),transparent 35%),
+    linear-gradient(135deg,#293e56,#101d2c);
+  box-shadow:0 20px 40px rgba(0,0,0,.3);
+  overflow:hidden;
 }
 
 .cardTop{
-display:flex;
-justify-content:space-between;
-align-items:center;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
 }
 
 .chip{
-width:53px;
-height:37px;
-border-radius:10px;
-background:linear-gradient(135deg,#ffe36a,#e7a626);
+  width:53px;
+  height:37px;
+  border-radius:10px;
+  background:linear-gradient(135deg,#ffe36a,#e7a626);
 }
 
 .cardBrand{
-font-weight:1000;
-text-shadow:0 0 10px #00ffff;
+  font-weight:1000;
+  text-shadow:0 0 10px #00ffff;
 }
 
 .cardNumber{
-margin-top:40px;
-font-size:17px;
-letter-spacing:2px;
-white-space:nowrap;
+  margin-top:40px;
+  font-size:17px;
+  letter-spacing:2px;
+  white-space:nowrap;
 }
 
 .copyButton{
-margin-top:14px;
-padding:11px 15px;
-border:0;
-border-radius:12px;
-background:rgba(255,255,255,.14);
-color:#fff;
-font-weight:900;
-cursor:pointer;
+  margin-top:14px;
+  padding:11px 15px;
+  border:0;
+  border-radius:12px;
+  background:rgba(255,255,255,.14);
+  color:#fff;
+  font-weight:900;
+  cursor:pointer;
 }
 
 .amount{
-position:absolute;
-right:18px;
-bottom:18px;
-padding:8px 12px;
-border-radius:12px;
-background:rgba(0,0,0,.25);
-color:#ffd85a;
-font-weight:900;
+  position:absolute;
+  right:18px;
+  bottom:18px;
+  padding:8px 12px;
+  border-radius:12px;
+  background:rgba(0,0,0,.25);
+  color:#ffd85a;
+  font-weight:900;
 }
 
-/* RECEIPT */
+/* QƏBZ */
 
 .receiptBox{
-min-height:280px;
-padding:25px 18px;
-border:2px dashed #18827e;
-border-radius:27px;
-background:rgba(18,80,80,.08);
-text-align:center;
+  min-height:280px;
+  padding:25px 18px;
+  border:2px dashed #18827e;
+  border-radius:27px;
+  background:rgba(18,80,80,.08);
+  text-align:center;
 }
 
 .receiptIcon{
-font-size:43px;
-margin-bottom:12px;
+  font-size:43px;
+  margin-bottom:12px;
 }
 
 .receiptTitle{
-color:#4fe2c9;
-font-size:20px;
-font-weight:1000;
+  color:#4fe2c9;
+  font-size:20px;
+  font-weight:1000;
 }
 
 .receiptText{
-color:#8ea0b0;
-font-size:13px;
-line-height:1.5;
-margin:10px 0 18px;
+  color:#8ea0b0;
+  font-size:13px;
+  line-height:1.5;
+  margin:10px 0 18px;
 }
 
 .file{
-width:100%;
-color:#b6c2ce;
-font-size:12px;
+  width:100%;
+  color:#b6c2ce;
+  font-size:12px;
 }
 
 .sendButton{
-width:100%;
-min-height:53px;
-margin-top:18px;
-border:0;
-border-radius:16px;
-background:linear-gradient(90deg,#20d9bd,#4b9cff);
-color:#041719;
-font-weight:1000;
-cursor:pointer;
+  width:100%;
+  min-height:53px;
+  margin-top:18px;
+  border:0;
+  border-radius:16px;
+  background:linear-gradient(90deg,#20d9bd,#4b9cff);
+  color:#041719;
+  font-weight:1000;
+  cursor:pointer;
 }
 
-/* CONFIRM */
+/* TƏSDİQ */
 
 .confirm{
-text-align:center;
-padding:35px 20px;
+  text-align:center;
+  padding:35px 20px;
 }
 
 .confirmIcon{
-width:85px;
-height:85px;
-margin:auto;
-border-radius:50%;
-display:flex;
-align-items:center;
-justify-content:center;
-background:#35dfc5;
-color:#06201e;
-font-size:42px;
-font-weight:1000;
+  width:85px;
+  height:85px;
+  margin:auto;
+  border-radius:50%;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  background:#35dfc5;
+  color:#06201e;
+  font-size:42px;
+  font-weight:1000;
 }
 
 .confirmTitle{
-margin-top:22px;
-font-size:30px;
-font-weight:1000;
+  margin-top:22px;
+  font-size:30px;
+  font-weight:1000;
 }
 
 .confirmText{
-margin-top:10px;
-color:#91a3b5;
+  margin-top:10px;
+  color:#91a3b5;
 }
 
 .summary{
-margin-top:25px;
-padding:18px;
-background:#101f31;
-border:1px solid #293f54;
-border-radius:20px;
-text-align:left;
+  margin-top:25px;
+  padding:18px;
+  background:#101f31;
+  border:1px solid #293f54;
+  border-radius:20px;
+  text-align:left;
 }
 
 .summaryRow{
-display:flex;
-justify-content:space-between;
-padding:9px 0;
-color:#8fa1b2;
+  display:flex;
+  justify-content:space-between;
+  padding:9px 0;
+  color:#8fa1b2;
 }
 
 .summaryRow strong{
-color:#fff;
+  color:#fff;
 }
 
 @media(max-width:600px){
-.paymentGrid{
-grid-template-columns:1fr;
-}
+  .paymentGrid{
+    grid-template-columns:1fr;
+  }
 }
 
 @media(max-width:430px){
-.logo{font-size:36px}
-.cardNumber{font-size:14px}
+  .logo{
+    font-size:36px;
+  }
+
+  .cardNumber{
+    font-size:14px;
+  }
 }
 </style>
 </head>
@@ -552,413 +570,560 @@ grid-template-columns:1fr;
 <body>
 
 <header class="header">
-<div class="logo">
-<span class="super">SUPER</span>
-<span class="gb">GB</span>
-</div>
-<div class="logoSub">SÜRƏTLİ • SADƏ • RAHAT</div>
+
+  <div class="logo">
+    <span class="super">SUPER</span>
+    <span class="gb">GB</span>
+  </div>
+
+  <div class="logoSub">
+    SÜRƏTLİ • SADƏ • RAHAT
+  </div>
+
 </header>
 
+
+<!-- MƏRHƏLƏLƏR -->
+
 <div class="stepsWrap">
-<div class="steps">
 
-<div id="s1" class="step active">1</div>
-<div id="l1" class="line"></div>
+  <div class="steps">
 
-<div id="s2" class="step">2</div>
-<div id="l2" class="line"></div>
+    <div id="s1" class="step active">1</div>
+    <div id="l1" class="line"></div>
 
-<div id="s3" class="step">3</div>
-<div id="l3" class="line"></div>
+    <div id="s2" class="step">2</div>
+    <div id="l2" class="line"></div>
 
-<div id="s4" class="step">4</div>
-<div id="l4" class="line"></div>
+    <div id="s3" class="step">3</div>
+    <div id="l3" class="line"></div>
 
-<div id="s5" class="step">5</div>
-<div id="l5" class="line"></div>
+    <div id="s4" class="step">4</div>
+    <div id="l4" class="line"></div>
 
-<div id="s6" class="step">✓</div>
+    <div id="s5" class="step">5</div>
+    <div id="l5" class="line"></div>
+
+    <div id="s6" class="step">✓</div>
+
+  </div>
 
 </div>
-</div>
+
 
 <div class="container">
 
-<!-- 1 -->
+
+<!-- 1. OPERATOR -->
 
 <section id="stage1" class="stage active">
 
-<div class="title">Operatoru seçin</div>
+  <div class="title">
+    Operatoru seçin
+  </div>
 
-<div class="subtitle">
-Mobil operatorunuzu seçin
-</div>
+  <div class="subtitle">
+    Mobil operatorunuzu seçin
+  </div>
 
-<div class="box">
+  <div class="box">
 
-<div class="operators">
+    <div class="operators">
 
-<div class="operator" data-operator="azercell">
-<div class="operatorLogo azercell">Azercell</div>
-<div class="operatorName">Azercell</div>
-</div>
+      <div class="operator" data-operator="azercell">
+        <div class="operatorLogo azercell">
+          Azercell
+        </div>
+        <div class="operatorName">
+          Azercell
+        </div>
+      </div>
 
-<div class="operator" data-operator="bakcell">
-<div class="operatorLogo bakcell">Bakcell</div>
-<div class="operatorName">Bakcell</div>
-</div>
+      <div class="operator" data-operator="bakcell">
+        <div class="operatorLogo bakcell">
+          Bakcell
+        </div>
+        <div class="operatorName">
+          Bakcell
+        </div>
+      </div>
 
-<div class="operator" data-operator="nar">
-<div class="operatorLogo nar">nar</div>
-<div class="operatorName">Nar</div>
-</div>
+      <div class="operator" data-operator="nar">
+        <div class="operatorLogo nar">
+          nar
+        </div>
+        <div class="operatorName">
+          Nar
+        </div>
+      </div>
 
-</div>
+    </div>
 
-</div>
+  </div>
+
 </section>
 
 
-<!-- 2 -->
+<!-- 2. NÖMRƏ -->
 
 <section id="stage2" class="stage">
 
-<div class="title">Nömrənizi daxil edin</div>
+  <div class="title">
+    Nömrənizi daxil edin
+  </div>
 
-<div class="subtitle">
-İstədiyiniz kodu seçin və nömrəni yazın
-</div>
+  <div class="subtitle">
+    Kodu seçin və qalan 7 rəqəmi yazın
+  </div>
 
-<div class="box">
+  <div class="box">
 
-<div id="prefixTitle" class="prefixTitle">
-Nömrə kodunu seçin
-</div>
+    <div class="prefixTitle">
+      Nömrə kodunu seçin
+    </div>
 
-<div id="prefixes" class="prefixes"></div>
+    <div id="prefixes" class="prefixes"></div>
 
-<input
-id="phone"
-class="phone"
-type="tel"
-inputmode="numeric"
-maxlength="12"
-placeholder="Kod seçin"
->
+    <input
+      id="phone"
+      class="phone"
+      type="tel"
+      inputmode="numeric"
+      maxlength="12"
+      placeholder="050-123-45-67"
+      autocomplete="tel"
+    >
 
-<div id="phoneError" class="error"></div>
+    <div id="phoneError" class="error"></div>
 
-<div id="phoneSuccess" class="success">
-✓ Nömrə düzgündür
-</div>
+    <div id="phoneSuccess" class="success">
+      ✓ 10 rəqəmli nömrə düzgündür
+    </div>
 
-<div class="buttons">
+    <div class="buttons">
 
-<button
-id="back2"
-class="button back">
-← Geri
-</button>
+      <button
+        id="back2"
+        class="button back"
+        type="button">
+        ← Geri
+      </button>
 
-<button
-id="phoneNext"
-class="button"
-disabled>
-İrəli →
-</button>
+      <button
+        id="phoneNext"
+        class="button"
+        type="button"
+        disabled>
+        İrəli →
+      </button>
 
-</div>
+    </div>
 
-</div>
+  </div>
+
 </section>
 
 
-<!-- 3 -->
+<!-- 3. PAKET -->
 
 <section id="stage3" class="stage">
 
-<div class="title">Paket seçin</div>
+  <div class="title">
+    Paket seçin
+  </div>
 
-<div class="subtitle">
-Sizə uyğun internet paketini seçin
-</div>
+  <div class="subtitle">
+    Sizə uyğun internet paketini seçin
+  </div>
 
-<div class="box">
+  <div class="box">
 
-<div class="package"
-data-gb="15"
-data-price="5">
+    <div
+      class="package"
+      data-gb="15"
+      data-price="5">
 
-<div class="packageLeft">
-<div class="packageIcon">⚡</div>
-<div>
-<div class="packageGB">15 GB</div>
-<div class="details">
-📅 30 gün • 📞 400 dəqiqə • 💬 100 SMS
-</div>
-</div>
-</div>
+      <div class="packageLeft">
 
-<div class="price">5 AZN</div>
-</div>
+        <div class="packageIcon">⚡</div>
 
+        <div>
+          <div class="packageGB">
+            15 GB
+          </div>
 
-<div class="package"
-data-gb="20"
-data-price="10">
+          <div class="details">
+            📅 30 gün • 📞 400 dəqiqə • 💬 100 SMS
+          </div>
+        </div>
 
-<div class="packageLeft">
-<div class="packageIcon">🚀</div>
-<div>
-<div class="packageGB">20 GB</div>
-<div class="details">
-📅 30 gün • 📞 600 dəqiqə • 💬 200 SMS
-</div>
-</div>
-</div>
+      </div>
 
-<div class="price">10 AZN</div>
-</div>
+      <div class="price">
+        5 AZN
+      </div>
+
+    </div>
 
 
-<div class="package"
-data-gb="60"
-data-price="20">
+    <div
+      class="package"
+      data-gb="20"
+      data-price="10">
 
-<div class="packageLeft">
-<div class="packageIcon">🔥</div>
-<div>
-<div class="packageGB">60 GB</div>
-<div class="details">
-📅 30 gün • 📞 1000 dəqiqə • 💬 300 SMS
-</div>
-</div>
-</div>
+      <div class="packageLeft">
 
-<div class="price">20 AZN</div>
-</div>
+        <div class="packageIcon">🚀</div>
 
+        <div>
+          <div class="packageGB">
+            20 GB
+          </div>
 
-<div class="package"
-data-gb="80"
-data-price="25">
+          <div class="details">
+            📅 30 gün • 📞 600 dəqiqə • 💬 200 SMS
+          </div>
+        </div>
 
-<div class="packageLeft">
-<div class="packageIcon">💎</div>
-<div>
-<div class="packageGB">80 GB</div>
-<div class="details">
-📅 30 gün • 📞 1200 dəqiqə • 💬 400 SMS
-</div>
-</div>
-</div>
+      </div>
 
-<div class="price">25 AZN</div>
-</div>
+      <div class="price">
+        10 AZN
+      </div>
+
+    </div>
 
 
-<div class="package"
-data-gb="100"
-data-price="30">
+    <div
+      class="package"
+      data-gb="60"
+      data-price="20">
 
-<div class="packageLeft">
-<div class="packageIcon">👑</div>
-<div>
-<div class="packageGB">100 GB</div>
-<div class="details">
-📅 30 gün • 📞 1500 dəqiqə • 💬 500 SMS
-</div>
-</div>
-</div>
+      <div class="packageLeft">
 
-<div class="price">30 AZN</div>
-</div>
+        <div class="packageIcon">🔥</div>
+
+        <div>
+          <div class="packageGB">
+            60 GB
+          </div>
+
+          <div class="details">
+            📅 30 gün • 📞 1000 dəqiqə • 💬 300 SMS
+          </div>
+        </div>
+
+      </div>
+
+      <div class="price">
+        20 AZN
+      </div>
+
+    </div>
 
 
-<div class="buttons">
+    <div
+      class="package"
+      data-gb="80"
+      data-price="25">
 
-<button
-id="back3"
-class="button back">
-← Geri
-</button>
+      <div class="packageLeft">
 
-<button
-id="packageNext"
-class="button"
-disabled>
-İrəli →
-</button>
+        <div class="packageIcon">💎</div>
 
-</div>
+        <div>
+          <div class="packageGB">
+            80 GB
+          </div>
 
-</div>
+          <div class="details">
+            📅 30 gün • 📞 1200 dəqiqə • 💬 400 SMS
+          </div>
+        </div>
+
+      </div>
+
+      <div class="price">
+        25 AZN
+      </div>
+
+    </div>
+
+
+    <div
+      class="package"
+      data-gb="100"
+      data-price="30">
+
+      <div class="packageLeft">
+
+        <div class="packageIcon">👑</div>
+
+        <div>
+          <div class="packageGB">
+            100 GB
+          </div>
+
+          <div class="details">
+            📅 30 gün • 📞 1500 dəqiqə • 💬 500 SMS
+          </div>
+        </div>
+
+      </div>
+
+      <div class="price">
+        30 AZN
+      </div>
+
+    </div>
+
+
+    <div class="buttons">
+
+      <button
+        id="back3"
+        class="button back"
+        type="button">
+        ← Geri
+      </button>
+
+      <button
+        id="packageNext"
+        class="button"
+        type="button"
+        disabled>
+        İrəli →
+      </button>
+
+    </div>
+
+  </div>
+
 </section>
 
 
-<!-- 4 -->
+<!-- 4. ÖDƏNİŞ -->
 
 <section id="stage4" class="stage">
 
-<div class="title">Ödəniş</div>
+  <div class="title">
+    Ödəniş
+  </div>
 
-<div class="subtitle">
-Ödənişi etdikdən sonra qəbzi göndərin
-</div>
+  <div class="subtitle">
+    Ödənişi etdikdən sonra qəbzi göndərin
+  </div>
 
-<div class="paymentGrid">
-
-<div class="bankCard">
-
-<div class="cardTop">
-<div class="chip"></div>
-<div class="cardBrand">SUPER GB</div>
-</div>
-
-<div class="cardNumber">
-5315 9921 2761 6081
-</div>
-
-<button
-id="copyButton"
-class="copyButton">
-📋 Kopyala
-</button>
-
-<div id="amount" class="amount">
-0 AZN
-</div>
-
-</div>
+  <div class="paymentGrid">
 
 
-<div class="receiptBox">
+    <div class="bankCard">
 
-<div class="receiptIcon">📤</div>
+      <div class="cardTop">
 
-<div class="receiptTitle">
-Qəbzi göndər
-</div>
+        <div class="chip"></div>
 
-<div class="receiptText">
-Ödənişi etdikdən sonra qəbzin şəklini seçin.
-</div>
+        <div class="cardBrand">
+          SUPER GB
+        </div>
 
-<input
-id="receipt"
-class="file"
-type="file"
-accept="image/*"
->
+      </div>
 
-<button
-id="sendReceipt"
-class="sendButton">
-Qəbzi göndər və təsdiqlə
-</button>
 
-<div id="receiptError" class="error"></div>
+      <div class="cardNumber">
+        5315 9921 2761 6081
+      </div>
 
-</div>
 
-</div>
+      <button
+        id="copyButton"
+        class="copyButton"
+        type="button">
+        📋 Kopyala
+      </button>
 
-<div class="buttons">
 
-<button
-id="back4"
-class="button back">
-← Geri
-</button>
+      <div
+        id="amount"
+        class="amount">
+        0 AZN
+      </div>
 
-</div>
+    </div>
+
+
+    <div class="receiptBox">
+
+      <div class="receiptIcon">
+        📤
+      </div>
+
+      <div class="receiptTitle">
+        Qəbzi göndər
+      </div>
+
+      <div class="receiptText">
+        Ödənişi etdikdən sonra qəbzin şəklini seçin.
+      </div>
+
+      <input
+        id="receipt"
+        class="file"
+        type="file"
+        accept="image/*"
+      >
+
+      <button
+        id="sendReceipt"
+        class="sendButton"
+        type="button">
+        Qəbzi göndər və təsdiqlə
+      </button>
+
+      <div
+        id="receiptError"
+        class="error">
+      </div>
+
+    </div>
+
+  </div>
+
+
+  <div class="buttons">
+
+    <button
+      id="back4"
+      class="button back"
+      type="button">
+      ← Geri
+    </button>
+
+  </div>
 
 </section>
 
 
-<!-- 5 -->
+<!-- 5. TƏSDİQ -->
 
 <section id="stage5" class="stage">
 
-<div class="title">Qəbz qəbul edildi</div>
+  <div class="title">
+    Təsdiq
+  </div>
 
-<div class="subtitle">
-Məlumatları yoxlayın və təsdiqləyin
-</div>
+  <div class="subtitle">
+    Məlumatları yoxlayın və təsdiqləyin
+  </div>
 
-<div class="box confirm">
+  <div class="box confirm">
 
-<div class="confirmIcon">✓</div>
+    <div class="confirmIcon">
+      ✓
+    </div>
 
-<h2 style="margin-top:20px">
-Qəbz göndərildi
-</h2>
+    <h2 style="margin-top:20px">
+      Qəbz göndərildi
+    </h2>
 
-<p style="color:#91a3b5;margin-top:10px">
-Məlumatlarınızı təsdiqləyin.
-</p>
+    <p style="color:#91a3b5;margin-top:10px">
+      Məlumatlarınızı təsdiqləyin.
+    </p>
 
-<div class="buttons">
 
-<button
-id="back5"
-class="button back">
-← Geri
-</button>
+    <div class="summary">
 
-<button
-id="confirmButton"
-class="button">
-Təsdiq et ✓
-</button>
+      <div class="summaryRow">
+        <span>Operator</span>
+        <strong id="confirmOperator">—</strong>
+      </div>
 
-</div>
+      <div class="summaryRow">
+        <span>Nömrə</span>
+        <strong id="confirmPhone">—</strong>
+      </div>
 
-</div>
+      <div class="summaryRow">
+        <span>Paket</span>
+        <strong id="confirmPackage">—</strong>
+      </div>
+
+      <div class="summaryRow">
+        <span>Məbləğ</span>
+        <strong id="confirmPrice">—</strong>
+      </div>
+
+    </div>
+
+
+    <div class="buttons">
+
+      <button
+        id="back5"
+        class="button back"
+        type="button">
+        ← Geri
+      </button>
+
+      <button
+        id="confirmButton"
+        class="button"
+        type="button">
+        Təsdiq et ✓
+      </button>
+
+    </div>
+
+  </div>
+
 </section>
 
 
-<!-- 6 -->
+<!-- 6. SON -->
 
 <section id="stage6" class="stage">
 
-<div class="box confirm">
+  <div class="box confirm">
 
-<div class="confirmIcon">✓</div>
+    <div class="confirmIcon">
+      ✓
+    </div>
 
-<div class="confirmTitle">
-Sifariş təsdiqləndi!
-</div>
+    <div class="confirmTitle">
+      Sifariş təsdiqləndi!
+    </div>
 
-<div class="confirmText">
-Məlumatlar uğurla qəbul edildi.
-</div>
+    <div class="confirmText">
+      Məlumatlar uğurla qəbul edildi.
+    </div>
 
-<div class="summary">
 
-<div class="summaryRow">
-<span>Operator</span>
-<strong id="confirmOperator">—</strong>
-</div>
+    <div class="summary">
 
-<div class="summaryRow">
-<span>Nömrə</span>
-<strong id="confirmPhone">—</strong>
-</div>
+      <div class="summaryRow">
+        <span>Operator</span>
+        <strong id="finalOperator">—</strong>
+      </div>
 
-<div class="summaryRow">
-<span>Paket</span>
-<strong id="confirmPackage">—</strong>
-</div>
+      <div class="summaryRow">
+        <span>Nömrə</span>
+        <strong id="finalPhone">—</strong>
+      </div>
 
-<div class="summaryRow">
-<span>Məbləğ</span>
-<strong id="confirmPrice">—</strong>
-</div>
+      <div class="summaryRow">
+        <span>Paket</span>
+        <strong id="finalPackage">—</strong>
+      </div>
 
-</div>
+      <div class="summaryRow">
+        <span>Məbləğ</span>
+        <strong id="finalPrice">—</strong>
+      </div>
 
-</div>
+    </div>
+
+  </div>
+
 </section>
 
 </div>
@@ -966,480 +1131,604 @@ Məlumatlar uğurla qəbul edildi.
 
 <script>
 
-let selectedOperator="";
-let selectedPrefix="";
-let selectedPackage=null;
+let selectedOperator = "";
+let selectedPrefix = "";
+let selectedPackage = null;
 
-const CARD_NUMBER="5315 9921 2761 6081";
+const CARD_NUMBER = "5315 9921 2761 6081";
 
 
-/* OPERATOR PREFIKSLƏRİ */
+/* OPERATOR KODLARI */
 
-const prefixes={
+const prefixes = {
 
-azercell:["010","050","051"],
+  azercell: [
+    "010",
+    "050",
+    "051"
+  ],
 
-bakcell:["055","099"],
+  bakcell: [
+    "055",
+    "099"
+  ],
 
-nar:["070","077"]
+  nar: [
+    "070",
+    "077"
+  ]
 
 };
 
 
-/* MƏRHƏLƏ */
+/* MƏRHƏLƏYƏ KEÇİD */
 
 function goToStage(number){
 
-for(let i=1;i<=6;i++){
+  for(let i=1;i<=6;i++){
 
-document
-.getElementById("stage"+i)
-.classList.remove("active");
+    document
+      .getElementById("stage"+i)
+      .classList.remove("active");
+
+  }
+
+
+  document
+    .getElementById("stage"+number)
+    .classList.add("active");
+
+
+  for(let i=1;i<=6;i++){
+
+    const step =
+      document.getElementById("s"+i);
+
+    step.classList.remove("active");
+    step.classList.remove("done");
+
+    if(i < number){
+      step.classList.add("done");
+    }
+
+    if(i === number){
+      step.classList.add("active");
+    }
+
+  }
+
+
+  for(let i=1;i<=5;i++){
+
+    const line =
+      document.getElementById("l"+i);
+
+    if(i < number){
+      line.classList.add("done");
+    }else{
+      line.classList.remove("done");
+    }
+
+  }
+
+  window.scrollTo({
+    top:0,
+    behavior:"smooth"
+  });
 
 }
 
-document
-.getElementById("stage"+number)
-.classList.add("active");
 
-
-for(let i=1;i<=6;i++){
-
-let step=document.getElementById("s"+i);
-
-step.classList.remove("active");
-step.classList.remove("done");
-
-if(i<number)
-step.classList.add("done");
-
-if(i===number)
-step.classList.add("active");
-
-}
-
-
-for(let i=1;i<=5;i++){
-
-let line=document.getElementById("l"+i);
-
-if(i<number)
-line.classList.add("done");
-else
-line.classList.remove("done");
-
-}
-
-window.scrollTo({
-top:0,
-behavior:"smooth"
-});
-
-}
-
-
-/* OPERATOR */
+/* OPERATOR SEÇİMİ */
 
 document
-.querySelectorAll(".operator")
-.forEach(function(item){
+  .querySelectorAll(".operator")
+  .forEach(function(item){
 
-item.addEventListener("click",function(){
+    item.addEventListener("click",function(){
 
-document
-.querySelectorAll(".operator")
-.forEach(function(x){
-x.classList.remove("selected");
-});
+      document
+        .querySelectorAll(".operator")
+        .forEach(function(x){
+          x.classList.remove("selected");
+        });
 
-this.classList.add("selected");
 
-selectedOperator=this.dataset.operator;
+      this.classList.add("selected");
 
-showPrefixes();
+      selectedOperator =
+        this.dataset.operator;
 
-goToStage(2);
+      selectedPrefix = "";
 
-});
+      document.getElementById("phone").value = "";
 
-});
+      showPrefixes();
+
+      goToStage(2);
+
+    });
+
+  });
 
 
 /* PREFİKSLƏRİ GÖSTƏR */
 
 function showPrefixes(){
 
-const box=
-document.getElementById("prefixes");
+  const box =
+    document.getElementById("prefixes");
 
-box.innerHTML="";
+  box.innerHTML = "";
 
-prefixes[selectedOperator]
-.forEach(function(prefix){
 
-const btn=
-document.createElement("button");
+  prefixes[selectedOperator]
+    .forEach(function(prefix){
 
-btn.className="prefix";
+      const btn =
+        document.createElement("button");
 
-btn.textContent=prefix;
+      btn.className = "prefix";
+      btn.type = "button";
+      btn.textContent = prefix;
 
-btn.type="button";
 
-btn.addEventListener("click",function(){
+      btn.addEventListener("click",function(){
 
-document
-.querySelectorAll(".prefix")
-.forEach(function(x){
-x.classList.remove("selected");
-});
+        document
+          .querySelectorAll(".prefix")
+          .forEach(function(x){
+            x.classList.remove("selected");
+          });
 
-this.classList.add("selected");
 
-selectedPrefix=prefix;
+        this.classList.add("selected");
 
-document
-.getElementById("phone")
-.value=prefix+"-";
+        selectedPrefix = prefix;
 
-document
-.getElementById("phone")
-.focus();
+        document.getElementById("phone").value =
+          prefix + "-";
 
-checkPhone();
 
-});
+        document.getElementById("phone").focus();
 
-box.appendChild(btn);
+        checkPhone();
 
-});
+      });
+
+
+      box.appendChild(btn);
+
+    });
 
 }
 
 
-/* NÖMRƏ */
+/* TELEFON */
 
-const phone=
-document.getElementById("phone");
+const phone =
+  document.getElementById("phone");
 
 
 phone.addEventListener("input",function(){
 
-let numbers=
-this.value.replace(/\D/g,"");
+  let numbers =
+    this.value.replace(/\D/g,"");
 
 
-/*
-Müştəri prefiksi dəyişmək istəyirsə,
-seçilmiş prefiksi dəyişməyə icazə veririk.
-*/
+  /*
+    Maksimum 10 rəqəm.
+    İlk 3 rəqəm prefiksdir.
+  */
 
-if(numbers.length>=3){
+  if(numbers.length > 10){
+    numbers =
+      numbers.substring(0,10);
+  }
 
-let typedPrefix=
-numbers.substring(0,3);
 
-if(
-prefixes[selectedOperator] &&
-prefixes[selectedOperator].includes(typedPrefix)
-){
+  /*
+    Əgər prefiks seçilibsə,
+    müştərinin yazdığı prefiks
+    seçilən prefikslə uyğunlaşdırılır.
+  */
 
-selectedPrefix=typedPrefix;
+  if(selectedPrefix){
 
-document
-.querySelectorAll(".prefix")
-.forEach(function(x){
+    const typedPrefix =
+      numbers.substring(0,3);
 
-x.classList.toggle(
-"selected",
-x.textContent===typedPrefix
-);
+
+    if(
+      typedPrefix.length === 3 &&
+      typedPrefix !== selectedPrefix
+    ){
+
+      /*
+        Müştəri prefiksi dəyişmək istəyirsə,
+        əvvəlcə prefiks düymələrindən
+        yenisini seçə bilər.
+      */
+
+      numbers =
+        selectedPrefix +
+        numbers.substring(3);
+
+    }
+
+  }
+
+
+  let formatted = "";
+
+
+  if(numbers.length > 0){
+    formatted +=
+      numbers.substring(0,3);
+  }
+
+
+  if(numbers.length > 3){
+    formatted +=
+      "-" +
+      numbers.substring(3,6);
+  }
+
+
+  if(numbers.length > 6){
+    formatted +=
+      "-" +
+      numbers.substring(6,8);
+  }
+
+
+  if(numbers.length > 8){
+    formatted +=
+      "-" +
+      numbers.substring(8,10);
+  }
+
+
+  this.value = formatted;
+
+  checkPhone();
 
 });
 
-}
 
-}
-
-
-numbers=numbers.substring(0,10);
-
-
-let formatted=
-numbers.substring(0,3);
-
-
-if(numbers.length>3)
-formatted+="-"+numbers.substring(3,6);
-
-if(numbers.length>6)
-formatted+="-"+numbers.substring(6,8);
-
-if(numbers.length>8)
-formatted+="-"+numbers.substring(8,10);
-
-this.value=formatted;
-
-checkPhone();
-
-});
-
-
-/* NÖMRƏ YOXLAMA */
+/* TELEFON YOXLAMA */
 
 function checkPhone(){
 
-const numbers=
-phone.value.replace(/\D/g,"");
+  const numbers =
+    phone.value.replace(/\D/g,"");
 
-const error=
-document.getElementById("phoneError");
+  const error =
+    document.getElementById("phoneError");
 
-const success=
-document.getElementById("phoneSuccess");
+  const success =
+    document.getElementById("phoneSuccess");
 
-const next=
-document.getElementById("phoneNext");
+  const next =
+    document.getElementById("phoneNext");
 
-error.style.display="none";
-success.style.display="none";
 
-next.disabled=true;
+  error.style.display = "none";
+  success.style.display = "none";
 
-if(!selectedPrefix)
-return false;
+  next.disabled = true;
 
-if(numbers.length<10){
 
-error.textContent=
-"Nömrə 10 rəqəm olmalıdır.";
+  if(!selectedPrefix){
 
-error.style.display="block";
+    error.textContent =
+      "Əvvəlcə nömrə kodunu seçin.";
 
-return false;
+    error.style.display = "block";
+
+    return false;
+  }
+
+
+  /*
+    DƏQİQ 10 RƏQƏM
+  */
+
+  if(numbers.length !== 10){
+
+    error.textContent =
+      "Nömrə tam 10 rəqəm olmalıdır.";
+
+    error.style.display = "block";
+
+    return false;
+  }
+
+
+  if(
+    !numbers.startsWith(selectedPrefix)
+  ){
+
+    error.textContent =
+      "Seçilmiş kod nömrə ilə uyğun deyil.";
+
+    error.style.display = "block";
+
+    return false;
+  }
+
+
+  success.style.display = "block";
+
+  next.disabled = false;
+
+  return true;
+
 }
 
-if(!numbers.startsWith(selectedPrefix)){
 
-error.textContent=
-"Seçdiyiniz prefiks nömrə ilə uyğun deyil.";
-
-error.style.display="block";
-
-return false;
-}
-
-success.style.display="block";
-
-next.disabled=false;
-
-return true;
-
-}
-
-
-/* GƏRİ */
+/* GERİ — 2 */
 
 document
-.getElementById("back2")
-.addEventListener("click",function(){
+  .getElementById("back2")
+  .addEventListener("click",function(){
 
-goToStage(1);
+    goToStage(1);
 
-});
+  });
 
 
-document
-.getElementById("back3")
-.addEventListener("click",function(){
-
-goToStage(2);
-
-});
-
+/* GERİ — 3 */
 
 document
-.getElementById("back4")
-.addEventListener("click",function(){
+  .getElementById("back3")
+  .addEventListener("click",function(){
 
-goToStage(3);
+    goToStage(2);
 
-});
+  });
 
+
+/* GERİ — 4 */
 
 document
-.getElementById("back5")
-.addEventListener("click",function(){
+  .getElementById("back4")
+  .addEventListener("click",function(){
 
-goToStage(4);
+    goToStage(3);
 
-});
+  });
+
+
+/* GERİ — 5 */
+
+document
+  .getElementById("back5")
+  .addEventListener("click",function(){
+
+    goToStage(4);
+
+  });
 
 
 /* NÖMRƏ → PAKET */
 
 document
-.getElementById("phoneNext")
-.addEventListener("click",function(){
+  .getElementById("phoneNext")
+  .addEventListener("click",function(){
 
-if(checkPhone())
-goToStage(3);
+    if(checkPhone()){
+      goToStage(3);
+    }
 
-});
+  });
 
 
-/* PAKET */
-
-document
-.querySelectorAll(".package")
-.forEach(function(item){
-
-item.addEventListener("click",function(){
+/* PAKET SEÇİMİ */
 
 document
-.querySelectorAll(".package")
-.forEach(function(x){
-x.classList.remove("selected");
-});
+  .querySelectorAll(".package")
+  .forEach(function(item){
 
-this.classList.add("selected");
+    item.addEventListener("click",function(){
 
-selectedPackage={
+      document
+        .querySelectorAll(".package")
+        .forEach(function(x){
+          x.classList.remove("selected");
+        });
 
-gb:this.dataset.gb,
 
-price:this.dataset.price
+      this.classList.add("selected");
 
-};
 
-document
-.getElementById("packageNext")
-.disabled=false;
+      selectedPackage = {
 
-});
+        gb:this.dataset.gb,
 
-});
+        price:this.dataset.price
+
+      };
+
+
+      document
+        .getElementById("packageNext")
+        .disabled = false;
+
+    });
+
+  });
 
 
 /* PAKET → ÖDƏNİŞ */
 
 document
-.getElementById("packageNext")
-.addEventListener("click",function(){
+  .getElementById("packageNext")
+  .addEventListener("click",function(){
 
-if(!selectedPackage)
-return;
+    if(!selectedPackage){
+      return;
+    }
+
+
+    document
+      .getElementById("amount")
+      .textContent =
+      selectedPackage.price + " AZN";
+
+
+    goToStage(4);
+
+  });
+
+
+/* KARTI KOPYALA */
 
 document
-.getElementById("amount")
-.textContent=
-selectedPackage.price+" AZN";
+  .getElementById("copyButton")
+  .addEventListener("click",function(){
 
-goToStage(4);
-
-});
+    const button = this;
 
 
-/* KART KOPYALA */
+    if(navigator.clipboard){
 
-document
-.getElementById("copyButton")
-.addEventListener("click",function(){
+      navigator.clipboard
+        .writeText(CARD_NUMBER)
+        .then(function(){
 
-const button=this;
+          button.textContent =
+            "✓ Kopyalandı";
 
-if(navigator.clipboard){
+          setTimeout(function(){
 
-navigator.clipboard
-.writeText(CARD_NUMBER)
-.then(function(){
+            button.textContent =
+              "📋 Kopyala";
 
-button.textContent="✓ Kopyalandı";
+          },2000);
 
-setTimeout(function(){
+        });
 
-button.textContent="📋 Kopyala";
+    }else{
 
-},2000);
+      alert(
+        "Kart nömrəsi: " +
+        CARD_NUMBER
+      );
 
-});
+    }
 
-}
-
-});
+  });
 
 
 /* QƏBZ */
 
 document
-.getElementById("sendReceipt")
-.addEventListener("click",function(){
+  .getElementById("sendReceipt")
+  .addEventListener("click",function(){
 
-const file=
-document
-.getElementById("receipt")
-.files[0];
+    const file =
+      document
+        .getElementById("receipt")
+        .files[0];
 
-const error=
-document.getElementById("receiptError");
+    const error =
+      document.getElementById("receiptError");
 
-error.style.display="none";
 
-if(!file){
+    error.style.display = "none";
 
-error.textContent=
-"Əvvəlcə qəbz şəklini seçin.";
 
-error.style.display="block";
+    if(!file){
 
-return;
+      error.textContent =
+        "Əvvəlcə qəbz şəklini seçin.";
 
-}
+      error.style.display = "block";
 
-goToStage(5);
+      return;
 
-});
+    }
+
+
+    goToStage(5);
+
+  });
 
 
 /* TƏSDİQ */
 
 document
-.getElementById("confirmButton")
-.addEventListener("click",function(){
+  .getElementById("confirmButton")
+  .addEventListener("click",function(){
 
-let operatorName="";
-
-if(selectedOperator==="azercell")
-operatorName="Azercell";
-
-if(selectedOperator==="bakcell")
-operatorName="Bakcell";
-
-if(selectedOperator==="nar")
-operatorName="Nar";
+    let operatorName = "";
 
 
-document
-.getElementById("confirmOperator")
-.textContent=operatorName;
+    if(selectedOperator === "azercell"){
+      operatorName = "Azercell";
+    }
 
-document
-.getElementById("confirmPhone")
-.textContent=phone.value;
+    if(selectedOperator === "bakcell"){
+      operatorName = "Bakcell";
+    }
 
-document
-.getElementById("confirmPackage")
-.textContent=
-selectedPackage.gb+" GB";
+    if(selectedOperator === "nar"){
+      operatorName = "Nar";
+    }
 
-document
-.getElementById("confirmPrice")
-.textContent=
-selectedPackage.price+" AZN";
 
-goToStage(6);
+    document
+      .getElementById("confirmOperator")
+      .textContent =
+      operatorName;
 
-});
+
+    document
+      .getElementById("confirmPhone")
+      .textContent =
+      phone.value;
+
+
+    document
+      .getElementById("confirmPackage")
+      .textContent =
+      selectedPackage.gb + " GB";
+
+
+    document
+      .getElementById("confirmPrice")
+      .textContent =
+      selectedPackage.price + " AZN";
+
+
+    document
+      .getElementById("finalOperator")
+      .textContent =
+      operatorName;
+
+
+    document
+      .getElementById("finalPhone")
+      .textContent =
+      phone.value;
+
+
+    document
+      .getElementById("finalPackage")
+      .textContent =
+      selectedPackage.gb + " GB";
+
+
+    document
+      .getElementById("finalPrice")
+      .textContent =
+      selectedPackage.price + " AZN";
+
+
+    goToStage(6);
+
+  });
 
 </script>
 
