@@ -2,548 +2,611 @@
 <html lang="az">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>SUPER GB</title>
 
 <style>
-*{box-sizing:border-box;margin:0;padding:0}
+*{
+  box-sizing:border-box;
+  margin:0;
+  padding:0;
+}
 
 body{
-font-family:Arial,sans-serif;
-background:
-radial-gradient(circle at 10% 10%,#073b4c,transparent 30%),
-radial-gradient(circle at 90% 20%,#3b145f,transparent 30%),
-#050b14;
-color:#fff;
-min-height:100vh;
+  font-family:Arial,sans-serif;
+  min-height:100vh;
+  color:#fff;
+  background:
+    radial-gradient(circle at 10% 10%,#064b61,transparent 30%),
+    radial-gradient(circle at 90% 15%,#43146b,transparent 30%),
+    #050b14;
 }
 
 .header{
-text-align:center;
-padding:24px 10px;
-background:#030811;
+  text-align:center;
+  padding:25px 10px;
+  background:#030811;
 }
 
 .logo{
-font-size:42px;
-font-weight:1000;
-letter-spacing:2px;
-animation:glow 1.7s infinite alternate;
+  font-size:43px;
+  font-weight:1000;
+  letter-spacing:2px;
+  animation:glow 1.5s infinite alternate;
 }
 
 .super{
-color:#fff;
-text-shadow:0 0 8px #fff,0 0 22px #00ffff;
+  color:#fff;
+  text-shadow:
+    0 0 7px #fff,
+    0 0 18px #00ffff,
+    0 0 30px #00ffff;
 }
 
 .gb{
-background:linear-gradient(
-90deg,#00ffff,#39ff14,#fff000,#ff00ff,#00ffff
-);
-background-size:300%;
--webkit-background-clip:text;
--webkit-text-fill-color:transparent;
-animation:rainbow 3s linear infinite;
+  background:linear-gradient(
+    90deg,
+    #00ffff,
+    #39ff14,
+    #fff000,
+    #ff00ff,
+    #00ffff
+  );
+  background-size:300%;
+  -webkit-background-clip:text;
+  -webkit-text-fill-color:transparent;
+  animation:rainbow 3s linear infinite;
 }
 
 @keyframes rainbow{
-to{background-position:300%}
+  to{
+    background-position:300%;
+  }
 }
 
 @keyframes glow{
-from{filter:brightness(1)}
-to{filter:brightness(1.5)}
+  from{
+    filter:brightness(1);
+  }
+  to{
+    filter:brightness(1.5);
+  }
 }
 
-.subtitleLogo{
-font-size:10px;
-letter-spacing:5px;
-color:#91a5b8;
-margin-top:5px;
+.logoSub{
+  margin-top:6px;
+  color:#8fa3b5;
+  font-size:10px;
+  letter-spacing:5px;
 }
 
 .steps{
-position:sticky;
-top:0;
-z-index:20;
-display:flex;
-justify-content:center;
-align-items:center;
-padding:12px 5px;
-background:rgba(3,10,18,.96);
-backdrop-filter:blur(15px);
+  position:sticky;
+  top:0;
+  z-index:50;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  padding:12px 5px;
+  background:rgba(3,10,18,.97);
+  backdrop-filter:blur(15px);
 }
 
 .step{
-width:35px;
-height:35px;
-border-radius:50%;
-display:flex;
-align-items:center;
-justify-content:center;
-background:#162434;
-border:2px solid #34485b;
-font-weight:bold;
-color:#8193a5;
+  width:35px;
+  height:35px;
+  border-radius:50%;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  background:#162434;
+  border:2px solid #34485b;
+  color:#8193a5;
+  font-weight:bold;
 }
 
 .step.active{
-background:#35dfc5;
-color:#031916;
-border-color:#35dfc5;
-box-shadow:0 0 22px #35dfc5;
+  background:#35dfc5;
+  border-color:#35dfc5;
+  color:#031916;
+  box-shadow:0 0 22px #35dfc5;
+}
+
+.step.done{
+  background:#168f82;
+  border-color:#35dfc5;
+  color:#fff;
 }
 
 .line{
-height:3px;
-width:28px;
-background:#263b4e;
+  width:28px;
+  height:3px;
+  background:#263b4e;
+}
+
+.line.done{
+  background:#35dfc5;
 }
 
 .container{
-max-width:700px;
-margin:auto;
-padding:30px 15px 60px;
+  max-width:700px;
+  margin:auto;
+  padding:30px 15px 60px;
 }
 
 .stage{
-display:none;
-animation:slide .3s ease;
+  display:none;
+  animation:slide .3s ease;
 }
 
 .stage.active{
-display:block;
+  display:block;
 }
 
 @keyframes slide{
-from{
-opacity:0;
-transform:translateX(25px)
-}
-to{
-opacity:1;
-transform:translateX(0)
-}
+  from{
+    opacity:0;
+    transform:translateX(25px);
+  }
+  to{
+    opacity:1;
+    transform:translateX(0);
+  }
 }
 
 .title{
-text-align:center;
-font-size:28px;
-font-weight:1000;
-margin-bottom:8px;
+  text-align:center;
+  font-size:28px;
+  font-weight:1000;
+  margin-bottom:8px;
 }
 
 .desc{
-text-align:center;
-color:#91a3b5;
-font-size:14px;
-margin-bottom:22px;
+  text-align:center;
+  color:#91a3b5;
+  font-size:14px;
+  margin-bottom:22px;
 }
 
 .box{
-background:rgba(255,255,255,.06);
-backdrop-filter:blur(18px);
--webkit-backdrop-filter:blur(18px);
-border:1px solid rgba(255,255,255,.12);
-border-radius:26px;
-padding:22px;
-box-shadow:0 20px 50px rgba(0,0,0,.3);
+  background:rgba(255,255,255,.06);
+  backdrop-filter:blur(18px);
+  border:1px solid rgba(255,255,255,.12);
+  border-radius:26px;
+  padding:22px;
+  box-shadow:0 20px 50px rgba(0,0,0,.3);
 }
 
+
+/* OPERATOR */
+
 .operators{
-display:grid;
-grid-template-columns:repeat(3,1fr);
-gap:12px;
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:12px;
 }
 
 .operator{
-background:#101e2d;
-border:2px solid #263b50;
-border-radius:22px;
-padding:20px 6px;
-text-align:center;
-cursor:pointer;
-transition:.2s;
+  background:#101e2d;
+  border:2px solid #263b50;
+  border-radius:22px;
+  padding:20px 6px;
+  text-align:center;
+  cursor:pointer;
+  transition:.2s;
 }
 
 .operator:hover{
-transform:translateY(-4px);
-border-color:#35dfc5;
+  transform:translateY(-4px);
+  border-color:#35dfc5;
 }
 
 .operator.selected{
-border-color:#35dfc5;
-box-shadow:0 0 25px rgba(53,223,197,.4);
+  border-color:#35dfc5;
+  box-shadow:0 0 25px rgba(53,223,197,.4);
+  transform:translateY(-3px);
 }
 
 .oplogo{
-width:65px;
-height:65px;
-margin:auto;
-border-radius:18px;
-display:flex;
-align-items:center;
-justify-content:center;
-font-weight:1000;
+  width:68px;
+  height:68px;
+  margin:auto;
+  border-radius:18px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  font-weight:1000;
 }
 
-.az{
-background:#fff;
-color:#55318a;
+.azercell{
+  background:#fff;
+  color:#57328c;
 }
 
-.bk{
-background:#e50046;
-color:#fff;
+.bakcell{
+  background:#e50046;
+  color:#fff;
 }
 
-.nr{
-background:#b90050;
-color:#fff;
-font-size:22px;
+.nar{
+  background:#b90050;
+  color:#fff;
+  font-size:22px;
 }
 
 .opname{
-margin-top:10px;
-font-weight:bold;
+  margin-top:10px;
+  font-weight:bold;
+}
+
+
+/* NÖMRƏ */
+
+.prefixTitle{
+  text-align:center;
+  color:#9badbd;
+  font-size:13px;
+  margin-bottom:12px;
 }
 
 .prefixes{
-display:flex;
-flex-wrap:wrap;
-gap:10px;
-justify-content:center;
-margin:18px 0;
+  display:flex;
+  flex-wrap:wrap;
+  justify-content:center;
+  gap:9px;
 }
 
 .prefix{
-border:1px solid #385067;
-background:#122638;
-color:#fff;
-padding:12px 18px;
-border-radius:13px;
-font-weight:bold;
-cursor:pointer;
+  border:1px solid #385067;
+  background:#122638;
+  color:#fff;
+  padding:12px 18px;
+  border-radius:13px;
+  font-weight:bold;
+  cursor:pointer;
 }
 
 .prefix.selected{
-background:#35dfc5;
-color:#031916;
-border-color:#35dfc5;
+  background:#35dfc5;
+  color:#031916;
+  border-color:#35dfc5;
+  box-shadow:0 0 15px rgba(53,223,197,.4);
 }
 
 .phone{
-width:100%;
-height:58px;
-background:#07131f;
-border:1px solid #30485d;
-border-radius:16px;
-color:#fff;
-text-align:center;
-font-size:21px;
-letter-spacing:1px;
-outline:none;
+  width:100%;
+  height:60px;
+  margin-top:18px;
+  background:#07131f;
+  border:1px solid #30485d;
+  border-radius:17px;
+  color:#fff;
+  text-align:center;
+  font-size:21px;
+  letter-spacing:1px;
+  outline:none;
 }
 
 .phone:focus{
-border-color:#35dfc5;
-box-shadow:0 0 15px rgba(53,223,197,.2);
+  border-color:#35dfc5;
+  box-shadow:0 0 15px rgba(53,223,197,.2);
 }
 
 .error{
-display:none;
-text-align:center;
-color:#ff7185;
-font-size:13px;
-margin-top:10px;
+  display:none;
+  text-align:center;
+  color:#ff7185;
+  font-size:13px;
+  margin-top:10px;
 }
 
+
+/* PAKET */
+
 .pack{
-display:flex;
-align-items:center;
-justify-content:space-between;
-padding:17px;
-margin-bottom:11px;
-border-radius:20px;
-background:#101f31;
-border:1px solid #293f54;
-cursor:pointer;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  padding:17px;
+  margin-bottom:11px;
+  border-radius:20px;
+  background:#101f31;
+  border:1px solid #293f54;
+  cursor:pointer;
 }
 
 .pack.selected{
-border:2px solid #35dfc5;
-background:rgba(53,223,197,.08);
+  border:2px solid #35dfc5;
+  background:rgba(53,223,197,.08);
 }
 
 .gbnum{
-font-size:22px;
-font-weight:1000;
+  font-size:22px;
+  font-weight:1000;
 }
 
 .info{
-font-size:12px;
-color:#8ea1b3;
-margin-top:5px;
+  color:#8ea1b3;
+  font-size:12px;
+  margin-top:5px;
 }
 
 .price{
-font-size:20px;
-font-weight:1000;
-color:#4fe2c9;
+  color:#4fe2c9;
+  font-size:20px;
+  font-weight:1000;
 }
 
+
+/* DÜYMƏ */
+
 .buttons{
-display:flex;
-gap:10px;
-margin-top:18px;
+  display:flex;
+  gap:10px;
+  margin-top:18px;
 }
 
 .btn{
-width:100%;
-height:54px;
-border:0;
-border-radius:16px;
-font-size:16px;
-font-weight:1000;
-cursor:pointer;
-background:linear-gradient(90deg,#20d9bd,#4b9cff);
-color:#031719;
+  width:100%;
+  height:55px;
+  border:0;
+  border-radius:16px;
+  background:linear-gradient(90deg,#20d9bd,#4b9cff);
+  color:#031719;
+  font-size:16px;
+  font-weight:1000;
+  cursor:pointer;
 }
 
 .btn:disabled{
-opacity:.4;
-cursor:not-allowed;
+  opacity:.4;
+  cursor:not-allowed;
 }
 
 .back{
-background:#182b3d;
-color:#b9c6d2;
+  background:#182b3d;
+  color:#b9c6d2;
 }
 
 
 /* MÜASİR KART */
 
 .payment{
-display:grid;
-grid-template-columns:1fr;
-gap:18px;
+  display:grid;
+  grid-template-columns:1fr;
+  gap:18px;
 }
 
 .card{
-position:relative;
-overflow:hidden;
-min-height:255px;
-padding:24px;
-border-radius:28px;
+  position:relative;
+  overflow:hidden;
+  min-height:260px;
+  padding:24px;
+  border-radius:28px;
 
-background:
-linear-gradient(
-135deg,
-rgba(255,255,255,.18),
-rgba(255,255,255,.04)
-);
+  background:
+    linear-gradient(
+      135deg,
+      rgba(255,255,255,.18),
+      rgba(255,255,255,.04)
+    );
 
-backdrop-filter:blur(25px);
--webkit-backdrop-filter:blur(25px);
+  backdrop-filter:blur(25px);
+  -webkit-backdrop-filter:blur(25px);
 
-border:1px solid rgba(255,255,255,.22);
+  border:1px solid rgba(255,255,255,.22);
 
-box-shadow:
-0 25px 60px rgba(0,0,0,.45),
-inset 0 1px 1px rgba(255,255,255,.3);
+  box-shadow:
+    0 25px 60px rgba(0,0,0,.45),
+    inset 0 1px 1px rgba(255,255,255,.3);
 }
 
 .card:before{
-content:"";
-position:absolute;
-width:220px;
-height:220px;
-border-radius:50%;
-background:#00ffff;
-filter:blur(70px);
-opacity:.18;
-right:-80px;
-top:-90px;
+  content:"";
+  position:absolute;
+  width:220px;
+  height:220px;
+  border-radius:50%;
+  background:#00ffff;
+  filter:blur(70px);
+  opacity:.18;
+  right:-80px;
+  top:-90px;
 }
 
 .card:after{
-content:"";
-position:absolute;
-width:180px;
-height:180px;
-border-radius:50%;
-background:#8b5cff;
-filter:blur(65px);
-opacity:.18;
-left:-80px;
-bottom:-80px;
+  content:"";
+  position:absolute;
+  width:180px;
+  height:180px;
+  border-radius:50%;
+  background:#8b5cff;
+  filter:blur(65px);
+  opacity:.18;
+  left:-80px;
+  bottom:-80px;
 }
 
 .cardTop,
 .cardNumber,
 .cardBottom,
 .copy{
-position:relative;
-z-index:2;
+  position:relative;
+  z-index:2;
 }
 
 .cardTop{
-display:flex;
-justify-content:space-between;
-align-items:center;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
 }
 
 .chip{
-width:53px;
-height:38px;
-border-radius:10px;
-background:
-linear-gradient(135deg,#ffe681,#c99120);
-box-shadow:inset 0 0 0 2px rgba(255,255,255,.3);
+  width:53px;
+  height:38px;
+  border-radius:10px;
+  background:linear-gradient(
+    135deg,
+    #ffe681,
+    #c99120
+  );
 }
 
 .cardBrand{
-font-size:18px;
-font-weight:1000;
-letter-spacing:2px;
-text-shadow:0 0 12px #00ffff;
+  font-size:18px;
+  font-weight:1000;
+  letter-spacing:2px;
+  text-shadow:0 0 12px #00ffff;
 }
 
 .cardNumber{
-font-family:monospace;
-font-size:20px;
-letter-spacing:2px;
-margin-top:45px;
-white-space:nowrap;
+  margin-top:45px;
+  font-family:monospace;
+  font-size:20px;
+  letter-spacing:2px;
+  white-space:nowrap;
 }
 
 .cardBottom{
-display:flex;
-justify-content:space-between;
-margin-top:25px;
-color:#c5d2dc;
-font-size:12px;
+  display:flex;
+  justify-content:space-between;
+  margin-top:25px;
+  color:#c5d2dc;
+  font-size:12px;
 }
 
 .copy{
-margin-top:18px;
-padding:11px 18px;
-border:1px solid rgba(255,255,255,.2);
-border-radius:12px;
-background:rgba(255,255,255,.1);
-color:#fff;
-font-weight:bold;
-cursor:pointer;
+  margin-top:18px;
+  padding:11px 18px;
+  border:1px solid rgba(255,255,255,.2);
+  border-radius:12px;
+  background:rgba(255,255,255,.1);
+  color:#fff;
+  font-weight:bold;
+  cursor:pointer;
 }
 
+
+/* QƏBZ */
+
 .receipt{
-padding:25px;
-text-align:center;
-border:2px dashed #248f87;
-border-radius:25px;
-background:rgba(20,90,90,.08);
+  padding:25px;
+  text-align:center;
+  border:2px dashed #248f87;
+  border-radius:25px;
+  background:rgba(20,90,90,.08);
 }
 
 .receiptIcon{
-font-size:42px;
-margin-bottom:10px;
+  font-size:42px;
+  margin-bottom:10px;
 }
 
 .receiptTitle{
-font-size:20px;
-font-weight:bold;
-color:#4fe2c9;
+  font-size:20px;
+  font-weight:bold;
+  color:#4fe2c9;
 }
 
 .receiptText{
-font-size:13px;
-line-height:1.5;
-color:#8ea1b2;
-margin:10px 0 18px;
+  font-size:13px;
+  line-height:1.5;
+  color:#8ea1b2;
+  margin:10px 0 18px;
 }
 
 .file{
-width:100%;
-color:#b8c5d0;
+  width:100%;
+  color:#b8c5d0;
 }
 
-.summary{
-background:#101f31;
-border:1px solid #293f54;
-border-radius:20px;
-padding:18px;
-line-height:2;
-color:#9fb0bf;
-}
 
-.summary b{
-color:#fff;
-}
+/* TƏSDİQ */
 
 .confirm{
-text-align:center;
+  text-align:center;
 }
 
 .confirmIcon{
-width:85px;
-height:85px;
-border-radius:50%;
-margin:auto;
-display:flex;
-align-items:center;
-justify-content:center;
-font-size:40px;
-font-weight:bold;
-background:#35dfc5;
-color:#03201c;
-box-shadow:0 0 35px rgba(53,223,197,.4);
+  width:85px;
+  height:85px;
+  border-radius:50%;
+  margin:auto;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  font-size:40px;
+  font-weight:bold;
+  background:#35dfc5;
+  color:#03201c;
+  box-shadow:0 0 35px rgba(53,223,197,.4);
 }
+
+.summary{
+  background:#101f31;
+  border:1px solid #293f54;
+  border-radius:20px;
+  padding:18px;
+  margin-top:25px;
+  line-height:2;
+  text-align:left;
+  color:#9fb0bf;
+}
+
+.summary b{
+  color:#fff;
+}
+
 
 @media(max-width:600px){
 
-.operators{
-grid-template-columns:repeat(3,1fr);
-}
+  .operators{
+    grid-template-columns:repeat(3,1fr);
+  }
 
-.cardNumber{
-font-size:16px;
-}
+  .cardNumber{
+    font-size:16px;
+  }
 
 }
 </style>
 </head>
 
+
 <body>
+
 
 <header class="header">
 
-<div class="logo">
-<span class="super">SUPER</span>
-<span class="gb">GB</span>
-</div>
+  <div class="logo">
+    <span class="super">SUPER</span>
+    <span class="gb">GB</span>
+  </div>
 
-<div class="subtitleLogo">
-SÜRƏTLİ • SADƏ • RAHAT
-</div>
+  <div class="logoSub">
+    SÜRƏTLİ • SADƏ • RAHAT
+  </div>
 
 </header>
 
 
+<!-- YUXARIDA SOLDAN-SAĞA MƏRHƏLƏLƏR -->
+
 <div class="steps">
 
-<div id="s1" class="step active">1</div>
-<div class="line"></div>
+  <div id="s1" class="step active">1</div>
+  <div id="l1" class="line"></div>
 
-<div id="s2" class="step">2</div>
-<div class="line"></div>
+  <div id="s2" class="step">2</div>
+  <div id="l2" class="line"></div>
 
-<div id="s3" class="step">3</div>
-<div class="line"></div>
+  <div id="s3" class="step">3</div>
+  <div id="l3" class="line"></div>
 
-<div id="s4" class="step">4</div>
-<div class="line"></div>
+  <div id="s4" class="step">4</div>
+  <div id="l4" class="line"></div>
 
-<div id="s5" class="step">5</div>
+  <div id="s5" class="step">5</div>
 
 </div>
 
@@ -551,568 +614,903 @@ SÜRƏTLİ • SADƏ • RAHAT
 <div class="container">
 
 
-<!-- 1 OPERATOR -->
+<!-- 1. OPERATORU MÜŞTƏRİ SEÇİR -->
 
 <section id="stage1" class="stage active">
 
-<div class="title">
-Operatoru seçin
-</div>
+  <div class="title">
+    Operatoru seçin
+  </div>
 
-<div class="desc">
-Operatorunuzu özünüz seçin
-</div>
+  <div class="desc">
+    Müştəri operatorunu özü seçir
+  </div>
 
-<div class="box">
+  <div class="box">
 
-<div class="operators">
+    <div class="operators">
 
-<div class="operator" data-op="azercell">
-<div class="oplogo az">Azercell</div>
-<div class="opname">Azercell</div>
-</div>
+      <div class="operator" data-op="azercell">
 
-<div class="operator" data-op="bakcell">
-<div class="oplogo bk">Bakcell</div>
-<div class="opname">Bakcell</div>
-</div>
+        <div class="oplogo azercell">
+          Azercell
+        </div>
 
-<div class="operator" data-op="nar">
-<div class="oplogo nr">nar</div>
-<div class="opname">Nar</div>
-</div>
+        <div class="opname">
+          Azercell
+        </div>
 
-</div>
+      </div>
 
-</div>
+
+      <div class="operator" data-op="bakcell">
+
+        <div class="oplogo bakcell">
+          Bakcell
+        </div>
+
+        <div class="opname">
+          Bakcell
+        </div>
+
+      </div>
+
+
+      <div class="operator" data-op="nar">
+
+        <div class="oplogo nar">
+          nar
+        </div>
+
+        <div class="opname">
+          Nar
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
 
 </section>
 
 
-<!-- 2 NÖMRƏ -->
+<!-- 2. NÖMRƏ -->
 
 <section id="stage2" class="stage">
 
-<div class="title">
-Nömrənizi daxil edin
-</div>
+  <div class="title">
+    Nömrənizi daxil edin
+  </div>
 
-<div class="desc">
-Əvvəlcə operator kodunu seçin
-</div>
+  <div class="desc">
+    Operator kodunu və nömrənizi daxil edin
+  </div>
 
-<div class="box">
+  <div class="box">
 
-<div id="prefixes" class="prefixes"></div>
+    <div class="prefixTitle">
+      Operator kodunu seçin
+    </div>
 
-<input
-id="phone"
-class="phone"
-type="tel"
-inputmode="numeric"
-maxlength="13"
-placeholder="050-123-45-67"
->
+    <div id="prefixes" class="prefixes"></div>
 
-<div id="error" class="error"></div>
+    <input
+      id="phone"
+      class="phone"
+      type="tel"
+      inputmode="numeric"
+      maxlength="13"
+      placeholder="050-123-45-67"
+      autocomplete="tel"
+    >
 
-<div class="buttons">
+    <div id="error" class="error"></div>
 
-<button class="btn back" id="back2">
-← Geri
-</button>
+    <div class="buttons">
 
-<button class="btn" id="next2" disabled>
-İrəli →
-</button>
+      <button
+        id="back2"
+        class="btn back"
+        type="button">
+        ← Geri
+      </button>
 
-</div>
+      <button
+        id="next2"
+        class="btn"
+        type="button"
+        disabled>
+        İrəli →
+      </button>
 
-</div>
+    </div>
+
+  </div>
 
 </section>
 
 
-<!-- 3 PAKET -->
+<!-- 3. PAKET -->
 
 <section id="stage3" class="stage">
 
-<div class="title">
-Paket seçin
-</div>
+  <div class="title">
+    Paket seçin
+  </div>
 
-<div class="desc">
-İstədiyiniz paketi seçin
-</div>
+  <div class="desc">
+    İstədiyiniz internet paketini seçin
+  </div>
 
-<div class="box">
+  <div class="box">
 
-<div class="pack" data-gb="15" data-price="5">
-<div>
-<div class="gbnum">15 GB</div>
-<div class="info">30 gün • 400 dəqiqə • 100 SMS</div>
-</div>
-<div class="price">5 AZN</div>
-</div>
 
-<div class="pack" data-gb="20" data-price="10">
-<div>
-<div class="gbnum">20 GB</div>
-<div class="info">30 gün • 600 dəqiqə • 200 SMS</div>
-</div>
-<div class="price">10 AZN</div>
-</div>
+    <div class="pack"
+         data-gb="15"
+         data-price="5">
 
-<div class="pack" data-gb="60" data-price="20">
-<div>
-<div class="gbnum">60 GB</div>
-<div class="info">30 gün • 1000 dəqiqə • 300 SMS</div>
-</div>
-<div class="price">20 AZN</div>
-</div>
+      <div>
+        <div class="gbnum">
+          15 GB
+        </div>
 
-<div class="pack" data-gb="80" data-price="25">
-<div>
-<div class="gbnum">80 GB</div>
-<div class="info">30 gün • 1200 dəqiqə • 400 SMS</div>
-</div>
-<div class="price">25 AZN</div>
-</div>
+        <div class="info">
+          30 gün • 400 dəqiqə • 100 SMS
+        </div>
+      </div>
 
-<div class="pack" data-gb="100" data-price="30">
-<div>
-<div class="gbnum">100 GB</div>
-<div class="info">30 gün • 1500 dəqiqə • 500 SMS</div>
-</div>
-<div class="price">30 AZN</div>
-</div>
+      <div class="price">
+        5 AZN
+      </div>
 
-<div class="buttons">
+    </div>
 
-<button class="btn back" id="back3">
-← Geri
-</button>
 
-<button class="btn" id="next3" disabled>
-İrəli →
-</button>
+    <div class="pack"
+         data-gb="20"
+         data-price="10">
 
-</div>
+      <div>
+        <div class="gbnum">
+          20 GB
+        </div>
 
-</div>
+        <div class="info">
+          30 gün • 600 dəqiqə • 200 SMS
+        </div>
+      </div>
+
+      <div class="price">
+        10 AZN
+      </div>
+
+    </div>
+
+
+    <div class="pack"
+         data-gb="60"
+         data-price="20">
+
+      <div>
+        <div class="gbnum">
+          60 GB
+        </div>
+
+        <div class="info">
+          30 gün • 1000 dəqiqə • 300 SMS
+        </div>
+      </div>
+
+      <div class="price">
+        20 AZN
+      </div>
+
+    </div>
+
+
+    <div class="pack"
+         data-gb="80"
+         data-price="25">
+
+      <div>
+        <div class="gbnum">
+          80 GB
+        </div>
+
+        <div class="info">
+          30 gün • 1200 dəqiqə • 400 SMS
+        </div>
+      </div>
+
+      <div class="price">
+        25 AZN
+      </div>
+
+    </div>
+
+
+    <div class="pack"
+         data-gb="100"
+         data-price="30">
+
+      <div>
+        <div class="gbnum">
+          100 GB
+        </div>
+
+        <div class="info">
+          30 gün • 1500 dəqiqə • 500 SMS
+        </div>
+      </div>
+
+      <div class="price">
+        30 AZN
+      </div>
+
+    </div>
+
+
+    <div class="buttons">
+
+      <button
+        id="back3"
+        class="btn back"
+        type="button">
+        ← Geri
+      </button>
+
+      <button
+        id="next3"
+        class="btn"
+        type="button"
+        disabled>
+        İrəli →
+      </button>
+
+    </div>
+
+  </div>
 
 </section>
 
 
-<!-- 4 ÖDƏNİŞ -->
+<!-- 4. ÖDƏNİŞ -->
 
 <section id="stage4" class="stage">
 
-<div class="title">
-Ödəniş
-</div>
+  <div class="title">
+    Ödəniş
+  </div>
 
-<div class="desc">
-Ödəniş etdikdən sonra qəbzi göndərin
-</div>
+  <div class="desc">
+    Ödəniş etdikdən sonra qəbzi göndərin
+  </div>
 
-<div class="payment">
-
-<div class="card">
-
-<div class="cardTop">
-
-<div class="chip"></div>
-
-<div class="cardBrand">
-SUPER GB
-</div>
-
-</div>
-
-<div class="cardNumber">
-5315 9921 2761 6081
-</div>
-
-<div class="cardBottom">
-<span>KART NÖMRƏSİ</span>
-<span>SUPER GB</span>
-</div>
-
-<button class="copy" id="copy">
-📋 Kartı kopyala
-</button>
-
-</div>
+  <div class="payment">
 
 
-<div class="receipt">
+    <div class="card">
 
-<div class="receiptIcon">
-📤
-</div>
+      <div class="cardTop">
 
-<div class="receiptTitle">
-Qəbzi göndər
-</div>
+        <div class="chip"></div>
 
-<div class="receiptText">
-Ödəniş etdikdən sonra qəbzin şəklini seçin.
-</div>
+        <div class="cardBrand">
+          SUPER GB
+        </div>
 
-<input
-class="file"
-id="receipt"
-type="file"
-accept="image/*"
->
+      </div>
 
-<button class="btn" id="receiptBtn" style="margin-top:18px">
-Qəbzi göndər
-</button>
+      <div class="cardNumber">
+        5315 9921 2761 6081
+      </div>
 
-</div>
+      <div class="cardBottom">
 
-</div>
+        <span>
+          KART NÖMRƏSİ
+        </span>
 
-<div class="buttons">
+        <span>
+          SUPER GB
+        </span>
 
-<button class="btn back" id="back4">
-← Geri
-</button>
+      </div>
 
-</div>
+      <button
+        id="copy"
+        class="copy"
+        type="button">
+        📋 Kartı kopyala
+      </button>
+
+    </div>
+
+
+    <div class="receipt">
+
+      <div class="receiptIcon">
+        📤
+      </div>
+
+      <div class="receiptTitle">
+        Qəbzi göndər
+      </div>
+
+      <div class="receiptText">
+        Ödəniş etdikdən sonra qəbzin şəklini seçin.
+      </div>
+
+      <input
+        id="receipt"
+        class="file"
+        type="file"
+        accept="image/*"
+      >
+
+      <button
+        id="receiptBtn"
+        class="btn"
+        type="button"
+        style="margin-top:18px">
+        Qəbzi göndər
+      </button>
+
+    </div>
+
+  </div>
+
+
+  <div class="buttons">
+
+    <button
+      id="back4"
+      class="btn back"
+      type="button">
+      ← Geri
+    </button>
+
+  </div>
 
 </section>
 
 
-<!-- 5 TƏSDİQ -->
+<!-- 5. TƏSDİQ -->
 
 <section id="stage5" class="stage">
 
-<div class="title">
-Təsdiq
-</div>
+  <div class="title">
+    Təsdiq
+  </div>
 
-<div class="desc">
-Məlumatları yoxlayın
-</div>
+  <div class="desc">
+    Məlumatları yoxlayın və təsdiqləyin
+  </div>
 
-<div class="box confirm">
+  <div class="box confirm">
 
-<div class="confirmIcon">
-✓
-</div>
+    <div class="confirmIcon">
+      ✓
+    </div>
 
-<div id="summary" class="summary" style="margin-top:25px"></div>
+    <div id="summary" class="summary"></div>
 
-<div class="buttons">
+    <div class="buttons">
 
-<button class="btn back" id="back5">
-← Geri
-</button>
+      <button
+        id="back5"
+        class="btn back"
+        type="button">
+        ← Geri
+      </button>
 
-<button class="btn" id="confirm">
-Təsdiq et ✓
-</button>
+      <button
+        id="confirm"
+        class="btn"
+        type="button">
+        Təsdiq et ✓
+      </button>
 
-</div>
+    </div>
 
-</div>
+  </div>
 
 </section>
+
 
 </div>
 
 
 <script>
 
-let operator="";
-let prefix="";
-let phone="";
-let packageData=null;
+let operator = "";
+let prefix = "";
+let phone = "";
+let packageData = null;
 
 
-const operatorPrefixes={
-azercell:["010","050","051"],
-bakcell:["055","099"],
-nar:["070","077"]
+const operatorPrefixes = {
+
+  azercell: [
+    "010",
+    "050",
+    "051"
+  ],
+
+  bakcell: [
+    "055",
+    "099"
+  ],
+
+  nar: [
+    "070",
+    "077"
+  ]
+
 };
 
 
-/* OPERATORU MÜŞTƏRİ ÖZÜ SEÇİR */
-
-document.querySelectorAll(".operator").forEach(item=>{
-
-item.addEventListener("click",()=>{
-
-operator=item.dataset.op;
+/* OPERATOR SEÇİMİ */
 
 document.querySelectorAll(".operator")
-.forEach(x=>x.classList.remove("selected"));
+.forEach(function(item){
 
-item.classList.add("selected");
+  item.addEventListener("click",function(){
 
-showPrefixes();
+    operator = this.dataset.op;
 
-go(2);
+    document
+      .querySelectorAll(".operator")
+      .forEach(function(x){
+        x.classList.remove("selected");
+      });
+
+    this.classList.add("selected");
+
+    showPrefixes();
+
+    go(2);
+
+  });
 
 });
 
-});
 
+/* OPERATOR KODLARI */
 
 function showPrefixes(){
 
-const area=document.getElementById("prefixes");
+  const area =
+    document.getElementById("prefixes");
 
-area.innerHTML="";
+  area.innerHTML = "";
 
-operatorPrefixes[operator].forEach(code=>{
+  prefix = "";
 
-const btn=document.createElement("button");
+  document.getElementById("phone").value = "";
 
-btn.className="prefix";
-btn.textContent=code;
+  document.getElementById("next2").disabled = true;
 
-btn.onclick=()=>{
+  operatorPrefixes[operator]
+  .forEach(function(code){
 
-document.querySelectorAll(".prefix")
-.forEach(x=>x.classList.remove("selected"));
+    const btn =
+      document.createElement("button");
 
-btn.classList.add("selected");
+    btn.type = "button";
 
-prefix=code;
+    btn.className = "prefix";
 
-document.getElementById("phone").value=code+"-";
+    btn.textContent = code;
 
-document.getElementById("phone").focus();
+    btn.addEventListener("click",function(){
 
-checkPhone();
+      document
+        .querySelectorAll(".prefix")
+        .forEach(function(x){
+          x.classList.remove("selected");
+        });
 
-};
+      btn.classList.add("selected");
 
-area.appendChild(btn);
+      prefix = code;
 
-});
+      document.getElementById("phone").value =
+        code + "-";
+
+      document.getElementById("phone").focus();
+
+      checkPhone();
+
+    });
+
+    area.appendChild(btn);
+
+  });
 
 }
 
 
-/* NÖMRƏ */
+/* NÖMRƏNİ DAXİL ET */
 
-document.getElementById("phone")
+document
+.getElementById("phone")
 .addEventListener("input",function(){
 
-let n=this.value.replace(/\D/g,"");
+  let numbers =
+    this.value.replace(/\D/g,"");
 
-if(n.length>10)n=n.substring(0,10);
+  if(numbers.length > 10){
+    numbers =
+      numbers.substring(0,10);
+  }
 
-let result="";
+  let formatted = "";
 
-if(n.length>0)result=n.substring(0,3);
+  if(numbers.length <= 3){
 
-if(n.length>3)result+="-"+n.substring(3,6);
+    formatted = numbers;
 
-if(n.length>6)result+="-"+n.substring(6,8);
+  }
 
-if(n.length>8)result+="-"+n.substring(8,10);
+  else if(numbers.length <= 6){
 
-this.value=result;
+    formatted =
+      numbers.substring(0,3) +
+      "-" +
+      numbers.substring(3);
 
-checkPhone();
+  }
+
+  else if(numbers.length <= 8){
+
+    formatted =
+      numbers.substring(0,3) +
+      "-" +
+      numbers.substring(3,6) +
+      "-" +
+      numbers.substring(6);
+
+  }
+
+  else{
+
+    formatted =
+      numbers.substring(0,3) +
+      "-" +
+      numbers.substring(3,6) +
+      "-" +
+      numbers.substring(6,8) +
+      "-" +
+      numbers.substring(8,10);
+
+  }
+
+  this.value = formatted;
+
+  checkPhone();
 
 });
 
+
+/* NÖMRƏ YOXLAMASI */
 
 function checkPhone(){
 
-const n=document.getElementById("phone")
-.value.replace(/\D/g,"");
+  const input =
+    document.getElementById("phone");
 
-const error=document.getElementById("error");
-const next=document.getElementById("next2");
+  const button =
+    document.getElementById("next2");
 
-next.disabled=true;
-error.style.display="none";
+  const error =
+    document.getElementById("error");
 
-if(!prefix){
+  const numbers =
+    input.value.replace(/\D/g,"");
 
-error.textContent="Əvvəlcə nömrə kodunu seçin.";
-error.style.display="block";
-return false;
+  button.disabled = true;
+
+  error.style.display = "none";
+
+
+  if(!prefix){
+
+    error.textContent =
+      "Əvvəlcə operator kodunu seçin.";
+
+    error.style.display = "block";
+
+    return false;
+
+  }
+
+
+  if(numbers.length !== 10){
+
+    error.textContent =
+      "Nömrə 10 rəqəm olmalıdır.";
+
+    error.style.display = "block";
+
+    return false;
+
+  }
+
+
+  /* KOD SEÇİLƏN KODLA EYNİDİR */
+
+  if(numbers.substring(0,3) !== prefix){
+
+    error.textContent =
+      "Seçdiyiniz operator kodu ilə nömrə uyğun gəlmir.";
+
+    error.style.display = "block";
+
+    return false;
+
+  }
+
+
+  button.disabled = false;
+
+  return true;
 
 }
 
-if(n.length!==10){
 
-error.textContent="Nömrə tam 10 rəqəm olmalıdır.";
-error.style.display="block";
-return false;
+/* İRƏLİ */
 
-}
+document
+.getElementById("next2")
+.addEventListener("click",function(){
 
-return true;
+  if(!checkPhone()){
+    return;
+  }
 
-}
+  phone =
+    document
+      .getElementById("phone")
+      .value;
 
+  go(3);
 
-document.getElementById("next2")
-.onclick=()=>{
-
-if(checkPhone()){
-
-phone=document.getElementById("phone").value;
-
-go(3);
-
-}
-
-};
+});
 
 
 /* PAKET */
 
-document.querySelectorAll(".pack")
-.forEach(item=>{
+document
+.querySelectorAll(".pack")
+.forEach(function(item){
 
-item.onclick=()=>{
+  item.addEventListener("click",function(){
 
-document.querySelectorAll(".pack")
-.forEach(x=>x.classList.remove("selected"));
+    document
+      .querySelectorAll(".pack")
+      .forEach(function(x){
+        x.classList.remove("selected");
+      });
 
-item.classList.add("selected");
+    this.classList.add("selected");
 
-packageData={
-gb:item.dataset.gb,
-price:item.dataset.price
-};
+    packageData = {
 
-document.getElementById("next3")
-.disabled=false;
+      gb:this.dataset.gb,
 
-};
+      price:this.dataset.price
+
+    };
+
+    document
+      .getElementById("next3")
+      .disabled = false;
+
+  });
 
 });
 
 
-document.getElementById("next3")
-.onclick=()=>{
+/* PAKET İRƏLİ */
 
-if(packageData)go(4);
+document
+.getElementById("next3")
+.addEventListener("click",function(){
 
-};
+  if(packageData){
+    go(4);
+  }
+
+});
 
 
 /* GERİ */
 
-document.getElementById("back2")
-.onclick=()=>go(1);
+document
+.getElementById("back2")
+.addEventListener("click",function(){
+  go(1);
+});
 
-document.getElementById("back3")
-.onclick=()=>go(2);
+document
+.getElementById("back3")
+.addEventListener("click",function(){
+  go(2);
+});
 
-document.getElementById("back4")
-.onclick=()=>go(3);
+document
+.getElementById("back4")
+.addEventListener("click",function(){
+  go(3);
+});
 
-document.getElementById("back5")
-.onclick=()=>go(4);
+document
+.getElementById("back5")
+.addEventListener("click",function(){
+  go(4);
+});
 
 
-/* KART KOPYALA */
+/* KARTI KOPYALA */
 
-document.getElementById("copy")
-.onclick=async function(){
+document
+.getElementById("copy")
+.addEventListener("click",function(){
 
-try{
+  const card =
+    "5315 9921 2761 6081";
 
-await navigator.clipboard.writeText(
-"5315 9921 2761 6081"
-);
+  navigator.clipboard
+  .writeText(card)
+  .then(()=>{
 
-this.textContent="✓ Kart nömrəsi kopyalandı";
+    this.textContent =
+      "✓ Kopyalandı";
 
-setTimeout(()=>{
-this.textContent="📋 Kartı kopyala";
-},2000);
+    setTimeout(()=>{
 
-}catch(e){
+      this.textContent =
+        "📋 Kartı kopyala";
 
-alert("Kart nömrəsi: 5315 9921 2761 6081");
+    },2000);
 
-}
+  })
+  .catch(()=>{
 
-};
+    alert(
+      "Kart nömrəsi: " +
+      card
+    );
+
+  });
+
+});
 
 
 /* QƏBZ */
 
-document.getElementById("receiptBtn")
-.onclick=()=>{
+document
+.getElementById("receiptBtn")
+.addEventListener("click",function(){
 
-const file=document.getElementById("receipt").files[0];
+  const file =
+    document
+      .getElementById("receipt")
+      .files[0];
 
-if(!file){
+  if(!file){
 
-alert("Zəhmət olmasa qəbzi seçin.");
+    alert(
+      "Zəhmət olmasa qəbzi seçin."
+    );
 
-return;
+    return;
 
-}
-
-const opName=
-operator==="azercell"?"Azercell":
-operator==="bakcell"?"Bakcell":"Nar";
-
-document.getElementById("summary").innerHTML=`
-
-<b>Operator:</b> ${opName}<br>
-<b>Nömrə:</b> ${phone}<br>
-<b>Paket:</b> ${packageData.gb} GB<br>
-<b>Məbləğ:</b> ${packageData.price} AZN<br>
-<b>Qəbz:</b> ${file.name}
-
-`;
-
-go(5);
-
-};
+  }
 
 
-/* TƏSDİQ */
-
-document.getElementById("confirm")
-.onclick=()=>{
-
-alert("Məlumatlar təsdiqləndi.");
-
-};
+  const operatorName =
+    operator === "azercell"
+      ? "Azercell"
+      : operator === "bakcell"
+        ? "Bakcell"
+        : "Nar";
 
 
-/* MƏRHƏLƏ KEÇİDİ */
+  document
+    .getElementById("summary")
+    .innerHTML =
+
+    "<b>Operator:</b> " +
+    operatorName +
+    "<br>" +
+
+    "<b>Nömrə:</b> " +
+    phone +
+    "<br>" +
+
+    "<b>Paket:</b> " +
+    packageData.gb +
+    " GB" +
+    "<br>" +
+
+    "<b>Məbləğ:</b> " +
+    packageData.price +
+    " AZN" +
+    "<br>" +
+
+    "<b>Qəbz:</b> " +
+    file.name;
+
+
+  go(5);
+
+});
+
+
+/* SON TƏSDİQ */
+
+document
+.getElementById("confirm")
+.addEventListener("click",function(){
+
+  alert(
+    "Məlumatlar təsdiqləndi."
+  );
+
+});
+
+
+/* MƏRHƏLƏ */
 
 function go(number){
 
-for(let i=1;i<=5;i++){
+  for(let i=1;i<=5;i++){
 
-document.getElementById("stage"+i)
-.classList.remove("active");
+    document
+      .getElementById("stage"+i)
+      .classList.remove("active");
 
-document.getElementById("s"+i)
-.classList.remove("active");
+    document
+      .getElementById("s"+i)
+      .classList.remove("active");
 
-}
+  }
 
-document.getElementById("stage"+number)
-.classList.add("active");
 
-document.getElementById("s"+number)
-.classList.add("active");
+  document
+    .getElementById("stage"+number)
+    .classList.add("active");
 
-window.scrollTo({
-top:0,
-behavior:"smooth"
-});
+
+  document
+    .getElementById("s"+number)
+    .classList.add("active");
+
+
+  for(let i=1;i<number;i++){
+
+    const step =
+      document.getElementById("s"+i);
+
+    step.classList.add("done");
+
+    const line =
+      document.getElementById("l"+i);
+
+    if(line){
+      line.classList.add("done");
+    }
+
+  }
+
+
+  window.scrollTo({
+    top:0,
+    behavior:"smooth"
+  });
 
 }
 
