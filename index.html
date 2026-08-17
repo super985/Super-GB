@@ -74,8 +74,7 @@ body{
   letter-spacing:5px;
 }
 
-
-/* YUXARI MƏRHƏLƏLƏR */
+/* MƏRHƏLƏLƏR */
 
 .steps{
   position:sticky;
@@ -174,7 +173,6 @@ body{
   box-shadow:0 20px 50px rgba(0,0,0,.3);
 }
 
-
 /* OPERATOR */
 
 .operators{
@@ -235,7 +233,6 @@ body{
   font-weight:bold;
 }
 
-
 /* NÖMRƏ */
 
 .phone{
@@ -271,7 +268,6 @@ body{
   font-size:13px;
   margin-top:10px;
 }
-
 
 /* PAKET */
 
@@ -309,7 +305,6 @@ body{
   font-weight:1000;
 }
 
-
 /* DÜYMƏLƏR */
 
 .buttons{
@@ -341,61 +336,81 @@ body{
 }
 
 
-/* MÜASİR KART */
+/* =====================================================
+   YENİ MÜASİR ÖDƏNİŞ BÖLMƏSİ
+   ===================================================== */
 
 .payment{
   display:grid;
-  gap:18px;
+  gap:20px;
 }
+
+
+/* ÖDƏNİŞ KARTI */
 
 .card{
   position:relative;
   overflow:hidden;
-  min-height:260px;
-  padding:24px;
-  border-radius:28px;
+  min-height:285px;
+  padding:25px;
+  border-radius:30px;
 
   background:
     linear-gradient(
       135deg,
-      rgba(255,255,255,.18),
-      rgba(255,255,255,.04)
+      rgba(27,55,75,.98),
+      rgba(8,22,37,.98) 55%,
+      rgba(35,21,62,.98)
     );
 
-  backdrop-filter:blur(25px);
-  -webkit-backdrop-filter:blur(25px);
-
-  border:1px solid rgba(255,255,255,.22);
+  border:1px solid rgba(255,255,255,.18);
 
   box-shadow:
-    0 25px 60px rgba(0,0,0,.45),
-    inset 0 1px 1px rgba(255,255,255,.3);
+    0 25px 70px rgba(0,0,0,.55),
+    inset 0 1px 0 rgba(255,255,255,.18);
+
+  transform:translateZ(0);
 }
+
+
+/* PARLAQ İŞIQ EFFEKTİ */
 
 .card:before{
   content:"";
   position:absolute;
-  width:220px;
-  height:220px;
+  width:260px;
+  height:260px;
   border-radius:50%;
   background:#00ffff;
-  filter:blur(70px);
-  opacity:.18;
-  right:-80px;
-  top:-90px;
+  filter:blur(75px);
+  opacity:.14;
+  right:-100px;
+  top:-120px;
+  animation:cardLight 4s infinite alternate;
 }
 
 .card:after{
   content:"";
   position:absolute;
-  width:180px;
-  height:180px;
+  width:230px;
+  height:230px;
   border-radius:50%;
-  background:#8b5cff;
-  filter:blur(65px);
-  opacity:.18;
-  left:-80px;
-  bottom:-80px;
+  background:#9b4dff;
+  filter:blur(75px);
+  opacity:.13;
+  left:-110px;
+  bottom:-120px;
+}
+
+@keyframes cardLight{
+  from{
+    transform:translate(0,0);
+    opacity:.12;
+  }
+  to{
+    transform:translate(-30px,25px);
+    opacity:.22;
+  }
 }
 
 .cardTop,
@@ -412,49 +427,189 @@ body{
   align-items:center;
 }
 
+
+/* ÇİP */
+
 .chip{
-  width:53px;
-  height:38px;
-  border-radius:10px;
-  background:linear-gradient(
-    135deg,
-    #ffe681,
-    #c99120
-  );
+  width:56px;
+  height:41px;
+  border-radius:11px;
+
+  background:
+    linear-gradient(
+      135deg,
+      #fff2a6,
+      #f3c84d 45%,
+      #a97519
+    );
+
+  box-shadow:
+    0 5px 15px rgba(0,0,0,.3),
+    inset 0 1px rgba(255,255,255,.7);
 }
+
+.chip:after{
+  content:"";
+  display:block;
+  width:100%;
+  height:100%;
+  border-radius:11px;
+  background:
+    linear-gradient(
+      90deg,
+      transparent 47%,
+      rgba(120,80,10,.35) 48%,
+      rgba(120,80,10,.35) 52%,
+      transparent 53%
+    );
+}
+
+
+/* BRAND */
 
 .cardBrand{
-  font-size:18px;
+  font-size:21px;
   font-weight:1000;
   letter-spacing:2px;
-  text-shadow:0 0 12px #00ffff;
+
+  background:
+    linear-gradient(
+      90deg,
+      #fff,
+      #4fffe4,
+      #fff
+    );
+
+  -webkit-background-clip:text;
+  -webkit-text-fill-color:transparent;
+
+  text-shadow:0 0 15px rgba(53,223,197,.5);
 }
 
+
+/* KART NÖMRƏSİ */
+
 .cardNumber{
-  margin-top:45px;
+  margin-top:48px;
+
   font-family:monospace;
-  font-size:20px;
-  letter-spacing:2px;
-  white-space:nowrap;
+  font-size:21px;
+  letter-spacing:3px;
+
+  padding:14px 15px;
+
+  border-radius:15px;
+
+  background:rgba(0,0,0,.18);
+
+  border:1px solid rgba(255,255,255,.08);
+
+  text-shadow:
+    0 2px 8px rgba(0,0,0,.7);
 }
+
+
+/* ALT HİSSƏ */
 
 .cardBottom{
   display:flex;
   justify-content:space-between;
+  align-items:end;
+
   margin-top:25px;
-  color:#c5d2dc;
-  font-size:12px;
+
+  color:#aebdca;
+  font-size:10px;
+  letter-spacing:1.5px;
 }
 
-.copy{
-  margin-top:18px;
-  padding:11px 18px;
-  border:1px solid rgba(255,255,255,.2);
-  border-radius:12px;
-  background:rgba(255,255,255,.1);
-  color:#fff;
+.cardBottom span:last-child{
+  color:#54ead3;
   font-weight:bold;
+}
+
+
+/* KOPYALA */
+
+.copy{
+  width:100%;
+  margin-top:18px;
+  height:48px;
+
+  border:1px solid rgba(255,255,255,.18);
+  border-radius:15px;
+
+  background:
+    linear-gradient(
+      90deg,
+      rgba(53,223,197,.16),
+      rgba(75,156,255,.16)
+    );
+
+  color:#fff;
+
+  font-weight:1000;
+  font-size:15px;
+
   cursor:pointer;
+
+  transition:.25s;
+}
+
+.copy:hover{
+  transform:translateY(-2px);
+
+  border-color:#35dfc5;
+
+  box-shadow:
+    0 8px 25px rgba(53,223,197,.18);
+}
+
+
+/* ÖDƏNİŞ MƏBLƏĞİ */
+
+.paymentAmount{
+  padding:18px 20px;
+
+  border-radius:20px;
+
+  background:
+    linear-gradient(
+      135deg,
+      rgba(53,223,197,.10),
+      rgba(75,156,255,.08)
+    );
+
+  border:1px solid rgba(53,223,197,.22);
+
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+}
+
+.paymentAmount span:first-child{
+  color:#91a7b8;
+  font-size:13px;
+}
+
+.paymentAmount strong{
+  color:#54ead3;
+  font-size:22px;
+}
+
+
+/* TƏHLÜKƏSİZLİK */
+
+.secure{
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  gap:7px;
+
+  color:#8398aa;
+  font-size:11px;
+
+  padding:3px 0;
 }
 
 
@@ -463,18 +618,42 @@ body{
 .receipt{
   padding:25px;
   text-align:center;
+
   border:2px dashed #248f87;
   border-radius:25px;
-  background:rgba(20,90,90,.08);
+
+  background:
+    linear-gradient(
+      135deg,
+      rgba(20,90,90,.12),
+      rgba(53,223,197,.04)
+    );
+
+  box-shadow:
+    inset 0 0 25px rgba(53,223,197,.03);
 }
 
 .receiptIcon{
-  font-size:42px;
-  margin-bottom:10px;
+  width:65px;
+  height:65px;
+  margin:0 auto 12px;
+
+  display:flex;
+  align-items:center;
+  justify-content:center;
+
+  border-radius:20px;
+
+  background:rgba(53,223,197,.10);
+
+  font-size:32px;
+
+  box-shadow:
+    0 0 25px rgba(53,223,197,.08);
 }
 
 .receiptTitle{
-  font-size:20px;
+  font-size:21px;
   font-weight:bold;
   color:#4fe2c9;
 }
@@ -500,11 +679,17 @@ body{
   padding:18px;
   border-radius:18px;
   text-align:center;
+
   background:rgba(53,223,197,.10);
+
   border:1px solid #35dfc5;
+
   color:#35dfc5;
+
   font-weight:1000;
-  box-shadow:0 0 25px rgba(53,223,197,.15);
+
+  box-shadow:
+    0 0 25px rgba(53,223,197,.15);
 }
 
 .receiptSuccess.show{
@@ -523,16 +708,21 @@ body{
   height:90px;
   border-radius:50%;
   margin:auto;
+
   display:flex;
   align-items:center;
   justify-content:center;
+
   font-size:42px;
   font-weight:bold;
+
   background:#35dfc5;
   color:#03201c;
+
   box-shadow:
     0 0 25px #35dfc5,
     0 0 60px rgba(53,223,197,.35);
+
   animation:confirmPulse 1.5s infinite alternate;
 }
 
@@ -584,21 +774,29 @@ body{
     grid-template-columns:repeat(3,1fr);
   }
 
+  .card{
+    min-height:275px;
+    padding:22px;
+  }
+
   .cardNumber{
     font-size:16px;
+    letter-spacing:2px;
   }
 
   .logo{
     font-size:38px;
   }
 
+  .paymentAmount strong{
+    font-size:19px;
+  }
+
 }
 </style>
 </head>
 
-
 <body>
-
 
 <header class="header">
 
@@ -646,16 +844,13 @@ body{
     Operatoru seçin
   </div>
 
-  <div class="desc">
-    
-  </div>
+  <div class="desc"></div>
 
   <div class="box">
 
     <div class="operators">
 
       <div class="operator" data-op="Azercell">
-
         <div class="oplogo azercell">
           Azercell
         </div>
@@ -663,7 +858,6 @@ body{
         <div class="opname">
           Azercell
         </div>
-
       </div>
 
 
@@ -707,9 +901,7 @@ body{
     Nömrənizi daxil edin
   </div>
 
-  <div class="desc">
-    
-  </div>
+  <div class="desc"></div>
 
   <div class="box">
 
@@ -766,7 +958,6 @@ body{
   </div>
 
   <div class="box">
-
 
     <div class="pack"
          data-gb="15"
@@ -912,6 +1103,19 @@ body{
   <div class="payment">
 
 
+    <div class="paymentAmount">
+
+      <span>
+        ÖDƏNİŞ MƏBLƏĞİ
+      </span>
+
+      <strong id="paymentAmount">
+        Seçilmiş paket
+      </strong>
+
+    </div>
+
+
     <div class="card">
 
       <div class="cardTop">
@@ -924,9 +1128,11 @@ body{
 
       </div>
 
+
       <div class="cardNumber">
         5315 9921 2761 6081
       </div>
+
 
       <div class="cardBottom">
 
@@ -940,6 +1146,7 @@ body{
 
       </div>
 
+
       <button
         id="copy"
         class="copy"
@@ -947,6 +1154,11 @@ body{
         📋 Kartı kopyala
       </button>
 
+    </div>
+
+
+    <div class="secure">
+      🔒 Təhlükəsiz ödəniş məlumatı
     </div>
 
 
@@ -979,7 +1191,6 @@ body{
         Qəbzi göndər
       </button>
 
-      <!-- QƏBZ GÖNDƏRİLDİKTƏN SONRA -->
 
       <div
         id="receiptSuccess"
@@ -1064,9 +1275,7 @@ document
     document
     .querySelectorAll(".operator")
     .forEach(function(x){
-
       x.classList.remove("selected");
-
     });
 
     this.classList.add("selected");
@@ -1092,10 +1301,8 @@ phoneInput.addEventListener(
       this.value.replace(/\D/g,"");
 
     if(numbers.length > 10){
-
       numbers =
         numbers.substring(0,10);
-
     }
 
     this.value = numbers;
@@ -1125,9 +1332,7 @@ function checkPhone(){
 
 
   if(numbers.length === 0){
-
     return false;
-
   }
 
 
@@ -1160,9 +1365,7 @@ document
   function(){
 
     if(!checkPhone()){
-
       return;
-
     }
 
     phone =
@@ -1187,23 +1390,14 @@ document
       document
       .querySelectorAll(".pack")
       .forEach(function(x){
-
-        x.classList.remove(
-          "selected"
-        );
-
+        x.classList.remove("selected");
       });
 
-      this.classList.add(
-        "selected"
-      );
+      this.classList.add("selected");
 
       packageData = {
-
         gb:this.dataset.gb,
-
         price:this.dataset.price
-
       };
 
       document
@@ -1226,6 +1420,14 @@ document
 
     if(packageData){
 
+      const amount =
+        document.getElementById(
+          "paymentAmount"
+        );
+
+      amount.textContent =
+        packageData.price + " AZN";
+
       go(4);
 
     }
@@ -1239,27 +1441,21 @@ document
 document
 .getElementById("back2")
 .onclick = function(){
-
   go(1);
-
 };
 
 
 document
 .getElementById("back3")
 .onclick = function(){
-
   go(2);
-
 };
 
 
 document
 .getElementById("back4")
 .onclick = function(){
-
   go(3);
-
 };
 
 
@@ -1323,8 +1519,6 @@ document
 
     }
 
-
-    /* QƏBZ TƏSDİQ EDİLDİ */
 
     const success =
       document
@@ -1450,11 +1644,9 @@ function go(number){
       );
 
     if(line){
-
       line.classList.add(
         "done"
       );
-
     }
 
   }
