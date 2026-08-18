@@ -188,6 +188,8 @@ body{
   box-shadow:0 0 27px rgba(139,92,246,.15);
 }
 
+/* LOQOLAR TAM MƏRKƏZDƏ */
+
 .logoBox{
   width:100px;
   height:72px;
@@ -197,6 +199,7 @@ body{
   overflow:hidden;
   border-radius:17px;
   background:#fff;
+  margin:0 auto;
 }
 
 .azercell{
@@ -209,6 +212,7 @@ body{
   background:#7425d8;
   border-radius:12px;
   overflow:hidden;
+  margin:auto;
 }
 
 .azercellText{
@@ -218,6 +222,7 @@ body{
   font-size:15px;
   font-weight:800;
   letter-spacing:-.7px;
+  text-align:center;
 }
 
 .azercellRing{
@@ -242,6 +247,7 @@ body{
   justify-content:center;
   background:#fff;
   border-radius:12px;
+  margin:auto;
 }
 
 .bakShape{
@@ -270,6 +276,9 @@ body{
   color:#111;
   font-size:8px;
   font-weight:900;
+  left:0;
+  right:0;
+  text-align:center;
 }
 
 .nar{
@@ -283,11 +292,14 @@ body{
   color:#fff;
   font-size:24px;
   font-weight:900;
+  margin:auto;
+  text-align:center;
 }
 
 .operatorName{
   font-size:11px;
   font-weight:bold;
+  text-align:center;
 }
 
 .label{
@@ -635,7 +647,7 @@ input[type="tel"]:focus{
   letter-spacing:1.5px;
 }
 
-/* YALNIZ BU HISSƏ DƏYİŞDİRİLİB */
+/* KART NÖMRƏSİ DAHA BÖYÜK */
 
 .cardNumber{
   display:flex;
@@ -643,9 +655,16 @@ input[type="tel"]:focus{
   justify-content:space-between;
   gap:8px;
   margin-top:8px;
-  font-size:16px;
+  font-size:19px;
   font-weight:bold;
   letter-spacing:1.5px;
+  line-height:1.2;
+}
+
+.cardNumber span{
+  overflow:hidden;
+  text-overflow:ellipsis;
+  white-space:nowrap;
 }
 
 .copy{
@@ -865,6 +884,10 @@ input[type="tel"]:focus{
     font-size:55px;
   }
 
+  .cardNumber{
+    font-size:19px;
+  }
+
 }
 
 @media(max-width:350px){
@@ -872,6 +895,10 @@ input[type="tel"]:focus{
   .operators,
   .packages{
     grid-template-columns:1fr;
+  }
+
+  .cardNumber{
+    font-size:16px;
   }
 
 }
@@ -932,6 +959,7 @@ paketini seç.
 </div>
 
 <div class="operators">
+
 
 <div class="operator">
 
