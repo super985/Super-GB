@@ -4,14 +4,21 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width,initial-scale=1.0">
 <meta name="theme-color" content="#020712">
+
 <title>SUPER GB</title>
 
 <style>
-*{box-sizing:border-box;margin:0;padding:0}
+*{
+ box-sizing:border-box;
+ margin:0;
+ padding:0;
+}
 
 :root{
  --green:#39ff9a;
+ --green2:#00d985;
  --blue:#19a7ff;
+ --purple:#8b5cff;
  --pink:#ff2d75;
  --bg:#020712;
  --card:#081525;
@@ -23,35 +30,52 @@ body{
  color:#fff;
  min-height:100vh;
  padding:10px;
+
  background:
  radial-gradient(circle at 50% -10%,rgba(57,255,154,.20),transparent 32%),
- radial-gradient(circle at 0 30%,rgba(25,167,255,.12),transparent 30%),
+ radial-gradient(circle at 0 30%,rgba(25,167,255,.13),transparent 30%),
  radial-gradient(circle at 100% 50%,rgba(255,45,117,.10),transparent 30%),
  #020712;
 }
 
-.container{max-width:620px;margin:auto}
-
-/* LOGO */
-
-.header{text-align:center;padding:25px 5px 18px}
-
-.logo{
- font-size:43px;
- font-weight:1000;
- letter-spacing:-2px;
- animation:neon 1.5s infinite alternate;
+.container{
+ max-width:650px;
+ margin:auto;
 }
 
-.logo span{color:var(--green)}
+/* =========================
+   SUPER GB LOGO
+========================= */
 
-@keyframes neon{
+.header{
+ text-align:center;
+ padding:25px 5px 20px;
+}
+
+.logo{
+ font-size:44px;
+ font-weight:1000;
+ letter-spacing:-2px;
+ animation:logoGlow 1.5s infinite alternate;
+}
+
+.logo span{
+ color:var(--green);
+}
+
+@keyframes logoGlow{
  from{
-  text-shadow:0 0 5px #fff,0 0 12px var(--green),0 0 25px var(--green)
+  text-shadow:
+  0 0 5px #fff,
+  0 0 12px var(--green),
+  0 0 25px var(--green);
  }
  to{
-  text-shadow:0 0 8px #fff,0 0 20px var(--green),
-  0 0 40px var(--green),0 0 65px var(--green)
+  text-shadow:
+  0 0 8px #fff,
+  0 0 20px var(--green),
+  0 0 40px var(--green),
+  0 0 65px var(--green);
  }
 }
 
@@ -59,524 +83,1040 @@ body{
  color:#b8c9da;
  font-size:11px;
  margin-top:7px;
- letter-spacing:1px
+ letter-spacing:1px;
 }
 
 .badge{
  display:inline-block;
  margin-top:12px;
- padding:7px 14px;
+ padding:8px 16px;
  border-radius:30px;
+
  color:var(--green);
+
  border:1px solid rgba(57,255,154,.35);
+
  background:rgba(57,255,154,.07);
- box-shadow:0 0 20px rgba(57,255,154,.12);
- font-size:11px
+
+ box-shadow:
+ 0 0 15px rgba(57,255,154,.15);
+
+ font-size:11px;
+ font-weight:bold;
 }
 
-/* SOLDAN SAĞA MƏRHƏLƏ */
+/* =========================
+   PREMIUM STEPS
+========================= */
 
 .steps-wrapper{
  width:100%;
  overflow-x:auto;
- padding:5px 0 15px
+ padding:8px 0 20px;
+
+ scrollbar-width:none;
+}
+
+.steps-wrapper::-webkit-scrollbar{
+ display:none;
 }
 
 .steps{
- min-width:500px;
+ min-width:600px;
+
  display:flex;
  align-items:center;
  justify-content:space-between;
- position:relative
+
+ position:relative;
+
+ padding:0 8px;
 }
 
-.steps:before{
- content:"";
+.steps-line{
  position:absolute;
- top:15px;
- left:30px;
- right:30px;
- height:2px;
- background:linear-gradient(90deg,var(--green),rgba(57,255,154,.08));
- z-index:0
+
+ top:30px;
+ left:50px;
+ right:50px;
+
+ height:3px;
+
+ background:
+ linear-gradient(
+ 90deg,
+ rgba(57,255,154,.7),
+ rgba(57,255,154,.08)
+ );
+
+ border-radius:20px;
+
+ box-shadow:
+ 0 0 10px rgba(57,255,154,.15);
+
+ z-index:0;
 }
 
 .step{
  position:relative;
  z-index:2;
- width:70px;
+
+ width:105px;
+
  text-align:center;
- color:#52677e;
- font-size:9px;
- background:#020712
+
+ color:#51677d;
+
+ transition:.35s;
 }
 
-.circle{
- width:30px;
- height:30px;
- border-radius:50%;
- margin:0 auto 5px;
+.step-icon{
+ width:60px;
+ height:60px;
+
+ margin:auto;
+
+ border-radius:20px;
+
  display:grid;
  place-items:center;
- background:#091524;
- border:1px solid rgba(255,255,255,.08);
- transition:.3s
+
+ font-size:23px;
+
+ background:
+ linear-gradient(
+ 145deg,
+ #0b1a2d,
+ #06101d
+ );
+
+ border:
+ 1px solid rgba(255,255,255,.10);
+
+ box-shadow:
+ 0 10px 25px rgba(0,0,0,.35);
+
+ transition:.35s;
 }
 
-.step.active{color:#fff}
+.step-number{
+ position:absolute;
 
-.step.active .circle{
+ top:-5px;
+ right:18px;
+
+ width:22px;
+ height:22px;
+
+ border-radius:50%;
+
+ display:grid;
+ place-items:center;
+
+ font-size:10px;
+ font-weight:900;
+
+ color:#8092a6;
+
+ background:#0a1625;
+
+ border:1px solid rgba(255,255,255,.12);
+
+ transition:.35s;
+}
+
+.step-name{
+ margin-top:8px;
+
+ font-size:10px;
+
+ font-weight:900;
+
+ letter-spacing:.6px;
+
+ white-space:nowrap;
+}
+
+.step.active{
+ color:#fff;
+}
+
+.step.active .step-icon{
+ color:var(--green);
+
+ border-color:var(--green);
+
+ background:
+ radial-gradient(
+  circle,
+  rgba(57,255,154,.18),
+  rgba(5,19,29,.98)
+ );
+
+ box-shadow:
+ 0 0 10px rgba(57,255,154,.5),
+ 0 0 30px rgba(57,255,154,.25),
+  inset 0 0 18px rgba(57,255,154,.08);
+
+ animation:stepPulse 1.7s infinite alternate;
+}
+
+.step.active .step-number{
+ color:#00150c;
+
  background:var(--green);
- color:#00140b;
- font-weight:bold;
- box-shadow:0 0 10px var(--green),0 0 25px rgba(57,255,154,.5)
+
+ border-color:var(--green);
+
+ box-shadow:
+ 0 0 12px var(--green);
 }
 
-/* CARD */
+@keyframes stepPulse{
+ from{
+  transform:translateY(0);
+ }
+ to{
+  transform:translateY(-3px);
+ }
+}
+
+/* =========================
+   CARDS
+========================= */
 
 .card{
- background:linear-gradient(145deg,rgba(13,31,51,.94),rgba(4,13,25,.97));
- border:1px solid rgba(255,255,255,.08);
- border-radius:25px;
- padding:18px;
- margin-bottom:14px;
- box-shadow:0 20px 60px rgba(0,0,0,.45)
+ background:
+ linear-gradient(
+ 145deg,
+ rgba(13,31,51,.96),
+ rgba(4,13,25,.98)
+ );
+
+ border:
+ 1px solid rgba(255,255,255,.08);
+
+ border-radius:26px;
+
+ padding:20px;
+
+ margin-bottom:15px;
+
+ box-shadow:
+ 0 20px 60px rgba(0,0,0,.45);
+
+ position:relative;
+ overflow:hidden;
 }
 
+.card:before{
+ content:"";
+
+ position:absolute;
+
+ top:-100px;
+ right:-100px;
+
+ width:180px;
+ height:180px;
+
+ background:
+ radial-gradient(
+  circle,
+  rgba(57,255,154,.08),
+  transparent 70%
+ );
+
+ pointer-events:none;
+}
+
+/* =========================
+   SECTION TITLE
+========================= */
+
 .title{
- font-size:19px;
- font-weight:900;
- margin-bottom:6px
+ font-size:20px;
+
+ font-weight:1000;
+
+ letter-spacing:.3px;
+
+ margin-bottom:7px;
+
+ color:#fff;
+
+ text-shadow:
+ 0 0 8px rgba(255,255,255,.15);
 }
 
 .description{
  color:var(--muted);
+
  font-size:12px;
- line-height:1.5;
- margin-bottom:16px
+
+ line-height:1.6;
+
+ margin-bottom:18px;
 }
 
-/* OPERATOR */
+.title:first-letter{
+ color:var(--green);
+}
+
+/* =========================
+   OPERATOR
+========================= */
 
 .operators{
  display:grid;
- grid-template-columns:repeat(3,1fr);
- gap:10px
+
+ grid-template-columns:
+ repeat(3,1fr);
+
+ gap:11px;
 }
 
 .operator{
- height:135px;
- border-radius:20px;
- border:1px solid rgba(255,255,255,.08);
- background:rgba(255,255,255,.035);
+ height:140px;
+
+ border-radius:21px;
+
+ border:
+ 1px solid rgba(255,255,255,.08);
+
+ background:
+ linear-gradient(
+ 145deg,
+ rgba(255,255,255,.05),
+ rgba(255,255,255,.015)
+ );
+
  display:flex;
+
  flex-direction:column;
+
  align-items:center;
+
  justify-content:center;
+
  gap:10px;
+
  cursor:pointer;
- transition:.25s;
- position:relative
+
+ transition:.3s;
+
+ position:relative;
 }
 
-.operator:hover{transform:translateY(-4px)}
+.operator:hover{
+ transform:translateY(-5px);
+
+ border-color:
+ rgba(57,255,154,.45);
+
+ box-shadow:
+ 0 10px 35px rgba(57,255,154,.12);
+}
 
 .operator.selected{
- transform:translateY(-4px);
+ transform:translateY(-5px);
+
  border-color:var(--green);
- box-shadow:0 0 15px rgba(57,255,154,.35),
- 0 0 35px rgba(57,255,154,.15)
+
+ box-shadow:
+ 0 0 15px rgba(57,255,154,.4),
+ 0 0 35px rgba(57,255,154,.15),
+ inset 0 0 20px rgba(57,255,154,.05);
 }
 
 .operator.selected:after{
  content:"✓";
+
  position:absolute;
+
  top:8px;
- right:10px;
- width:22px;
- height:22px;
+ right:9px;
+
+ width:24px;
+ height:24px;
+
  border-radius:50%;
+
  display:grid;
  place-items:center;
- background:var(--green);
- color:#00160d;
- font-weight:bold;
- box-shadow:0 0 15px var(--green)
-}
 
-/*
- OPERATOR LOQOSU
- Şəkil faylı linkindən asılı deyil.
- SVG loqo kartın içindədir.
-*/
+ background:var(--green);
+
+ color:#00150c;
+
+ font-weight:1000;
+
+ box-shadow:
+ 0 0 15px var(--green);
+}
 
 .operator-logo{
  width:110px;
  height:60px;
+
  background:#fff;
+
  border-radius:13px;
+
  display:flex;
+
  align-items:center;
+
  justify-content:center;
+
  padding:8px;
+
  overflow:hidden;
- box-shadow:0 8px 25px rgba(0,0,0,.25)
 }
 
 .operator-logo svg{
  width:100%;
- height:100%
+ height:100%;
 }
 
 .operator-name{
  font-size:13px;
- font-weight:800
+ font-weight:900;
 }
 
-/* NÖMRƏ */
+/* =========================
+   INPUT
+========================= */
 
 label{
  display:block;
+
  font-size:12px;
- color:#cad7e5;
- margin:0 0 7px 2px;
- font-weight:bold
+
+ color:#d4e0ec;
+
+ margin:0 0 8px 2px;
+
+ font-weight:900;
 }
 
 .phone-box{
  display:flex;
- gap:8px
+
+ gap:8px;
 }
 
 .country{
  min-width:90px;
- height:55px;
- border-radius:15px;
+
+ height:56px;
+
+ border-radius:16px;
+
  display:flex;
+
  align-items:center;
+
  justify-content:center;
- background:rgba(255,255,255,.045);
- border:1px solid rgba(255,255,255,.08);
- font-weight:bold
+
+ background:
+ rgba(255,255,255,.045);
+
+ border:
+ 1px solid rgba(255,255,255,.08);
+
+ font-weight:900;
+
+ box-shadow:
+ inset 0 0 15px rgba(255,255,255,.02);
 }
 
 .input{
  width:100%;
- height:55px;
- border-radius:15px;
- border:1px solid rgba(255,255,255,.08);
- background:rgba(255,255,255,.045);
+
+ height:56px;
+
+ border-radius:16px;
+
+ border:
+ 1px solid rgba(255,255,255,.08);
+
+ background:
+ rgba(255,255,255,.045);
+
  color:#fff;
- padding:0 15px;
- font-size:16px;
- outline:none
+
+ padding:0 16px;
+
+ font-size:17px;
+
+ outline:none;
+
+ transition:.25s;
 }
 
 .input:focus{
  border-color:var(--green);
- box-shadow:0 0 0 4px rgba(57,255,154,.06)
+
+ box-shadow:
+ 0 0 0 4px rgba(57,255,154,.06),
+ 0 0 20px rgba(57,255,154,.08);
 }
 
-.phone{flex:1}
+.phone{
+ flex:1;
+}
 
 .hint{
- margin-top:7px;
+ margin-top:8px;
+
  color:var(--muted);
- font-size:11px
+
+ font-size:11px;
 }
 
-.hint.ok{color:var(--green)}
+.hint.ok{
+ color:var(--green);
 
-/* PAKETLƏR */
+ text-shadow:
+ 0 0 8px rgba(57,255,154,.5);
+}
+
+/* =========================
+   PACKAGES
+========================= */
 
 .packages{
  display:grid;
- gap:11px
+
+ gap:11px;
 }
 
 .package{
  position:relative;
+
  overflow:hidden;
+
  display:flex;
+
  justify-content:space-between;
+
  align-items:center;
- padding:17px;
- border-radius:19px;
- border:1px solid rgba(255,255,255,.08);
- background:linear-gradient(135deg,
+
+ padding:18px;
+
+ border-radius:20px;
+
+ border:
+ 1px solid rgba(255,255,255,.08);
+
+ background:
+ linear-gradient(
+ 135deg,
  rgba(255,255,255,.045),
- rgba(57,255,154,.025));
- cursor:pointer;
- transition:.25s
-}
-
-.package:before{
- content:"";
- position:absolute;
- left:-100%;
- top:0;
- width:70%;
- height:100%;
- background:linear-gradient(
- 90deg,transparent,rgba(255,255,255,.12),transparent
+ rgba(57,255,154,.025)
  );
- transform:skewX(-20deg);
- transition:.5s
-}
 
-.package:hover:before,
-.package.selected:before{
- left:140%
+ cursor:pointer;
+
+ transition:.3s;
 }
 
 .package:hover{
- transform:translateY(-3px);
- border-color:rgba(57,255,154,.45);
- box-shadow:0 0 25px rgba(57,255,154,.10)
+ transform:translateY(-4px);
+
+ border-color:
+ rgba(57,255,154,.45);
+
+ box-shadow:
+ 0 0 25px rgba(57,255,154,.13);
 }
 
 .package.selected{
  border-color:var(--green);
- background:rgba(57,255,154,.09);
- box-shadow:0 0 18px rgba(57,255,154,.25),
- inset 0 0 20px rgba(57,255,154,.04)
+
+ background:
+ rgba(57,255,154,.09);
+
+ box-shadow:
+ 0 0 20px rgba(57,255,154,.25),
+ 0 0 45px rgba(57,255,154,.08),
+ inset 0 0 20px rgba(57,255,154,.04);
 }
 
 .gb{
- font-size:20px;
+ font-size:21px;
+
  font-weight:1000;
+
  color:#fff;
- text-shadow:0 0 7px #fff,0 0 18px var(--green);
- animation:gbGlow 1.8s infinite alternate
+
+ text-shadow:
+ 0 0 7px #fff,
+ 0 0 16px var(--green),
+ 0 0 30px var(--green);
+
+ animation:gbGlow 1.7s infinite alternate;
 }
 
 @keyframes gbGlow{
- from{text-shadow:0 0 5px #fff,0 0 10px var(--green)}
- to{text-shadow:0 0 8px #fff,0 0 20px var(--green),0 0 30px var(--green)}
+ from{
+  text-shadow:
+  0 0 5px #fff,
+  0 0 10px var(--green);
+ }
+ to{
+  text-shadow:
+  0 0 8px #fff,
+  0 0 20px var(--green),
+  0 0 35px var(--green);
+ }
 }
 
 .package small{
  display:block;
+
  color:#a9bbcf;
+
  font-size:11px;
- margin-top:6px
+
+ margin-top:7px;
 }
 
 .price{
  color:var(--green);
- font-size:22px;
+
+ font-size:23px;
+
  font-weight:1000;
- text-shadow:0 0 8px var(--green),0 0 20px rgba(57,255,154,.7)
+
+ text-shadow:
+ 0 0 8px var(--green),
+ 0 0 20px rgba(57,255,154,.75);
 }
 
-/* ÖDƏNİŞ */
+/* =========================
+   PAYMENT
+========================= */
 
 .summary{
  display:flex;
+
  justify-content:space-between;
+
  align-items:center;
- padding:15px;
- border-radius:18px;
- background:rgba(57,255,154,.05);
- border:1px solid rgba(57,255,154,.15);
- margin-bottom:15px
+
+ padding:16px;
+
+ border-radius:19px;
+
+ background:
+ rgba(57,255,154,.05);
+
+ border:
+ 1px solid rgba(57,255,154,.15);
+
+ margin-bottom:16px;
 }
 
-.summary small{color:var(--muted)}
+.summary small{
+ color:var(--muted);
+}
 
 .total{
  color:var(--green);
- font-size:25px;
+
+ font-size:27px;
+
  font-weight:1000;
- text-shadow:0 0 15px rgba(57,255,154,.5)
+
+ text-shadow:
+ 0 0 12px var(--green),
+ 0 0 25px rgba(57,255,154,.5);
 }
 
 .payment-card{
  position:relative;
+
  overflow:hidden;
- min-height:190px;
- padding:20px;
- border-radius:22px;
- background:linear-gradient(135deg,#12395c,#071827 50%,#073d2d);
- border:1px solid rgba(57,255,154,.25);
- box-shadow:0 15px 45px rgba(0,0,0,.4),
- 0 0 30px rgba(57,255,154,.06)
+
+ min-height:195px;
+
+ padding:21px;
+
+ border-radius:23px;
+
+ background:
+ linear-gradient(
+ 135deg,
+ #12395c,
+ #071827 50%,
+ #073d2d
+ );
+
+ border:
+ 1px solid rgba(57,255,154,.25);
+
+ box-shadow:
+ 0 15px 45px rgba(0,0,0,.4),
+ 0 0 30px rgba(57,255,154,.08);
 }
 
 .card-label{
  color:#9db1c5;
+
  font-size:10px;
- letter-spacing:1px
+
+ letter-spacing:1.5px;
 }
 
 .card-owner{
  font-weight:bold;
+
  font-size:13px;
- margin-top:5px
+
+ margin-top:5px;
 }
 
 .merchant-number{
- margin-top:30px;
+ margin-top:32px;
+
  font-size:21px;
+
  letter-spacing:2px;
- font-weight:bold
+
+ font-weight:bold;
+
+ text-shadow:
+ 0 0 10px rgba(255,255,255,.3);
 }
 
 .copy{
  width:100%;
- height:43px;
+
+ height:44px;
+
  margin-top:14px;
- border-radius:13px;
- border:1px solid rgba(57,255,154,.3);
- background:rgba(57,255,154,.08);
+
+ border-radius:14px;
+
+ border:
+ 1px solid rgba(57,255,154,.3);
+
+ background:
+ rgba(57,255,154,.08);
+
  color:var(--green);
+
  font-weight:bold;
- cursor:pointer
+
+ cursor:pointer;
+
+ transition:.25s;
 }
 
-/* BUTTON */
+.copy:hover{
+ background:
+ rgba(57,255,154,.16);
+
+ box-shadow:
+ 0 0 20px rgba(57,255,154,.15);
+}
+
+/* =========================
+   BUTTONS
+========================= */
 
 .btn{
  width:100%;
- height:56px;
+
+ height:57px;
+
  border:0;
- border-radius:17px;
- background:linear-gradient(135deg,#39ff9a,#00d985);
+
+ border-radius:18px;
+
+ background:
+ linear-gradient(
+ 135deg,
+ #39ff9a,
+ #00d985
+ );
+
  color:#00160d;
+
  font-size:16px;
+
  font-weight:1000;
+
  cursor:pointer;
- box-shadow:0 8px 30px rgba(57,255,154,.22)
+
+ box-shadow:
+ 0 8px 30px rgba(57,255,154,.25);
+
+ transition:.25s;
 }
 
-.btn:disabled{opacity:.4}
+.btn:hover{
+ transform:translateY(-2px);
+
+ box-shadow:
+ 0 12px 35px rgba(57,255,154,.4);
+}
+
+.btn:disabled{
+ opacity:.4;
+}
 
 .back-btn{
  width:100%;
- height:50px;
+
+ height:49px;
+
  margin-top:10px;
+
  border-radius:16px;
- border:1px solid rgba(255,255,255,.12);
- background:rgba(255,255,255,.05);
+
+ border:
+ 1px solid rgba(255,255,255,.12);
+
+ background:
+ rgba(255,255,255,.05);
+
  color:#fff;
+
  font-size:14px;
- font-weight:800;
- cursor:pointer
+
+ font-weight:900;
+
+ cursor:pointer;
+
+ transition:.25s;
 }
 
-/* QƏBİZ */
+.back-btn:hover{
+ border-color:var(--green);
+
+ color:var(--green);
+
+ box-shadow:
+ 0 0 15px rgba(57,255,154,.1);
+}
+
+/* =========================
+   RECEIPT
+========================= */
 
 .receipt-box{
- border:1.5px dashed rgba(57,255,154,.4);
- border-radius:20px;
- padding:26px 15px;
+ border:
+ 1.5px dashed rgba(57,255,154,.45);
+
+ border-radius:21px;
+
+ padding:28px 15px;
+
  text-align:center;
+
  cursor:pointer;
- background:rgba(57,255,154,.035)
+
+ background:
+ rgba(57,255,154,.035);
+
+ transition:.25s;
 }
 
-.receipt-box input{display:none}
+.receipt-box:hover{
+ background:
+ rgba(57,255,154,.07);
+
+ box-shadow:
+ 0 0 25px rgba(57,255,154,.1);
+}
+
+.receipt-box input{
+ display:none;
+}
 
 .upload-icon{
- font-size:35px;
- margin-bottom:8px
+ font-size:38px;
+
+ margin-bottom:9px;
+
+ text-shadow:
+ 0 0 15px var(--green);
 }
 
 .file-name{
  color:var(--green);
+
  font-size:12px;
- margin-top:9px;
- word-break:break-word
+
+ margin-top:10px;
+
+ word-break:break-word;
 }
 
 .preview{
  display:none;
+
  width:100%;
+
  max-height:280px;
+
  object-fit:contain;
+
  border-radius:15px;
- margin-top:12px
+
+ margin-top:12px;
 }
 
 /* SUCCESS */
 
-.success{text-align:center}
+.success{
+ text-align:center;
+}
 
 .success-icon{
- font-size:60px;
- text-shadow:0 0 15px var(--green),0 0 35px var(--green)
+ font-size:62px;
+
+ text-shadow:
+ 0 0 15px var(--green),
+ 0 0 35px var(--green);
 }
 
 .order{
- margin:17px 0;
- padding:14px;
- border-radius:17px;
- background:rgba(255,255,255,.035);
- border:1px solid rgba(255,255,255,.08);
- text-align:left
+ margin:18px 0;
+
+ padding:15px;
+
+ border-radius:18px;
+
+ background:
+ rgba(255,255,255,.035);
+
+ border:
+ 1px solid rgba(255,255,255,.08);
+
+ text-align:left;
 }
 
 .order-row{
  display:flex;
+
  justify-content:space-between;
- padding:9px 0;
- border-bottom:1px solid rgba(255,255,255,.06);
- font-size:13px
+
+ padding:10px 0;
+
+ border-bottom:
+ 1px solid rgba(255,255,255,.06);
+
+ font-size:13px;
 }
 
-.order-row:last-child{border:0}
-.order-row span{color:var(--muted)}
+.order-row:last-child{
+ border:0;
+}
 
-.hidden{display:none!important}
+.order-row span{
+ color:var(--muted);
+}
+
+.hidden{
+ display:none!important;
+}
 
 /* TOAST */
 
 .toast{
  position:fixed;
+
  left:50%;
+
  bottom:20px;
- transform:translate(-50%,30px);
+
+ transform:
+ translate(-50%,30px);
+
  opacity:0;
+
  background:#12263c;
- border:1px solid rgba(255,255,255,.1);
+
+ border:
+ 1px solid rgba(255,255,255,.1);
+
  border-radius:15px;
+
  padding:12px 18px;
+
  font-size:13px;
+
  z-index:9999;
- transition:.25s
+
+ transition:.25s;
 }
 
 .toast.show{
  opacity:1;
- transform:translate(-50%,0)
+
+ transform:
+ translate(-50%,0);
 }
 
 .note{
  text-align:center;
+
  color:#637991;
+
  font-size:10px;
+
  line-height:1.5;
- margin-top:12px
+
+ margin-top:12px;
 }
 
 @media(max-width:420px){
 
- .logo{font-size:35px}
-
- .card{padding:15px}
-
- .operator{height:125px}
-
- .operator-logo{
-  width:95px;
-  height:55px
+ .logo{
+  font-size:35px;
  }
 
- .merchant-number{font-size:17px}
+ .card{
+  padding:15px;
+ }
 
- .gb{font-size:18px}
+ .steps{
+  min-width:570px;
+ }
 
- .price{font-size:19px}
+ .step{
+  width:95px;
+ }
+
+ .step-icon{
+  width:55px;
+  height:55px;
+ }
+
+ .operator{
+  height:125px;
+ }
+
+ .operator-logo{
+  width:92px;
+  height:52px;
+ }
+
+ .merchant-number{
+  font-size:17px;
+ }
+
+ .gb{
+  font-size:18px;
+ }
+
+ .price{
+  font-size:20px;
+ }
 }
 </style>
 </head>
@@ -602,49 +1142,109 @@ BÜTÜN OPERATORLAR ÜÇÜN İNTERNET PAKETLƏRİ
 </header>
 
 
-<!-- MƏRHƏLƏLƏR -->
+<!-- =========================
+     PREMIUM MƏRHƏLƏLƏR
+========================= -->
 
 <div class="steps-wrapper">
+
 <div class="steps">
 
+<div class="steps-line"></div>
+
 <div class="step active" id="step1">
-<div class="circle">1</div>
-Operator
+
+<div class="step-number">1</div>
+
+<div class="step-icon">
+📡
 </div>
+
+<div class="step-name">
+OPERATOR
+</div>
+
+</div>
+
 
 <div class="step" id="step2">
-<div class="circle">2</div>
-Nömrə
+
+<div class="step-number">2</div>
+
+<div class="step-icon">
+📱
 </div>
+
+<div class="step-name">
+NÖMRƏ
+</div>
+
+</div>
+
 
 <div class="step" id="step3">
-<div class="circle">3</div>
-Paket
+
+<div class="step-number">3</div>
+
+<div class="step-icon">
+📦
 </div>
+
+<div class="step-name">
+PAKET
+</div>
+
+</div>
+
 
 <div class="step" id="step4">
-<div class="circle">4</div>
-Ödəniş
+
+<div class="step-number">4</div>
+
+<div class="step-icon">
+💳
 </div>
+
+<div class="step-name">
+ÖDƏNİŞ
+</div>
+
+</div>
+
 
 <div class="step" id="step5">
-<div class="circle">5</div>
-Qəbiz
+
+<div class="step-number">5</div>
+
+<div class="step-icon">
+🧾
+</div>
+
+<div class="step-name">
+QƏBİZ
 </div>
 
 </div>
+
+</div>
+
 </div>
 
 
-<!-- OPERATOR -->
+<!-- =========================
+     OPERATOR
+========================= -->
 
 <section class="card">
 
-<div class="title">📡 Operator seçin</div>
+<div class="title">
+📡 OPERATOR SEÇİN
+</div>
 
 <div class="description">
-Nömrənizə uyğun operatoru seçin.
+Nömrənizə uyğun operatoru seçin və növbəti mərhələyə keçin.
 </div>
+
 
 <div class="operators">
 
@@ -659,9 +1259,11 @@ Nömrənizə uyğun operatoru seçin.
 xmlns="http://www.w3.org/2000/svg">
 
 <rect width="300" height="100"
-rx="12" fill="#fff"/>
+rx="12"
+fill="#fff"/>
 
-<text x="150" y="66"
+<text x="150"
+y="66"
 text-anchor="middle"
 font-family="Arial"
 font-size="48"
@@ -690,13 +1292,18 @@ Azercell
 <svg viewBox="0 0 300 100"
 xmlns="http://www.w3.org/2000/svg">
 
-<rect width="300" height="100"
-rx="12" fill="#fff"/>
+<rect width="300"
+height="100"
+rx="12"
+fill="#fff"/>
 
-<circle cx="65" cy="50"
-r="27" fill="#e21b2d"/>
+<circle cx="65"
+cy="50"
+r="27"
+fill="#e21b2d"/>
 
-<text x="175" y="64"
+<text x="175"
+y="64"
 text-anchor="middle"
 font-family="Arial"
 font-size="43"
@@ -725,13 +1332,18 @@ Bakcell
 <svg viewBox="0 0 300 100"
 xmlns="http://www.w3.org/2000/svg">
 
-<rect width="300" height="100"
-rx="12" fill="#fff"/>
+<rect width="300"
+height="100"
+rx="12"
+fill="#fff"/>
 
-<circle cx="65" cy="50"
-r="28" fill="#e5002b"/>
+<circle cx="65"
+cy="50"
+r="28"
+fill="#e5002b"/>
 
-<text x="175" y="66"
+<text x="175"
+y="66"
 text-anchor="middle"
 font-family="Arial"
 font-size="48"
@@ -751,22 +1363,27 @@ Nar
 </div>
 
 </div>
+
 </section>
 
 
-<!-- NÖMRƏ -->
+<!-- =========================
+     NÖMRƏ
+========================= -->
 
 <section class="card">
 
 <div class="title">
-📱 Mobil nömrə
+📱 NÖMRƏNİZİ DAXİL EDİN
 </div>
 
 <div class="description">
 Azərbaycan mobil nömrənizi daxil edin.
 </div>
 
-<label>Nömrəniz</label>
+<label>
+Mobil nömrə
+</label>
 
 <div class="phone-box">
 
@@ -784,64 +1401,87 @@ autocomplete="tel">
 
 </div>
 
-<div id="phoneHint" class="hint">
+<div id="phoneHint"
+class="hint">
 Məsələn: 50 123 45 67
 </div>
 
-<button id="backPhone"
+<button
+id="backPhone"
 class="back-btn">
-← Geri
+
+← Əvvəlki mərhələyə qayıt
+
 </button>
 
 </section>
 
 
-<!-- PAKET -->
+<!-- =========================
+     PAKET
+========================= -->
 
 <section class="card">
 
 <div class="title">
-📦 İnternet paketləri
+📦 İNTERNET PAKETİNİ SEÇİN
 </div>
 
 <div class="description">
-Sizə uyğun paketi seçin. Bütün paketlər 30 gün keçərlidir.
+İstədiyiniz paketi seçin. Bütün paketlər 30 gün keçərlidir.
 </div>
 
-<div id="packages" class="packages"></div>
+<div id="packages"
+class="packages">
+</div>
 
-<button id="backPackage"
+<button
+id="backPackage"
 class="back-btn">
-← Geri
+
+← Əvvəlki mərhələyə qayıt
+
 </button>
 
 </section>
 
 
-<!-- ÖDƏNİŞ -->
+<!-- =========================
+     ÖDƏNİŞ
+========================= -->
 
 <section class="card">
 
 <div class="title">
-💳 Ödəniş
+💳 ÖDƏNİŞİ TAMAMLAYIN
 </div>
 
 <div class="description">
-Seçdiyiniz məbləği aşağıdakı karta ödəyin.
+Seçdiyiniz paket üzrə məbləği aşağıdakı karta ödəyin.
 </div>
 
 <div class="summary">
 
 <div>
-<small>Seçilmiş paket</small>
+
+<small>
+Seçilmiş paket
+</small>
+
 <br>
+
 <b id="selectedPackage">
 Paket seçilməyib
 </b>
+
 </div>
 
-<div id="total" class="total">
+<div
+id="total"
+class="total">
+
 0 AZN
+
 </div>
 
 </div>
@@ -854,17 +1494,23 @@ Paket seçilməyib
 </div>
 
 <div class="card-owner">
-SUPER GB ÖDƏNİŞ
+🏦 BANK OF BAKU
 </div>
 
-<div id="merchantNumber"
+<div
+id="merchantNumber"
 class="merchant-number">
-0000 0000 0000 0000
+
+5315 9921 2761 6081
+
 </div>
 
-<button id="copyCard"
+<button
+id="copyCard"
 class="copy">
+
 📋 Kart nömrəsini kopyala
+
 </button>
 
 </div>
@@ -873,66 +1519,90 @@ class="copy">
 <div style="
 font-size:12px;
 color:#a9bbcf;
-line-height:1.7;
-margin:15px 0;
+line-height:1.8;
+margin:16px 0;
 ">
 
 <strong style="color:white">
-Ödəniş qaydası:
+⚡ ÖDƏNİŞ ADDIMLARI
 </strong>
 
 <br>
+
 1️⃣ Paketi seçin
 <br>
+
 2️⃣ Göstərilən karta ödəniş edin
 <br>
+
 3️⃣ “Ödənişi etdim” düyməsinə basın
 <br>
+
 4️⃣ Qəbizi yükləyin
 
 </div>
 
 
-<button id="paymentDone" class="btn">
-Ödənişi etdim → Qəbiz yüklə
+<button
+id="paymentDone"
+class="btn">
+
+💳 ÖDƏNİŞİ ETDİM → QƏBİZ YÜKLƏ
+
 </button>
 
-<button id="backPayment" class="back-btn">
-← Geri
+
+<button
+id="backPayment"
+class="back-btn">
+
+← Əvvəlki mərhələyə qayıt
+
 </button>
 
 <div class="note">
-🔒 Kart məlumatları saytda saxlanılmır.
+🔒 Kart məlumatları bu səhifədə saxlanılmır.
 </div>
 
 </section>
 
 
-<!-- QƏBİZ -->
+<!-- =========================
+     QƏBİZ
+========================= -->
 
-<section id="receiptSection"
+<section
+id="receiptSection"
 class="card hidden">
 
 <div class="title">
-🧾 Qəbiz göndər
+🧾 QƏBİZİ YÜKLƏYİN
 </div>
 
 <div class="description">
 Ödəniş qəbzinizin şəklini və ya PDF faylını seçin.
 </div>
 
-<label for="receipt"
+
+<label
+for="receipt"
 class="receipt-box">
 
-<div class="upload-icon">📤</div>
+<div class="upload-icon">
+📤
+</div>
 
-<b>Qəbizi seç</b>
+<b>
+QƏBİZİ SEÇ
+</b>
 
 <div style="
 font-size:11px;
 color:var(--muted);
-margin-top:6px">
+margin-top:7px">
+
 JPG • PNG • PDF
+
 </div>
 
 <input
@@ -940,38 +1610,47 @@ id="receipt"
 type="file"
 accept="image/*,.pdf">
 
-<div id="fileName"
+<div
+id="fileName"
 class="file-name">
 </div>
 
-<img id="preview"
+<img
+id="preview"
 class="preview"
 alt="Qəbiz">
 
 </label>
 
 
-<button id="sendReceipt"
+<button
+id="sendReceipt"
 class="btn"
 disabled
 style="margin-top:12px">
 
-🧾 Qəbizi göndər
+🧾 QƏBİZİ GÖNDƏR
 
 </button>
 
 
-<button id="backReceipt"
+<button
+id="backReceipt"
 class="back-btn">
-← Geri
+
+← Ödənişə qayıt
+
 </button>
 
 </section>
 
 
-<!-- UĞURLU -->
+<!-- =========================
+     SUCCESS
+========================= -->
 
-<section id="success"
+<section
+id="success"
 class="card hidden">
 
 <div class="success">
@@ -981,12 +1660,13 @@ class="card hidden">
 </div>
 
 <div class="title">
-Qəbiz qəbul edildi!
+SİFARİŞ QƏBUL EDİLDİ!
 </div>
 
 <div class="description">
-Sifariş məlumatlarınız hazırdır.
+Məlumatlarınız hazırdır.
 </div>
+
 
 <div class="order">
 
@@ -1017,12 +1697,17 @@ Sifariş məlumatlarınız hazırdır.
 
 </div>
 
-<button class="btn secondary"
+
+<button
+class="btn"
 onclick="location.reload()">
-Yeni sifariş
+
+✨ YENİ SİFARİŞ
+
 </button>
 
 </div>
+
 </section>
 
 
@@ -1033,7 +1718,10 @@ Yeni sifariş
 </div>
 
 
-<div id="toast" class="toast"></div>
+<div
+id="toast"
+class="toast">
+</div>
 
 
 <script>
@@ -1043,7 +1731,7 @@ Yeni sifariş
 ================================= */
 
 const MY_CARD_NUMBER =
-"5315 9921 2761 6081";
+"0000 0000 0000 0000";
 
 
 let selectedOperator="";
@@ -1175,7 +1863,8 @@ function loadPackages(){
 $("packages").innerHTML =
 packages.map((p,index)=>`
 
-<div class="package"
+<div
+class="package"
 data-index="${index}">
 
 <div>
@@ -1233,6 +1922,7 @@ selectedPackage.days+
 $("total").textContent =
 selectedPackage.price+
 " AZN";
+
 
 updateSteps(4);
 
@@ -1311,7 +2001,9 @@ await navigator.clipboard.writeText(
 MY_CARD_NUMBER.replace(/\s/g,"")
 );
 
-toast("✓ Kart nömrəsi kopyalandı");
+toast(
+"✓ Kart nömrəsi kopyalandı"
+);
 
 }catch(e){
 
@@ -1330,22 +2022,36 @@ $("paymentDone")
 .addEventListener("click",()=>{
 
 const phone =
-$("phone").value.replace(/\D/g,"");
+$("phone")
+.value
+.replace(/\D/g,"");
 
 
 if(!selectedOperator){
- toast("Operator seçin.");
- return;
+
+toast(
+"📡 Əvvəlcə operator seçin."
+);
+
+return;
 }
 
 if(phone.length!==9){
- toast("Nömrəni düzgün daxil edin.");
- return;
+
+toast(
+"📱 Nömrəni düzgün daxil edin."
+);
+
+return;
 }
 
 if(!selectedPackage){
- toast("Paket seçin.");
- return;
+
+toast(
+"📦 Paket seçin."
+);
+
+return;
 }
 
 
@@ -1363,7 +2069,7 @@ updateSteps(5);
 });
 
 
-/* GERİ - NÖMRƏ */
+/* GERİ NÖMRƏ */
 
 $("backPhone")
 .addEventListener("click",()=>{
@@ -1378,7 +2084,7 @@ updateSteps(1);
 });
 
 
-/* GERİ - PAKET */
+/* GERİ PAKET */
 
 $("backPackage")
 .addEventListener("click",()=>{
@@ -1395,7 +2101,7 @@ updateSteps(3);
 });
 
 
-/* GERİ - ÖDƏNİŞ */
+/* GERİ ÖDƏNİŞ */
 
 $("backPayment")
 .addEventListener("click",()=>{
@@ -1419,7 +2125,8 @@ $("receipt")
 
 const file=this.files[0];
 
-if(!file)return;
+if(!file)
+return;
 
 
 if(file.size>10*1024*1024){
@@ -1429,8 +2136,8 @@ toast(
 );
 
 this.value="";
-return;
 
+return;
 }
 
 
@@ -1467,7 +2174,7 @@ $("preview").style.display =
 });
 
 
-/* QƏBİZDƏN GERİ */
+/* QƏBİZ GERİ */
 
 $("backReceipt")
 .addEventListener("click",()=>{
@@ -1486,7 +2193,7 @@ updateSteps(4);
 });
 
 
-/* QƏBİZİ GÖNDƏR */
+/* QƏBİZ GÖNDƏR */
 
 $("sendReceipt")
 .addEventListener("click",()=>{
@@ -1504,7 +2211,8 @@ Math.floor(
 );
 
 
-$("orderId").textContent=order;
+$("orderId").textContent =
+order;
 
 $("orderOperator").textContent =
 selectedOperator;
