@@ -2,8 +2,9 @@
 <html lang="az">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="theme-color" content="#07111f">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<meta name="theme-color" content="#020712">
+
 <title>SUPER GB</title>
 
 <style>
@@ -14,107 +15,139 @@
 }
 
 :root{
-  --bg:#06101d;
-  --card:#0d1b2d;
-  --card2:#11243a;
-  --text:#fff;
-  --muted:#94a8bd;
-  --green:#35e7a4;
-  --blue:#42a5ff;
-  --red:#ff6078;
-  --border:rgba(255,255,255,.09);
+  --green:#39ff9a;
+  --blue:#159cff;
+  --red:#ff174f;
+  --orange:#ff6500;
+  --bg:#020712;
+  --card:#081525;
+  --muted:#91a7bd;
 }
 
 body{
   font-family:Arial,Helvetica,sans-serif;
-  color:var(--text);
+  color:#fff;
   min-height:100vh;
+  padding:10px;
   background:
-    radial-gradient(circle at 10% 0%,rgba(53,231,164,.15),transparent 30%),
-    radial-gradient(circle at 100% 10%,rgba(66,165,255,.15),transparent 30%),
-    var(--bg);
-  padding:15px;
+  radial-gradient(circle at 50% -10%,rgba(57,255,154,.20),transparent 32%),
+  radial-gradient(circle at 0 30%,rgba(21,156,255,.12),transparent 30%),
+  radial-gradient(circle at 100% 50%,rgba(255,23,79,.10),transparent 30%),
+  var(--bg);
 }
 
 .container{
-  width:100%;
   max-width:620px;
   margin:auto;
 }
 
+/* SUPER GB LOGO */
+
 .header{
   text-align:center;
-  padding:20px 5px;
+  padding:25px 5px 20px;
 }
 
 .logo{
-  font-size:34px;
-  font-weight:900;
-  letter-spacing:-1px;
+  font-size:42px;
+  font-weight:1000;
+  letter-spacing:-2px;
+  color:#fff;
+  animation:neon 1.8s infinite alternate;
 }
 
 .logo span{
   color:var(--green);
 }
 
+@keyframes neon{
+  from{
+    text-shadow:
+    0 0 5px #fff,
+    0 0 12px var(--green),
+    0 0 25px var(--green);
+  }
+  to{
+    text-shadow:
+    0 0 8px #fff,
+    0 0 20px var(--green),
+    0 0 40px var(--green),
+    0 0 65px var(--green);
+  }
+}
+
+.subtitle{
+  color:#b8c9da;
+  font-size:11px;
+  margin-top:7px;
+  letter-spacing:1px;
+}
+
 .badge{
   display:inline-block;
-  margin-top:10px;
-  padding:7px 13px;
+  margin-top:12px;
+  padding:7px 14px;
   border-radius:30px;
-  background:rgba(53,231,164,.08);
-  border:1px solid rgba(53,231,164,.25);
-  color:#baffdf;
-  font-size:12px;
+  color:var(--green);
+  border:1px solid rgba(57,255,154,.35);
+  background:rgba(57,255,154,.07);
+  box-shadow:0 0 20px rgba(57,255,154,.12);
+  font-size:11px;
 }
+
+/* STEPS */
 
 .steps{
   display:flex;
   gap:5px;
-  margin-bottom:18px;
+  margin-bottom:17px;
 }
 
 .step{
   flex:1;
   text-align:center;
-  color:#62758b;
-  font-size:10px;
+  font-size:9px;
+  color:#52677e;
 }
 
-.step .circle{
-  width:31px;
-  height:31px;
+.circle{
+  width:30px;
+  height:30px;
   border-radius:50%;
+  margin:auto auto 5px;
   display:grid;
   place-items:center;
-  margin:auto auto 5px;
-  background:#101e30;
-  border:1px solid var(--border);
-  font-weight:bold;
+  background:#091524;
+  border:1px solid rgba(255,255,255,.08);
 }
 
 .step.active{
-  color:#dffff0;
+  color:#fff;
 }
 
 .step.active .circle{
-  background:linear-gradient(135deg,var(--green),#22bddd);
-  color:#00151a;
-  border:0;
+  background:var(--green);
+  color:#00140b;
+  font-weight:bold;
+  box-shadow:
+  0 0 10px var(--green),
+  0 0 25px rgba(57,255,154,.4);
 }
 
+/* CARD */
+
 .card{
-  background:linear-gradient(
-    180deg,
-    rgba(18,36,59,.88),
-    rgba(8,18,31,.9)
+  background:
+  linear-gradient(
+    145deg,
+    rgba(13,31,51,.94),
+    rgba(4,13,25,.97)
   );
-  border:1px solid var(--border);
-  border-radius:24px;
+  border:1px solid rgba(255,255,255,.08);
+  border-radius:25px;
   padding:18px;
   margin-bottom:14px;
-  box-shadow:0 20px 55px rgba(0,0,0,.3);
-  backdrop-filter:blur(15px);
+  box-shadow:0 20px 60px rgba(0,0,0,.45);
 }
 
 .title{
@@ -125,18 +158,12 @@ body{
 
 .description{
   color:var(--muted);
-  font-size:13px;
+  font-size:12px;
   line-height:1.5;
   margin-bottom:16px;
 }
 
-label{
-  display:block;
-  font-size:12px;
-  color:#cbd7e5;
-  margin:0 0 7px 2px;
-  font-weight:bold;
-}
+/* OPERATOR */
 
 .operators{
   display:grid;
@@ -145,38 +172,52 @@ label{
 }
 
 .operator{
-  border:1px solid var(--border);
+  height:115px;
+  border-radius:20px;
+  border:1px solid rgba(255,255,255,.08);
   background:rgba(255,255,255,.035);
-  border-radius:17px;
-  padding:16px 5px;
-  text-align:center;
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  justify-content:center;
+  gap:9px;
   cursor:pointer;
-  transition:.2s;
+  transition:.25s;
 }
 
 .operator:hover{
-  transform:translateY(-2px);
+  transform:translateY(-3px);
 }
 
 .operator.selected{
+  transform:translateY(-3px);
   border-color:var(--green);
-  background:rgba(53,231,164,.1);
-  box-shadow:0 0 20px rgba(53,231,164,.08);
+  box-shadow:
+  0 0 15px rgba(57,255,154,.35),
+  0 0 35px rgba(57,255,154,.10);
 }
 
-.operator-icon{
-  font-size:25px;
-  margin-bottom:6px;
+/* OPERATOR LOGO */
+
+.operator-logo{
+  width:58px;
+  height:58px;
+  object-fit:contain;
 }
 
-.operator strong{
+.operator-name{
+  font-size:13px;
+  font-weight:800;
+}
+
+/* INPUT */
+
+label{
   display:block;
-  font-size:14px;
-}
-
-.operator small{
-  color:var(--muted);
-  font-size:10px;
+  font-size:12px;
+  color:#cad7e5;
+  margin:0 0 7px 2px;
+  font-weight:bold;
 }
 
 .phone-box{
@@ -185,14 +226,14 @@ label{
 }
 
 .country{
-  min-width:91px;
+  min-width:90px;
   height:55px;
-  border:1px solid var(--border);
   border-radius:15px;
-  background:rgba(255,255,255,.045);
   display:flex;
-  justify-content:center;
   align-items:center;
+  justify-content:center;
+  background:rgba(255,255,255,.045);
+  border:1px solid rgba(255,255,255,.08);
   font-weight:bold;
 }
 
@@ -200,17 +241,17 @@ label{
   width:100%;
   height:55px;
   border-radius:15px;
-  border:1px solid var(--border);
-  outline:none;
+  border:1px solid rgba(255,255,255,.08);
   background:rgba(255,255,255,.045);
-  color:white;
+  color:#fff;
   padding:0 15px;
   font-size:16px;
+  outline:none;
 }
 
 .input:focus{
   border-color:var(--green);
-  box-shadow:0 0 0 4px rgba(53,231,164,.07);
+  box-shadow:0 0 0 4px rgba(57,255,154,.06);
 }
 
 .phone{
@@ -218,18 +259,16 @@ label{
 }
 
 .hint{
-  color:var(--muted);
-  font-size:12px;
   margin-top:7px;
+  color:var(--muted);
+  font-size:11px;
 }
 
 .hint.ok{
   color:var(--green);
 }
 
-.hint.error{
-  color:var(--red);
-}
+/* PACKAGES */
 
 .packages{
   display:grid;
@@ -241,20 +280,17 @@ label{
   justify-content:space-between;
   align-items:center;
   padding:16px;
-  border-radius:17px;
-  border:1px solid var(--border);
+  border-radius:18px;
+  border:1px solid rgba(255,255,255,.08);
   background:rgba(255,255,255,.035);
   cursor:pointer;
   transition:.2s;
 }
 
-.package:hover{
-  transform:translateY(-1px);
-}
-
 .package.selected{
   border-color:var(--green);
-  background:rgba(53,231,164,.08);
+  background:rgba(57,255,154,.08);
+  box-shadow:0 0 20px rgba(57,255,154,.08);
 }
 
 .package b{
@@ -264,24 +300,27 @@ label{
 .package small{
   display:block;
   color:var(--muted);
-  margin-top:5px;
   font-size:11px;
+  margin-top:5px;
 }
 
 .price{
   color:var(--green);
   font-size:20px;
   font-weight:900;
+  text-shadow:0 0 12px rgba(57,255,154,.5);
 }
+
+/* SUMMARY */
 
 .summary{
   display:flex;
   justify-content:space-between;
   align-items:center;
   padding:15px;
-  border-radius:17px;
-  background:rgba(66,165,255,.08);
-  border:1px solid rgba(66,165,255,.16);
+  border-radius:18px;
+  background:rgba(57,255,154,.05);
+  border:1px solid rgba(57,255,154,.15);
   margin-bottom:15px;
 }
 
@@ -290,90 +329,110 @@ label{
 }
 
 .total{
-  font-size:25px;
-  font-weight:900;
   color:var(--green);
+  font-size:25px;
+  font-weight:1000;
+  text-shadow:0 0 15px rgba(57,255,154,.5);
 }
 
-.card-preview{
-  min-height:155px;
-  border-radius:21px;
-  padding:19px;
-  margin-bottom:16px;
+/* PAYMENT CARD */
+
+.payment-card{
+  position:relative;
+  overflow:hidden;
+  min-height:190px;
+  padding:20px;
+  border-radius:22px;
   background:
-    linear-gradient(
-      135deg,
-      #173454,
-      #09182a 58%,
-      #075442
-    );
-  border:1px solid rgba(255,255,255,.13);
+  linear-gradient(
+    135deg,
+    #12395c,
+    #071827 50%,
+    #073d2d
+  );
+  border:1px solid rgba(57,255,154,.25);
+  box-shadow:
+  0 15px 45px rgba(0,0,0,.4),
+  0 0 30px rgba(57,255,154,.06);
 }
 
-.chip{
-  width:40px;
-  height:30px;
-  border-radius:7px;
-  background:linear-gradient(135deg,#d4bd77,#fff0aa);
-  margin-bottom:20px;
+.payment-card:after{
+  content:"";
+  position:absolute;
+  width:190px;
+  height:190px;
+  border-radius:50%;
+  right:-90px;
+  top:-90px;
+  background:rgba(57,255,154,.08);
 }
 
-.card-number-preview{
-  font-size:19px;
-  letter-spacing:2px;
-  margin-bottom:15px;
-}
-
-.card-bottom{
-  display:flex;
-  justify-content:space-between;
-  color:#b8c7d8;
+.card-label{
+  color:#9db1c5;
   font-size:10px;
+  letter-spacing:1px;
 }
 
-.grid{
-  display:grid;
-  grid-template-columns:1fr 1fr;
-  gap:10px;
+.card-owner{
+  font-weight:bold;
+  font-size:13px;
+  margin-top:5px;
 }
 
-.secure{
-  color:#9db1c8;
-  font-size:11px;
-  margin-top:12px;
+.merchant-number{
+  margin-top:30px;
+  font-size:21px;
+  letter-spacing:2px;
+  font-weight:bold;
 }
+
+.copy{
+  width:100%;
+  height:43px;
+  margin-top:14px;
+  border-radius:13px;
+  border:1px solid rgba(57,255,154,.3);
+  background:rgba(57,255,154,.08);
+  color:var(--green);
+  font-weight:bold;
+  cursor:pointer;
+}
+
+/* BUTTON */
 
 .btn{
   width:100%;
   height:56px;
   border:0;
   border-radius:17px;
-  background:linear-gradient(135deg,var(--green),#66f5c1);
-  color:#03151a;
+  background:linear-gradient(135deg,#39ff9a,#00d985);
+  color:#00160d;
   font-size:16px;
-  font-weight:900;
+  font-weight:1000;
   cursor:pointer;
-  margin-top:15px;
+  box-shadow:0 8px 30px rgba(57,255,154,.22);
 }
 
 .btn:disabled{
-  opacity:.45;
-  cursor:not-allowed;
+  opacity:.4;
 }
 
-.btn.secondary{
+.secondary{
   background:rgba(255,255,255,.06);
-  border:1px solid var(--border);
-  color:white;
+  color:#fff;
+  border:1px solid rgba(255,255,255,.1);
+  box-shadow:none;
 }
+
+/* RECEIPT */
 
 .receipt-box{
-  border:1.5px dashed rgba(53,231,164,.45);
-  border-radius:19px;
-  padding:24px 15px;
+  border:1.5px dashed rgba(57,255,154,.4);
+  border-radius:20px;
+  padding:26px 15px;
   text-align:center;
-  background:rgba(53,231,164,.04);
   cursor:pointer;
+  background:rgba(57,255,154,.035);
 }
 
 .receipt-box input{
@@ -381,55 +440,58 @@ label{
 }
 
 .upload-icon{
-  font-size:32px;
+  font-size:35px;
   margin-bottom:8px;
 }
 
 .file-name{
   color:var(--green);
   font-size:12px;
-  margin-top:8px;
+  margin-top:9px;
   word-break:break-word;
 }
 
 .preview{
   display:none;
   width:100%;
-  max-height:260px;
+  max-height:280px;
   object-fit:contain;
-  margin-top:13px;
-  border-radius:14px;
+  border-radius:15px;
+  margin-top:12px;
 }
+
+/* SUCCESS */
 
 .success{
   text-align:center;
 }
 
 .success-icon{
-  font-size:58px;
-  margin-bottom:8px;
+  font-size:60px;
+  text-shadow:
+  0 0 15px var(--green),
+  0 0 35px var(--green);
 }
 
 .order{
-  text-align:left;
-  background:rgba(255,255,255,.04);
-  border:1px solid var(--border);
-  border-radius:17px;
+  margin:17px 0;
   padding:14px;
-  margin:16px 0;
+  border-radius:17px;
+  background:rgba(255,255,255,.035);
+  border:1px solid rgba(255,255,255,.08);
+  text-align:left;
 }
 
 .order-row{
   display:flex;
   justify-content:space-between;
-  gap:10px;
   padding:9px 0;
   border-bottom:1px solid rgba(255,255,255,.06);
   font-size:13px;
 }
 
 .order-row:last-child{
-  border-bottom:0;
+  border:0;
 }
 
 .order-row span{
@@ -438,15 +500,17 @@ label{
 
 .note{
   text-align:center;
-  color:#6e8197;
+  color:#637991;
   font-size:10px;
   line-height:1.5;
   margin-top:12px;
 }
 
 .hidden{
-  display:none !important;
+  display:none!important;
 }
+
+/* TOAST */
 
 .toast{
   position:fixed;
@@ -454,14 +518,13 @@ label{
   bottom:20px;
   transform:translate(-50%,30px);
   opacity:0;
-  background:#14263c;
-  border:1px solid var(--border);
-  border-radius:14px;
-  padding:12px 17px;
-  z-index:999;
-  transition:.25s;
+  background:#12263c;
+  border:1px solid rgba(255,255,255,.1);
+  border-radius:15px;
+  padding:12px 18px;
   font-size:13px;
-  box-shadow:0 15px 40px rgba(0,0,0,.4);
+  z-index:9999;
+  transition:.25s;
 }
 
 .toast.show{
@@ -472,7 +535,7 @@ label{
 @media(max-width:420px){
 
   body{
-    padding:10px;
+    padding:8px;
   }
 
   .card{
@@ -481,25 +544,23 @@ label{
   }
 
   .logo{
-    font-size:29px;
-  }
-
-  .operators{
-    gap:6px;
+    font-size:34px;
   }
 
   .operator{
-    padding:13px 3px;
+    height:105px;
   }
 
-  .operator strong{
-    font-size:12px;
+  .operator-logo{
+    width:52px;
+    height:52px;
   }
 
-  .card-number-preview{
-    font-size:16px;
+  .merchant-number{
+    font-size:17px;
   }
 }
+
 </style>
 </head>
 
@@ -507,20 +568,26 @@ label{
 
 <div class="container">
 
+<!-- HEADER -->
+
 <header class="header">
 
 <div class="logo">
 ⚡ SUPER <span>GB</span>
 </div>
 
+<div class="subtitle">
+BÜTÜN OPERATORLAR ÜÇÜN İNTERNET PAKETLƏRİ
+</div>
+
 <div class="badge">
-🚀 Sürətli • Rahat • Mobil üçün
+✨ SÜRƏTLİ • RAHAT • MÜASİR
 </div>
 
 </header>
 
 
-<!-- ADDIMLAR -->
+<!-- STEPS -->
 
 <div class="steps">
 
@@ -557,32 +624,129 @@ Qəbiz
 <section class="card">
 
 <div class="title">
-📡 Operatorunuzu seçin
+📡 Operator seçin
 </div>
 
 <div class="description">
-Sizə uyğun mobil operatoru seçin.
+Nömrənizə uyğun operatoru seçin.
 </div>
 
 <div class="operators">
 
+
+<!-- AZERCELL -->
+
 <div class="operator" data-operator="Azercell">
-<div class="operator-icon">🔵</div>
-<strong>Azercell</strong>
-<small>Mobil</small>
+
+<svg
+class="operator-logo"
+viewBox="0 0 100 100"
+xmlns="http://www.w3.org/2000/svg"
+>
+
+<circle
+cx="50"
+cy="50"
+r="48"
+fill="#087ff5"
+/>
+
+<text
+x="50"
+y="55"
+text-anchor="middle"
+fill="white"
+font-size="20"
+font-weight="bold"
+font-family="Arial"
+>
+AZ
+</text>
+
+</svg>
+
+<div class="operator-name">
+Azercell
 </div>
+
+</div>
+
+
+<!-- BAKCELL -->
 
 <div class="operator" data-operator="Bakcell">
-<div class="operator-icon">🔴</div>
-<strong>Bakcell</strong>
-<small>Mobil</small>
+
+<svg
+class="operator-logo"
+viewBox="0 0 100 100"
+xmlns="http://www.w3.org/2000/svg"
+>
+
+<circle
+cx="50"
+cy="50"
+r="48"
+fill="#ed1748"
+/>
+
+<text
+x="50"
+y="55"
+text-anchor="middle"
+fill="white"
+font-size="17"
+font-weight="bold"
+font-family="Arial"
+>
+BAK
+</text>
+
+</svg>
+
+<div class="operator-name">
+Bakcell
 </div>
 
-<div class="operator" data-operator="Nar">
-<div class="operator-icon">🟠</div>
-<strong>Nar</strong>
-<small>Mobil</small>
 </div>
+
+
+<!-- NAR -->
+
+<div class="operator" data-operator="Nar">
+
+<svg
+class="operator-logo"
+viewBox="0 0 100 100"
+xmlns="http://www.w3.org/2000/svg"
+>
+
+<circle
+cx="50"
+cy="50"
+r="48"
+fill="#ff6500"
+/>
+
+<text
+x="50"
+y="57"
+text-anchor="middle"
+fill="white"
+font-size="23"
+font-weight="bold"
+font-family="Arial"
+>
+nar
+</text>
+
+</svg>
+
+<div class="operator-name">
+Nar
+</div>
+
+</div>
+
 
 </div>
 
@@ -601,7 +765,9 @@ Sizə uyğun mobil operatoru seçin.
 Azərbaycan mobil nömrənizi daxil edin.
 </div>
 
-<label>Nömrəniz</label>
+<label>
+Nömrəniz
+</label>
 
 <div class="phone-box">
 
@@ -632,11 +798,11 @@ Məsələn: 50 123 45 67
 <section class="card">
 
 <div class="title">
-📦 Paket seçin
+📦 İnternet paketi
 </div>
 
 <div class="description">
-Sizə uyğun internet paketini seçin.
+Sizə uyğun paketi seçin.
 </div>
 
 <div id="packages" class="packages"></div>
@@ -649,22 +815,28 @@ Sizə uyğun internet paketini seçin.
 <section class="card">
 
 <div class="title">
-💳 Təhlükəsiz ödəniş
+💳 Ödəniş
 </div>
 
 <div class="description">
-Seçdiyiniz paket və ödəniş məlumatları.
+Aşağıdakı karta seçdiyiniz məbləği ödəyin.
 </div>
 
 
 <div class="summary">
 
 <div>
-<small>Seçilmiş paket</small>
+
+<small>
+Seçilmiş paket
+</small>
+
 <br>
+
 <b id="selectedPackage">
 Paket seçilməyib
 </b>
+
 </div>
 
 <div id="total" class="total">
@@ -674,123 +846,93 @@ Paket seçilməyib
 </div>
 
 
-<!-- KART GÖRÜNÜŞÜ -->
+<!-- MÜŞTƏRİYƏ GÖSTƏRİLƏN KART -->
 
-<div class="card-preview">
+<div class="payment-card">
 
-<div class="chip"></div>
-
-<div id="previewNumber" class="card-number-preview">
-•••• •••• •••• ••••
+<div class="card-label">
+ÖDƏNİŞ KARTI
 </div>
 
-<div class="card-bottom">
-
-<span id="previewName">
-CARD HOLDER
-</span>
-
-<span>
-SUPER GB
-</span>
-
+<div class="card-owner">
+SUPER GB ÖDƏNİŞ
 </div>
 
-</div>
-
-
-<label>
-Kart sahibinin adı
-</label>
-
-<input
-id="cardName"
-class="input"
-placeholder="Ad Soyad"
-autocomplete="cc-name"
+<div
+id="merchantNumber"
+class="merchant-number"
 >
+0000 0000 0000 0000
+</div>
 
-
-<label style="margin-top:12px">
-Kart nömrəsi
-</label>
-
-<input
-id="cardNumber"
-class="input"
-inputmode="numeric"
-maxlength="19"
-placeholder="0000 0000 0000 0000"
-autocomplete="cc-number"
+<button
+id="copyCard"
+class="copy"
 >
-
-
-<div class="grid">
-
-<div>
-
-<label style="margin-top:12px">
-Son istifadə
-</label>
-
-<input
-id="expiry"
-class="input"
-inputmode="numeric"
-maxlength="5"
-placeholder="MM/YY"
-autocomplete="cc-exp"
->
-
-</div>
-
-
-<div>
-
-<label style="margin-top:12px">
-CVV
-</label>
-
-<input
-id="cvv"
-class="input"
-inputmode="numeric"
-maxlength="4"
-placeholder="•••"
-autocomplete="cc-csc"
->
-
-</div>
-
-</div>
-
-
-<div class="secure">
-🔒 Təhlükəsiz bağlantı • Kart məlumatlarını saytda saxlamayın
-</div>
-
-
-<button id="paymentButton" class="btn">
-Ödənişi davam etdir →
+📋 Kart nömrəsini kopyala
 </button>
+
+</div>
+
+
+<div
+style="
+font-size:12px;
+color:#a9bbcf;
+line-height:1.7;
+margin:15px 0;
+"
+>
+
+<strong style="color:white">
+Ödəniş qaydası:
+</strong>
+
+<br>
+
+1️⃣ Paketi seçin<br>
+2️⃣ Yuxarıdakı karta ödəniş edin<br>
+3️⃣ “Ödənişi etdim” düyməsinə basın<br>
+4️⃣ Qəbizi yükləyin
+
+</div>
+
+
+<button
+id="paymentDone"
+class="btn"
+>
+Ödənişi etdim → Qəbiz yüklə
+</button>
+
+
+<div class="note">
+🔒 Kart məlumatları bu səhifədə saxlanılmır.
+</div>
 
 </section>
 
 
 <!-- QƏBİZ -->
 
-<section id="receiptSection" class="card hidden">
+<section
+id="receiptSection"
+class="card hidden"
+>
 
 <div class="title">
-🧾 Qəbiz yüklə
+🧾 Qəbiz göndər
 </div>
 
 <div class="description">
-Ödəniş etdikdən sonra qəbizin şəklini və ya PDF faylını seçin.
+Ödəniş qəbzinizin şəklini və ya PDF faylını seçin.
 </div>
 
 
-<label for="receipt" class="receipt-box">
+<label
+for="receipt"
+class="receipt-box"
+>
 
 <div class="upload-icon">
 📤
@@ -800,7 +942,13 @@ autocomplete="cc-csc"
 Qəbizi seç
 </b>
 
-<div style="color:var(--muted);font-size:11px;margin-top:6px">
+<div
+style="
+font-size:11px;
+color:var(--muted);
+margin-top:6px;
+"
+>
 JPG • PNG • PDF
 </div>
 
@@ -810,10 +958,14 @@ type="file"
 accept="image/*,.pdf"
 >
 
-<div id="fileName" class="file-name"></div>
+<div
+id="fileName"
+class="file-name"
+>
+</div>
 
 <img
-id="receiptPreview"
+id="preview"
 class="preview"
 alt="Qəbiz önizləmə"
 >
@@ -822,24 +974,23 @@ alt="Qəbiz önizləmə"
 
 
 <button
-id="receiptButton"
+id="sendReceipt"
 class="btn"
 disabled
+style="margin-top:12px"
 >
 🧾 Qəbizi göndər
 </button>
 
-
-<div class="note">
-Demo versiyada fayl serverə göndərilmir. Real sistem üçün backend/storage bağlantısı əlavə edilməlidir.
-</div>
-
 </section>
 
 
-<!-- UĞUR -->
+<!-- TƏSDİQ -->
 
-<section id="successSection" class="card hidden">
+<section
+id="success"
+class="card hidden"
+>
 
 <div class="success">
 
@@ -848,11 +999,11 @@ Demo versiyada fayl serverə göndərilmir. Real sistem üçün backend/storage 
 </div>
 
 <div class="title">
-Sorğunuz qəbul edildi!
+Qəbiz qəbul edildi!
 </div>
 
 <div class="description">
-Məlumatlar uğurla hazırlandı.
+Sifariş məlumatlarınız hazırdır.
 </div>
 
 
@@ -899,7 +1050,7 @@ Yeni sifariş
 
 
 <div class="note">
-SUPER GB • Müasir mobil interfeys
+⚡ SUPER GB • Sürətli • Rahat • Müasir
 </div>
 
 </div>
@@ -910,11 +1061,23 @@ SUPER GB • Müasir mobil interfeys
 
 <script>
 
-let selectedOperator = "";
-let selectedPackage = null;
+/* ===================================
+   BURAYA ÖZ KART NÖMRƏNİ YAZ
+=================================== */
+
+const MY_CARD_NUMBER =
+"0000 0000 0000 0000";
 
 
-const packages = [
+/* ===================================
+   SİSTEM
+=================================== */
+
+let selectedOperator="";
+let selectedPackage=null;
+
+
+const packages=[
 
 {
 gb:"5 GB",
@@ -949,29 +1112,43 @@ minutes:700
 ];
 
 
-const $ = id => document.getElementById(id);
+const $=id=>
+document.getElementById(id);
 
 
-function showToast(message){
+/* KARTI GÖSTƏR */
 
-const toast = $("toast");
+$("merchantNumber").textContent=
+MY_CARD_NUMBER;
 
-toast.textContent = message;
 
-toast.classList.add("show");
+/* TOAST */
+
+function toast(message){
+
+const box=$("toast");
+
+box.textContent=message;
+
+box.classList.add("show");
 
 setTimeout(()=>{
-toast.classList.remove("show");
+
+box.classList.remove("show");
+
 },2200);
 
 }
 
 
+/* ADDIMLAR */
+
 function updateSteps(number){
 
 for(let i=1;i<=5;i++){
 
-$("step"+i).classList.toggle(
+$("step"+i)
+.classList.toggle(
 "active",
 i<=number
 );
@@ -983,14 +1160,20 @@ i<=number
 
 /* OPERATOR */
 
-document.querySelectorAll(".operator").forEach(item=>{
+document
+.querySelectorAll(".operator")
+.forEach(item=>{
 
 item.addEventListener("click",()=>{
 
-selectedOperator = item.dataset.operator;
+selectedOperator=
+item.dataset.operator;
 
-document.querySelectorAll(".operator")
-.forEach(x=>x.classList.remove("selected"));
+document
+.querySelectorAll(".operator")
+.forEach(x=>
+x.classList.remove("selected")
+);
 
 item.classList.add("selected");
 
@@ -1003,9 +1186,10 @@ updateSteps(2);
 
 /* PAKETLƏR */
 
-function renderPackages(){
+function loadPackages(){
 
-$("packages").innerHTML = packages.map((p,index)=>`
+$("packages").innerHTML=
+packages.map((p,index)=>`
 
 <div
 class="package"
@@ -1019,7 +1203,8 @@ data-index="${index}"
 </b>
 
 <small>
-📞 ${p.minutes} dəqiqə • 📅 30 gün
+📞 ${p.minutes} dəqiqə
+• 📅 30 gün
 </small>
 
 </div>
@@ -1033,26 +1218,37 @@ ${p.price} AZN
 `).join("");
 
 
-document.querySelectorAll(".package").forEach(item=>{
+document
+.querySelectorAll(".package")
+.forEach(item=>{
 
 item.addEventListener("click",()=>{
 
-const index = Number(item.dataset.index);
+selectedPackage=
+packages[
+Number(item.dataset.index)
+];
 
-selectedPackage = packages[index];
-
-document.querySelectorAll(".package")
-.forEach(x=>x.classList.remove("selected"));
+document
+.querySelectorAll(".package")
+.forEach(x=>
+x.classList.remove("selected")
+);
 
 item.classList.add("selected");
 
-$("selectedPackage").textContent =
-selectedPackage.gb+" • 30 gün";
 
-$("total").textContent =
-selectedPackage.price+" AZN";
+$("selectedPackage").textContent=
+selectedPackage.gb+
+" • 30 gün";
 
-updateSteps(3);
+
+$("total").textContent=
+selectedPackage.price+
+" AZN";
+
+
+updateSteps(4);
 
 });
 
@@ -1060,49 +1256,50 @@ updateSteps(3);
 
 }
 
-renderPackages();
+loadPackages();
 
 
 /* NÖMRƏ */
 
-$("phone").addEventListener("input",function(){
+$("phone")
+.addEventListener("input",function(){
 
-let numbers =
-this.value.replace(/\D/g,"").slice(0,9);
+let number=
+this.value
+.replace(/\D/g,"")
+.slice(0,9);
 
-let formatted = "";
+let result="";
 
-if(numbers.length>0)
-formatted += numbers.slice(0,2);
+if(number.length>0)
+result+=number.slice(0,2);
 
-if(numbers.length>2)
-formatted += " "+numbers.slice(2,5);
+if(number.length>2)
+result+=" "+number.slice(2,5);
 
-if(numbers.length>5)
-formatted += " "+numbers.slice(5,7);
+if(number.length>5)
+result+=" "+number.slice(5,7);
 
-if(numbers.length>7)
-formatted += " "+numbers.slice(7,9);
+if(number.length>7)
+result+=" "+number.slice(7,9);
 
-this.value = formatted;
+this.value=result;
 
 
-if(numbers.length === 9){
+if(number.length===9){
 
-$("phoneHint").textContent =
-"✓ Nömrə formatı düzgündür";
+$("phoneHint").textContent=
+"✓ Nömrə düzgündür";
 
-$("phoneHint").className =
+$("phoneHint").className=
 "hint ok";
-
-updateSteps(3);
 
 }else{
 
-$("phoneHint").textContent =
+$("phoneHint").textContent=
 "Məsələn: 50 123 45 67";
 
-$("phoneHint").className =
+$("phoneHint").className=
 "hint";
 
 }
@@ -1110,111 +1307,51 @@ $("phoneHint").className =
 });
 
 
-/* KART ADI */
+/* KART KOPYALA */
 
-$("cardName").addEventListener("input",function(){
+$("copyCard")
+.addEventListener("click",async()=>{
 
-let name =
-this.value.trim();
+try{
 
-$("previewName").textContent =
-(name || "CARD HOLDER")
-.toUpperCase()
-.slice(0,22);
+await navigator.clipboard.writeText(
+MY_CARD_NUMBER.replace(/\s/g,"")
+);
 
-});
+toast("✓ Kart nömrəsi kopyalandı");
 
+}catch(error){
 
-/* KART NÖMRƏSI */
-
-$("cardNumber").addEventListener("input",function(){
-
-let numbers =
-this.value.replace(/\D/g,"")
-.slice(0,16);
-
-let groups =
-numbers.match(/.{1,4}/g);
-
-let formatted =
-groups ? groups.join(" ") : "";
-
-this.value = formatted;
-
-$("previewNumber").textContent =
-formatted || "•••• •••• •••• ••••";
-
-});
-
-
-/* EXPIRY */
-
-$("expiry").addEventListener("input",function(){
-
-let numbers =
-this.value.replace(/\D/g,"")
-.slice(0,4);
-
-if(numbers.length>2){
-
-this.value =
-numbers.slice(0,2)+"/"+
-numbers.slice(2);
-
-}else{
-
-this.value = numbers;
+toast("Kart nömrəsini əl ilə kopyalayın");
 
 }
 
 });
 
 
-/* CVV */
+/* ÖDƏNİŞ ETDİM */
 
-$("cvv").addEventListener("input",function(){
+$("paymentDone")
+.addEventListener("click",()=>{
 
-this.value =
-this.value.replace(/\D/g,"")
-.slice(0,4);
-
-});
-
-
-/* ÖDƏNIŞ */
-
-$("paymentButton").addEventListener("click",function(){
-
-const phone =
-$("phone").value.replace(/\D/g,"");
-
-const card =
-$("cardNumber").value.replace(/\D/g,"");
-
-const name =
-$("cardName").value.trim();
-
-const expiry =
-$("expiry").value;
-
-const cvv =
-$("cvv").value;
+const phone=
+$("phone")
+.value
+.replace(/\D/g,"");
 
 
 if(!selectedOperator){
 
-showToast("Əvvəl operator seçin.");
+toast("Operator seçin.");
 
 return;
 
 }
 
 
-if(phone.length !== 9){
+if(phone.length!==9){
 
-showToast("Nömrəni düzgün daxil edin.");
-
-$("phone").focus();
+toast("Nömrəni düzgün daxil edin.");
 
 return;
 
@@ -1223,56 +1360,14 @@ return;
 
 if(!selectedPackage){
 
-showToast("Paket seçin.");
+toast("Paket seçin.");
 
 return;
 
 }
 
 
-if(!name){
-
-showToast("Kart sahibinin adını daxil edin.");
-
-$("cardName").focus();
-
-return;
-
-}
-
-
-if(card.length < 12){
-
-showToast("Kart nömrəsini düzgün daxil edin.");
-
-$("cardNumber").focus();
-
-return;
-
-}
-
-
-if(!/^\d{2}\/\d{2}$/.test(expiry)){
-
-showToast("Son istifadə tarixini MM/YY yazın.");
-
-$("expiry").focus();
-
-return;
-
-}
-
-
-if(cvv.length < 3){
-
-showToast("CVV kodunu daxil edin.");
-
-$("cvv").focus();
-
-return;
-
-}
-
+/* QƏBİZİ AÇ */
 
 $("receiptSection")
 .classList.remove("hidden");
@@ -1290,17 +1385,19 @@ updateSteps(5);
 
 /* QƏBİZ */
 
-$("receipt").addEventListener("change",function(){
+$("receipt")
+.addEventListener("change",function(){
 
-const file = this.files[0];
+const file=this.files[0];
 
 if(!file)
 return;
 
 
-if(file.size > 10 * 1024 * 1024){
+if(file.size>
+10*1024*1024){
 
-showToast("Fayl maksimum 10 MB ola bilər.");
+toast("Qəbiz maksimum 10 MB ola bilər.");
 
 this.value="";
 
@@ -1309,23 +1406,23 @@ return;
 }
 
 
-$("fileName").textContent =
+$("fileName").textContent=
 "✓ "+file.name;
 
-$("receiptButton").disabled = false;
+$("sendReceipt").disabled=false;
 
 
 if(file.type.startsWith("image/")){
 
-const reader =
+const reader=
 new FileReader();
 
-reader.onload = function(event){
+reader.onload=function(e){
 
-$("receiptPreview").src =
-event.target.result;
+$("preview").src=
+e.target.result;
 
-$("receiptPreview").style.display =
+$("preview").style.display=
 "block";
 
 };
@@ -1334,7 +1431,7 @@ reader.readAsDataURL(file);
 
 }else{
 
-$("receiptPreview").style.display =
+$("preview").style.display=
 "none";
 
 }
@@ -1344,58 +1441,58 @@ $("receiptPreview").style.display =
 
 /* QƏBİZİ GÖNDƏR */
 
-$("receiptButton").addEventListener("click",function(){
+$("sendReceipt")
+.addEventListener("click",()=>{
 
-const date = new Date();
+const date=new Date();
 
-const orderId =
+const order=
 "SGB-"+
-
 date.getFullYear()+
-
 String(date.getMonth()+1).padStart(2,"0")+
-
 String(date.getDate()).padStart(2,"0")+
-
 "-"+
+Math.floor(
+1000+
+Math.random()*9000
+);
 
-Math.floor(1000+Math.random()*9000);
 
+$("orderId").textContent=
+order;
 
-$("orderId").textContent =
-orderId;
-
-$("orderOperator").textContent =
+$("orderOperator").textContent=
 selectedOperator;
 
-$("orderPhone").textContent =
-"+994 "+$("phone").value;
+$("orderPhone").textContent=
+"+994 "+
+$("phone").value;
 
-$("orderPackage").textContent =
-selectedPackage.gb+" • 30 gün";
+$("orderPackage").textContent=
+selectedPackage.gb+
+" • 30 gün";
 
-$("orderAmount").textContent =
-selectedPackage.price+" AZN";
+$("orderAmount").textContent=
+selectedPackage.price+
+" AZN";
 
 
 $("receiptSection")
 .classList.add("hidden");
 
-$("successSection")
+$("success")
 .classList.remove("hidden");
 
 
-$("successSection")
+$("success")
 .scrollIntoView({
 behavior:"smooth",
 block:"start"
 });
 
-
 updateSteps(5);
 
 });
-
 
 </script>
 
