@@ -2,563 +2,712 @@
 <html lang="az">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="theme-color" content="#020712">
 
 <title>SUPER GB</title>
 
 <style>
+
 *{
-  box-sizing:border-box;
-  margin:0;
-  padding:0;
+box-sizing:border-box;
+margin:0;
+padding:0;
 }
 
 :root{
-  --green:#39ff9a;
-  --blue:#159cff;
-  --red:#ff174f;
-  --orange:#ff6500;
-  --bg:#020712;
-  --card:#081525;
-  --muted:#91a7bd;
+--green:#39ff9a;
+--blue:#159cff;
+--red:#ff174f;
+--bg:#020712;
+--muted:#91a7bd;
 }
 
 body{
-  font-family:Arial,Helvetica,sans-serif;
-  color:#fff;
-  min-height:100vh;
-  padding:10px;
-  background:
-  radial-gradient(circle at 50% -10%,rgba(57,255,154,.20),transparent 32%),
-  radial-gradient(circle at 0 30%,rgba(21,156,255,.12),transparent 30%),
-  radial-gradient(circle at 100% 50%,rgba(255,23,79,.10),transparent 30%),
-  var(--bg);
+font-family:Arial,Helvetica,sans-serif;
+color:#fff;
+min-height:100vh;
+padding:10px;
+
+background:
+radial-gradient(circle at 50% -10%,rgba(57,255,154,.20),transparent 32%),
+radial-gradient(circle at 0 30%,rgba(21,156,255,.12),transparent 30%),
+radial-gradient(circle at 100% 50%,rgba(255,23,79,.10),transparent 30%),
+#020712;
 }
 
 .container{
-  max-width:620px;
-  margin:auto;
+max-width:620px;
+margin:auto;
 }
 
-/* SUPER GB LOGO */
+/* LOGO */
 
 .header{
-  text-align:center;
-  padding:25px 5px 20px;
+text-align:center;
+padding:25px 5px 20px;
 }
 
 .logo{
-  font-size:42px;
-  font-weight:1000;
-  letter-spacing:-2px;
-  color:#fff;
-  animation:neon 1.8s infinite alternate;
+font-size:43px;
+font-weight:1000;
+letter-spacing:-2px;
+color:#fff;
+animation:neon 1.7s infinite alternate;
 }
 
 .logo span{
-  color:var(--green);
+color:var(--green);
 }
 
 @keyframes neon{
-  from{
-    text-shadow:
-    0 0 5px #fff,
-    0 0 12px var(--green),
-    0 0 25px var(--green);
-  }
-  to{
-    text-shadow:
-    0 0 8px #fff,
-    0 0 20px var(--green),
-    0 0 40px var(--green),
-    0 0 65px var(--green);
-  }
+from{
+text-shadow:
+0 0 5px #fff,
+0 0 12px var(--green),
+0 0 25px var(--green);
+}
+
+to{
+text-shadow:
+0 0 8px #fff,
+0 0 20px var(--green),
+0 0 40px var(--green),
+0 0 65px var(--green);
+}
 }
 
 .subtitle{
-  color:#b8c9da;
-  font-size:11px;
-  margin-top:7px;
-  letter-spacing:1px;
+color:#b8c9da;
+font-size:11px;
+margin-top:7px;
+letter-spacing:1px;
 }
 
 .badge{
-  display:inline-block;
-  margin-top:12px;
-  padding:7px 14px;
-  border-radius:30px;
-  color:var(--green);
-  border:1px solid rgba(57,255,154,.35);
-  background:rgba(57,255,154,.07);
-  box-shadow:0 0 20px rgba(57,255,154,.12);
-  font-size:11px;
+display:inline-block;
+margin-top:12px;
+padding:7px 14px;
+border-radius:30px;
+color:var(--green);
+border:1px solid rgba(57,255,154,.35);
+background:rgba(57,255,154,.07);
+box-shadow:0 0 20px rgba(57,255,154,.12);
+font-size:11px;
 }
 
-/* STEPS */
+/* MƏRHƏLƏLƏR */
+
+.steps-wrapper{
+width:100%;
+overflow-x:auto;
+padding:5px 0 15px;
+}
 
 .steps{
-  display:flex;
-  gap:5px;
-  margin-bottom:17px;
+min-width:500px;
+display:flex;
+align-items:center;
+justify-content:space-between;
+position:relative;
+}
+
+.steps::before{
+content:"";
+position:absolute;
+top:15px;
+left:30px;
+right:30px;
+height:2px;
+
+background:
+linear-gradient(
+90deg,
+rgba(57,255,154,.5),
+rgba(57,255,154,.08)
+);
+
+z-index:0;
 }
 
 .step{
-  flex:1;
-  text-align:center;
-  font-size:9px;
-  color:#52677e;
+position:relative;
+z-index:2;
+width:70px;
+text-align:center;
+color:#52677e;
+font-size:9px;
+background:#020712;
 }
 
 .circle{
-  width:30px;
-  height:30px;
-  border-radius:50%;
-  margin:auto auto 5px;
-  display:grid;
-  place-items:center;
-  background:#091524;
-  border:1px solid rgba(255,255,255,.08);
+width:30px;
+height:30px;
+border-radius:50%;
+margin:0 auto 5px;
+display:grid;
+place-items:center;
+background:#091524;
+border:1px solid rgba(255,255,255,.08);
+transition:.3s;
 }
 
 .step.active{
-  color:#fff;
+color:#fff;
 }
 
 .step.active .circle{
-  background:var(--green);
-  color:#00140b;
-  font-weight:bold;
-  box-shadow:
-  0 0 10px var(--green),
-  0 0 25px rgba(57,255,154,.4);
+background:var(--green);
+color:#00140b;
+font-weight:bold;
+box-shadow:
+0 0 10px var(--green),
+0 0 25px rgba(57,255,154,.5);
 }
 
 /* CARD */
 
 .card{
-  background:
-  linear-gradient(
-    145deg,
-    rgba(13,31,51,.94),
-    rgba(4,13,25,.97)
-  );
-  border:1px solid rgba(255,255,255,.08);
-  border-radius:25px;
-  padding:18px;
-  margin-bottom:14px;
-  box-shadow:0 20px 60px rgba(0,0,0,.45);
+background:
+linear-gradient(
+145deg,
+rgba(13,31,51,.94),
+rgba(4,13,25,.97)
+);
+
+border:1px solid rgba(255,255,255,.08);
+border-radius:25px;
+padding:18px;
+margin-bottom:14px;
+
+box-shadow:
+0 20px 60px rgba(0,0,0,.45);
 }
 
 .title{
-  font-size:19px;
-  font-weight:900;
-  margin-bottom:6px;
+font-size:19px;
+font-weight:900;
+margin-bottom:6px;
 }
 
 .description{
-  color:var(--muted);
-  font-size:12px;
-  line-height:1.5;
-  margin-bottom:16px;
+color:var(--muted);
+font-size:12px;
+line-height:1.5;
+margin-bottom:16px;
 }
 
 /* OPERATOR */
 
 .operators{
-  display:grid;
-  grid-template-columns:repeat(3,1fr);
-  gap:9px;
+display:grid;
+grid-template-columns:repeat(3,1fr);
+gap:10px;
 }
 
 .operator{
-  height:115px;
-  border-radius:20px;
-  border:1px solid rgba(255,255,255,.08);
-  background:rgba(255,255,255,.035);
-  display:flex;
-  flex-direction:column;
-  align-items:center;
-  justify-content:center;
-  gap:9px;
-  cursor:pointer;
-  transition:.25s;
+height:125px;
+border-radius:20px;
+border:1px solid rgba(255,255,255,.08);
+background:rgba(255,255,255,.035);
+
+display:flex;
+flex-direction:column;
+align-items:center;
+justify-content:center;
+gap:9px;
+
+cursor:pointer;
+transition:.25s;
 }
 
 .operator:hover{
-  transform:translateY(-3px);
+transform:translateY(-3px);
 }
 
 .operator.selected{
-  transform:translateY(-3px);
-  border-color:var(--green);
-  box-shadow:
-  0 0 15px rgba(57,255,154,.35),
-  0 0 35px rgba(57,255,154,.10);
+transform:translateY(-3px);
+
+border-color:var(--green);
+
+box-shadow:
+0 0 15px rgba(57,255,154,.35),
+0 0 35px rgba(57,255,154,.10);
 }
 
-/* OPERATOR LOGO */
-
 .operator-logo{
-  width:58px;
-  height:58px;
-  object-fit:contain;
+width:70px;
+height:55px;
+object-fit:contain;
+background:white;
+border-radius:10px;
+padding:5px;
 }
 
 .operator-name{
-  font-size:13px;
-  font-weight:800;
+font-size:13px;
+font-weight:800;
 }
 
-/* INPUT */
+/* NÖMRƏ */
 
 label{
-  display:block;
-  font-size:12px;
-  color:#cad7e5;
-  margin:0 0 7px 2px;
-  font-weight:bold;
+display:block;
+font-size:12px;
+color:#cad7e5;
+margin:0 0 7px 2px;
+font-weight:bold;
 }
 
 .phone-box{
-  display:flex;
-  gap:8px;
+display:flex;
+gap:8px;
 }
 
 .country{
-  min-width:90px;
-  height:55px;
-  border-radius:15px;
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  background:rgba(255,255,255,.045);
-  border:1px solid rgba(255,255,255,.08);
-  font-weight:bold;
+min-width:90px;
+height:55px;
+border-radius:15px;
+
+display:flex;
+align-items:center;
+justify-content:center;
+
+background:rgba(255,255,255,.045);
+border:1px solid rgba(255,255,255,.08);
+
+font-weight:bold;
 }
 
 .input{
-  width:100%;
-  height:55px;
-  border-radius:15px;
-  border:1px solid rgba(255,255,255,.08);
-  background:rgba(255,255,255,.045);
-  color:#fff;
-  padding:0 15px;
-  font-size:16px;
-  outline:none;
+width:100%;
+height:55px;
+border-radius:15px;
+border:1px solid rgba(255,255,255,.08);
+
+background:rgba(255,255,255,.045);
+
+color:#fff;
+padding:0 15px;
+font-size:16px;
+outline:none;
 }
 
 .input:focus{
-  border-color:var(--green);
-  box-shadow:0 0 0 4px rgba(57,255,154,.06);
+border-color:var(--green);
+
+box-shadow:
+0 0 0 4px rgba(57,255,154,.06);
 }
 
 .phone{
-  flex:1;
+flex:1;
 }
 
 .hint{
-  margin-top:7px;
-  color:var(--muted);
-  font-size:11px;
+margin-top:7px;
+color:var(--muted);
+font-size:11px;
 }
 
 .hint.ok{
-  color:var(--green);
+color:var(--green);
 }
 
-/* PACKAGES */
+/* PAKETLƏR */
 
 .packages{
-  display:grid;
-  gap:10px;
+display:grid;
+gap:10px;
 }
 
 .package{
-  display:flex;
-  justify-content:space-between;
-  align-items:center;
-  padding:16px;
-  border-radius:18px;
-  border:1px solid rgba(255,255,255,.08);
-  background:rgba(255,255,255,.035);
-  cursor:pointer;
-  transition:.2s;
+display:flex;
+justify-content:space-between;
+align-items:center;
+
+padding:16px;
+
+border-radius:18px;
+border:1px solid rgba(255,255,255,.08);
+
+background:rgba(255,255,255,.035);
+
+cursor:pointer;
+transition:.2s;
 }
 
 .package.selected{
-  border-color:var(--green);
-  background:rgba(57,255,154,.08);
-  box-shadow:0 0 20px rgba(57,255,154,.08);
+border-color:var(--green);
+
+background:
+rgba(57,255,154,.08);
+
+box-shadow:
+0 0 20px rgba(57,255,154,.08);
 }
 
 .package b{
-  font-size:17px;
+font-size:17px;
 }
 
 .package small{
-  display:block;
-  color:var(--muted);
-  font-size:11px;
-  margin-top:5px;
+display:block;
+color:var(--muted);
+font-size:11px;
+margin-top:5px;
 }
 
 .price{
-  color:var(--green);
-  font-size:20px;
-  font-weight:900;
-  text-shadow:0 0 12px rgba(57,255,154,.5);
+color:var(--green);
+font-size:20px;
+font-weight:900;
+
+text-shadow:
+0 0 12px rgba(57,255,154,.5);
 }
 
-/* SUMMARY */
+/* ÖDƏNİŞ */
 
 .summary{
-  display:flex;
-  justify-content:space-between;
-  align-items:center;
-  padding:15px;
-  border-radius:18px;
-  background:rgba(57,255,154,.05);
-  border:1px solid rgba(57,255,154,.15);
-  margin-bottom:15px;
+display:flex;
+justify-content:space-between;
+align-items:center;
+
+padding:15px;
+border-radius:18px;
+
+background:
+rgba(57,255,154,.05);
+
+border:
+1px solid rgba(57,255,154,.15);
+
+margin-bottom:15px;
 }
 
 .summary small{
-  color:var(--muted);
+color:var(--muted);
 }
 
 .total{
-  color:var(--green);
-  font-size:25px;
-  font-weight:1000;
-  text-shadow:0 0 15px rgba(57,255,154,.5);
+color:var(--green);
+font-size:25px;
+font-weight:1000;
+
+text-shadow:
+0 0 15px rgba(57,255,154,.5);
 }
 
-/* PAYMENT CARD */
+/* KART */
 
 .payment-card{
-  position:relative;
-  overflow:hidden;
-  min-height:190px;
-  padding:20px;
-  border-radius:22px;
-  background:
-  linear-gradient(
-    135deg,
-    #12395c,
-    #071827 50%,
-    #073d2d
-  );
-  border:1px solid rgba(57,255,154,.25);
-  box-shadow:
-  0 15px 45px rgba(0,0,0,.4),
-  0 0 30px rgba(57,255,154,.06);
-}
+position:relative;
+overflow:hidden;
 
-.payment-card:after{
-  content:"";
-  position:absolute;
-  width:190px;
-  height:190px;
-  border-radius:50%;
-  right:-90px;
-  top:-90px;
-  background:rgba(57,255,154,.08);
+min-height:190px;
+padding:20px;
+
+border-radius:22px;
+
+background:
+linear-gradient(
+135deg,
+#12395c,
+#071827 50%,
+#073d2d
+);
+
+border:
+1px solid rgba(57,255,154,.25);
+
+box-shadow:
+0 15px 45px rgba(0,0,0,.4),
+0 0 30px rgba(57,255,154,.06);
 }
 
 .card-label{
-  color:#9db1c5;
-  font-size:10px;
-  letter-spacing:1px;
+color:#9db1c5;
+font-size:10px;
+letter-spacing:1px;
 }
 
 .card-owner{
-  font-weight:bold;
-  font-size:13px;
-  margin-top:5px;
+font-weight:bold;
+font-size:13px;
+margin-top:5px;
 }
 
 .merchant-number{
-  margin-top:30px;
-  font-size:21px;
-  letter-spacing:2px;
-  font-weight:bold;
+margin-top:30px;
+font-size:21px;
+letter-spacing:2px;
+font-weight:bold;
 }
 
 .copy{
-  width:100%;
-  height:43px;
-  margin-top:14px;
-  border-radius:13px;
-  border:1px solid rgba(57,255,154,.3);
-  background:rgba(57,255,154,.08);
-  color:var(--green);
-  font-weight:bold;
-  cursor:pointer;
+width:100%;
+height:43px;
+margin-top:14px;
+
+border-radius:13px;
+
+border:
+1px solid rgba(57,255,154,.3);
+
+background:
+rgba(57,255,154,.08);
+
+color:var(--green);
+
+font-weight:bold;
+cursor:pointer;
 }
 
 /* BUTTON */
 
 .btn{
-  width:100%;
-  height:56px;
-  border:0;
-  border-radius:17px;
-  background:linear-gradient(135deg,#39ff9a,#00d985);
-  color:#00160d;
-  font-size:16px;
-  font-weight:1000;
-  cursor:pointer;
-  box-shadow:0 8px 30px rgba(57,255,154,.22);
+width:100%;
+height:56px;
+
+border:0;
+border-radius:17px;
+
+background:
+linear-gradient(
+135deg,
+#39ff9a,
+#00d985
+);
+
+color:#00160d;
+
+font-size:16px;
+font-weight:1000;
+
+cursor:pointer;
+
+box-shadow:
+0 8px 30px rgba(57,255,154,.22);
 }
 
 .btn:disabled{
-  opacity:.4;
+opacity:.4;
+}
+
+/* GERİ DÜYMƏSİ */
+
+.back-btn{
+width:100%;
+height:50px;
+
+margin-top:10px;
+
+border-radius:16px;
+
+border:1px solid rgba(255,255,255,.12);
+
+background:
+rgba(255,255,255,.05);
+
+color:#fff;
+
+font-size:14px;
+font-weight:800;
+
+cursor:pointer;
+
+transition:.25s;
+}
+
+.back-btn:hover{
+border-color:var(--green);
+color:var(--green);
+
+background:
+rgba(57,255,154,.06);
+
+box-shadow:
+0 0 18px rgba(57,255,154,.12);
 }
 
 .secondary{
-  background:rgba(255,255,255,.06);
-  color:#fff;
-  border:1px solid rgba(255,255,255,.1);
-  box-shadow:none;
+background:
+rgba(255,255,255,.06);
+
+color:#fff;
+
+border:
+1px solid rgba(255,255,255,.1);
+
+box-shadow:none;
 }
 
-/* RECEIPT */
+/* QƏBİZ */
 
 .receipt-box{
-  border:1.5px dashed rgba(57,255,154,.4);
-  border-radius:20px;
-  padding:26px 15px;
-  text-align:center;
-  cursor:pointer;
-  background:rgba(57,255,154,.035);
+border:
+1.5px dashed rgba(57,255,154,.4);
+
+border-radius:20px;
+
+padding:26px 15px;
+
+text-align:center;
+
+cursor:pointer;
+
+background:
+rgba(57,255,154,.035);
 }
 
 .receipt-box input{
-  display:none;
+display:none;
 }
 
 .upload-icon{
-  font-size:35px;
-  margin-bottom:8px;
+font-size:35px;
+margin-bottom:8px;
 }
 
 .file-name{
-  color:var(--green);
-  font-size:12px;
-  margin-top:9px;
-  word-break:break-word;
+color:var(--green);
+font-size:12px;
+margin-top:9px;
+word-break:break-word;
 }
 
 .preview{
-  display:none;
-  width:100%;
-  max-height:280px;
-  object-fit:contain;
-  border-radius:15px;
-  margin-top:12px;
+display:none;
+width:100%;
+max-height:280px;
+
+object-fit:contain;
+border-radius:15px;
+margin-top:12px;
 }
 
 /* SUCCESS */
 
 .success{
-  text-align:center;
+text-align:center;
 }
 
 .success-icon{
-  font-size:60px;
-  text-shadow:
-  0 0 15px var(--green),
-  0 0 35px var(--green);
+font-size:60px;
+
+text-shadow:
+0 0 15px var(--green),
+0 0 35px var(--green);
 }
 
 .order{
-  margin:17px 0;
-  padding:14px;
-  border-radius:17px;
-  background:rgba(255,255,255,.035);
-  border:1px solid rgba(255,255,255,.08);
-  text-align:left;
+margin:17px 0;
+padding:14px;
+
+border-radius:17px;
+
+background:
+rgba(255,255,255,.035);
+
+border:
+1px solid rgba(255,255,255,.08);
+
+text-align:left;
 }
 
 .order-row{
-  display:flex;
-  justify-content:space-between;
-  padding:9px 0;
-  border-bottom:1px solid rgba(255,255,255,.06);
-  font-size:13px;
+display:flex;
+justify-content:space-between;
+
+padding:9px 0;
+
+border-bottom:
+1px solid rgba(255,255,255,.06);
+
+font-size:13px;
 }
 
 .order-row:last-child{
-  border:0;
+border:0;
 }
 
 .order-row span{
-  color:var(--muted);
+color:var(--muted);
 }
 
 .note{
-  text-align:center;
-  color:#637991;
-  font-size:10px;
-  line-height:1.5;
-  margin-top:12px;
+text-align:center;
+color:#637991;
+font-size:10px;
+line-height:1.5;
+margin-top:12px;
 }
 
 .hidden{
-  display:none!important;
+display:none!important;
 }
 
 /* TOAST */
 
 .toast{
-  position:fixed;
-  left:50%;
-  bottom:20px;
-  transform:translate(-50%,30px);
-  opacity:0;
-  background:#12263c;
-  border:1px solid rgba(255,255,255,.1);
-  border-radius:15px;
-  padding:12px 18px;
-  font-size:13px;
-  z-index:9999;
-  transition:.25s;
+position:fixed;
+left:50%;
+bottom:20px;
+
+transform:
+translate(-50%,30px);
+
+opacity:0;
+
+background:#12263c;
+
+border:
+1px solid rgba(255,255,255,.1);
+
+border-radius:15px;
+
+padding:12px 18px;
+
+font-size:13px;
+
+z-index:9999;
+
+transition:.25s;
 }
 
 .toast.show{
-  opacity:1;
-  transform:translate(-50%,0);
+opacity:1;
+
+transform:
+translate(-50%,0);
 }
+
+/* MOBILE */
 
 @media(max-width:420px){
 
-  body{
-    padding:8px;
-  }
+.logo{
+font-size:35px;
+}
 
-  .card{
-    padding:15px;
-    border-radius:21px;
-  }
+.card{
+padding:15px;
+}
 
-  .logo{
-    font-size:34px;
-  }
+.operator{
+height:115px;
+}
 
-  .operator{
-    height:105px;
-  }
+.operator-logo{
+width:62px;
+height:50px;
+}
 
-  .operator-logo{
-    width:52px;
-    height:52px;
-  }
+.merchant-number{
+font-size:17px;
+}
 
-  .merchant-number{
-    font-size:17px;
-  }
 }
 
 </style>
@@ -567,8 +716,6 @@ label{
 <body>
 
 <div class="container">
-
-<!-- HEADER -->
 
 <header class="header">
 
@@ -587,7 +734,9 @@ BÜTÜN OPERATORLAR ÜÇÜN İNTERNET PAKETLƏRİ
 </header>
 
 
-<!-- STEPS -->
+<!-- MƏRHƏLƏLƏR -->
+
+<div class="steps-wrapper">
 
 <div class="steps">
 
@@ -618,6 +767,8 @@ Qəbiz
 
 </div>
 
+</div>
+
 
 <!-- OPERATOR -->
 
@@ -633,37 +784,13 @@ Nömrənizə uyğun operatoru seçin.
 
 <div class="operators">
 
-
-<!-- AZERCELL -->
-
 <div class="operator" data-operator="Azercell">
 
-<svg
+<img
 class="operator-logo"
-viewBox="0 0 100 100"
-xmlns="http://www.w3.org/2000/svg"
+src="https://img.logokit.com/azercell.com"
+alt="Azercell Logo"
 >
-
-<circle
-cx="50"
-cy="50"
-r="48"
-fill="#087ff5"
-/>
-
-<text
-x="50"
-y="55"
-text-anchor="middle"
-fill="white"
-font-size="20"
-font-weight="bold"
-font-family="Arial"
->
-AZ
-</text>
-
-</svg>
 
 <div class="operator-name">
 Azercell
@@ -672,36 +799,13 @@ Azercell
 </div>
 
 
-<!-- BAKCELL -->
-
 <div class="operator" data-operator="Bakcell">
 
-<svg
+<img
 class="operator-logo"
-viewBox="0 0 100 100"
-xmlns="http://www.w3.org/2000/svg"
+src="https://img.logokit.com/bakcell.com"
+alt="Bakcell Logo"
 >
-
-<circle
-cx="50"
-cy="50"
-r="48"
-fill="#ed1748"
-/>
-
-<text
-x="50"
-y="55"
-text-anchor="middle"
-fill="white"
-font-size="17"
-font-weight="bold"
-font-family="Arial"
->
-BAK
-</text>
-
-</svg>
 
 <div class="operator-name">
 Bakcell
@@ -710,43 +814,19 @@ Bakcell
 </div>
 
 
-<!-- NAR -->
-
 <div class="operator" data-operator="Nar">
 
-<svg
+<img
 class="operator-logo"
-viewBox="0 0 100 100"
-xmlns="http://www.w3.org/2000/svg"
+src="https://img.logokit.com/nar.az"
+alt="Nar Logo"
 >
-
-<circle
-cx="50"
-cy="50"
-r="48"
-fill="#ff6500"
-/>
-
-<text
-x="50"
-y="57"
-text-anchor="middle"
-fill="white"
-font-size="23"
-font-weight="bold"
-font-family="Arial"
->
-nar
-</text>
-
-</svg>
 
 <div class="operator-name">
 Nar
 </div>
 
 </div>
-
 
 </div>
 
@@ -810,7 +890,7 @@ Sizə uyğun paketi seçin.
 </section>
 
 
-<!-- ÖDƏNIŞ -->
+<!-- ÖDƏNİŞ -->
 
 <section class="card">
 
@@ -819,9 +899,8 @@ Sizə uyğun paketi seçin.
 </div>
 
 <div class="description">
-Aşağıdakı karta seçdiyiniz məbləği ödəyin.
+Seçdiyiniz məbləği aşağıdakı karta ödəyin.
 </div>
-
 
 <div class="summary">
 
@@ -846,8 +925,6 @@ Paket seçilməyib
 </div>
 
 
-<!-- MÜŞTƏRİYƏ GÖSTƏRİLƏN KART -->
-
 <div class="payment-card">
 
 <div class="card-label">
@@ -858,17 +935,11 @@ Paket seçilməyib
 SUPER GB ÖDƏNİŞ
 </div>
 
-<div
-id="merchantNumber"
-class="merchant-number"
->
-0000 0000 0000 0000
+<div id="merchantNumber" class="merchant-number">
+5315 9921 2761 6081
 </div>
 
-<button
-id="copyCard"
-class="copy"
->
+<button id="copyCard" class="copy">
 📋 Kart nömrəsini kopyala
 </button>
 
@@ -890,24 +961,33 @@ margin:15px 0;
 
 <br>
 
-1️⃣ Paketi seçin<br>
-2️⃣ Yuxarıdakı karta ödəniş edin<br>
-3️⃣ “Ödənişi etdim” düyməsinə basın<br>
+1️⃣ Paketi seçin
+<br>
+
+2️⃣ Göstərilən karta ödəniş edin
+<br>
+
+3️⃣ “Ödənişi etdim” düyməsinə basın
+<br>
+
 4️⃣ Qəbizi yükləyin
 
 </div>
 
 
-<button
-id="paymentDone"
-class="btn"
->
+<button id="paymentDone" class="btn">
 Ödənişi etdim → Qəbiz yüklə
+</button>
+
+<!-- GERİ -->
+
+<button id="backPayment" class="back-btn">
+← Geri
 </button>
 
 
 <div class="note">
-🔒 Kart məlumatları bu səhifədə saxlanılmır.
+🔒 Kart məlumatları saytda saxlanılmır.
 </div>
 
 </section>
@@ -915,10 +995,7 @@ class="btn"
 
 <!-- QƏBİZ -->
 
-<section
-id="receiptSection"
-class="card hidden"
->
+<section id="receiptSection" class="card hidden">
 
 <div class="title">
 🧾 Qəbiz göndər
@@ -929,10 +1006,7 @@ class="card hidden"
 </div>
 
 
-<label
-for="receipt"
-class="receipt-box"
->
+<label for="receipt" class="receipt-box">
 
 <div class="upload-icon">
 📤
@@ -958,16 +1032,12 @@ type="file"
 accept="image/*,.pdf"
 >
 
-<div
-id="fileName"
-class="file-name"
->
-</div>
+<div id="fileName" class="file-name"></div>
 
 <img
 id="preview"
 class="preview"
-alt="Qəbiz önizləmə"
+alt="Qəbiz"
 >
 
 </label>
@@ -982,15 +1052,19 @@ style="margin-top:12px"
 🧾 Qəbizi göndər
 </button>
 
+
+<!-- GERİ -->
+
+<button id="backReceipt" class="back-btn">
+← Geri
+</button>
+
 </section>
 
 
-<!-- TƏSDİQ -->
+<!-- UĞURLU -->
 
-<section
-id="success"
-class="card hidden"
->
+<section id="success" class="card hidden">
 
 <div class="success">
 
@@ -1061,17 +1135,13 @@ Yeni sifariş
 
 <script>
 
-/* ===================================
-   BURAYA ÖZ KART NÖMRƏNİ YAZ
-=================================== */
+/* =================================
+   ÖZ KART NÖMRƏNİ BURAYA YAZ
+================================= */
 
 const MY_CARD_NUMBER =
 "0000 0000 0000 0000";
 
-
-/* ===================================
-   SİSTEM
-=================================== */
 
 let selectedOperator="";
 let selectedPackage=null;
@@ -1116,7 +1186,7 @@ const $=id=>
 document.getElementById(id);
 
 
-/* KARTI GÖSTƏR */
+/* KART */
 
 $("merchantNumber").textContent=
 MY_CARD_NUMBER;
@@ -1141,14 +1211,13 @@ box.classList.remove("show");
 }
 
 
-/* ADDIMLAR */
+/* MƏRHƏLƏ */
 
 function updateSteps(number){
 
 for(let i=1;i<=5;i++){
 
-$("step"+i)
-.classList.toggle(
+$("step"+i).classList.toggle(
 "active",
 i<=number
 );
@@ -1164,16 +1233,18 @@ document
 .querySelectorAll(".operator")
 .forEach(item=>{
 
-item.addEventListener("click",()=>{
+item.addEventListener(
+"click",
+()=>{
 
 selectedOperator=
 item.dataset.operator;
 
 document
 .querySelectorAll(".operator")
-.forEach(x=>
-x.classList.remove("selected")
-);
+.forEach(x=>{
+x.classList.remove("selected");
+});
 
 item.classList.add("selected");
 
@@ -1189,7 +1260,9 @@ updateSteps(2);
 function loadPackages(){
 
 $("packages").innerHTML=
-packages.map((p,index)=>`
+
+packages.map(
+(p,index)=>`
 
 <div
 class="package"
@@ -1215,14 +1288,17 @@ ${p.price} AZN
 
 </div>
 
-`).join("");
+`
+).join("");
 
 
 document
 .querySelectorAll(".package")
 .forEach(item=>{
 
-item.addEventListener("click",()=>{
+item.addEventListener(
+"click",
+()=>{
 
 selectedPackage=
 packages[
@@ -1231,9 +1307,9 @@ Number(item.dataset.index)
 
 document
 .querySelectorAll(".package")
-.forEach(x=>
-x.classList.remove("selected")
-);
+.forEach(x=>{
+x.classList.remove("selected");
+});
 
 item.classList.add("selected");
 
@@ -1262,7 +1338,9 @@ loadPackages();
 /* NÖMRƏ */
 
 $("phone")
-.addEventListener("input",function(){
+.addEventListener(
+"input",
+function(){
 
 let number=
 this.value
@@ -1307,10 +1385,12 @@ $("phoneHint").className=
 });
 
 
-/* KART KOPYALA */
+/* KARTI KOPYALA */
 
 $("copyCard")
-.addEventListener("click",async()=>{
+.addEventListener(
+"click",
+async()=>{
 
 try{
 
@@ -1318,21 +1398,27 @@ await navigator.clipboard.writeText(
 MY_CARD_NUMBER.replace(/\s/g,"")
 );
 
-toast("✓ Kart nömrəsi kopyalandı");
+toast(
+"✓ Kart nömrəsi kopyalandı"
+);
 
-}catch(error){
+}catch(e){
 
-toast("Kart nömrəsini əl ilə kopyalayın");
+toast(
+"Kart nömrəsini əl ilə kopyalayın"
+);
 
 }
 
 });
 
 
-/* ÖDƏNİŞ ETDİM */
+/* ÖDƏNİŞ */
 
 $("paymentDone")
-.addEventListener("click",()=>{
+.addEventListener(
+"click",
+()=>{
 
 const phone=
 $("phone")
@@ -1342,7 +1428,9 @@ $("phone")
 
 if(!selectedOperator){
 
-toast("Operator seçin.");
+toast(
+"Operator seçin."
+);
 
 return;
 
@@ -1351,7 +1439,9 @@ return;
 
 if(phone.length!==9){
 
-toast("Nömrəni düzgün daxil edin.");
+toast(
+"Nömrəni düzgün daxil edin."
+);
 
 return;
 
@@ -1360,17 +1450,19 @@ return;
 
 if(!selectedPackage){
 
-toast("Paket seçin.");
+toast(
+"Paket seçin."
+);
 
 return;
 
 }
 
 
-/* QƏBİZİ AÇ */
-
 $("receiptSection")
-.classList.remove("hidden");
+.classList.remove(
+"hidden"
+);
 
 $("receiptSection")
 .scrollIntoView({
@@ -1383,10 +1475,35 @@ updateSteps(5);
 });
 
 
+/* =========================
+   ÖDƏNİŞDƏN GERİ
+========================= */
+
+$("backPayment")
+.addEventListener(
+"click",
+()=>{
+
+window.scrollTo({
+top:0,
+behavior:"smooth"
+});
+
+updateSteps(3);
+
+toast(
+"← Əvvəlki mərhələyə qayıtdınız"
+);
+
+});
+
+
 /* QƏBİZ */
 
 $("receipt")
-.addEventListener("change",function(){
+.addEventListener(
+"change",
+function(){
 
 const file=this.files[0];
 
@@ -1394,10 +1511,14 @@ if(!file)
 return;
 
 
-if(file.size>
-10*1024*1024){
+if(
+file.size>
+10*1024*1024
+){
 
-toast("Qəbiz maksimum 10 MB ola bilər.");
+toast(
+"Qəbiz maksimum 10 MB ola bilər."
+);
 
 this.value="";
 
@@ -1409,15 +1530,19 @@ return;
 $("fileName").textContent=
 "✓ "+file.name;
 
-$("sendReceipt").disabled=false;
+$("sendReceipt").disabled=
+false;
 
 
-if(file.type.startsWith("image/")){
+if(
+file.type.startsWith("image/")
+){
 
 const reader=
 new FileReader();
 
-reader.onload=function(e){
+reader.onload=
+function(e){
 
 $("preview").src=
 e.target.result;
@@ -1439,18 +1564,51 @@ $("preview").style.display=
 });
 
 
+/* =========================
+   QƏBİZDƏN GERİ
+========================= */
+
+$("backReceipt")
+.addEventListener(
+"click",
+()=>{
+
+$("receiptSection")
+.classList.add("hidden");
+
+$("paymentDone").scrollIntoView({
+behavior:"smooth",
+block:"center"
+});
+
+updateSteps(4);
+
+toast(
+"← Ödəniş bölməsinə qayıtdınız"
+);
+
+});
+
+
 /* QƏBİZİ GÖNDƏR */
 
 $("sendReceipt")
-.addEventListener("click",()=>{
+.addEventListener(
+"click",
+()=>{
 
-const date=new Date();
+const date=
+new Date();
 
 const order=
 "SGB-"+
 date.getFullYear()+
-String(date.getMonth()+1).padStart(2,"0")+
-String(date.getDate()).padStart(2,"0")+
+String(
+date.getMonth()+1
+).padStart(2,"0")+
+String(
+date.getDate()
+).padStart(2,"0")+
 "-"+
 Math.floor(
 1000+
@@ -1484,8 +1642,7 @@ $("success")
 .classList.remove("hidden");
 
 
-$("success")
-.scrollIntoView({
+$("success").scrollIntoView({
 behavior:"smooth",
 block:"start"
 });
