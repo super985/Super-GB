@@ -7,6 +7,7 @@
 <title>SUPER GB — İnternet Paketləri</title>
 
 <style>
+
 *{
   box-sizing:border-box;
   margin:0;
@@ -29,6 +30,8 @@ body{
   margin:auto;
   padding:18px 0 45px;
 }
+
+/* HEADER */
 
 .header{
   display:flex;
@@ -57,7 +60,6 @@ body{
 
 .brand h1{
   font-size:23px;
-  letter-spacing:-.5px;
 }
 
 .brand p{
@@ -74,6 +76,8 @@ body{
   border:1px solid rgba(37,211,102,.18);
   font-size:9px;
 }
+
+/* HERO */
 
 .hero{
   padding:28px 22px;
@@ -120,6 +124,8 @@ body{
   font-size:9px;
 }
 
+/* SECTION */
+
 .section{
   margin-top:15px;
   padding:18px;
@@ -148,10 +154,20 @@ body{
   font-size:10px;
 }
 
+/* OPERATORLAR */
+
 .operators{
   display:grid;
   grid-template-columns:repeat(3,1fr);
-  gap:9px;
+  gap:12px;
+  align-items:stretch;
+  justify-content:center;
+}
+
+.operator{
+  width:100%;
+  display:flex;
+  justify-content:center;
 }
 
 .operator input{
@@ -159,12 +175,14 @@ body{
 }
 
 .operator label{
+  width:100%;
   min-height:145px;
-  padding:10px;
+  padding:12px;
   display:flex;
   flex-direction:column;
-  justify-content:center;
   align-items:center;
+  justify-content:center;
+  text-align:center;
   gap:10px;
   cursor:pointer;
   border-radius:19px;
@@ -188,31 +206,35 @@ body{
   box-shadow:0 0 27px rgba(139,92,246,.15);
 }
 
-/* LOQOLAR TAM MƏRKƏZDƏ */
+/* LOQO KONTEYNERI */
 
 .logoBox{
   width:100px;
   height:72px;
+  flex:none;
   display:flex;
-  justify-content:center;
   align-items:center;
+  justify-content:center;
+  margin:0 auto;
   overflow:hidden;
   border-radius:17px;
   background:#fff;
-  margin:0 auto;
 }
+
+/* AZERCELL */
 
 .azercell{
   position:relative;
   width:88px;
   height:58px;
+  flex:none;
   display:flex;
   justify-content:center;
   align-items:center;
   background:#7425d8;
   border-radius:12px;
   overflow:hidden;
-  margin:auto;
+  margin:0 auto;
 }
 
 .azercellText{
@@ -238,22 +260,26 @@ body{
   transform:rotate(-20deg);
 }
 
+/* BAKCELL */
+
 .bakcell{
   position:relative;
   width:88px;
   height:58px;
+  flex:none;
   display:flex;
   align-items:center;
   justify-content:center;
   background:#fff;
   border-radius:12px;
-  margin:auto;
+  margin:0 auto;
 }
 
 .bakShape{
   width:42px;
   height:42px;
   background:#e31837;
+
   clip-path:polygon(
     50% 0,
     63% 28%,
@@ -281,9 +307,12 @@ body{
   text-align:center;
 }
 
+/* NAR */
+
 .nar{
   width:88px;
   height:58px;
+  flex:none;
   display:flex;
   align-items:center;
   justify-content:center;
@@ -292,15 +321,18 @@ body{
   color:#fff;
   font-size:24px;
   font-weight:900;
-  margin:auto;
+  margin:0 auto;
   text-align:center;
 }
 
 .operatorName{
+  width:100%;
+  text-align:center;
   font-size:11px;
   font-weight:bold;
-  text-align:center;
 }
+
+/* PHONE */
 
 .label{
   display:block;
@@ -339,6 +371,8 @@ input[type="tel"]{
 input[type="tel"]:focus{
   border-color:#8b5cf6;
 }
+
+/* PAKETLƏR */
 
 .packages{
   display:grid;
@@ -434,6 +468,8 @@ input[type="tel"]:focus{
   font-weight:600;
 }
 
+/* XÜLASƏ */
+
 .summary{
   margin-top:15px;
   padding:19px;
@@ -500,6 +536,8 @@ input[type="tel"]:focus{
   font-weight:600;
 }
 
+/* ÖDƏNİŞ */
+
 .payment{
   margin-top:15px;
   padding:20px;
@@ -542,6 +580,8 @@ input[type="tel"]:focus{
   background:rgba(37,211,102,.08);
 }
 
+/* MƏBLƏĞ */
+
 .amount{
   padding:18px;
   text-align:center;
@@ -576,6 +616,8 @@ input[type="tel"]:focus{
   font-size:10px;
   font-weight:600;
 }
+
+/* KART */
 
 .card{
   position:relative;
@@ -647,7 +689,7 @@ input[type="tel"]:focus{
   letter-spacing:1.5px;
 }
 
-/* KART NÖMRƏSİ DAHA BÖYÜK */
+/* BÖYÜK KART NÖMRƏSİ */
 
 .cardNumber{
   display:flex;
@@ -708,6 +750,8 @@ input[type="tel"]:focus{
   background:rgba(255,255,255,.035);
   font-size:9px;
 }
+
+/* QƏBZ */
 
 .receipt{
   margin-top:13px;
@@ -874,10 +918,34 @@ input[type="tel"]:focus{
   line-height:1.7;
 }
 
+/* MOBİL */
+
 @media(max-width:430px){
 
   .hero h2{
     font-size:27px;
+  }
+
+  .operators{
+    grid-template-columns:repeat(3,1fr);
+    gap:7px;
+  }
+
+  .operator label{
+    min-height:135px;
+    padding:8px 4px;
+  }
+
+  .logoBox{
+    width:88px;
+    height:65px;
+  }
+
+  .azercell,
+  .bakcell,
+  .nar{
+    width:78px;
+    height:54px;
   }
 
   .amountValue b{
@@ -902,6 +970,7 @@ input[type="tel"]:focus{
   }
 
 }
+
 </style>
 </head>
 
@@ -950,6 +1019,8 @@ paketini seç.
 
 </section>
 
+
+<!-- OPERATOR -->
 
 <section class="section">
 
@@ -1057,10 +1128,13 @@ Nar
 
 </div>
 
+
 </div>
 
 </section>
 
+
+<!-- NÖMRƏ -->
 
 <section class="section">
 
@@ -1094,6 +1168,8 @@ inputmode="numeric"
 
 </section>
 
+
+<!-- PAKET -->
 
 <section class="section">
 
@@ -1293,6 +1369,8 @@ data-minutes="700"
 </section>
 
 
+<!-- XÜLASƏ -->
+
 <section class="summary">
 
 <div class="summaryTitle">
@@ -1345,6 +1423,8 @@ data-minutes="700"
 </section>
 
 
+<!-- ÖDƏNİŞ -->
+
 <section class="payment">
 
 <div class="paymentTitle">
@@ -1380,6 +1460,8 @@ data-minutes="700"
 
 </div>
 
+
+<!-- KART -->
 
 <div class="card">
 
@@ -1447,6 +1529,8 @@ id="copyInfo"
 💳 Kart nömrəsini kopyalamaq üçün düyməyə toxunun.
 </div>
 
+
+<!-- QƏBZ -->
 
 <div class="receipt">
 
@@ -1554,22 +1638,37 @@ SUPER GB<br>
 
 <script>
 
-const CARD_NUMBER = "5315 9921 2761 6081";
+/*
+  ÖZ KART NÖMRƏNİ BURADA YAZ.
+  Məsələn:
+  const CARD_NUMBER = "4169 1234 5678 9012";
+*/
+
+const CARD_NUMBER =
+"5315 9921 2761 6081";
 
 document.getElementById("cardNumber").innerText =
 CARD_NUMBER;
 
 
+/* KART KOPYALAMA */
+
 function copyCard(){
 
-  if(CARD_NUMBER === "BURAYA_KART_NOMRESI"){
+  if(
+    CARD_NUMBER ===
+    "BURAYA_KART_NOMRESI"
+  ){
 
-    alert("Əvvəlcə kodda öz kart nömrəni əlavə et.");
+    alert(
+      "Əvvəlcə kodda öz kart nömrəni əlavə et."
+    );
 
     return;
   }
 
-  navigator.clipboard.writeText(CARD_NUMBER)
+  navigator.clipboard
+  .writeText(CARD_NUMBER)
   .then(function(){
 
     const info =
@@ -1578,14 +1677,15 @@ function copyCard(){
     info.innerHTML =
       "✓ Kart nömrəsi yaddaşa kopyalandı";
 
-    info.style.color="#70ffc0";
+    info.style.color =
+      "#70ffc0";
 
     setTimeout(function(){
 
       info.innerHTML =
         "💳 Kart nömrəsini kopyalamaq üçün düyməyə toxunun.";
 
-      info.style.color="";
+      info.style.color = "";
 
     },2500);
 
@@ -1593,6 +1693,8 @@ function copyCard(){
 
 }
 
+
+/* SİFARİŞ XÜLASƏSİ */
 
 function updateSummary(){
 
@@ -1649,8 +1751,12 @@ function updateSummary(){
 }
 
 
+/* OPERATOR */
+
 document
-.querySelectorAll('input[name="operator"]')
+.querySelectorAll(
+  'input[name="operator"]'
+)
 .forEach(function(input){
 
   input.addEventListener(
@@ -1661,8 +1767,12 @@ document
 });
 
 
+/* PAKET */
+
 document
-.querySelectorAll('input[name="package"]')
+.querySelectorAll(
+  'input[name="package"]'
+)
 .forEach(function(input){
 
   input.addEventListener(
@@ -1672,6 +1782,8 @@ document
 
 });
 
+
+/* NÖMRƏ */
 
 document
 .getElementById("phone")
@@ -1680,6 +1792,8 @@ document
   updateSummary
 );
 
+
+/* QƏBZ */
 
 function receiptSelected(){
 
@@ -1693,7 +1807,8 @@ function receiptSelected(){
 
   document.getElementById(
     "success"
-  ).style.display="block";
+  ).style.display =
+    "block";
 
 
   document.getElementById(
@@ -1704,10 +1819,14 @@ function receiptSelected(){
 }
 
 
+/* ÖDƏNİŞİ ETDİM */
+
 function paymentDone(){
 
   const phone =
-    document.getElementById("phone").value;
+    document.getElementById(
+      "phone"
+    ).value;
 
   const receipt =
     document.getElementById(
@@ -1736,15 +1855,20 @@ function paymentDone(){
 
 
   const status =
-    document.getElementById("status");
+    document.getElementById(
+      "status"
+    );
 
-  status.style.display="block";
+  status.style.display =
+    "block";
 
   status.innerHTML =
     "✓ Ödəniş məlumatı və qəbz qəbul edildi.";
 
 }
 
+
+/* İLK MƏLUMATLAR */
 
 updateSummary();
 
