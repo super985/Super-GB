@@ -30,8 +30,6 @@ body{
   padding:18px 0 45px;
 }
 
-/* HEADER */
-
 .header{
   display:flex;
   justify-content:space-between;
@@ -76,8 +74,6 @@ body{
   border:1px solid rgba(37,211,102,.18);
   font-size:9px;
 }
-
-/* HERO */
 
 .hero{
   padding:28px 22px;
@@ -124,8 +120,6 @@ body{
   font-size:9px;
 }
 
-/* SECTION */
-
 .section{
   margin-top:15px;
   padding:18px;
@@ -153,8 +147,6 @@ body{
   color:#777285;
   font-size:10px;
 }
-
-/* OPERATOR */
 
 .operators{
   display:grid;
@@ -196,12 +188,6 @@ body{
   box-shadow:0 0 27px rgba(139,92,246,.15);
 }
 
-/*
-  LOQO KARTLARI
-  Şəkil görünməzsə belə marka adı və rəng
-  aydın görünür.
-*/
-
 .logoBox{
   width:100px;
   height:72px;
@@ -212,8 +198,6 @@ body{
   border-radius:17px;
   background:#fff;
 }
-
-/* AZERCELL */
 
 .azercell{
   position:relative;
@@ -248,8 +232,6 @@ body{
   border-radius:50%;
   transform:rotate(-20deg);
 }
-
-/* BAKCELL */
 
 .bakcell{
   position:relative;
@@ -290,8 +272,6 @@ body{
   font-weight:900;
 }
 
-/* NAR */
-
 .nar{
   width:88px;
   height:58px;
@@ -309,8 +289,6 @@ body{
   font-size:11px;
   font-weight:bold;
 }
-
-/* PHONE */
 
 .label{
   display:block;
@@ -349,8 +327,6 @@ input[type="tel"]{
 input[type="tel"]:focus{
   border-color:#8b5cf6;
 }
-
-/* PACKAGES */
 
 .packages{
   display:grid;
@@ -446,8 +422,6 @@ input[type="tel"]:focus{
   font-weight:600;
 }
 
-/* SUMMARY */
-
 .summary{
   margin-top:15px;
   padding:19px;
@@ -514,8 +488,6 @@ input[type="tel"]:focus{
   font-weight:600;
 }
 
-/* PAYMENT */
-
 .payment{
   margin-top:15px;
   padding:20px;
@@ -558,8 +530,6 @@ input[type="tel"]:focus{
   background:rgba(37,211,102,.08);
 }
 
-/* BIG AMOUNT */
-
 .amount{
   padding:18px;
   text-align:center;
@@ -594,8 +564,6 @@ input[type="tel"]:focus{
   font-size:10px;
   font-weight:600;
 }
-
-/* CARD */
 
 .card{
   position:relative;
@@ -667,15 +635,17 @@ input[type="tel"]:focus{
   letter-spacing:1.5px;
 }
 
+/* YALNIZ BU HISSƏ DƏYİŞDİRİLİB */
+
 .cardNumber{
   display:flex;
   align-items:center;
   justify-content:space-between;
   gap:8px;
   margin-top:8px;
-  font-size:12px;
+  font-size:16px;
   font-weight:bold;
-  letter-spacing:1px;
+  letter-spacing:1.5px;
 }
 
 .copy{
@@ -719,8 +689,6 @@ input[type="tel"]:focus{
   background:rgba(255,255,255,.035);
   font-size:9px;
 }
-
-/* RECEIPT */
 
 .receipt{
   margin-top:13px;
@@ -956,8 +924,6 @@ paketini seç.
 </section>
 
 
-<!-- OPERATOR -->
-
 <section class="section">
 
 <div class="sectionTitle">
@@ -966,7 +932,6 @@ paketini seç.
 </div>
 
 <div class="operators">
-
 
 <div class="operator">
 
@@ -1069,8 +1034,6 @@ Nar
 </section>
 
 
-<!-- PHONE -->
-
 <section class="section">
 
 <div class="sectionTitle">
@@ -1103,8 +1066,6 @@ inputmode="numeric"
 
 </section>
 
-
-<!-- PACKAGES -->
 
 <section class="section">
 
@@ -1304,8 +1265,6 @@ data-minutes="700"
 </section>
 
 
-<!-- SUMMARY -->
-
 <section class="summary">
 
 <div class="summaryTitle">
@@ -1358,8 +1317,6 @@ data-minutes="700"
 </section>
 
 
-<!-- PAYMENT -->
-
 <section class="payment">
 
 <div class="paymentTitle">
@@ -1395,8 +1352,6 @@ data-minutes="700"
 
 </div>
 
-
-<!-- KART -->
 
 <div class="card">
 
@@ -1464,8 +1419,6 @@ id="copyInfo"
 💳 Kart nömrəsini kopyalamaq üçün düyməyə toxunun.
 </div>
 
-
-<!-- RECEIPT -->
 
 <div class="receipt">
 
@@ -1573,18 +1526,11 @@ SUPER GB<br>
 
 <script>
 
-/* =====================================
-   KART NÖMRƏSİ
-   BURADA ÖZ KART NÖMRƏNİ YAZ
-===================================== */
-
 const CARD_NUMBER = "5315 9921 2761 6081";
 
 document.getElementById("cardNumber").innerText =
 CARD_NUMBER;
 
-
-/* KARTI KOPYALA */
 
 function copyCard(){
 
@@ -1619,8 +1565,6 @@ function copyCard(){
 
 }
 
-
-/* XÜLASƏ */
 
 function updateSummary(){
 
@@ -1677,8 +1621,6 @@ function updateSummary(){
 }
 
 
-/* OPERATOR */
-
 document
 .querySelectorAll('input[name="operator"]')
 .forEach(function(input){
@@ -1690,8 +1632,6 @@ document
 
 });
 
-
-/* PAKET */
 
 document
 .querySelectorAll('input[name="package"]')
@@ -1705,8 +1645,6 @@ document
 });
 
 
-/* NÖMRƏ */
-
 document
 .getElementById("phone")
 .addEventListener(
@@ -1714,8 +1652,6 @@ document
   updateSummary
 );
 
-
-/* QƏBZ */
 
 function receiptSelected(){
 
@@ -1739,8 +1675,6 @@ function receiptSelected(){
 
 }
 
-
-/* ÖDƏNİŞ */
 
 function paymentDone(){
 
@@ -1783,8 +1717,6 @@ function paymentDone(){
 
 }
 
-
-/* BAŞLANĞIC */
 
 updateSummary();
 
