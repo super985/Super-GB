@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>SUPER GB</title>
+<title>SUPER GB — İnternet Paketləri</title>
 
 <style>
 *{
@@ -18,17 +18,19 @@ body{
   min-height:100vh;
   color:#fff;
   background:
-    radial-gradient(circle at 10% 0%,rgba(124,58,237,.30),transparent 28%),
-    radial-gradient(circle at 100% 20%,rgba(14,165,233,.18),transparent 25%),
-    linear-gradient(145deg,#05050b,#0d0917,#05050b);
+    radial-gradient(circle at 5% 0%,rgba(124,58,237,.30),transparent 28%),
+    radial-gradient(circle at 100% 20%,rgba(14,165,233,.16),transparent 28%),
+    linear-gradient(145deg,#04040a,#0b0814,#05050a);
 }
 
 .app{
   width:94%;
-  max-width:620px;
+  max-width:650px;
   margin:auto;
   padding:18px 0 45px;
 }
+
+/* HEADER */
 
 .header{
   display:flex;
@@ -44,61 +46,64 @@ body{
 }
 
 .brandIcon{
-  width:54px;
-  height:54px;
+  width:53px;
+  height:53px;
   display:flex;
   align-items:center;
   justify-content:center;
-  border-radius:18px;
+  border-radius:17px;
   background:linear-gradient(135deg,#8b5cf6,#ec4899);
-  box-shadow:0 0 30px rgba(139,92,246,.4);
-  font-size:27px;
+  box-shadow:0 0 30px rgba(139,92,246,.35);
+  font-size:25px;
 }
 
 .brand h1{
   font-size:23px;
+  letter-spacing:-.5px;
 }
 
 .brand p{
   margin-top:3px;
-  color:#858292;
+  color:#817d90;
   font-size:9px;
 }
 
 .live{
   padding:8px 11px;
   border-radius:12px;
-  color:#6dffba;
-  font-size:9px;
-  background:rgba(37,211,102,.07);
+  color:#69ffb7;
+  background:rgba(37,211,102,.06);
   border:1px solid rgba(37,211,102,.18);
+  font-size:9px;
 }
 
+/* HERO */
+
 .hero{
-  padding:27px 22px;
+  padding:28px 22px;
   border-radius:28px;
   background:
-    radial-gradient(circle at 100% 0%,rgba(34,211,238,.22),transparent 32%),
-    radial-gradient(circle at 0% 100%,rgba(236,72,153,.18),transparent 35%),
-    linear-gradient(135deg,#1b1231,#0b0b14);
+    radial-gradient(circle at 100% 0%,rgba(34,211,238,.19),transparent 33%),
+    radial-gradient(circle at 0% 100%,rgba(236,72,153,.18),transparent 38%),
+    linear-gradient(135deg,#1b1230,#0b0a13);
   border:1px solid rgba(255,255,255,.08);
   box-shadow:0 25px 70px rgba(0,0,0,.4);
 }
 
 .hero h2{
-  font-size:30px;
+  font-size:31px;
   line-height:1.1;
 }
 
 .gradient{
-  background:linear-gradient(90deg,#bda2ff,#ff8ec6,#5eeaff);
+  background:linear-gradient(90deg,#c2a7ff,#ff8dc5,#5deaff);
   -webkit-background-clip:text;
   color:transparent;
 }
 
 .hero p{
   margin-top:11px;
-  color:#a19eaf;
+  color:#a09cab;
   font-size:12px;
   line-height:1.5;
 }
@@ -107,17 +112,19 @@ body{
   display:flex;
   flex-wrap:wrap;
   gap:7px;
-  margin-top:16px;
+  margin-top:17px;
 }
 
 .badge{
   padding:8px 10px;
   border-radius:11px;
-  color:#d6d2df;
-  font-size:9px;
-  background:rgba(255,255,255,.05);
+  color:#d3cfdd;
+  background:rgba(255,255,255,.045);
   border:1px solid rgba(255,255,255,.07);
+  font-size:9px;
 }
+
+/* SECTION */
 
 .section{
   margin-top:15px;
@@ -126,7 +133,7 @@ body{
   background:linear-gradient(
     145deg,
     rgba(255,255,255,.055),
-    rgba(255,255,255,.018)
+    rgba(255,255,255,.015)
   );
   border:1px solid rgba(255,255,255,.075);
 }
@@ -143,9 +150,11 @@ body{
 }
 
 .step{
-  color:#777386;
+  color:#777285;
   font-size:10px;
 }
+
+/* OPERATOR */
 
 .operators{
   display:grid;
@@ -158,16 +167,16 @@ body{
 }
 
 .operator label{
-  min-height:140px;
+  min-height:145px;
+  padding:10px;
   display:flex;
   flex-direction:column;
   justify-content:center;
   align-items:center;
   gap:10px;
-  padding:10px;
-  border-radius:18px;
   cursor:pointer;
-  background:#090910;
+  border-radius:19px;
+  background:#08080e;
   border:1px solid rgba(255,255,255,.08);
   transition:.25s;
 }
@@ -177,76 +186,91 @@ body{
 }
 
 .operator input:checked + label{
-  border-color:#9b6cff;
+  border-color:#9568ff;
   background:
     linear-gradient(
       145deg,
-      rgba(139,92,246,.25),
-      rgba(236,72,153,.08)
+      rgba(139,92,246,.22),
+      rgba(236,72,153,.06)
     );
-  box-shadow:0 0 25px rgba(139,92,246,.16);
+  box-shadow:0 0 27px rgba(139,92,246,.15);
 }
 
-/* AZERCELL RƏSMİ LOQO GÖRÜNÜŞÜ */
-.azercellLogo{
-  width:86px;
-  height:60px;
+/*
+  LOQO KARTLARI
+  Şəkil görünməzsə belə marka adı və rəng
+  aydın görünür.
+*/
+
+.logoBox{
+  width:100px;
+  height:72px;
   display:flex;
-  align-items:center;
   justify-content:center;
+  align-items:center;
+  overflow:hidden;
+  border-radius:17px;
+  background:#fff;
+}
+
+/* AZERCELL */
+
+.azercell{
   position:relative;
-  color:#fff;
-  background:#7b2cff;
+  width:88px;
+  height:58px;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  background:#7425d8;
   border-radius:12px;
   overflow:hidden;
+}
+
+.azercellText{
+  position:relative;
+  z-index:3;
+  color:#fff;
   font-size:15px;
   font-weight:800;
   letter-spacing:-.7px;
 }
 
-/* Azercell-in swoosh/halqa elementinə bənzər detal */
-.azercellLogo:before{
-  content:"";
+.azercellRing{
   position:absolute;
-  width:52px;
-  height:27px;
-  left:17px;
-  top:9px;
-  border:5px solid #fff;
+  width:50px;
+  height:25px;
+  top:8px;
+  left:18px;
+  border:4px solid #fff;
   border-left-color:transparent;
   border-bottom-color:transparent;
   border-radius:50%;
-  transform:rotate(-18deg);
-  opacity:.95;
-}
-
-.azercellLogo span{
-  position:relative;
-  z-index:2;
+  transform:rotate(-20deg);
 }
 
 /* BAKCELL */
-.bakcellLogo{
-  width:86px;
-  height:60px;
+
+.bakcell{
+  position:relative;
+  width:88px;
+  height:58px;
   display:flex;
   align-items:center;
   justify-content:center;
-  position:relative;
   background:#fff;
   border-radius:12px;
-  overflow:hidden;
 }
 
-.bakcellShape{
-  width:43px;
-  height:43px;
-  background:#e51b3e;
+.bakShape{
+  width:42px;
+  height:42px;
+  background:#e31837;
   clip-path:polygon(
     50% 0,
-    62% 29%,
+    63% 28%,
     96% 20%,
-    73% 48%,
+    73% 49%,
     100% 70%,
     65% 64%,
     55% 100%,
@@ -258,38 +282,27 @@ body{
   );
 }
 
-.bakcellText{
+.bakText{
   position:absolute;
-  bottom:5px;
+  bottom:4px;
   color:#111;
   font-size:8px;
   font-weight:900;
 }
 
 /* NAR */
-.narLogo{
-  width:86px;
-  height:60px;
+
+.nar{
+  width:88px;
+  height:58px;
   display:flex;
   align-items:center;
   justify-content:center;
   border-radius:12px;
   background:#ed1c24;
   color:#fff;
-  font-size:23px;
+  font-size:24px;
   font-weight:900;
-  box-shadow:0 5px 20px rgba(237,28,36,.25);
-}
-
-.logoBox{
-  width:90px;
-  height:70px;
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  overflow:hidden;
-  border-radius:16px;
-  background:#fff;
 }
 
 .operatorName{
@@ -297,10 +310,12 @@ body{
   font-weight:bold;
 }
 
+/* PHONE */
+
 .label{
   display:block;
   margin-bottom:7px;
-  color:#aaa7b5;
+  color:#aaa6b5;
   font-size:11px;
 }
 
@@ -312,28 +327,30 @@ body{
 .prefix{
   width:72px;
   display:flex;
-  justify-content:center;
   align-items:center;
+  justify-content:center;
   border-radius:13px;
-  background:#08080f;
+  color:#aaa7b5;
+  background:#08080e;
   border:1px solid rgba(255,255,255,.1);
-  color:#aaa7b6;
 }
 
 input[type="tel"]{
   flex:1;
   min-width:0;
   padding:14px;
-  border-radius:13px;
   outline:none;
   color:#fff;
-  background:#08080f;
+  background:#08080e;
   border:1px solid rgba(255,255,255,.1);
+  border-radius:13px;
 }
 
 input[type="tel"]:focus{
   border-color:#8b5cf6;
 }
+
+/* PACKAGES */
 
 .packages{
   display:grid;
@@ -353,9 +370,9 @@ input[type="tel"]:focus{
   display:block;
   min-height:150px;
   padding:16px;
-  border-radius:19px;
   cursor:pointer;
-  background:#090910;
+  border-radius:19px;
+  background:#09090f;
   border:1px solid rgba(255,255,255,.08);
   transition:.25s;
 }
@@ -429,6 +446,8 @@ input[type="tel"]:focus{
   font-weight:600;
 }
 
+/* SUMMARY */
+
 .summary{
   margin-top:15px;
   padding:19px;
@@ -495,6 +514,8 @@ input[type="tel"]:focus{
   font-weight:600;
 }
 
+/* PAYMENT */
+
 .payment{
   margin-top:15px;
   padding:20px;
@@ -531,11 +552,13 @@ input[type="tel"]:focus{
   width:42px;
   height:42px;
   display:flex;
-  justify-content:center;
   align-items:center;
+  justify-content:center;
   border-radius:14px;
   background:rgba(37,211,102,.08);
 }
+
+/* BIG AMOUNT */
 
 .amount{
   padding:18px;
@@ -562,15 +585,17 @@ input[type="tel"]:focus{
 }
 
 .amountValue b{
-  font-size:58px;
+  font-size:60px;
   line-height:1;
   font-weight:900;
 }
 
 .amountValue small{
-  font-size:11px;
+  font-size:10px;
   font-weight:600;
 }
+
+/* CARD */
 
 .card{
   position:relative;
@@ -675,10 +700,10 @@ input[type="tel"]:focus{
 
 .cardBottom small{
   display:block;
+  margin-bottom:4px;
   color:#858294;
   font-size:7px;
   letter-spacing:1px;
-  margin-bottom:4px;
 }
 
 .cardBottom strong{
@@ -694,6 +719,8 @@ input[type="tel"]:focus{
   background:rgba(255,255,255,.035);
   font-size:9px;
 }
+
+/* RECEIPT */
 
 .receipt{
   margin-top:13px;
@@ -714,8 +741,8 @@ input[type="tel"]:focus{
   width:41px;
   height:41px;
   display:flex;
-  justify-content:center;
   align-items:center;
+  justify-content:center;
   border-radius:13px;
   background:rgba(139,92,246,.12);
 }
@@ -756,8 +783,8 @@ input[type="tel"]:focus{
   width:46px;
   height:46px;
   display:flex;
-  justify-content:center;
   align-items:center;
+  justify-content:center;
   margin-bottom:8px;
   border-radius:50%;
   background:linear-gradient(135deg,#8b5cf6,#ec4899);
@@ -788,8 +815,8 @@ input[type="tel"]:focus{
   width:52px;
   height:52px;
   display:flex;
-  justify-content:center;
   align-items:center;
+  justify-content:center;
   margin:0 auto 9px;
   border-radius:50%;
   background:linear-gradient(135deg,#22c55e,#16a34a);
@@ -867,11 +894,7 @@ input[type="tel"]:focus{
   }
 
   .amountValue b{
-    font-size:54px;
-  }
-
-  .packages{
-    grid-template-columns:repeat(2,1fr);
+    font-size:55px;
   }
 
 }
@@ -919,17 +942,15 @@ input[type="tel"]:focus{
 </h2>
 
 <p>
-Operatorunu, nömrəni və sənə uyğun
-internet paketini seç.
+Operatorunu, nömrəni və sənə uyğun internet
+paketini seç.
 </p>
 
 <div class="badges">
-
 <div class="badge">⚡ Sürətli</div>
 <div class="badge">📱 Mobil uyğun</div>
 <div class="badge">🔒 Təhlükəsiz</div>
 <div class="badge">📅 30 gün</div>
-
 </div>
 
 </section>
@@ -947,8 +968,6 @@ internet paketini seç.
 <div class="operators">
 
 
-<!-- AZERCELL -->
-
 <div class="operator">
 
 <input
@@ -963,8 +982,14 @@ checked
 
 <div class="logoBox">
 
-<div class="azercellLogo">
-<span>azercell</span>
+<div class="azercell">
+
+<div class="azercellRing"></div>
+
+<div class="azercellText">
+azercell
+</div>
+
 </div>
 
 </div>
@@ -977,8 +1002,6 @@ Azercell
 
 </div>
 
-
-<!-- BAKCELL -->
 
 <div class="operator">
 
@@ -993,11 +1016,11 @@ value="Bakcell"
 
 <div class="logoBox">
 
-<div class="bakcellLogo">
+<div class="bakcell">
 
-<div class="bakcellShape"></div>
+<div class="bakShape"></div>
 
-<div class="bakcellText">
+<div class="bakText">
 bakcell
 </div>
 
@@ -1014,8 +1037,6 @@ Bakcell
 </div>
 
 
-<!-- NAR -->
-
 <div class="operator">
 
 <input
@@ -1029,7 +1050,7 @@ value="Nar"
 
 <div class="logoBox">
 
-<div class="narLogo">
+<div class="nar">
 Nar
 </div>
 
@@ -1048,7 +1069,7 @@ Nar
 </section>
 
 
-<!-- NÖMRƏ -->
+<!-- PHONE -->
 
 <section class="section">
 
@@ -1083,7 +1104,7 @@ inputmode="numeric"
 </section>
 
 
-<!-- PAKETLƏR -->
+<!-- PACKAGES -->
 
 <section class="section">
 
@@ -1094,7 +1115,6 @@ inputmode="numeric"
 <span class="step">03</span>
 
 </div>
-
 
 <div class="packages">
 
@@ -1284,7 +1304,7 @@ data-minutes="700"
 </section>
 
 
-<!-- XÜLASƏ -->
+<!-- SUMMARY -->
 
 <section class="summary">
 
@@ -1292,7 +1312,7 @@ data-minutes="700"
 
 <h3>📋 Sifariş xülasəsi</h3>
 
-<span>● AKTİV</span>
+<span>● HAZIR</span>
 
 </div>
 
@@ -1338,7 +1358,7 @@ data-minutes="700"
 </section>
 
 
-<!-- ÖDƏNİŞ -->
+<!-- PAYMENT -->
 
 <section class="payment">
 
@@ -1349,8 +1369,7 @@ data-minutes="700"
 <h3>💳 Ödəniş mərkəzi</h3>
 
 <p>
-Ödəniş məlumatlarını yoxlayın və
-qəbzi əlavə edin.
+Ödəniş məlumatlarını yoxlayın və qəbzi əlavə edin.
 </p>
 
 </div>
@@ -1446,7 +1465,7 @@ id="copyInfo"
 </div>
 
 
-<!-- QƏBZ -->
+<!-- RECEIPT -->
 
 <div class="receipt">
 
@@ -1555,27 +1574,23 @@ SUPER GB<br>
 <script>
 
 /* =====================================
-   KART NÖMRƏNİ BURADA DƏYİŞ
+   KART NÖMRƏSİ
+   BURADA ÖZ KART NÖMRƏNİ YAZ
 ===================================== */
 
-const CARD_NUMBER =
-"5315 9921 2761 6081";
+const CARD_NUMBER = "5315 9921 2761 6081";
 
 document.getElementById("cardNumber").innerText =
 CARD_NUMBER;
 
 
-/* =====================================
-   KARTI KOPYALA
-===================================== */
+/* KARTI KOPYALA */
 
 function copyCard(){
 
   if(CARD_NUMBER === "BURAYA_KART_NOMRESI"){
 
-    alert(
-      "Kodu dəyişərək öz kart nömrəni əlavə et."
-    );
+    alert("Əvvəlcə kodda öz kart nömrəni əlavə et.");
 
     return;
   }
@@ -1605,9 +1620,7 @@ function copyCard(){
 }
 
 
-/* =====================================
-   SİFARİŞ XÜLASƏSİ
-===================================== */
+/* XÜLASƏ */
 
 function updateSummary(){
 
@@ -1664,9 +1677,7 @@ function updateSummary(){
 }
 
 
-/* =====================================
-   OPERATOR SEÇİMİ
-===================================== */
+/* OPERATOR */
 
 document
 .querySelectorAll('input[name="operator"]')
@@ -1680,9 +1691,7 @@ document
 });
 
 
-/* =====================================
-   PAKET SEÇİMİ
-===================================== */
+/* PAKET */
 
 document
 .querySelectorAll('input[name="package"]')
@@ -1696,9 +1705,7 @@ document
 });
 
 
-/* =====================================
-   NÖMRƏ
-===================================== */
+/* NÖMRƏ */
 
 document
 .getElementById("phone")
@@ -1708,9 +1715,7 @@ document
 );
 
 
-/* =====================================
-   QƏBZ
-===================================== */
+/* QƏBZ */
 
 function receiptSelected(){
 
@@ -1735,9 +1740,7 @@ function receiptSelected(){
 }
 
 
-/* =====================================
-   ÖDƏNİŞİ ETDİM
-===================================== */
+/* ÖDƏNİŞ */
 
 function paymentDone(){
 
@@ -1781,7 +1784,7 @@ function paymentDone(){
 }
 
 
-/* İlk açılış */
+/* BAŞLANĞIC */
 
 updateSummary();
 
