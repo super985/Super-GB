@@ -3,6 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
 <title>SUPER GB</title>
 
 <style>
@@ -14,8 +15,8 @@
 
 body{
   font-family:Arial,Helvetica,sans-serif;
-  color:#fff;
   min-height:100vh;
+  color:#fff;
   background:
     radial-gradient(circle at 10% 0%,rgba(124,58,237,.30),transparent 28%),
     radial-gradient(circle at 100% 20%,rgba(14,165,233,.18),transparent 25%),
@@ -46,8 +47,8 @@ body{
   width:54px;
   height:54px;
   display:flex;
-  justify-content:center;
   align-items:center;
+  justify-content:center;
   border-radius:18px;
   background:linear-gradient(135deg,#8b5cf6,#ec4899);
   box-shadow:0 0 30px rgba(139,92,246,.4);
@@ -146,8 +147,6 @@ body{
   font-size:10px;
 }
 
-/* OPERATOR */
-
 .operators{
   display:grid;
   grid-template-columns:repeat(3,1fr);
@@ -159,7 +158,7 @@ body{
 }
 
 .operator label{
-  min-height:128px;
+  min-height:140px;
   display:flex;
   flex-direction:column;
   justify-content:center;
@@ -174,73 +173,75 @@ body{
 }
 
 .operator label:hover{
-  transform:translateY(-2px);
+  transform:translateY(-3px);
 }
 
 .operator input:checked + label{
   border-color:#9b6cff;
-  background:linear-gradient(
-    145deg,
-    rgba(139,92,246,.25),
-    rgba(236,72,153,.08)
-  );
+  background:
+    linear-gradient(
+      145deg,
+      rgba(139,92,246,.25),
+      rgba(236,72,153,.08)
+    );
   box-shadow:0 0 25px rgba(139,92,246,.16);
 }
 
-/*
-  LOQOLAR TƏK INDEX.HTML İÇİNDƏDİR.
-  Xarici logos qovluğu tələb olunmur.
-*/
-
-.logoBox{
-  width:76px;
-  height:76px;
-  display:flex;
-  justify-content:center;
-  align-items:center;
-  border-radius:20px;
-  background:#fff;
-  overflow:hidden;
-  box-shadow:0 8px 25px rgba(0,0,0,.35);
-}
-
-.operator input:checked + label .logoBox{
-  box-shadow:
-    0 0 0 2px #9b6cff,
-    0 0 30px rgba(139,92,246,.3);
-}
-
-/* AZERCELL */
-
+/* AZERCELL RƏSMİ LOQO GÖRÜNÜŞÜ */
 .azercellLogo{
-  width:62px;
-  height:62px;
-  border-radius:50%;
-  background:#ffd900;
-  color:#111;
+  width:86px;
+  height:60px;
   display:flex;
   align-items:center;
   justify-content:center;
-  font-size:12px;
-  font-weight:900;
+  position:relative;
+  color:#fff;
+  background:#7b2cff;
+  border-radius:12px;
+  overflow:hidden;
+  font-size:15px;
+  font-weight:800;
   letter-spacing:-.7px;
 }
 
-/* BAKCELL */
+/* Azercell-in swoosh/halqa elementinə bənzər detal */
+.azercellLogo:before{
+  content:"";
+  position:absolute;
+  width:52px;
+  height:27px;
+  left:17px;
+  top:9px;
+  border:5px solid #fff;
+  border-left-color:transparent;
+  border-bottom-color:transparent;
+  border-radius:50%;
+  transform:rotate(-18deg);
+  opacity:.95;
+}
 
-.bakcellLogo{
+.azercellLogo span{
   position:relative;
-  width:65px;
-  height:65px;
+  z-index:2;
+}
+
+/* BAKCELL */
+.bakcellLogo{
+  width:86px;
+  height:60px;
   display:flex;
-  justify-content:center;
   align-items:center;
+  justify-content:center;
+  position:relative;
+  background:#fff;
+  border-radius:12px;
+  overflow:hidden;
 }
 
 .bakcellShape{
-  width:47px;
-  height:47px;
-  background:#e51d3f;
+  width:43px;
+  height:43px;
+  background:#e51b3e;
   clip-path:polygon(
     50% 0,
     62% 29%,
@@ -259,33 +260,42 @@ body{
 
 .bakcellText{
   position:absolute;
-  bottom:2px;
+  bottom:5px;
   color:#111;
-  font-weight:900;
   font-size:8px;
+  font-weight:900;
 }
 
 /* NAR */
-
 .narLogo{
-  width:62px;
-  height:62px;
+  width:86px;
+  height:60px;
   display:flex;
-  justify-content:center;
   align-items:center;
-  border-radius:20px 20px 20px 6px;
+  justify-content:center;
+  border-radius:12px;
   background:#ed1c24;
   color:#fff;
-  font-size:21px;
+  font-size:23px;
   font-weight:900;
+  box-shadow:0 5px 20px rgba(237,28,36,.25);
+}
+
+.logoBox{
+  width:90px;
+  height:70px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  overflow:hidden;
+  border-radius:16px;
+  background:#fff;
 }
 
 .operatorName{
   font-size:11px;
   font-weight:bold;
 }
-
-/* PHONE */
 
 .label{
   display:block;
@@ -324,8 +334,6 @@ input[type="tel"]{
 input[type="tel"]:focus{
   border-color:#8b5cf6;
 }
-
-/* PACKAGES */
 
 .packages{
   display:grid;
@@ -374,8 +382,8 @@ input[type="tel"]:focus{
   width:21px;
   height:21px;
   display:flex;
-  justify-content:center;
   align-items:center;
+  justify-content:center;
   border-radius:50%;
   color:#fff;
   background:#8b5cf6;
@@ -412,11 +420,14 @@ input[type="tel"]:focus{
 .price{
   margin-top:13px;
   color:#ffd54a;
-  font-size:22px;
+  font-size:30px;
   font-weight:900;
 }
 
-/* SUMMARY */
+.price small{
+  font-size:9px;
+  font-weight:600;
+}
 
 .summary{
   margin-top:15px;
@@ -469,28 +480,31 @@ input[type="tel"]:focus{
 .totalValue{
   display:flex;
   align-items:baseline;
-  gap:6px;
+  gap:5px;
   color:#ffd54a;
 }
 
 .totalValue b{
-  font-size:42px;
+  font-size:48px;
   line-height:1;
+  font-weight:900;
 }
 
 .totalValue small{
-  font-size:14px;
-  font-weight:700;
+  font-size:10px;
+  font-weight:600;
 }
-
-/* PAYMENT */
 
 .payment{
   margin-top:15px;
   padding:20px;
   border-radius:27px;
   background:
-    radial-gradient(circle at 100% 0%,rgba(139,92,246,.2),transparent 32%),
+    radial-gradient(
+      circle at 100% 0%,
+      rgba(139,92,246,.2),
+      transparent 32%
+    ),
     linear-gradient(145deg,#171426,#090910);
   border:1px solid rgba(255,255,255,.1);
 }
@@ -523,8 +537,6 @@ input[type="tel"]:focus{
   background:rgba(37,211,102,.08);
 }
 
-/* AMOUNT */
-
 .amount{
   padding:18px;
   text-align:center;
@@ -536,7 +548,7 @@ input[type="tel"]:focus{
 .amount > span{
   display:block;
   color:#777487;
-  font-size:9px;
+  font-size:8px;
   letter-spacing:1.8px;
 }
 
@@ -544,23 +556,21 @@ input[type="tel"]:focus{
   display:flex;
   justify-content:center;
   align-items:baseline;
-  gap:7px;
-  margin-top:6px;
+  gap:5px;
+  margin-top:7px;
   color:#ffd54a;
 }
 
 .amountValue b{
-  font-size:50px;
+  font-size:58px;
   line-height:1;
   font-weight:900;
 }
 
 .amountValue small{
-  font-size:16px;
-  font-weight:700;
+  font-size:11px;
+  font-weight:600;
 }
-
-/* CARD */
 
 .card{
   position:relative;
@@ -569,12 +579,13 @@ input[type="tel"]:focus{
   padding:20px;
   overflow:hidden;
   border-radius:23px;
-  background:linear-gradient(
-    135deg,
-    #382463,
-    #16142c 52%,
-    #101b29
-  );
+  background:
+    linear-gradient(
+      135deg,
+      #382463,
+      #16142c 52%,
+      #101b29
+    );
   border:1px solid rgba(255,255,255,.13);
   box-shadow:0 20px 45px rgba(0,0,0,.35);
 }
@@ -637,7 +648,7 @@ input[type="tel"]:focus{
   justify-content:space-between;
   gap:8px;
   margin-top:8px;
-  font-size:14px;
+  font-size:12px;
   font-weight:bold;
   letter-spacing:1px;
 }
@@ -680,11 +691,9 @@ input[type="tel"]:focus{
   text-align:center;
   border-radius:11px;
   color:#858294;
-  font-size:9px;
   background:rgba(255,255,255,.035);
+  font-size:9px;
 }
-
-/* RECEIPT */
 
 .receipt{
   margin-top:13px;
@@ -857,21 +866,14 @@ input[type="tel"]:focus{
     font-size:27px;
   }
 
+  .amountValue b{
+    font-size:54px;
+  }
+
   .packages{
     grid-template-columns:repeat(2,1fr);
   }
 
-  .package label{
-    padding:13px;
-  }
-
-  .gb{
-    font-size:23px;
-  }
-
-  .cardNumber{
-    font-size:11px;
-  }
 }
 
 @media(max-width:350px){
@@ -880,6 +882,7 @@ input[type="tel"]:focus{
   .packages{
     grid-template-columns:1fr;
   }
+
 }
 </style>
 </head>
@@ -890,38 +893,44 @@ input[type="tel"]:focus{
 
 <header class="header">
 
-  <div class="brand">
-    <div class="brandIcon">⚡</div>
+<div class="brand">
 
-    <div>
-      <h1>SUPER GB</h1>
-      <p>İnternet Paketləri</p>
-    </div>
-  </div>
+<div class="brandIcon">⚡</div>
 
-  <div class="live">● AKTİV</div>
+<div>
+<h1>SUPER GB</h1>
+<p>İnternet Paketləri</p>
+</div>
+
+</div>
+
+<div class="live">
+● AKTİV
+</div>
 
 </header>
 
 
 <section class="hero">
 
-  <h2>
-    İnternetini
-    <span class="gradient">SUPER et!</span>
-  </h2>
+<h2>
+İnternetini
+<span class="gradient">SUPER et!</span>
+</h2>
 
-  <p>
-    Operatorunu, nömrəni və sənə uyğun
-    internet paketini seç.
-  </p>
+<p>
+Operatorunu, nömrəni və sənə uyğun
+internet paketini seç.
+</p>
 
-  <div class="badges">
-    <div class="badge">⚡ Sürətli</div>
-    <div class="badge">📱 Mobil uyğun</div>
-    <div class="badge">🔒 Təhlükəsiz</div>
-    <div class="badge">📅 30 gün</div>
-  </div>
+<div class="badges">
+
+<div class="badge">⚡ Sürətli</div>
+<div class="badge">📱 Mobil uyğun</div>
+<div class="badge">🔒 Təhlükəsiz</div>
+<div class="badge">📅 30 gün</div>
+
+</div>
 
 </section>
 
@@ -930,584 +939,614 @@ input[type="tel"]:focus{
 
 <section class="section">
 
-  <div class="sectionTitle">
-    <h3>📡 Operator seçin</h3>
-    <span class="step">01</span>
-  </div>
+<div class="sectionTitle">
+<h3>📡 Operator seçin</h3>
+<span class="step">01</span>
+</div>
 
-  <div class="operators">
-
-
-    <div class="operator">
-
-      <input
-        type="radio"
-        name="operator"
-        id="azercell"
-        value="Azercell"
-        checked
-      >
-
-      <label for="azercell">
-
-        <div class="logoBox">
-          <div class="azercellLogo">
-            azercell
-          </div>
-        </div>
-
-        <div class="operatorName">
-          Azercell
-        </div>
-
-      </label>
-
-    </div>
+<div class="operators">
 
 
-    <div class="operator">
+<!-- AZERCELL -->
 
-      <input
-        type="radio"
-        name="operator"
-        id="bakcell"
-        value="Bakcell"
-      >
+<div class="operator">
 
-      <label for="bakcell">
+<input
+type="radio"
+name="operator"
+id="azercell"
+value="Azercell"
+checked
+>
 
-        <div class="logoBox">
+<label for="azercell">
 
-          <div class="bakcellLogo">
+<div class="logoBox">
 
-            <div class="bakcellShape"></div>
+<div class="azercellLogo">
+<span>azercell</span>
+</div>
 
-            <div class="bakcellText">
-              bakcell
-            </div>
+</div>
 
-          </div>
+<div class="operatorName">
+Azercell
+</div>
 
-        </div>
+</label>
 
-        <div class="operatorName">
-          Bakcell
-        </div>
-
-      </label>
-
-    </div>
+</div>
 
 
-    <div class="operator">
+<!-- BAKCELL -->
 
-      <input
-        type="radio"
-        name="operator"
-        id="nar"
-        value="Nar"
-      >
+<div class="operator">
 
-      <label for="nar">
+<input
+type="radio"
+name="operator"
+id="bakcell"
+value="Bakcell"
+>
 
-        <div class="logoBox">
+<label for="bakcell">
 
-          <div class="narLogo">
-            Nar
-          </div>
+<div class="logoBox">
 
-        </div>
+<div class="bakcellLogo">
 
-        <div class="operatorName">
-          Nar
-        </div>
+<div class="bakcellShape"></div>
 
-      </label>
+<div class="bakcellText">
+bakcell
+</div>
 
-    </div>
+</div>
 
-  </div>
+</div>
+
+<div class="operatorName">
+Bakcell
+</div>
+
+</label>
+
+</div>
+
+
+<!-- NAR -->
+
+<div class="operator">
+
+<input
+type="radio"
+name="operator"
+id="nar"
+value="Nar"
+>
+
+<label for="nar">
+
+<div class="logoBox">
+
+<div class="narLogo">
+Nar
+</div>
+
+</div>
+
+<div class="operatorName">
+Nar
+</div>
+
+</label>
+
+</div>
+
+</div>
 
 </section>
 
 
-<!-- PHONE -->
+<!-- NÖMRƏ -->
 
 <section class="section">
 
-  <div class="sectionTitle">
-    <h3>📱 Nömrə</h3>
-    <span class="step">02</span>
-  </div>
+<div class="sectionTitle">
 
-  <label class="label">
-    Mobil nömrənizi daxil edin
-  </label>
+<h3>📱 Nömrə</h3>
 
-  <div class="phone">
+<span class="step">02</span>
 
-    <div class="prefix">
-      +994
-    </div>
+</div>
 
-    <input
-      type="tel"
-      id="phone"
-      maxlength="12"
-      placeholder="50 000 00 00"
-      inputmode="numeric"
-    >
+<label class="label">
+Mobil nömrənizi daxil edin
+</label>
 
-  </div>
+<div class="phone">
+
+<div class="prefix">
++994
+</div>
+
+<input
+type="tel"
+id="phone"
+maxlength="12"
+placeholder="50 000 00 00"
+inputmode="numeric"
+>
+
+</div>
 
 </section>
 
 
-<!-- PACKAGES -->
+<!-- PAKETLƏR -->
 
 <section class="section">
 
-  <div class="sectionTitle">
-    <h3>⚡ Paket seçin</h3>
-    <span class="step">03</span>
-  </div>
+<div class="sectionTitle">
 
-  <div class="packages">
+<h3>⚡ Paket seçin</h3>
 
+<span class="step">03</span>
 
-    <div class="package">
-
-      <input
-        type="radio"
-        name="package"
-        id="p20"
-        value="20 GB"
-        data-price="5"
-        data-minutes="200"
-        checked
-      >
-
-      <label for="p20">
-
-        <div class="mark">✓</div>
-
-        <div class="gb">
-          20 <small>GB</small>
-        </div>
-
-        <div class="info">
-          📞 200 dəqiqə
-        </div>
-
-        <div class="days">
-          📅 30 gün
-        </div>
-
-        <div class="price">
-          5 <small>AZN</small>
-        </div>
-
-      </label>
-
-    </div>
+</div>
 
 
-    <div class="package">
-
-      <input
-        type="radio"
-        name="package"
-        id="p30"
-        value="30 GB"
-        data-price="10"
-        data-minutes="300"
-      >
-
-      <label for="p30">
-
-        <div class="mark">✓</div>
-
-        <div class="gb">
-          30 <small>GB</small>
-        </div>
-
-        <div class="info">
-          📞 300 dəqiqə
-        </div>
-
-        <div class="days">
-          📅 30 gün
-        </div>
-
-        <div class="price">
-          10 <small>AZN</small>
-        </div>
-
-      </label>
-
-    </div>
+<div class="packages">
 
 
-    <div class="package">
+<div class="package">
 
-      <input
-        type="radio"
-        name="package"
-        id="p40"
-        value="40 GB"
-        data-price="15"
-        data-minutes="400"
-      >
+<input
+type="radio"
+name="package"
+id="p20"
+value="20 GB"
+data-price="5"
+data-minutes="200"
+checked
+>
 
-      <label for="p40">
+<label for="p20">
 
-        <div class="mark">✓</div>
+<div class="mark">✓</div>
 
-        <div class="gb">
-          40 <small>GB</small>
-        </div>
+<div class="gb">
+20 <small>GB</small>
+</div>
 
-        <div class="info">
-          📞 400 dəqiqə
-        </div>
+<div class="info">
+📞 200 dəqiqə
+</div>
 
-        <div class="days">
-          📅 30 gün
-        </div>
+<div class="days">
+📅 30 gün
+</div>
 
-        <div class="price">
-          15 <small>AZN</small>
-        </div>
+<div class="price">
+5 <small>AZN</small>
+</div>
 
-      </label>
+</label>
 
-    </div>
-
-
-    <div class="package">
-
-      <input
-        type="radio"
-        name="package"
-        id="p60"
-        value="60 GB"
-        data-price="20"
-        data-minutes="500"
-      >
-
-      <label for="p60">
-
-        <div class="mark">✓</div>
-
-        <div class="gb">
-          60 <small>GB</small>
-        </div>
-
-        <div class="info">
-          📞 500 dəqiqə
-        </div>
-
-        <div class="days">
-          📅 30 gün
-        </div>
-
-        <div class="price">
-          20 <small>AZN</small>
-        </div>
-
-      </label>
-
-    </div>
+</div>
 
 
-    <div class="package">
+<div class="package">
 
-      <input
-        type="radio"
-        name="package"
-        id="p80"
-        value="80 GB"
-        data-price="30"
-        data-minutes="700"
-      >
+<input
+type="radio"
+name="package"
+id="p30"
+value="30 GB"
+data-price="10"
+data-minutes="300"
+>
 
-      <label for="p80">
+<label for="p30">
 
-        <div class="mark">✓</div>
+<div class="mark">✓</div>
 
-        <div class="gb">
-          80 <small>GB</small>
-        </div>
+<div class="gb">
+30 <small>GB</small>
+</div>
 
-        <div class="info">
-          📞 700 dəqiqə
-        </div>
+<div class="info">
+📞 300 dəqiqə
+</div>
 
-        <div class="days">
-          📅 30 gün
-        </div>
+<div class="days">
+📅 30 gün
+</div>
 
-        <div class="price">
-          30 <small>AZN</small>
-        </div>
+<div class="price">
+10 <small>AZN</small>
+</div>
 
-      </label>
+</label>
 
-    </div>
+</div>
 
-  </div>
+
+<div class="package">
+
+<input
+type="radio"
+name="package"
+id="p40"
+value="40 GB"
+data-price="15"
+data-minutes="400"
+>
+
+<label for="p40">
+
+<div class="mark">✓</div>
+
+<div class="gb">
+40 <small>GB</small>
+</div>
+
+<div class="info">
+📞 400 dəqiqə
+</div>
+
+<div class="days">
+📅 30 gün
+</div>
+
+<div class="price">
+15 <small>AZN</small>
+</div>
+
+</label>
+
+</div>
+
+
+<div class="package">
+
+<input
+type="radio"
+name="package"
+id="p60"
+value="60 GB"
+data-price="20"
+data-minutes="500"
+>
+
+<label for="p60">
+
+<div class="mark">✓</div>
+
+<div class="gb">
+60 <small>GB</small>
+</div>
+
+<div class="info">
+📞 500 dəqiqə
+</div>
+
+<div class="days">
+📅 30 gün
+</div>
+
+<div class="price">
+20 <small>AZN</small>
+</div>
+
+</label>
+
+</div>
+
+
+<div class="package">
+
+<input
+type="radio"
+name="package"
+id="p80"
+value="80 GB"
+data-price="30"
+data-minutes="700"
+>
+
+<label for="p80">
+
+<div class="mark">✓</div>
+
+<div class="gb">
+80 <small>GB</small>
+</div>
+
+<div class="info">
+📞 700 dəqiqə
+</div>
+
+<div class="days">
+📅 30 gün
+</div>
+
+<div class="price">
+30 <small>AZN</small>
+</div>
+
+</label>
+
+</div>
+
+</div>
 
 </section>
 
 
-<!-- SUMMARY -->
+<!-- XÜLASƏ -->
 
 <section class="summary">
 
-  <div class="summaryTitle">
-    <h3>📋 Sifariş xülasəsi</h3>
-    <span>● CANLI</span>
-  </div>
+<div class="summaryTitle">
 
-  <div class="row">
-    <span>Operator</span>
-    <strong id="summaryOperator">Azercell</strong>
-  </div>
+<h3>📋 Sifariş xülasəsi</h3>
 
-  <div class="row">
-    <span>Nömrə</span>
-    <strong id="summaryPhone">—</strong>
-  </div>
+<span>● AKTİV</span>
 
-  <div class="row">
-    <span>Paket</span>
-    <strong id="summaryPackage">20 GB</strong>
-  </div>
+</div>
 
-  <div class="row">
-    <span>Dəqiqə</span>
-    <strong id="summaryMinutes">200 dəqiqə</strong>
-  </div>
+<div class="row">
+<span>Operator</span>
+<strong id="summaryOperator">Azercell</strong>
+</div>
 
-  <div class="row">
-    <span>Müddət</span>
-    <strong>30 gün</strong>
-  </div>
+<div class="row">
+<span>Nömrə</span>
+<strong id="summaryPhone">—</strong>
+</div>
 
-  <div class="total">
+<div class="row">
+<span>Paket</span>
+<strong id="summaryPackage">20 GB</strong>
+</div>
 
-    <span>Ödəniləcək məbləğ</span>
+<div class="row">
+<span>Dəqiqə</span>
+<strong id="summaryMinutes">200 dəqiqə</strong>
+</div>
 
-    <div class="totalValue">
-      <b id="total">5</b>
-      <small>AZN</small>
-    </div>
+<div class="row">
+<span>Müddət</span>
+<strong>30 gün</strong>
+</div>
 
-  </div>
+<div class="total">
+
+<span>Ödəniləcək məbləğ</span>
+
+<div class="totalValue">
+
+<b id="total">5</b>
+
+<small>AZN</small>
+
+</div>
+
+</div>
 
 </section>
 
 
-<!-- PAYMENT -->
+<!-- ÖDƏNİŞ -->
 
 <section class="payment">
 
-  <div class="paymentTitle">
+<div class="paymentTitle">
 
-    <div>
-      <h3>💳 Ödəniş mərkəzi</h3>
+<div>
 
-      <p>
-        Ödəniş məlumatlarını yoxlayın və
-        qəbzi əlavə edin.
-      </p>
-    </div>
+<h3>💳 Ödəniş mərkəzi</h3>
 
-    <div class="lock">
-      🔒
-    </div>
+<p>
+Ödəniş məlumatlarını yoxlayın və
+qəbzi əlavə edin.
+</p>
 
-  </div>
+</div>
 
+<div class="lock">
+🔒
+</div>
 
-  <div class="amount">
-
-    <span>ÖDƏNİLMƏLİ MƏBLƏĞ</span>
-
-    <div class="amountValue">
-      <b id="paymentAmount">5</b>
-      <small>AZN</small>
-    </div>
-
-  </div>
+</div>
 
 
-  <!-- KART -->
+<div class="amount">
 
-  <div class="card">
+<span>ÖDƏNİLMƏLİ MƏBLƏĞ</span>
 
-    <div class="cardTop">
+<div class="amountValue">
 
-      <div class="chip"></div>
+<b id="paymentAmount">5</b>
 
-      <div class="cardBrand">
-        SUPER<span>GB</span>
-      </div>
+<small>AZN</small>
 
-    </div>
+</div>
 
-
-    <div class="cardMiddle">
-
-      <div class="cardLabel">
-        ÖDƏNİŞ KARTI
-      </div>
-
-      <div class="cardNumber">
-
-        <span id="cardNumber">
-          BURAYA_KART_NOMRESI
-        </span>
-
-        <button
-          class="copy"
-          onclick="copyCard()"
-          type="button"
-        >
-          ⧉
-        </button>
-
-      </div>
-
-    </div>
+</div>
 
 
-    <div class="cardBottom">
+<!-- KART -->
 
-      <div>
-        <small>KART SAHİBİ</small>
-        <strong>SUPER GB</strong>
-      </div>
+<div class="card">
 
-      <div>
-        <small>VALYUTA</small>
-        <strong>AZN</strong>
-      </div>
+<div class="cardTop">
 
-    </div>
+<div class="chip"></div>
 
-  </div>
+<div class="cardBrand">
+SUPER<span>GB</span>
+</div>
 
+</div>
 
-  <div
-    class="copyInfo"
-    id="copyInfo"
-  >
-    💳 Kart nömrəsini kopyalamaq üçün
-    düyməyə toxunun.
-  </div>
+<div class="cardMiddle">
 
+<div class="cardLabel">
+ÖDƏNİŞ KARTI
+</div>
 
-  <!-- QƏBZ -->
+<div class="cardNumber">
 
-  <div class="receipt">
+<span id="cardNumber">
+BURAYA_KART_NOMRESI
+</span>
 
-    <div class="receiptHead">
+<button
+class="copy"
+onclick="copyCard()"
+type="button"
+>
+⧉
+</button>
 
-      <div class="receiptIcon">
-        📄
-      </div>
+</div>
 
-      <div>
-        <h4>Ödəniş qəbzi</h4>
+</div>
 
-        <span>
-          Ödənişdən sonra qəbzi əlavə edin
-        </span>
-      </div>
+<div class="cardBottom">
 
-    </div>
+<div>
 
+<small>KART SAHİBİ</small>
 
-    <label class="upload">
+<strong>SUPER GB</strong>
 
-      <input
-        type="file"
-        id="receiptFile"
-        accept="image/*,.pdf"
-        onchange="receiptSelected()"
-      >
+</div>
 
-      <div class="uploadIcon">
-        ↑
-      </div>
+<div>
 
-      <strong>
-        Qəbzi seçin
-      </strong>
+<small>VALYUTA</small>
 
-      <small>
-        JPG, PNG və PDF • Maksimum 10 MB
-      </small>
+<strong>AZN</strong>
 
-    </label>
+</div>
+
+</div>
+
+</div>
 
 
-    <div
-      class="success"
-      id="success"
-    >
-
-      <div class="successCircle">
-        ✓
-      </div>
-
-      <h4>
-        Qəbz qəbul edildi
-      </h4>
-
-      <p>
-        Qəbz faylı uğurla seçildi.
-      </p>
-
-      <span
-        class="fileName"
-        id="fileName"
-      ></span>
-
-    </div>
-
-  </div>
+<div
+class="copyInfo"
+id="copyInfo"
+>
+💳 Kart nömrəsini kopyalamaq üçün düyməyə toxunun.
+</div>
 
 
-  <button
-    class="paid"
-    type="button"
-    onclick="paymentDone()"
-  >
-    ✓ Ödənişi etdim
-  </button>
+<!-- QƏBZ -->
+
+<div class="receipt">
+
+<div class="receiptHead">
+
+<div class="receiptIcon">
+📄
+</div>
+
+<div>
+
+<h4>Ödəniş qəbzi</h4>
+
+<span>
+Ödənişdən sonra qəbzi əlavə edin
+</span>
+
+</div>
+
+</div>
 
 
-  <div
-    class="status"
-    id="status"
-  >
-    ✓ Ödəniş məlumatı qeyd edildi.
-  </div>
+<label class="upload">
+
+<input
+type="file"
+id="receiptFile"
+accept="image/*,.pdf"
+onchange="receiptSelected()"
+>
+
+<div class="uploadIcon">
+↑
+</div>
+
+<strong>
+Qəbzi seçin
+</strong>
+
+<small>
+JPG, PNG və PDF
+</small>
+
+</label>
+
+
+<div
+class="success"
+id="success"
+>
+
+<div class="successCircle">
+✓
+</div>
+
+<h4>
+Qəbz əlavə edildi
+</h4>
+
+<p>
+Qəbz faylı uğurla seçildi.
+</p>
+
+<span
+class="fileName"
+id="fileName"
+></span>
+
+</div>
+
+</div>
+
+
+<button
+class="paid"
+type="button"
+onclick="paymentDone()"
+>
+✓ Ödənişi etdim
+</button>
+
+
+<div
+class="status"
+id="status"
+>
+✓ Ödəniş məlumatı qeyd edildi.
+</div>
 
 </section>
 
 
 <div class="notice">
-  🔒 Sifarişi təsdiqləməzdən əvvəl
-  məlumatları yoxlayın.
+🔒 Sifarişi təsdiqləməzdən əvvəl məlumatları yoxlayın.
 </div>
 
 
 <div class="footer">
-  SUPER GB<br>
-  İnternet Paketləri
+SUPER GB<br>
+İnternet Paketləri
 </div>
 
 </div>
@@ -1515,162 +1554,125 @@ input[type="tel"]:focus{
 
 <script>
 
-/* ==========================================
-   ÖZ KART NÖMRƏNİ BURAYA YAZ
-   ========================================== */
+/* =====================================
+   KART NÖMRƏNİ BURADA DƏYİŞ
+===================================== */
 
-const CARD_NUMBER = "BURAYA_KART_NOMRESI";
+const CARD_NUMBER =
+"5315 9921 2761 6081";
 
 document.getElementById("cardNumber").innerText =
 CARD_NUMBER;
 
 
-/* KARTI KOPYALA */
+/* =====================================
+   KARTI KOPYALA
+===================================== */
 
 function copyCard(){
 
   if(CARD_NUMBER === "BURAYA_KART_NOMRESI"){
-    alert("Əvvəlcə kodda öz kart nömrəni əlavə et.");
+
+    alert(
+      "Kodu dəyişərək öz kart nömrəni əlavə et."
+    );
+
     return;
   }
 
-  if(navigator.clipboard){
+  navigator.clipboard.writeText(CARD_NUMBER)
+  .then(function(){
 
-    navigator.clipboard.writeText(CARD_NUMBER)
-    .then(function(){
-
-      const info =
+    const info =
       document.getElementById("copyInfo");
 
-      info.innerHTML =
+    info.innerHTML =
       "✓ Kart nömrəsi yaddaşa kopyalandı";
 
-      info.style.color="#70ffc0";
+    info.style.color="#70ffc0";
 
-      setTimeout(function(){
+    setTimeout(function(){
 
-        info.innerHTML =
+      info.innerHTML =
         "💳 Kart nömrəsini kopyalamaq üçün düyməyə toxunun.";
 
-        info.style.color="";
+      info.style.color="";
 
-      },2500);
+    },2500);
 
-    });
-
-  }else{
-
-    const area =
-    document.createElement("textarea");
-
-    area.value=CARD_NUMBER;
-
-    document.body.appendChild(area);
-
-    area.select();
-
-    document.execCommand("copy");
-
-    area.remove();
-
-    document.getElementById("copyInfo").innerHTML =
-    "✓ Kart nömrəsi yaddaşa kopyalandı";
-
-  }
+  });
 
 }
 
 
-/* PAKET */
-
-function getPackage(){
-
-  return document.querySelector(
-    'input[name="package"]:checked'
-  );
-
-}
-
-
-/* OPERATOR */
-
-function getOperator(){
-
-  return document.querySelector(
-    'input[name="operator"]:checked'
-  );
-
-}
-
-
-/* TELEFON */
-
-document.getElementById("phone")
-.addEventListener("input",function(){
-
-  let value =
-  this.value.replace(/\D/g,"");
-
-  value=value.substring(0,9);
-
-  let result="";
-
-  if(value.length>0)
-    result=value.substring(0,2);
-
-  if(value.length>2)
-    result+=" "+value.substring(2,5);
-
-  if(value.length>5)
-    result+=" "+value.substring(5,7);
-
-  if(value.length>7)
-    result+=" "+value.substring(7,9);
-
-  this.value=result;
-
-  updateSummary();
-
-});
-
-
-/* XÜLASƏ */
+/* =====================================
+   SİFARİŞ XÜLASƏSİ
+===================================== */
 
 function updateSummary(){
 
-  const operator=getOperator();
-  const pack=getPackage();
-  const phone=document.getElementById("phone").value;
+  const operator =
+    document.querySelector(
+      'input[name="operator"]:checked'
+    );
 
-  document.getElementById("summaryOperator")
-  .innerText=operator.value;
+  const pack =
+    document.querySelector(
+      'input[name="package"]:checked'
+    );
 
-  document.getElementById("summaryPhone")
-  .innerText=phone || "—";
+  const phone =
+    document.getElementById("phone").value;
 
-  document.getElementById("summaryPackage")
-  .innerText=pack.value;
 
-  document.getElementById("summaryMinutes")
-  .innerText=
-  pack.dataset.minutes+" dəqiqə";
+  document.getElementById(
+    "summaryOperator"
+  ).innerText =
+    operator.value;
 
-  document.getElementById("total")
-  .innerText=pack.dataset.price;
 
-  document.getElementById("paymentAmount")
-  .innerText=pack.dataset.price;
+  document.getElementById(
+    "summaryPhone"
+  ).innerText =
+    phone || "—";
+
+
+  document.getElementById(
+    "summaryPackage"
+  ).innerText =
+    pack.value;
+
+
+  document.getElementById(
+    "summaryMinutes"
+  ).innerText =
+    pack.dataset.minutes +
+    " dəqiqə";
+
+
+  document.getElementById(
+    "total"
+  ).innerText =
+    pack.dataset.price;
+
+
+  document.getElementById(
+    "paymentAmount"
+  ).innerText =
+    pack.dataset.price;
 
 }
 
 
-/* SEÇİMLƏR */
+/* =====================================
+   OPERATOR SEÇİMİ
+===================================== */
 
-document.querySelectorAll(
-  'input[name="operator"],input[name="package"]'
-).forEach(function(item){
+document
+.querySelectorAll('input[name="operator"]')
+.forEach(function(input){
 
-  item.addEventListener(
+  input.addEventListener(
     "change",
     updateSummary
   );
@@ -1678,73 +1680,108 @@ document.querySelectorAll(
 });
 
 
-/* QƏBZ */
+/* =====================================
+   PAKET SEÇİMİ
+===================================== */
+
+document
+.querySelectorAll('input[name="package"]')
+.forEach(function(input){
+
+  input.addEventListener(
+    "change",
+    updateSummary
+  );
+
+});
+
+
+/* =====================================
+   NÖMRƏ
+===================================== */
+
+document
+.getElementById("phone")
+.addEventListener(
+  "input",
+  updateSummary
+);
+
+
+/* =====================================
+   QƏBZ
+===================================== */
 
 function receiptSelected(){
 
-  const input=
-  document.getElementById("receiptFile");
+  const file =
+    document.getElementById(
+      "receiptFile"
+    ).files[0];
 
-  const success=
-  document.getElementById("success");
+  if(!file) return;
 
-  const fileName=
-  document.getElementById("fileName");
 
-  if(!input.files.length){
+  document.getElementById(
+    "success"
+  ).style.display="block";
 
-    success.style.display="none";
-    return;
 
-  }
-
-  const file=input.files[0];
-
-  if(file.size > 10*1024*1024){
-
-    alert("Qəbz 10 MB-dan böyük ola bilməz.");
-
-    input.value="";
-    success.style.display="none";
-
-    return;
-
-  }
-
-  fileName.innerText="📎 "+file.name;
-
-  success.style.display="block";
+  document.getElementById(
+    "fileName"
+  ).innerText =
+    file.name;
 
 }
 
 
-/* ÖDƏNİŞ */
+/* =====================================
+   ÖDƏNİŞİ ETDİM
+===================================== */
 
 function paymentDone(){
 
-  const receipt=
-  document.getElementById("receiptFile");
+  const phone =
+    document.getElementById("phone").value;
 
-  const status=
-  document.getElementById("status");
+  const receipt =
+    document.getElementById(
+      "receiptFile"
+    ).files.length;
 
-  if(!receipt.files.length){
 
-    alert("Əvvəlcə ödəniş qəbzini əlavə edin.");
+  if(phone.trim()===""){
+
+    alert(
+      "Zəhmət olmasa mobil nömrənizi daxil edin."
+    );
 
     return;
-
   }
+
+
+  if(receipt===0){
+
+    alert(
+      "Zəhmət olmasa ödəniş qəbzini əlavə edin."
+    );
+
+    return;
+  }
+
+
+  const status =
+    document.getElementById("status");
 
   status.style.display="block";
 
-  status.innerHTML=
-  "✓ Ödəniş məlumatı qeyd edildi.<br>✓ Qəbz əlavə olundu.";
+  status.innerHTML =
+    "✓ Ödəniş məlumatı və qəbz qəbul edildi.";
 
 }
 
 
-/* BAŞLANĞIC */
+/* İlk açılış */
 
 updateSummary();
 
