@@ -2,8 +2,7 @@
 <html lang="az">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width,initial-scale=1.0">
-<meta name="theme-color" content="#07070d">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <title>SUPER GB</title>
 
@@ -21,26 +20,12 @@ body{
   color:#fff;
 
   background:
-    radial-gradient(
-      circle at 10% 0%,
-      rgba(124,58,237,.28),
-      transparent 28%
-    ),
-    radial-gradient(
-      circle at 100% 20%,
-      rgba(14,165,233,.18),
-      transparent 25%
-    ),
-    linear-gradient(
-      145deg,
-      #05050b,
-      #0c0915 55%,
-      #05050b
-    );
+    radial-gradient(circle at 10% 0%,rgba(124,58,237,.28),transparent 28%),
+    radial-gradient(circle at 100% 20%,rgba(14,165,233,.18),transparent 25%),
+    linear-gradient(145deg,#05050b,#0c0915 55%,#05050b);
 }
 
-button,
-input{
+button,input{
   font:inherit;
 }
 
@@ -51,7 +36,7 @@ input{
   padding:18px 0 45px;
 }
 
-/* ================= HEADER ================= */
+/* HEADER */
 
 .header{
   display:flex;
@@ -76,22 +61,15 @@ input{
 
   border-radius:17px;
 
-  background:
-    linear-gradient(
-      135deg,
-      #8b5cf6,
-      #ec4899
-    );
+  background:linear-gradient(135deg,#8b5cf6,#ec4899);
 
-  box-shadow:
-    0 0 30px rgba(139,92,246,.4);
+  box-shadow:0 0 30px rgba(139,92,246,.4);
 
   font-size:27px;
 }
 
 .logoText h1{
   font-size:23px;
-  letter-spacing:.5px;
 }
 
 .logoText span{
@@ -109,14 +87,13 @@ input{
 
   font-size:9px;
 
-  background:
-    rgba(37,211,102,.07);
+  background:rgba(37,211,102,.07);
 
-  border:
-    1px solid rgba(37,211,102,.18);
+  border:1px solid rgba(37,211,102,.18);
 }
 
-/* ================= HERO ================= */
+
+/* HERO */
 
 .hero{
   position:relative;
@@ -127,54 +104,27 @@ input{
   border-radius:28px;
 
   background:
-    radial-gradient(
-      circle at 90% 0%,
-      rgba(34,211,238,.22),
-      transparent 32%
-    ),
-    radial-gradient(
-      circle at 0% 100%,
-      rgba(236,72,153,.18),
-      transparent 35%
-    ),
-    linear-gradient(
-      135deg,
-      #1a1230,
-      #0c0c16
-    );
+    radial-gradient(circle at 90% 0%,rgba(34,211,238,.22),transparent 32%),
+    radial-gradient(circle at 0% 100%,rgba(236,72,153,.18),transparent 35%),
+    linear-gradient(135deg,#1a1230,#0c0c16);
 
-  border:
-    1px solid rgba(255,255,255,.09);
+  border:1px solid rgba(255,255,255,.09);
 
-  box-shadow:
-    0 25px 70px rgba(0,0,0,.4);
+  box-shadow:0 25px 70px rgba(0,0,0,.4);
 }
 
 .hero h2{
-  position:relative;
-  z-index:2;
-
   font-size:31px;
   line-height:1.1;
 }
 
 .gradient{
-  background:
-    linear-gradient(
-      90deg,
-      #bda2ff,
-      #ff8ec6,
-      #5eeaff
-    );
-
+  background:linear-gradient(90deg,#bda2ff,#ff8ec6,#5eeaff);
   -webkit-background-clip:text;
   color:transparent;
 }
 
 .hero p{
-  position:relative;
-  z-index:2;
-
   margin-top:12px;
 
   color:#a19eaf;
@@ -184,14 +134,9 @@ input{
 }
 
 .heroBadges{
-  position:relative;
-  z-index:2;
-
   display:flex;
   flex-wrap:wrap;
-
   gap:7px;
-
   margin-top:17px;
 }
 
@@ -200,18 +145,17 @@ input{
 
   border-radius:11px;
 
-  background:
-    rgba(255,255,255,.055);
+  background:rgba(255,255,255,.055);
 
-  border:
-    1px solid rgba(255,255,255,.07);
+  border:1px solid rgba(255,255,255,.07);
 
   color:#d7d4df;
 
   font-size:9px;
 }
 
-/* ================= SECTION ================= */
+
+/* SECTION */
 
 .section{
   margin-top:15px;
@@ -220,15 +164,13 @@ input{
 
   border-radius:23px;
 
-  background:
-    linear-gradient(
-      145deg,
-      rgba(255,255,255,.055),
-      rgba(255,255,255,.018)
-    );
+  background:linear-gradient(
+    145deg,
+    rgba(255,255,255,.055),
+    rgba(255,255,255,.018)
+  );
 
-  border:
-    1px solid rgba(255,255,255,.075);
+  border:1px solid rgba(255,255,255,.075);
 }
 
 .sectionTitle{
@@ -248,14 +190,12 @@ input{
   font-size:10px;
 }
 
-/* ================= OPERATORS ================= */
+
+/* OPERATORS */
 
 .operators{
   display:grid;
-
-  grid-template-columns:
-    repeat(3,1fr);
-
+  grid-template-columns:repeat(3,1fr);
   gap:9px;
 }
 
@@ -264,7 +204,7 @@ input{
 }
 
 .operator label{
-  min-height:110px;
+  min-height:125px;
 
   display:flex;
   flex-direction:column;
@@ -272,7 +212,7 @@ input{
   align-items:center;
   justify-content:center;
 
-  gap:8px;
+  gap:9px;
 
   padding:10px 5px;
 
@@ -282,8 +222,7 @@ input{
 
   background:#0a0a12;
 
-  border:
-    1px solid rgba(255,255,255,.08);
+  border:1px solid rgba(255,255,255,.08);
 
   transition:.25s;
 }
@@ -302,28 +241,37 @@ input{
       rgba(236,72,153,.08)
     );
 
-  box-shadow:
-    0 0 25px rgba(139,92,246,.14);
+  box-shadow:0 0 25px rgba(139,92,246,.14);
 }
 
+
+/* LOGOLAR */
+
 .operatorLogo{
-  width:60px;
-  height:60px;
+  width:72px;
+  height:72px;
 
   display:flex;
   align-items:center;
   justify-content:center;
 
-  border-radius:17px;
+  border-radius:18px;
 
   overflow:hidden;
 
   background:#fff;
 
-  box-shadow:
-    0 8px 25px rgba(0,0,0,.35);
+  box-shadow:0 8px 25px rgba(0,0,0,.35);
 
   transition:.25s;
+}
+
+.operator input:checked + label .operatorLogo{
+  transform:scale(1.06);
+
+  box-shadow:
+    0 0 0 2px #9b6cff,
+    0 0 30px rgba(139,92,246,.35);
 }
 
 .operatorLogo img{
@@ -332,23 +280,18 @@ input{
 
   object-fit:contain;
 
-  padding:7px;
-}
+  padding:8px;
 
-.operator input:checked + label
-.operatorLogo{
-  transform:scale(1.06);
-
-  box-shadow:
-    0 0 0 2px #9b6cff,
-    0 0 30px rgba(139,92,246,.35);
+  display:block;
 }
 
 .operatorName{
   font-size:11px;
+  font-weight:bold;
 }
 
-/* ================= PHONE ================= */
+
+/* PHONE */
 
 .textLabel{
   display:block;
@@ -376,8 +319,7 @@ input{
 
   background:#08080f;
 
-  border:
-    1px solid rgba(255,255,255,.1);
+  border:1px solid rgba(255,255,255,.1);
 
   color:#aaa7b6;
 
@@ -386,7 +328,6 @@ input{
 
 input[type="tel"]{
   flex:1;
-  width:100%;
 
   padding:14px;
 
@@ -394,8 +335,7 @@ input[type="tel"]{
 
   background:#08080f;
 
-  border:
-    1px solid rgba(255,255,255,.1);
+  border:1px solid rgba(255,255,255,.1);
 
   color:#fff;
 
@@ -406,13 +346,13 @@ input[type="tel"]:focus{
   border-color:#8b5cf6;
 }
 
-/* ================= PACKAGES ================= */
+
+/* PACKAGES */
 
 .packages{
   display:grid;
 
-  grid-template-columns:
-    repeat(2,1fr);
+  grid-template-columns:repeat(2,1fr);
 
   gap:10px;
 }
@@ -436,8 +376,7 @@ input[type="tel"]:focus{
 
   background:#0a0a12;
 
-  border:
-    1px solid rgba(255,255,255,.08);
+  border:1px solid rgba(255,255,255,.08);
 
   cursor:pointer;
 
@@ -459,8 +398,7 @@ input[type="tel"]:focus{
     ),
     #0d0b17;
 
-  box-shadow:
-    0 0 30px rgba(139,92,246,.15);
+  box-shadow:0 0 30px rgba(139,92,246,.15);
 }
 
 .gb{
@@ -521,13 +459,12 @@ input[type="tel"]:focus{
   opacity:0;
 }
 
-.package input:checked
-+ label
-.selectedMark{
+.package input:checked + label .selectedMark{
   opacity:1;
 }
 
-/* ================= SUMMARY ================= */
+
+/* SUMMARY */
 
 .summary{
   margin-top:15px;
@@ -536,15 +473,9 @@ input[type="tel"]:focus{
 
   border-radius:23px;
 
-  background:
-    linear-gradient(
-      145deg,
-      #19132d,
-      #0d0c15
-    );
+  background:linear-gradient(145deg,#19132d,#0d0c15);
 
-  border:
-    1px solid rgba(139,92,246,.3);
+  border:1px solid rgba(139,92,246,.3);
 }
 
 .summaryTop{
@@ -570,8 +501,7 @@ input[type="tel"]:focus{
 
   padding:9px 0;
 
-  border-bottom:
-    1px solid rgba(255,255,255,.055);
+  border-bottom:1px solid rgba(255,255,255,.055);
 
   font-size:11px;
 
@@ -592,15 +522,17 @@ input[type="tel"]:focus{
 
 .total span{
   color:#aaa7b5;
-  font-size:11px;
+  font-size:12px;
 }
 
 .total strong{
-  font-size:30px;
+  font-size:36px;
   color:#ffd54a;
+  font-weight:900;
 }
 
-/* ================= PAYMENT ================= */
+
+/* PAYMENT */
 
 .payment{
   margin-top:15px;
@@ -610,27 +542,19 @@ input[type="tel"]:focus{
   border-radius:27px;
 
   background:
-    radial-gradient(
-      circle at 100% 0%,
-      rgba(139,92,246,.2),
-      transparent 32%
-    ),
-    linear-gradient(
-      145deg,
-      #171426,
-      #090910
-    );
+    radial-gradient(circle at 100% 0%,rgba(139,92,246,.2),transparent 32%),
+    linear-gradient(145deg,#171426,#090910);
 
-  border:
-    1px solid rgba(255,255,255,.1);
+  border:1px solid rgba(255,255,255,.1);
 
-  box-shadow:
-    0 25px 70px rgba(0,0,0,.4);
+  box-shadow:0 25px 70px rgba(0,0,0,.4);
 }
 
 .paymentTitle{
   display:flex;
+
   justify-content:space-between;
+
   align-items:flex-start;
 
   margin-bottom:16px;
@@ -655,40 +579,41 @@ input[type="tel"]:focus{
   height:42px;
 
   display:flex;
+
   align-items:center;
+
   justify-content:center;
 
   border-radius:14px;
 
-  background:
-    rgba(37,211,102,.08);
+  background:rgba(37,211,102,.08);
 
-  border:
-    1px solid rgba(37,211,102,.15);
+  border:1px solid rgba(37,211,102,.15);
 }
 
-.amount{
-  padding:15px;
 
-  border-radius:17px;
+/* ÖDƏNIŞ MƏBLƏĞI */
+
+.amount{
+  padding:18px;
+
+  border-radius:18px;
 
   text-align:center;
 
-  background:
-    rgba(255,255,255,.04);
+  background:rgba(255,255,255,.04);
 
-  border:
-    1px solid rgba(255,255,255,.07);
+  border:1px solid rgba(255,255,255,.07);
 }
 
-.amount span{
+.amount span:first-child{
   display:block;
 
   color:#777487;
 
-  font-size:8px;
+  font-size:9px;
 
-  letter-spacing:1.5px;
+  letter-spacing:1.8px;
 }
 
 .amount strong{
@@ -698,10 +623,15 @@ input[type="tel"]:focus{
 
   color:#ffd54a;
 
-  font-size:30px;
+  font-size:40px;
+
+  line-height:1;
+
+  font-weight:900;
 }
 
-/* ================= CARD ================= */
+
+/* CARD */
 
 .card{
   position:relative;
@@ -717,18 +647,11 @@ input[type="tel"]:focus{
   border-radius:23px;
 
   background:
-    linear-gradient(
-      135deg,
-      #382463,
-      #16142c 52%,
-      #101b29
-    );
+    linear-gradient(135deg,#382463,#16142c 52%,#101b29);
 
-  border:
-    1px solid rgba(255,255,255,.13);
+  border:1px solid rgba(255,255,255,.13);
 
-  box-shadow:
-    0 20px 45px rgba(0,0,0,.35);
+  box-shadow:0 20px 45px rgba(0,0,0,.35);
 }
 
 .card:after{
@@ -755,7 +678,6 @@ input[type="tel"]:focus{
 .cardMiddle,
 .cardBottom{
   position:relative;
-
   z-index:2;
 }
 
@@ -763,6 +685,7 @@ input[type="tel"]:focus{
   display:flex;
 
   justify-content:space-between;
+
   align-items:center;
 }
 
@@ -772,12 +695,7 @@ input[type="tel"]:focus{
 
   border-radius:8px;
 
-  background:
-    linear-gradient(
-      135deg,
-      #f4d778,
-      #aa7c29
-    );
+  background:linear-gradient(135deg,#f4d778,#aa7c29);
 }
 
 .cardBrand{
@@ -806,6 +724,7 @@ input[type="tel"]:focus{
   display:flex;
 
   align-items:center;
+
   justify-content:space-between;
 
   gap:8px;
@@ -831,8 +750,7 @@ input[type="tel"]:focus{
 
   border-radius:11px;
 
-  background:
-    rgba(255,255,255,.1);
+  background:rgba(255,255,255,.1);
 
   color:#fff;
 
@@ -884,13 +802,11 @@ input[type="tel"]:focus{
 
   font-size:9px;
 
-  background:
-    rgba(255,255,255,.035);
-
-  transition:.3s;
+  background:rgba(255,255,255,.035);
 }
 
-/* ================= RECEIPT ================= */
+
+/* RECEIPT */
 
 .receipt{
   margin-top:13px;
@@ -899,11 +815,9 @@ input[type="tel"]:focus{
 
   border-radius:19px;
 
-  background:
-    rgba(255,255,255,.035);
+  background:rgba(255,255,255,.035);
 
-  border:
-    1px solid rgba(255,255,255,.07);
+  border:1px solid rgba(255,255,255,.07);
 }
 
 .receiptHead{
@@ -923,12 +837,12 @@ input[type="tel"]:focus{
   display:flex;
 
   align-items:center;
+
   justify-content:center;
 
   border-radius:13px;
 
-  background:
-    rgba(139,92,246,.12);
+  background:rgba(139,92,246,.12);
 }
 
 .receiptHead h4{
@@ -955,19 +869,18 @@ input[type="tel"]:focus{
   flex-direction:column;
 
   align-items:center;
+
   justify-content:center;
 
   padding:20px;
 
   text-align:center;
 
-  border:
-    1px dashed rgba(139,92,246,.45);
+  border:1px dashed rgba(139,92,246,.45);
 
   border-radius:16px;
 
-  background:
-    rgba(139,92,246,.045);
+  background:rgba(139,92,246,.045);
 
   cursor:pointer;
 
@@ -977,8 +890,7 @@ input[type="tel"]:focus{
 .upload:hover{
   border-color:#a78bfa;
 
-  background:
-    rgba(139,92,246,.09);
+  background:rgba(139,92,246,.09);
 }
 
 .upload input{
@@ -998,16 +910,12 @@ input[type="tel"]:focus{
   display:flex;
 
   align-items:center;
+
   justify-content:center;
 
   border-radius:50%;
 
-  background:
-    linear-gradient(
-      135deg,
-      #8b5cf6,
-      #ec4899
-    );
+  background:linear-gradient(135deg,#8b5cf6,#ec4899);
 
   font-size:21px;
 
@@ -1026,7 +934,8 @@ input[type="tel"]:focus{
   margin-top:5px;
 }
 
-/* ================= RECEIPT SUCCESS ================= */
+
+/* SUCCESS */
 
 .receiptSuccess{
   display:none;
@@ -1046,11 +955,9 @@ input[type="tel"]:focus{
       rgba(37,211,102,.035)
     );
 
-  border:
-    1px solid rgba(37,211,102,.28);
+  border:1px solid rgba(37,211,102,.28);
 
-  animation:
-    successIn .45s ease;
+  animation:successIn .45s ease;
 }
 
 @keyframes successIn{
@@ -1076,6 +983,7 @@ input[type="tel"]:focus{
   display:flex;
 
   align-items:center;
+
   justify-content:center;
 
   border-radius:50%;
@@ -1084,34 +992,9 @@ input[type="tel"]:focus{
 
   font-size:24px;
 
-  background:
-    linear-gradient(
-      135deg,
-      #22c55e,
-      #16a34a
-    );
+  background:linear-gradient(135deg,#22c55e,#16a34a);
 
-  box-shadow:
-    0 0 25px rgba(34,197,94,.35);
-
-  animation:
-    successPop .5s ease;
-}
-
-@keyframes successPop{
-
-  0%{
-    transform:scale(.4);
-  }
-
-  70%{
-    transform:scale(1.12);
-  }
-
-  100%{
-    transform:scale(1);
-  }
-
+  box-shadow:0 0 25px rgba(34,197,94,.35);
 }
 
 .receiptSuccess h4{
@@ -1139,8 +1022,7 @@ input[type="tel"]:focus{
 
   border-radius:9px;
 
-  background:
-    rgba(255,255,255,.045);
+  background:rgba(255,255,255,.045);
 
   color:#d6d3df;
 
@@ -1153,7 +1035,8 @@ input[type="tel"]:focus{
   white-space:nowrap;
 }
 
-/* ================= PAYMENT BUTTON ================= */
+
+/* BUTTON */
 
 .paid{
   width:100%;
@@ -1170,12 +1053,7 @@ input[type="tel"]:focus{
 
   font-weight:bold;
 
-  background:
-    linear-gradient(
-      90deg,
-      #8b5cf6,
-      #ec4899
-    );
+  background:linear-gradient(90deg,#8b5cf6,#ec4899);
 
   cursor:pointer;
 
@@ -1185,15 +1063,8 @@ input[type="tel"]:focus{
 .paid:hover{
   transform:translateY(-2px);
 
-  box-shadow:
-    0 10px 30px rgba(139,92,246,.2);
+  box-shadow:0 10px 30px rgba(139,92,246,.2);
 }
-
-.paid:active{
-  transform:scale(.98);
-}
-
-/* ================= STATUS ================= */
 
 .status{
   display:none;
@@ -1210,17 +1081,10 @@ input[type="tel"]:focus{
 
   font-size:10px;
 
-  background:
-    rgba(37,211,102,.07);
+  background:rgba(37,211,102,.07);
 
-  border:
-    1px solid rgba(37,211,102,.18);
-
-  animation:
-    successIn .4s ease;
+  border:1px solid rgba(37,211,102,.18);
 }
-
-/* ================= FOOTER ================= */
 
 .notice{
   margin-top:12px;
@@ -1246,18 +1110,17 @@ input[type="tel"]:focus{
   line-height:1.7;
 }
 
-/* ================= MOBILE ================= */
+
+/* MOBILE */
 
 @media(max-width:430px){
 
   .packages{
-    grid-template-columns:
-      1fr 1fr;
+    grid-template-columns:repeat(2,1fr);
   }
 
   .package label{
     min-height:145px;
-
     padding:13px;
   }
 
@@ -1271,6 +1134,14 @@ input[type="tel"]:focus{
 
   .hero h2{
     font-size:27px;
+  }
+
+  .amount strong{
+    font-size:38px;
+  }
+
+  .total strong{
+    font-size:34px;
   }
 
 }
@@ -1295,7 +1166,8 @@ input[type="tel"]:focus{
 
 <div class="app">
 
-<!-- ================= HEADER ================= -->
+
+<!-- HEADER -->
 
 <header class="header">
 
@@ -1324,7 +1196,7 @@ input[type="tel"]:focus{
 </header>
 
 
-<!-- ================= HERO ================= -->
+<!-- HERO -->
 
 <section class="hero">
 
@@ -1342,28 +1214,17 @@ input[type="tel"]:focus{
 
   <div class="heroBadges">
 
-    <div class="badge">
-      ⚡ Sürətli
-    </div>
-
-    <div class="badge">
-      📱 Mobil uyğun
-    </div>
-
-    <div class="badge">
-      🔒 Təhlükəsiz
-    </div>
-
-    <div class="badge">
-      📅 30 gün
-    </div>
+    <div class="badge">⚡ Sürətli</div>
+    <div class="badge">📱 Mobil uyğun</div>
+    <div class="badge">🔒 Təhlükəsiz</div>
+    <div class="badge">📅 30 gün</div>
 
   </div>
 
 </section>
 
 
-<!-- ================= OPERATOR ================= -->
+<!-- OPERATOR -->
 
 <section class="section">
 
@@ -1400,7 +1261,7 @@ input[type="tel"]:focus{
         <div class="operatorLogo">
 
           <img
-            src="images/azercell-logo.png"
+            src="logos/azercell.png"
             alt="Azercell"
           >
 
@@ -1431,7 +1292,7 @@ input[type="tel"]:focus{
         <div class="operatorLogo">
 
           <img
-            src="images/bakcell-logo.png"
+            src="logos/bakcell.png"
             alt="Bakcell"
           >
 
@@ -1462,7 +1323,7 @@ input[type="tel"]:focus{
         <div class="operatorLogo">
 
           <img
-            src="images/nar-logo.png"
+            src="logos/nar.png"
             alt="Nar"
           >
 
@@ -1481,7 +1342,7 @@ input[type="tel"]:focus{
 </section>
 
 
-<!-- ================= PHONE ================= -->
+<!-- PHONE -->
 
 <section class="section">
 
@@ -1497,11 +1358,9 @@ input[type="tel"]:focus{
 
   </div>
 
-
   <label class="textLabel">
     Mobil nömrənizi daxil edin
   </label>
-
 
   <div class="phoneBox">
 
@@ -1522,7 +1381,7 @@ input[type="tel"]:focus{
 </section>
 
 
-<!-- ================= PACKAGES ================= -->
+<!-- PACKAGES -->
 
 <section class="section">
 
@@ -1747,7 +1606,7 @@ input[type="tel"]:focus{
 </section>
 
 
-<!-- ================= SUMMARY ================= -->
+<!-- SUMMARY -->
 
 <section class="summary">
 
@@ -1766,9 +1625,7 @@ input[type="tel"]:focus{
 
   <div class="summaryRow">
 
-    <span>
-      Operator
-    </span>
+    <span>Operator</span>
 
     <strong id="summaryOperator">
       Azercell
@@ -1779,9 +1636,7 @@ input[type="tel"]:focus{
 
   <div class="summaryRow">
 
-    <span>
-      Nömrə
-    </span>
+    <span>Nömrə</span>
 
     <strong id="summaryPhone">
       —
@@ -1792,9 +1647,7 @@ input[type="tel"]:focus{
 
   <div class="summaryRow">
 
-    <span>
-      Paket
-    </span>
+    <span>Paket</span>
 
     <strong id="summaryPackage">
       20 GB
@@ -1805,9 +1658,7 @@ input[type="tel"]:focus{
 
   <div class="summaryRow">
 
-    <span>
-      Dəqiqə
-    </span>
+    <span>Dəqiqə</span>
 
     <strong id="summaryMinutes">
       200 dəqiqə
@@ -1818,9 +1669,7 @@ input[type="tel"]:focus{
 
   <div class="summaryRow">
 
-    <span>
-      Müddət
-    </span>
+    <span>Müddət</span>
 
     <strong>
       30 gün
@@ -1845,7 +1694,7 @@ input[type="tel"]:focus{
 </section>
 
 
-<!-- ================= PAYMENT ================= -->
+<!-- PAYMENT -->
 
 <section class="payment">
 
@@ -1871,6 +1720,8 @@ input[type="tel"]:focus{
   </div>
 
 
+  <!-- BÖYÜK MƏBLƏĞ -->
+
   <div class="amount">
 
     <span>
@@ -1878,14 +1729,16 @@ input[type="tel"]:focus{
     </span>
 
     <strong>
-      <span id="paymentAmount">5</span>
+      <span id="paymentAmount">
+        5
+      </span>
       AZN
     </strong>
 
   </div>
 
 
-  <!-- ================= CARD ================= -->
+  <!-- CARD -->
 
   <div class="card">
 
@@ -1906,13 +1759,11 @@ input[type="tel"]:focus{
         ÖDƏNİŞ KARTI
       </div>
 
-
       <div class="cardNumber">
 
         <span id="cardNumber">
           BURAYA_KART_NOMRESI
         </span>
-
 
         <button
           class="copy"
@@ -1941,7 +1792,6 @@ input[type="tel"]:focus{
 
       </div>
 
-
       <div>
 
         <small>
@@ -1968,7 +1818,7 @@ input[type="tel"]:focus{
   </div>
 
 
-  <!-- ================= RECEIPT ================= -->
+  <!-- RECEIPT -->
 
   <div class="receipt">
 
@@ -2002,16 +1852,13 @@ input[type="tel"]:focus{
         onchange="receiptSelected()"
       >
 
-
       <div class="uploadIcon">
         ↑
       </div>
 
-
       <strong>
         Qəbzi seçin
       </strong>
-
 
       <small>
         JPG, PNG və PDF • Maksimum 10 MB
@@ -2019,8 +1866,6 @@ input[type="tel"]:focus{
 
     </label>
 
-
-    <!-- PREMIUM SUCCESS -->
 
     <div
       class="receiptSuccess"
@@ -2050,8 +1895,6 @@ input[type="tel"]:focus{
   </div>
 
 
-  <!-- PAYMENT CONFIRM -->
-
   <button
     class="paid"
     type="button"
@@ -2066,7 +1909,6 @@ input[type="tel"]:focus{
     id="paymentStatus"
   >
     ✓ Ödəniş məlumatı qeyd edildi.
-    Qəbziniz də əlavə olunub.
   </div>
 
 </section>
@@ -2075,8 +1917,7 @@ input[type="tel"]:focus{
 <div class="notice">
 
   🔒 Məlumatları göndərməzdən əvvəl
-  operator, nömrə, paket və məbləği
-  yoxlayın.
+  operator, nömrə, paket və məbləği yoxlayın.
 
 </div>
 
@@ -2084,7 +1925,6 @@ input[type="tel"]:focus{
 <div class="footer">
 
   SUPER GB<br>
-
   İnternet Paketləri
 
 </div>
@@ -2094,26 +1934,23 @@ input[type="tel"]:focus{
 
 <script>
 
+
 /* =====================================================
    KART NÖMRƏSİ
-   BURAYA SƏNİN KART NÖMRƏNİ YAZ
+   BURADA ÖZ KART NÖMRƏNİ YAZ
 ===================================================== */
 
 const CARD_NUMBER =
 "5315 9921 2761 6081";
 
 
-/* =====================================================
-   KARTI GÖSTƏR
-===================================================== */
-
-document.getElementById("cardNumber").innerText =
+document.getElementById(
+  "cardNumber"
+).innerText =
 CARD_NUMBER;
 
 
-/* =====================================================
-   KARTI KOPYALA
-===================================================== */
+/* KART KOPYALA */
 
 function copyCard(){
 
@@ -2127,6 +1964,7 @@ function copyCard(){
     );
 
     return;
+
   }
 
 
@@ -2137,16 +1975,8 @@ function copyCard(){
 
     navigator.clipboard
     .writeText(CARD_NUMBER)
-    .then(function(){
-
-      showCopySuccess();
-
-    })
-    .catch(function(){
-
-      fallbackCopy();
-
-    });
+    .then(showCopySuccess)
+    .catch(fallbackCopy);
 
   }else{
 
@@ -2157,50 +1987,42 @@ function copyCard(){
 }
 
 
-/* =====================================================
-   KOPYALAMA TƏSDİQİ
-===================================================== */
+/* COPY SUCCESS */
 
 function showCopySuccess(){
 
   const info =
-  document.getElementById("copyInfo");
-
+  document.getElementById(
+    "copyInfo"
+  );
 
   info.innerHTML =
   "✓ Kart nömrəsi yaddaşa kopyalandı";
 
-
   info.style.color =
   "#70ffc0";
-
-
-  info.style.border =
-  "1px solid rgba(37,211,102,.2)";
-
 
   setTimeout(function(){
 
     info.innerHTML =
     "💳 Kart nömrəsini kopyalamaq üçün düyməyə toxunun.";
 
-    info.style.color = "";
-
-    info.style.border = "";
+    info.style.color =
+    "";
 
   },2500);
 
 }
 
 
-/* =====================================================
-   KÖHNƏ BRAUZER ÜÇÜN KOPYALAMA
-===================================================== */
+/* FALLBACK COPY */
 
 function fallbackCopy(){
 
   const textarea =
-  document.createElement("textarea");
+  document.createElement(
+    "textarea"
+  );
 
   textarea.value =
   CARD_NUMBER;
@@ -2219,7 +2041,9 @@ function fallbackCopy(){
 
   try{
 
-    document.execCommand("copy");
+    document.execCommand(
+      "copy"
+    );
 
     showCopySuccess();
 
@@ -2238,9 +2062,7 @@ function fallbackCopy(){
 }
 
 
-/* =====================================================
-   PAKETİ GÖTÜR
-===================================================== */
+/* PACKAGE */
 
 function getPackage(){
 
@@ -2251,9 +2073,7 @@ function getPackage(){
 }
 
 
-/* =====================================================
-   OPERATORU GÖTÜR
-===================================================== */
+/* OPERATOR */
 
 function getOperator(){
 
@@ -2264,9 +2084,7 @@ function getOperator(){
 }
 
 
-/* =====================================================
-   TELEFON FORMATLA
-===================================================== */
+/* PHONE */
 
 document
 .getElementById("phone")
@@ -2275,8 +2093,10 @@ document
   function(){
 
     let value =
-    this.value.replace(/\D/g,"");
-
+    this.value.replace(
+      /\D/g,
+      ""
+    );
 
     if(value.length > 9){
 
@@ -2285,9 +2105,7 @@ document
 
     }
 
-
     let result = "";
-
 
     if(value.length > 0){
 
@@ -2295,7 +2113,6 @@ document
       value.substring(0,2);
 
     }
-
 
     if(value.length > 2){
 
@@ -2305,7 +2122,6 @@ document
 
     }
 
-
     if(value.length > 5){
 
       result +=
@@ -2313,7 +2129,6 @@ document
       value.substring(5,7);
 
     }
-
 
     if(value.length > 7){
 
@@ -2323,10 +2138,8 @@ document
 
     }
 
-
     this.value =
     result;
-
 
     updateSummary();
 
@@ -2334,43 +2147,35 @@ document
 );
 
 
-/* =====================================================
-   XÜLASƏNİ YENİLƏ
-===================================================== */
+/* SUMMARY */
 
 function updateSummary(){
 
   const operator =
   getOperator();
 
-
   const pack =
   getPackage();
-
 
   const phone =
   document.getElementById(
     "phone"
   ).value;
 
-
   document.getElementById(
     "summaryOperator"
   ).innerText =
   operator.value;
-
 
   document.getElementById(
     "summaryPhone"
   ).innerText =
   phone || "—";
 
-
   document.getElementById(
     "summaryPackage"
   ).innerText =
   pack.value;
-
 
   document.getElementById(
     "summaryMinutes"
@@ -2378,12 +2183,10 @@ function updateSummary(){
   pack.dataset.minutes +
   " dəqiqə";
 
-
   document.getElementById(
     "total"
   ).innerText =
   pack.dataset.price;
-
 
   document.getElementById(
     "paymentAmount"
@@ -2393,9 +2196,7 @@ function updateSummary(){
 }
 
 
-/* =====================================================
-   OPERATOR VƏ PAKET DƏYİŞİKLİKLƏRİ
-===================================================== */
+/* CHANGES */
 
 document
 .querySelectorAll(
@@ -2411,9 +2212,7 @@ document
 });
 
 
-/* =====================================================
-   QƏBZ SEÇİLDİ
-===================================================== */
+/* RECEIPT */
 
 function receiptSelected(){
 
@@ -2422,12 +2221,10 @@ function receiptSelected(){
     "receiptFile"
   );
 
-
   const success =
   document.getElementById(
     "receiptSuccess"
   );
-
 
   const fileName =
   document.getElementById(
@@ -2449,8 +2246,6 @@ function receiptSelected(){
   input.files[0];
 
 
-  /* 10 MB LIMIT */
-
   if(
     file.size >
     10 * 1024 * 1024
@@ -2460,7 +2255,8 @@ function receiptSelected(){
       "Qəbz faylı 10 MB-dan böyük ola bilməz."
     );
 
-    input.value = "";
+    input.value =
+    "";
 
     success.style.display =
     "none";
@@ -2470,25 +2266,19 @@ function receiptSelected(){
   }
 
 
-  /* SUCCESS */
-
   fileName.innerText =
   "📎 " + file.name;
-
 
   success.style.display =
   "block";
 
 
-  /* Upload sahəsinin mətnini dəyiş */
-
-  const upload =
+  const uploadTitle =
   document.querySelector(
     ".upload strong"
   );
 
-
-  upload.innerText =
+  uploadTitle.innerText =
   "Qəbz seçildi ✓";
 
 
@@ -2497,28 +2287,13 @@ function receiptSelected(){
     ".upload small"
   );
 
-
   uploadSmall.innerText =
   "Başqa qəbz seçmək üçün toxunun";
-
-
-  /* Success hissəsinə sürüş */
-
-  setTimeout(function(){
-
-    success.scrollIntoView({
-      behavior:"smooth",
-      block:"center"
-    });
-
-  },150);
 
 }
 
 
-/* =====================================================
-   ÖDƏNİŞİ ETDİM
-===================================================== */
+/* PAYMENT */
 
 function paymentDone(){
 
@@ -2526,7 +2301,6 @@ function paymentDone(){
   document.getElementById(
     "paymentStatus"
   );
-
 
   const receipt =
   document.getElementById(
@@ -2548,27 +2322,14 @@ function paymentDone(){
   status.style.display =
   "block";
 
-
   status.innerHTML =
   "✓ Ödəniş məlumatı qeyd edildi.<br>" +
   "✓ Qəbz əlavə olundu.";
 
-
-  setTimeout(function(){
-
-    status.scrollIntoView({
-      behavior:"smooth",
-      block:"center"
-    });
-
-  },100);
-
 }
 
 
-/* =====================================================
-   BAŞLANĞIC
-===================================================== */
+/* START */
 
 updateSummary();
 
