@@ -3,11 +3,9 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
 <title>SUPER GB — İnternet Paketləri</title>
 
 <style>
-
 *{
   box-sizing:border-box;
   margin:0;
@@ -54,16 +52,104 @@ body{
   justify-content:center;
   border-radius:17px;
   background:linear-gradient(135deg,#8b5cf6,#ec4899);
-  box-shadow:0 0 30px rgba(139,92,246,.35);
+  box-shadow:
+    0 0 20px rgba(139,92,246,.45),
+    0 0 40px rgba(236,72,153,.15);
   font-size:25px;
+  animation:iconGlow 2s ease-in-out infinite;
 }
 
+@keyframes iconGlow{
+  0%,100%{
+    transform:scale(1);
+    box-shadow:0 0 20px rgba(139,92,246,.4);
+  }
+  50%{
+    transform:scale(1.05);
+    box-shadow:0 0 35px rgba(236,72,153,.55);
+  }
+}
+
+/* İŞIQLI SUPER GB */
+
 .brand h1{
-  font-size:23px;
+  position:relative;
+  font-size:25px;
+  font-weight:1000;
+  letter-spacing:1px;
+
+  background:linear-gradient(
+    90deg,
+    #ffffff,
+    #b993ff,
+    #ff75c8,
+    #72e8ff,
+    #ffffff
+  );
+
+  background-size:300% auto;
+
+  -webkit-background-clip:text;
+  background-clip:text;
+  color:transparent;
+
+  animation:superGlow 4s linear infinite;
+
+  text-shadow:
+    0 0 8px rgba(190,130,255,.45),
+    0 0 20px rgba(190,130,255,.25);
+}
+
+.brand h1::after{
+  content:"";
+  position:absolute;
+  left:0;
+  bottom:-5px;
+  width:100%;
+  height:2px;
+  border-radius:20px;
+
+  background:linear-gradient(
+    90deg,
+    transparent,
+    #b993ff,
+    #ff75c8,
+    #72e8ff,
+    transparent
+  );
+
+  box-shadow:
+    0 0 8px #b993ff,
+    0 0 18px #ff75c8;
+
+  animation:lineGlow 2s ease-in-out infinite;
+}
+
+@keyframes superGlow{
+  0%{
+    background-position:0% center;
+  }
+  50%{
+    background-position:100% center;
+  }
+  100%{
+    background-position:0% center;
+  }
+}
+
+@keyframes lineGlow{
+  0%,100%{
+    opacity:.45;
+    transform:scaleX(.75);
+  }
+  50%{
+    opacity:1;
+    transform:scaleX(1);
+  }
 }
 
 .brand p{
-  margin-top:3px;
+  margin-top:7px;
   color:#817d90;
   font-size:9px;
 }
@@ -82,10 +168,12 @@ body{
 .hero{
   padding:28px 22px;
   border-radius:28px;
+
   background:
     radial-gradient(circle at 100% 0%,rgba(34,211,238,.19),transparent 33%),
     radial-gradient(circle at 0% 100%,rgba(236,72,153,.18),transparent 38%),
     linear-gradient(135deg,#1b1230,#0b0a13);
+
   border:1px solid rgba(255,255,255,.08);
   box-shadow:0 25px 70px rgba(0,0,0,.4);
 }
@@ -130,11 +218,14 @@ body{
   margin-top:15px;
   padding:18px;
   border-radius:23px;
-  background:linear-gradient(
-    145deg,
-    rgba(255,255,255,.055),
-    rgba(255,255,255,.015)
-  );
+
+  background:
+    linear-gradient(
+      145deg,
+      rgba(255,255,255,.055),
+      rgba(255,255,255,.015)
+    );
+
   border:1px solid rgba(255,255,255,.075);
 }
 
@@ -178,16 +269,22 @@ body{
   width:100%;
   min-height:145px;
   padding:12px;
+
   display:flex;
   flex-direction:column;
   align-items:center;
   justify-content:center;
+
   text-align:center;
   gap:10px;
+
   cursor:pointer;
+
   border-radius:19px;
+
   background:#08080e;
   border:1px solid rgba(255,255,255,.08);
+
   transition:.25s;
 }
 
@@ -197,26 +294,33 @@ body{
 
 .operator input:checked + label{
   border-color:#9568ff;
+
   background:
     linear-gradient(
       145deg,
       rgba(139,92,246,.22),
       rgba(236,72,153,.06)
     );
-  box-shadow:0 0 27px rgba(139,92,246,.15);
+
+  box-shadow:
+    0 0 27px rgba(139,92,246,.15);
 }
 
-/* LOQO KONTEYNERI */
+/* LOGO BOX */
 
 .logoBox{
   width:100px;
   height:72px;
   flex:none;
+
   display:flex;
   align-items:center;
   justify-content:center;
+
   margin:0 auto;
+
   overflow:hidden;
+
   border-radius:17px;
   background:#fff;
 }
@@ -225,14 +329,19 @@ body{
 
 .azercell{
   position:relative;
+
   width:88px;
   height:58px;
+
   flex:none;
+
   display:flex;
   justify-content:center;
   align-items:center;
+
   background:#7425d8;
   border-radius:12px;
+
   overflow:hidden;
   margin:0 auto;
 }
@@ -240,23 +349,32 @@ body{
 .azercellText{
   position:relative;
   z-index:3;
+
   color:#fff;
+
   font-size:15px;
   font-weight:800;
+
   letter-spacing:-.7px;
   text-align:center;
 }
 
 .azercellRing{
   position:absolute;
+
   width:50px;
   height:25px;
+
   top:8px;
   left:18px;
+
   border:4px solid #fff;
+
   border-left-color:transparent;
   border-bottom-color:transparent;
+
   border-radius:50%;
+
   transform:rotate(-20deg);
 }
 
@@ -264,20 +382,26 @@ body{
 
 .bakcell{
   position:relative;
+
   width:88px;
   height:58px;
+
   flex:none;
+
   display:flex;
   align-items:center;
   justify-content:center;
+
   background:#fff;
   border-radius:12px;
+
   margin:0 auto;
 }
 
 .bakShape{
   width:42px;
   height:42px;
+
   background:#e31837;
 
   clip-path:polygon(
@@ -298,12 +422,17 @@ body{
 
 .bakText{
   position:absolute;
+
   bottom:4px;
+
   color:#111;
+
   font-size:8px;
   font-weight:900;
+
   left:0;
   right:0;
+
   text-align:center;
 }
 
@@ -312,22 +441,31 @@ body{
 .nar{
   width:88px;
   height:58px;
+
   flex:none;
+
   display:flex;
   align-items:center;
   justify-content:center;
+
   border-radius:12px;
+
   background:#ed1c24;
+
   color:#fff;
+
   font-size:24px;
   font-weight:900;
+
   margin:0 auto;
+
   text-align:center;
 }
 
 .operatorName{
   width:100%;
   text-align:center;
+
   font-size:11px;
   font-weight:bold;
 }
@@ -337,6 +475,7 @@ body{
 .label{
   display:block;
   margin-bottom:7px;
+
   color:#aaa6b5;
   font-size:11px;
 }
@@ -348,23 +487,34 @@ body{
 
 .prefix{
   width:72px;
+
   display:flex;
   align-items:center;
   justify-content:center;
+
   border-radius:13px;
+
   color:#aaa7b5;
+
   background:#08080e;
+
   border:1px solid rgba(255,255,255,.1);
 }
 
 input[type="tel"]{
   flex:1;
   min-width:0;
+
   padding:14px;
+
   outline:none;
+
   color:#fff;
+
   background:#08080e;
+
   border:1px solid rgba(255,255,255,.1);
+
   border-radius:13px;
 }
 
@@ -390,12 +540,19 @@ input[type="tel"]:focus{
 
 .package label{
   display:block;
+
   min-height:150px;
+
   padding:16px;
+
   cursor:pointer;
+
   border-radius:19px;
+
   background:#09090f;
+
   border:1px solid rgba(255,255,255,.08);
+
   transition:.25s;
 }
 
@@ -405,6 +562,7 @@ input[type="tel"]:focus{
 
 .package input:checked + label{
   border-color:#8b5cf6;
+
   background:
     radial-gradient(
       circle at 100% 0%,
@@ -416,17 +574,25 @@ input[type="tel"]:focus{
 
 .mark{
   position:absolute;
+
   top:10px;
   right:10px;
+
   width:21px;
   height:21px;
+
   display:flex;
   align-items:center;
   justify-content:center;
+
   border-radius:50%;
+
   color:#fff;
+
   background:#8b5cf6;
+
   font-size:11px;
+
   opacity:0;
 }
 
@@ -473,14 +639,19 @@ input[type="tel"]:focus{
 .summary{
   margin-top:15px;
   padding:19px;
+
   border-radius:23px;
-  background:linear-gradient(145deg,#19132d,#0d0c15);
+
+  background:
+    linear-gradient(145deg,#19132d,#0d0c15);
+
   border:1px solid rgba(139,92,246,.3);
 }
 
 .summaryTitle{
   display:flex;
   justify-content:space-between;
+
   margin-bottom:12px;
 }
 
@@ -496,9 +667,13 @@ input[type="tel"]:focus{
 .row{
   display:flex;
   justify-content:space-between;
+
   padding:9px 0;
+
   border-bottom:1px solid rgba(255,255,255,.05);
+
   color:#9693a4;
+
   font-size:11px;
 }
 
@@ -510,6 +685,7 @@ input[type="tel"]:focus{
   display:flex;
   justify-content:space-between;
   align-items:baseline;
+
   margin-top:15px;
 }
 
@@ -521,13 +697,16 @@ input[type="tel"]:focus{
 .totalValue{
   display:flex;
   align-items:baseline;
+
   gap:5px;
+
   color:#ffd54a;
 }
 
 .totalValue b{
   font-size:48px;
   line-height:1;
+
   font-weight:900;
 }
 
@@ -536,12 +715,15 @@ input[type="tel"]:focus{
   font-weight:600;
 }
 
-/* ÖDƏNİŞ */
+/* PAYMENT */
 
 .payment{
   margin-top:15px;
+
   padding:20px;
+
   border-radius:27px;
+
   background:
     radial-gradient(
       circle at 100% 0%,
@@ -549,6 +731,7 @@ input[type="tel"]:focus{
       transparent 32%
     ),
     linear-gradient(145deg,#171426,#090910);
+
   border:1px solid rgba(255,255,255,.1);
 }
 
@@ -556,6 +739,7 @@ input[type="tel"]:focus{
   display:flex;
   justify-content:space-between;
   align-items:flex-start;
+
   margin-bottom:15px;
 }
 
@@ -565,7 +749,9 @@ input[type="tel"]:focus{
 
 .paymentTitle p{
   margin-top:5px;
+
   color:#858293;
+
   font-size:10px;
   line-height:1.5;
 }
@@ -573,10 +759,13 @@ input[type="tel"]:focus{
 .lock{
   width:42px;
   height:42px;
+
   display:flex;
   align-items:center;
   justify-content:center;
+
   border-radius:14px;
+
   background:rgba(37,211,102,.08);
 }
 
@@ -584,31 +773,42 @@ input[type="tel"]:focus{
 
 .amount{
   padding:18px;
+
   text-align:center;
+
   border-radius:18px;
+
   background:rgba(255,255,255,.04);
+
   border:1px solid rgba(255,255,255,.07);
 }
 
 .amount > span{
   display:block;
+
   color:#777487;
+
   font-size:8px;
   letter-spacing:1.8px;
 }
 
 .amountValue{
   display:flex;
+
   justify-content:center;
   align-items:baseline;
+
   gap:5px;
+
   margin-top:7px;
+
   color:#ffd54a;
 }
 
 .amountValue b{
   font-size:60px;
   line-height:1;
+
   font-weight:900;
 }
 
@@ -621,11 +821,17 @@ input[type="tel"]:focus{
 
 .card{
   position:relative;
+
   height:205px;
+
   margin-top:14px;
+
   padding:20px;
+
   overflow:hidden;
+
   border-radius:23px;
+
   background:
     linear-gradient(
       135deg,
@@ -633,20 +839,30 @@ input[type="tel"]:focus{
       #16142c 52%,
       #101b29
     );
+
   border:1px solid rgba(255,255,255,.13);
-  box-shadow:0 20px 45px rgba(0,0,0,.35);
+
+  box-shadow:
+    0 20px 45px rgba(0,0,0,.35);
 }
 
 .card:after{
   content:"";
+
   position:absolute;
+
   width:180px;
   height:180px;
+
   right:-65px;
   top:-75px;
+
   border-radius:50%;
+
   background:#8b5cf6;
+
   filter:blur(55px);
+
   opacity:.35;
 }
 
@@ -666,8 +882,15 @@ input[type="tel"]:focus{
 .chip{
   width:43px;
   height:31px;
+
   border-radius:8px;
-  background:linear-gradient(135deg,#f4d778,#aa7c29);
+
+  background:
+    linear-gradient(
+      135deg,
+      #f4d778,
+      #aa7c29
+    );
 }
 
 .cardBrand{
@@ -685,55 +908,81 @@ input[type="tel"]:focus{
 
 .cardLabel{
   color:#9e9aaa;
+
   font-size:8px;
   letter-spacing:1.5px;
 }
 
-/* BÖYÜK KART NÖMRƏSİ */
-
 .cardNumber{
   display:flex;
+
   align-items:center;
   justify-content:space-between;
+
   gap:8px;
+
   margin-top:8px;
-  font-size:19px;
+
+  font-size:21px;
   font-weight:bold;
+
   letter-spacing:1.5px;
+
   line-height:1.2;
 }
 
 .cardNumber span{
   overflow:hidden;
+
   text-overflow:ellipsis;
+
   white-space:nowrap;
 }
 
 .copy{
   flex:none;
-  width:38px;
-  height:38px;
+
+  width:40px;
+  height:40px;
+
   border:0;
+
   border-radius:11px;
+
   color:#fff;
+
   background:rgba(255,255,255,.1);
+
   cursor:pointer;
+
+  font-size:17px;
+}
+
+.copy:active{
+  transform:scale(.92);
 }
 
 .cardBottom{
   position:absolute;
+
   left:20px;
   right:20px;
   bottom:18px;
+
   display:flex;
+
   justify-content:space-between;
 }
 
 .cardBottom small{
   display:block;
+
   margin-bottom:4px;
+
   color:#858294;
+
   font-size:7px;
+
   letter-spacing:1px;
 }
 
@@ -743,11 +992,17 @@ input[type="tel"]:focus{
 
 .copyInfo{
   margin-top:9px;
+
   padding:10px;
+
   text-align:center;
+
   border-radius:11px;
+
   color:#858294;
+
   background:rgba(255,255,255,.035);
+
   font-size:9px;
 }
 
@@ -755,26 +1010,36 @@ input[type="tel"]:focus{
 
 .receipt{
   margin-top:13px;
+
   padding:15px;
+
   border-radius:19px;
+
   background:rgba(255,255,255,.035);
+
   border:1px solid rgba(255,255,255,.07);
 }
 
 .receiptHead{
   display:flex;
+
   gap:10px;
+
   align-items:center;
+
   margin-bottom:12px;
 }
 
 .receiptIcon{
   width:41px;
   height:41px;
+
   display:flex;
   align-items:center;
   justify-content:center;
+
   border-radius:13px;
+
   background:rgba(139,92,246,.12);
 }
 
@@ -784,41 +1049,80 @@ input[type="tel"]:focus{
 
 .receiptHead span{
   display:block;
+
   margin-top:3px;
+
   color:#777486;
+
   font-size:9px;
 }
 
+/* UPLOAD */
+
 .upload{
   position:relative;
+
   min-height:145px;
+
   display:flex;
+
   flex-direction:column;
+
   justify-content:center;
+
   align-items:center;
+
   padding:20px;
+
   text-align:center;
+
   border:1px dashed rgba(139,92,246,.45);
+
   border-radius:16px;
+
   background:rgba(139,92,246,.045);
+
   cursor:pointer;
+
+  transition:.25s;
+}
+
+.upload:hover{
+  background:rgba(139,92,246,.09);
+
+  border-color:#a77aff;
 }
 
 .upload input{
   position:absolute;
+
   inset:0;
+
   opacity:0;
+
+  cursor:pointer;
 }
 
 .uploadIcon{
   width:46px;
   height:46px;
+
   display:flex;
+
   align-items:center;
   justify-content:center;
+
   margin-bottom:8px;
+
   border-radius:50%;
-  background:linear-gradient(135deg,#8b5cf6,#ec4899);
+
+  background:
+    linear-gradient(
+      135deg,
+      #8b5cf6,
+      #ec4899
+    );
+
   font-size:21px;
 }
 
@@ -828,93 +1132,274 @@ input[type="tel"]:focus{
 
 .upload small{
   margin-top:5px;
+
   color:#777486;
+
   font-size:8px;
 }
 
+/* PREMIUM QƏBZ TƏSDİQİ */
+
 .success{
+  position:relative;
+
+  overflow:hidden;
+
   display:none;
-  margin-top:11px;
-  padding:17px;
+
+  margin-top:12px;
+
+  padding:22px 15px;
+
   text-align:center;
-  border-radius:18px;
-  background:rgba(37,211,102,.08);
-  border:1px solid rgba(37,211,102,.28);
+
+  border-radius:22px;
+
+  background:
+    radial-gradient(
+      circle at 50% 0%,
+      rgba(34,197,94,.22),
+      transparent 55%
+    ),
+    linear-gradient(
+      145deg,
+      rgba(34,197,94,.13),
+      rgba(16,185,129,.035)
+    );
+
+  border:1px solid rgba(74,222,128,.38);
+
+  box-shadow:
+    0 0 25px rgba(34,197,94,.10),
+    inset 0 0 25px rgba(34,197,94,.04);
+
+  animation:receiptSuccess .55s ease-out;
+}
+
+.success:before{
+  content:"";
+
+  position:absolute;
+
+  width:180px;
+  height:180px;
+
+  left:50%;
+  top:-120px;
+
+  transform:translateX(-50%);
+
+  border-radius:50%;
+
+  background:rgba(74,222,128,.18);
+
+  filter:blur(30px);
 }
 
 .successCircle{
-  width:52px;
-  height:52px;
+  position:relative;
+
+  z-index:2;
+
+  width:62px;
+  height:62px;
+
   display:flex;
+
   align-items:center;
   justify-content:center;
-  margin:0 auto 9px;
+
+  margin:0 auto 11px;
+
   border-radius:50%;
-  background:linear-gradient(135deg,#22c55e,#16a34a);
-  font-size:24px;
+
+  color:#fff;
+
+  font-size:29px;
+  font-weight:bold;
+
+  background:
+    linear-gradient(
+      135deg,
+      #22c55e,
+      #10b981
+    );
+
+  box-shadow:
+    0 0 0 7px rgba(34,197,94,.08),
+    0 0 25px rgba(34,197,94,.45);
+
+  animation:successPulse 1.7s ease-in-out infinite;
 }
 
 .success h4{
+  position:relative;
+
+  z-index:2;
+
   color:#7dffb5;
-  font-size:14px;
+
+  font-size:17px;
+
+  font-weight:900;
+
+  letter-spacing:.3px;
 }
 
 .success p{
-  margin-top:5px;
-  color:#8f8c99;
-  font-size:9px;
+  position:relative;
+
+  z-index:2;
+
+  margin-top:7px;
+
+  color:#aaa7b5;
+
+  font-size:10px;
+
+  line-height:1.5;
 }
 
 .fileName{
+  position:relative;
+
+  z-index:2;
+
   display:block;
-  margin-top:9px;
-  padding:8px;
-  border-radius:9px;
-  color:#d6d3df;
+
+  margin-top:12px;
+
+  padding:10px;
+
+  border-radius:11px;
+
+  color:#d9ffe8;
+
   background:rgba(255,255,255,.045);
+
+  border:1px solid rgba(74,222,128,.12);
+
   font-size:8px;
+
   overflow:hidden;
+
   text-overflow:ellipsis;
+
   white-space:nowrap;
 }
 
+@keyframes receiptSuccess{
+
+  0%{
+    opacity:0;
+
+    transform:
+      translateY(12px)
+      scale(.96);
+  }
+
+  100%{
+    opacity:1;
+
+    transform:
+      translateY(0)
+      scale(1);
+  }
+
+}
+
+@keyframes successPulse{
+
+  0%,100%{
+    transform:scale(1);
+  }
+
+  50%{
+    transform:scale(1.06);
+  }
+
+}
+
+/* ÖDƏNİŞ DÜYMƏSİ */
+
 .paid{
   width:100%;
+
   margin-top:11px;
+
   padding:15px;
+
   border:0;
+
   border-radius:14px;
+
   color:#fff;
+
   font-weight:bold;
-  background:linear-gradient(90deg,#8b5cf6,#ec4899);
+
+  background:
+    linear-gradient(
+      90deg,
+      #8b5cf6,
+      #ec4899
+    );
+
+  box-shadow:
+    0 8px 25px rgba(139,92,246,.18);
+
   cursor:pointer;
+
+  transition:.2s;
+}
+
+.paid:hover{
+  transform:translateY(-2px);
+
+  box-shadow:
+    0 12px 30px rgba(236,72,153,.25);
 }
 
 .status{
   display:none;
+
   margin-top:10px;
+
   padding:13px;
+
   text-align:center;
+
   border-radius:13px;
+
   color:#70ffc0;
+
   background:rgba(37,211,102,.07);
+
   border:1px solid rgba(37,211,102,.18);
+
   font-size:10px;
 }
 
 .notice{
   margin-top:12px;
+
   text-align:center;
+
   color:#6f6c7c;
+
   font-size:8px;
+
   line-height:1.5;
 }
 
 .footer{
   margin-top:25px;
+
   text-align:center;
+
   color:#595767;
+
   font-size:9px;
+
   line-height:1.7;
 }
 
@@ -982,11 +1467,18 @@ input[type="tel"]:focus{
 
 <div class="brand">
 
-<div class="brandIcon">⚡</div>
+<div class="brandIcon">
+⚡
+</div>
 
 <div>
+
 <h1>SUPER GB</h1>
-<p>İnternet Paketləri</p>
+
+<p>
+İnternet Paketləri
+</p>
+
 </div>
 
 </div>
@@ -1002,7 +1494,9 @@ input[type="tel"]:focus{
 
 <h2>
 İnternetini
-<span class="gradient">SUPER et!</span>
+<span class="gradient">
+SUPER et!
+</span>
 </h2>
 
 <p>
@@ -1011,10 +1505,23 @@ paketini seç.
 </p>
 
 <div class="badges">
-<div class="badge">⚡ Sürətli</div>
-<div class="badge">📱 Mobil uyğun</div>
-<div class="badge">🔒 Təhlükəsiz</div>
-<div class="badge">📅 30 gün</div>
+
+<div class="badge">
+⚡ Sürətli
+</div>
+
+<div class="badge">
+📱 Mobil uyğun
+</div>
+
+<div class="badge">
+🔒 Təhlükəsiz
+</div>
+
+<div class="badge">
+📅 30 gün
+</div>
+
 </div>
 
 </section>
@@ -1025,9 +1532,17 @@ paketini seç.
 <section class="section">
 
 <div class="sectionTitle">
-<h3>📡 Operator seçin</h3>
-<span class="step">01</span>
+
+<h3>
+📡 Operator seçin
+</h3>
+
+<span class="step">
+01
+</span>
+
 </div>
+
 
 <div class="operators">
 
@@ -1048,7 +1563,8 @@ checked
 
 <div class="azercell">
 
-<div class="azercellRing"></div>
+<div class="azercellRing">
+</div>
 
 <div class="azercellText">
 azercell
@@ -1082,7 +1598,8 @@ value="Bakcell"
 
 <div class="bakcell">
 
-<div class="bakShape"></div>
+<div class="bakShape">
+</div>
 
 <div class="bakText">
 bakcell
@@ -1128,7 +1645,6 @@ Nar
 
 </div>
 
-
 </div>
 
 </section>
@@ -1140,9 +1656,13 @@ Nar
 
 <div class="sectionTitle">
 
-<h3>📱 Nömrə</h3>
+<h3>
+📱 Nömrə
+</h3>
 
-<span class="step">02</span>
+<span class="step">
+02
+</span>
 
 </div>
 
@@ -1175,11 +1695,16 @@ inputmode="numeric"
 
 <div class="sectionTitle">
 
-<h3>⚡ Paket seçin</h3>
+<h3>
+⚡ Paket seçin
+</h3>
 
-<span class="step">03</span>
+<span class="step">
+03
+</span>
 
 </div>
+
 
 <div class="packages">
 
@@ -1198,7 +1723,9 @@ checked
 
 <label for="p20">
 
-<div class="mark">✓</div>
+<div class="mark">
+✓
+</div>
 
 <div class="gb">
 20 <small>GB</small>
@@ -1234,7 +1761,9 @@ data-minutes="300"
 
 <label for="p30">
 
-<div class="mark">✓</div>
+<div class="mark">
+✓
+</div>
 
 <div class="gb">
 30 <small>GB</small>
@@ -1270,7 +1799,9 @@ data-minutes="400"
 
 <label for="p40">
 
-<div class="mark">✓</div>
+<div class="mark">
+✓
+</div>
 
 <div class="gb">
 40 <small>GB</small>
@@ -1306,7 +1837,9 @@ data-minutes="500"
 
 <label for="p60">
 
-<div class="mark">✓</div>
+<div class="mark">
+✓
+</div>
 
 <div class="gb">
 60 <small>GB</small>
@@ -1342,7 +1875,9 @@ data-minutes="700"
 
 <label for="p80">
 
-<div class="mark">✓</div>
+<div class="mark">
+✓
+</div>
 
 <div class="gb">
 80 <small>GB</small>
@@ -1375,46 +1910,66 @@ data-minutes="700"
 
 <div class="summaryTitle">
 
-<h3>📋 Sifariş xülasəsi</h3>
+<h3>
+📋 Sifariş xülasəsi
+</h3>
 
-<span>● HAZIR</span>
+<span>
+● HAZIR
+</span>
 
 </div>
 
 <div class="row">
 <span>Operator</span>
-<strong id="summaryOperator">Azercell</strong>
+<strong id="summaryOperator">
+Azercell
+</strong>
 </div>
 
 <div class="row">
 <span>Nömrə</span>
-<strong id="summaryPhone">—</strong>
+<strong id="summaryPhone">
+—
+</strong>
 </div>
 
 <div class="row">
 <span>Paket</span>
-<strong id="summaryPackage">20 GB</strong>
+<strong id="summaryPackage">
+20 GB
+</strong>
 </div>
 
 <div class="row">
 <span>Dəqiqə</span>
-<strong id="summaryMinutes">200 dəqiqə</strong>
+<strong id="summaryMinutes">
+200 dəqiqə
+</strong>
 </div>
 
 <div class="row">
 <span>Müddət</span>
-<strong>30 gün</strong>
+<strong>
+30 gün
+</strong>
 </div>
 
 <div class="total">
 
-<span>Ödəniləcək məbləğ</span>
+<span>
+Ödəniləcək məbləğ
+</span>
 
 <div class="totalValue">
 
-<b id="total">5</b>
+<b id="total">
+5
+</b>
 
-<small>AZN</small>
+<small>
+AZN
+</small>
 
 </div>
 
@@ -1431,7 +1986,9 @@ data-minutes="700"
 
 <div>
 
-<h3>💳 Ödəniş mərkəzi</h3>
+<h3>
+💳 Ödəniş mərkəzi
+</h3>
 
 <p>
 Ödəniş məlumatlarını yoxlayın və qəbzi əlavə edin.
@@ -1448,13 +2005,19 @@ data-minutes="700"
 
 <div class="amount">
 
-<span>ÖDƏNİLMƏLİ MƏBLƏĞ</span>
+<span>
+ÖDƏNİLMƏLİ MƏBLƏĞ
+</span>
 
 <div class="amountValue">
 
-<b id="paymentAmount">5</b>
+<b id="paymentAmount">
+5
+</b>
 
-<small>AZN</small>
+<small>
+AZN
+</small>
 
 </div>
 
@@ -1467,7 +2030,8 @@ data-minutes="700"
 
 <div class="cardTop">
 
-<div class="chip"></div>
+<div class="chip">
+</div>
 
 <div class="cardBrand">
 SUPER<span>GB</span>
@@ -1503,17 +2067,25 @@ type="button"
 
 <div>
 
-<small>KART SAHİBİ</small>
+<small>
+KART SAHİBİ
+</small>
 
-<strong>SUPER GB</strong>
+<strong>
+SUPER GB
+</strong>
 
 </div>
 
 <div>
 
-<small>VALYUTA</small>
+<small>
+VALYUTA
+</small>
 
-<strong>AZN</strong>
+<strong>
+AZN
+</strong>
 
 </div>
 
@@ -1542,7 +2114,9 @@ id="copyInfo"
 
 <div>
 
-<h4>Ödəniş qəbzi</h4>
+<h4>
+Ödəniş qəbzi
+</h4>
 
 <span>
 Ödənişdən sonra qəbzi əlavə edin
@@ -1577,6 +2151,8 @@ JPG, PNG və PDF
 </label>
 
 
+<!-- TƏSDİQ -->
+
 <div
 class="success"
 id="success"
@@ -1587,17 +2163,18 @@ id="success"
 </div>
 
 <h4>
-Qəbz əlavə edildi
+✓ Qəbz uğurla göndərildi
 </h4>
 
 <p>
-Qəbz faylı uğurla seçildi.
+Ödəniş qəbziniz qəbul edildi və yoxlama üçün hazırdır.
 </p>
 
 <span
 class="fileName"
 id="fileName"
-></span>
+>
+</span>
 
 </div>
 
@@ -1617,7 +2194,7 @@ onclick="paymentDone()"
 class="status"
 id="status"
 >
-✓ Ödəniş məlumatı qeyd edildi.
+✓ Ödəniş məlumatı və qəbz qəbul edildi.
 </div>
 
 </section>
@@ -1639,7 +2216,7 @@ SUPER GB<br>
 <script>
 
 /*
-  ÖZ KART NÖMRƏNİ BURADA YAZ.
+  BURADA ÖZ KART NÖMRƏNİ YAZ.
   Məsələn:
   const CARD_NUMBER = "4169 1234 5678 9012";
 */
@@ -1651,7 +2228,7 @@ document.getElementById("cardNumber").innerText =
 CARD_NUMBER;
 
 
-/* KART KOPYALAMA */
+/* KARTI KOPYALA */
 
 function copyCard(){
 
@@ -1694,7 +2271,7 @@ function copyCard(){
 }
 
 
-/* SİFARİŞ XÜLASƏSİ */
+/* XÜLASƏ */
 
 function updateSummary(){
 
@@ -1793,7 +2370,7 @@ document
 );
 
 
-/* QƏBZ */
+/* QƏBZ SEÇİLDİ */
 
 function receiptSelected(){
 
@@ -1802,7 +2379,9 @@ function receiptSelected(){
       "receiptFile"
     ).files[0];
 
-  if(!file) return;
+  if(!file){
+    return;
+  }
 
 
   document.getElementById(
@@ -1814,7 +2393,7 @@ function receiptSelected(){
   document.getElementById(
     "fileName"
   ).innerText =
-    file.name;
+    "📎 " + file.name;
 
 }
 
@@ -1868,7 +2447,7 @@ function paymentDone(){
 }
 
 
-/* İLK MƏLUMATLAR */
+/* BAŞLANĞIC */
 
 updateSummary();
 
