@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>SUPER GB — İnternet Paketləri</title>
+<title>SUPER GB</title>
 
 <style>
 *{
@@ -14,16 +14,12 @@
 
 body{
   font-family:Arial,Helvetica,sans-serif;
-  min-height:100vh;
   color:#fff;
+  min-height:100vh;
   background:
     radial-gradient(circle at 10% 0%,rgba(124,58,237,.30),transparent 28%),
     radial-gradient(circle at 100% 20%,rgba(14,165,233,.18),transparent 25%),
-    linear-gradient(145deg,#05050b,#0c0915 55%,#05050b);
-}
-
-button,input{
-  font:inherit;
+    linear-gradient(145deg,#05050b,#0d0917,#05050b);
 }
 
 .app{
@@ -33,8 +29,6 @@ button,input{
   padding:18px 0 45px;
 }
 
-/* HEADER */
-
 .header{
   display:flex;
   justify-content:space-between;
@@ -42,61 +36,56 @@ button,input{
   margin-bottom:18px;
 }
 
-.logoArea{
+.brand{
   display:flex;
   align-items:center;
   gap:12px;
 }
 
-.mainLogo{
+.brandIcon{
   width:54px;
   height:54px;
   display:flex;
-  align-items:center;
   justify-content:center;
+  align-items:center;
   border-radius:18px;
   background:linear-gradient(135deg,#8b5cf6,#ec4899);
   box-shadow:0 0 30px rgba(139,92,246,.4);
   font-size:27px;
 }
 
-.logoText h1{
+.brand h1{
   font-size:23px;
 }
 
-.logoText span{
-  display:block;
-  color:#8f8ca0;
-  font-size:10px;
+.brand p{
   margin-top:3px;
+  color:#858292;
+  font-size:9px;
 }
 
 .live{
-  padding:8px 10px;
+  padding:8px 11px;
   border-radius:12px;
-  color:#72ffc0;
+  color:#6dffba;
   font-size:9px;
   background:rgba(37,211,102,.07);
   border:1px solid rgba(37,211,102,.18);
 }
 
-/* HERO */
-
 .hero{
-  position:relative;
-  overflow:hidden;
   padding:27px 22px;
   border-radius:28px;
   background:
-    radial-gradient(circle at 90% 0%,rgba(34,211,238,.22),transparent 32%),
+    radial-gradient(circle at 100% 0%,rgba(34,211,238,.22),transparent 32%),
     radial-gradient(circle at 0% 100%,rgba(236,72,153,.18),transparent 35%),
-    linear-gradient(135deg,#1a1230,#0c0c16);
-  border:1px solid rgba(255,255,255,.09);
+    linear-gradient(135deg,#1b1231,#0b0b14);
+  border:1px solid rgba(255,255,255,.08);
   box-shadow:0 25px 70px rgba(0,0,0,.4);
 }
 
 .hero h2{
-  font-size:31px;
+  font-size:30px;
   line-height:1.1;
 }
 
@@ -107,29 +96,27 @@ button,input{
 }
 
 .hero p{
-  margin-top:12px;
+  margin-top:11px;
   color:#a19eaf;
   font-size:12px;
-  line-height:1.55;
+  line-height:1.5;
 }
 
-.heroBadges{
+.badges{
   display:flex;
   flex-wrap:wrap;
   gap:7px;
-  margin-top:17px;
+  margin-top:16px;
 }
 
 .badge{
   padding:8px 10px;
   border-radius:11px;
-  background:rgba(255,255,255,.055);
-  border:1px solid rgba(255,255,255,.07);
-  color:#d7d4df;
+  color:#d6d2df;
   font-size:9px;
+  background:rgba(255,255,255,.05);
+  border:1px solid rgba(255,255,255,.07);
 }
-
-/* SECTIONS */
 
 .section{
   margin-top:15px;
@@ -159,7 +146,7 @@ button,input{
   font-size:10px;
 }
 
-/* OPERATORS */
+/* OPERATOR */
 
 .operators{
   display:grid;
@@ -172,16 +159,16 @@ button,input{
 }
 
 .operator label{
-  min-height:125px;
+  min-height:128px;
   display:flex;
   flex-direction:column;
-  align-items:center;
   justify-content:center;
-  gap:9px;
-  padding:10px 5px;
+  align-items:center;
+  gap:10px;
+  padding:10px;
   border-radius:18px;
   cursor:pointer;
-  background:#0a0a12;
+  background:#090910;
   border:1px solid rgba(255,255,255,.08);
   transition:.25s;
 }
@@ -192,110 +179,105 @@ button,input{
 
 .operator input:checked + label{
   border-color:#9b6cff;
-  background:
-    linear-gradient(
-      145deg,
-      rgba(139,92,246,.25),
-      rgba(236,72,153,.08)
-    );
-  box-shadow:0 0 25px rgba(139,92,246,.14);
+  background:linear-gradient(
+    145deg,
+    rgba(139,92,246,.25),
+    rgba(236,72,153,.08)
+  );
+  box-shadow:0 0 25px rgba(139,92,246,.16);
 }
 
 /*
-  LOQOLAR KODUN ÖZÜNDƏDİR.
-  Xarici PNG və logos qovluğu tələb olunmur.
+  LOQOLAR TƏK INDEX.HTML İÇİNDƏDİR.
+  Xarici logos qovluğu tələb olunmur.
 */
 
-.operatorLogo{
-  width:72px;
-  height:72px;
+.logoBox{
+  width:76px;
+  height:76px;
   display:flex;
-  align-items:center;
   justify-content:center;
-  border-radius:18px;
-  overflow:hidden;
+  align-items:center;
+  border-radius:20px;
   background:#fff;
+  overflow:hidden;
   box-shadow:0 8px 25px rgba(0,0,0,.35);
-  transition:.25s;
 }
 
-.operator input:checked + label .operatorLogo{
-  transform:scale(1.06);
+.operator input:checked + label .logoBox{
   box-shadow:
     0 0 0 2px #9b6cff,
-    0 0 30px rgba(139,92,246,.35);
+    0 0 30px rgba(139,92,246,.3);
 }
 
 /* AZERCELL */
-.azLogo{
-  width:58px;
-  height:58px;
+
+.azercellLogo{
+  width:62px;
+  height:62px;
   border-radius:50%;
-  background:#ffdc00;
+  background:#ffd900;
   color:#111;
   display:flex;
   align-items:center;
   justify-content:center;
-  font-size:13px;
+  font-size:12px;
   font-weight:900;
   letter-spacing:-.7px;
 }
 
 /* BAKCELL */
-.bakLogo{
-  width:60px;
-  height:60px;
-  display:flex;
-  align-items:center;
-  justify-content:center;
+
+.bakcellLogo{
   position:relative;
+  width:65px;
+  height:65px;
+  display:flex;
+  justify-content:center;
+  align-items:center;
 }
 
-.bakStar{
-  width:44px;
-  height:44px;
+.bakcellShape{
+  width:47px;
+  height:47px;
   background:#e51d3f;
   clip-path:polygon(
-    50% 0%,
-    61% 30%,
-    95% 20%,
-    72% 48%,
+    50% 0,
+    62% 29%,
+    96% 20%,
+    73% 48%,
     100% 70%,
-    64% 64%,
+    65% 64%,
     55% 100%,
     42% 67%,
     8% 82%,
     28% 53%,
-    0% 31%,
+    0 31%,
     37% 32%
   );
 }
 
-.bakText{
+.bakcellText{
   position:absolute;
-  bottom:-1px;
+  bottom:2px;
   color:#111;
-  font-size:7px;
   font-weight:900;
+  font-size:8px;
 }
 
 /* NAR */
+
 .narLogo{
-  width:58px;
-  height:58px;
-  border-radius:19px 19px 19px 5px;
+  width:62px;
+  height:62px;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  border-radius:20px 20px 20px 6px;
   background:#ed1c24;
   color:#fff;
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  font-size:20px;
+  font-size:21px;
   font-weight:900;
-  transform:rotate(-2deg);
-}
-
-.narLogo span{
-  transform:rotate(2deg);
 }
 
 .operatorName{
@@ -305,14 +287,14 @@ button,input{
 
 /* PHONE */
 
-.textLabel{
+.label{
   display:block;
   margin-bottom:7px;
   color:#aaa7b5;
   font-size:11px;
 }
 
-.phoneBox{
+.phone{
   display:flex;
   gap:8px;
 }
@@ -320,23 +302,23 @@ button,input{
 .prefix{
   width:72px;
   display:flex;
-  align-items:center;
   justify-content:center;
+  align-items:center;
   border-radius:13px;
   background:#08080f;
   border:1px solid rgba(255,255,255,.1);
   color:#aaa7b6;
-  font-size:13px;
 }
 
 input[type="tel"]{
   flex:1;
+  min-width:0;
   padding:14px;
   border-radius:13px;
+  outline:none;
+  color:#fff;
   background:#08080f;
   border:1px solid rgba(255,255,255,.1);
-  color:#fff;
-  outline:none;
 }
 
 input[type="tel"]:focus{
@@ -364,9 +346,9 @@ input[type="tel"]:focus{
   min-height:150px;
   padding:16px;
   border-radius:19px;
-  background:#0a0a12;
-  border:1px solid rgba(255,255,255,.08);
   cursor:pointer;
+  background:#090910;
+  border:1px solid rgba(255,255,255,.08);
   transition:.25s;
 }
 
@@ -383,55 +365,55 @@ input[type="tel"]:focus{
       transparent 45%
     ),
     #0d0b17;
-  box-shadow:0 0 30px rgba(139,92,246,.15);
 }
 
-.gb{
-  font-size:26px;
-  font-weight:900;
-}
-
-.gb small{
-  font-size:12px;
-  color:#a9a5b5;
-}
-
-.packageLine{
-  margin-top:10px;
-  color:#aaa7b5;
-  font-size:10px;
-}
-
-.packagePrice{
-  margin-top:13px;
-  color:#ffd54a;
-  font-size:21px;
-  font-weight:900;
-}
-
-.packageDays{
-  margin-top:5px;
-  color:#777486;
-  font-size:9px;
-}
-
-.selectedMark{
+.mark{
   position:absolute;
   top:10px;
   right:10px;
   width:21px;
   height:21px;
   display:flex;
-  align-items:center;
   justify-content:center;
+  align-items:center;
   border-radius:50%;
+  color:#fff;
   background:#8b5cf6;
   font-size:11px;
   opacity:0;
 }
 
-.package input:checked + label .selectedMark{
+.package input:checked + label .mark{
   opacity:1;
+}
+
+.gb{
+  font-size:27px;
+  font-weight:900;
+}
+
+.gb small{
+  color:#aaa7b5;
+  font-size:12px;
+}
+
+.info{
+  margin-top:10px;
+  color:#aaa7b5;
+  font-size:10px;
+}
+
+.days{
+  margin-top:6px;
+  color:#777486;
+  font-size:9px;
+}
+
+.price{
+  margin-top:13px;
+  color:#ffd54a;
+  font-size:22px;
+  font-weight:900;
 }
 
 /* SUMMARY */
@@ -444,51 +426,61 @@ input[type="tel"]:focus{
   border:1px solid rgba(139,92,246,.3);
 }
 
-.summaryTop{
+.summaryTitle{
   display:flex;
   justify-content:space-between;
-  align-items:center;
   margin-bottom:12px;
 }
 
-.summaryTop h3{
+.summaryTitle h3{
   font-size:16px;
 }
 
-.summaryLive{
+.summaryTitle span{
   color:#70ffbd;
   font-size:8px;
 }
 
-.summaryRow{
+.row{
   display:flex;
   justify-content:space-between;
   padding:9px 0;
-  border-bottom:1px solid rgba(255,255,255,.055);
-  font-size:11px;
+  border-bottom:1px solid rgba(255,255,255,.05);
   color:#9693a4;
+  font-size:11px;
 }
 
-.summaryRow strong{
+.row strong{
   color:#fff;
 }
 
 .total{
   display:flex;
   justify-content:space-between;
-  align-items:center;
+  align-items:baseline;
   margin-top:15px;
 }
 
-.total span{
+.total > span{
   color:#aaa7b5;
   font-size:12px;
 }
 
-.total strong{
-  font-size:36px;
+.totalValue{
+  display:flex;
+  align-items:baseline;
+  gap:6px;
   color:#ffd54a;
-  font-weight:900;
+}
+
+.totalValue b{
+  font-size:42px;
+  line-height:1;
+}
+
+.totalValue small{
+  font-size:14px;
+  font-weight:700;
 }
 
 /* PAYMENT */
@@ -501,14 +493,13 @@ input[type="tel"]:focus{
     radial-gradient(circle at 100% 0%,rgba(139,92,246,.2),transparent 32%),
     linear-gradient(145deg,#171426,#090910);
   border:1px solid rgba(255,255,255,.1);
-  box-shadow:0 25px 70px rgba(0,0,0,.4);
 }
 
 .paymentTitle{
   display:flex;
   justify-content:space-between;
   align-items:flex-start;
-  margin-bottom:16px;
+  margin-bottom:15px;
 }
 
 .paymentTitle h3{
@@ -516,9 +507,9 @@ input[type="tel"]:focus{
 }
 
 .paymentTitle p{
+  margin-top:5px;
   color:#858293;
   font-size:10px;
-  margin-top:5px;
   line-height:1.5;
 }
 
@@ -526,37 +517,47 @@ input[type="tel"]:focus{
   width:42px;
   height:42px;
   display:flex;
-  align-items:center;
   justify-content:center;
+  align-items:center;
   border-radius:14px;
   background:rgba(37,211,102,.08);
-  border:1px solid rgba(37,211,102,.15);
 }
 
 /* AMOUNT */
 
 .amount{
   padding:18px;
-  border-radius:18px;
   text-align:center;
+  border-radius:18px;
   background:rgba(255,255,255,.04);
   border:1px solid rgba(255,255,255,.07);
 }
 
-.amount span:first-child{
+.amount > span{
   display:block;
   color:#777487;
   font-size:9px;
   letter-spacing:1.8px;
 }
 
-.amount strong{
-  display:block;
-  margin-top:5px;
+.amountValue{
+  display:flex;
+  justify-content:center;
+  align-items:baseline;
+  gap:7px;
+  margin-top:6px;
   color:#ffd54a;
-  font-size:42px;
+}
+
+.amountValue b{
+  font-size:50px;
   line-height:1;
   font-weight:900;
+}
+
+.amountValue small{
+  font-size:16px;
+  font-weight:700;
 }
 
 /* CARD */
@@ -568,8 +569,12 @@ input[type="tel"]:focus{
   padding:20px;
   overflow:hidden;
   border-radius:23px;
-  background:
-    linear-gradient(135deg,#382463,#16142c 52%,#101b29);
+  background:linear-gradient(
+    135deg,
+    #382463,
+    #16142c 52%,
+    #101b29
+  );
   border:1px solid rgba(255,255,255,.13);
   box-shadow:0 20px 45px rgba(0,0,0,.35);
 }
@@ -632,20 +637,19 @@ input[type="tel"]:focus{
   justify-content:space-between;
   gap:8px;
   margin-top:8px;
-  font-size:15px;
+  font-size:14px;
   font-weight:bold;
-  letter-spacing:1.4px;
-  word-break:break-all;
+  letter-spacing:1px;
 }
 
 .copy{
   flex:none;
-  width:37px;
-  height:37px;
+  width:38px;
+  height:38px;
   border:0;
   border-radius:11px;
-  background:rgba(255,255,255,.1);
   color:#fff;
+  background:rgba(255,255,255,.1);
   cursor:pointer;
 }
 
@@ -673,8 +677,8 @@ input[type="tel"]:focus{
 .copyInfo{
   margin-top:9px;
   padding:10px;
-  border-radius:11px;
   text-align:center;
+  border-radius:11px;
   color:#858294;
   font-size:9px;
   background:rgba(255,255,255,.035);
@@ -701,8 +705,8 @@ input[type="tel"]:focus{
   width:41px;
   height:41px;
   display:flex;
-  align-items:center;
   justify-content:center;
+  align-items:center;
   border-radius:13px;
   background:rgba(139,92,246,.12);
 }
@@ -713,9 +717,9 @@ input[type="tel"]:focus{
 
 .receiptHead span{
   display:block;
+  margin-top:3px;
   color:#777486;
   font-size:9px;
-  margin-top:3px;
 }
 
 .upload{
@@ -723,8 +727,8 @@ input[type="tel"]:focus{
   min-height:145px;
   display:flex;
   flex-direction:column;
-  align-items:center;
   justify-content:center;
+  align-items:center;
   padding:20px;
   text-align:center;
   border:1px dashed rgba(139,92,246,.45);
@@ -737,19 +741,18 @@ input[type="tel"]:focus{
   position:absolute;
   inset:0;
   opacity:0;
-  cursor:pointer;
 }
 
 .uploadIcon{
   width:46px;
   height:46px;
   display:flex;
-  align-items:center;
   justify-content:center;
+  align-items:center;
+  margin-bottom:8px;
   border-radius:50%;
   background:linear-gradient(135deg,#8b5cf6,#ec4899);
   font-size:21px;
-  margin-bottom:8px;
 }
 
 .upload strong{
@@ -757,68 +760,56 @@ input[type="tel"]:focus{
 }
 
 .upload small{
+  margin-top:5px;
   color:#777486;
   font-size:8px;
-  margin-top:5px;
 }
 
-/* SUCCESS */
-
-.receiptSuccess{
+.success{
   display:none;
   margin-top:11px;
   padding:17px;
-  border-radius:18px;
   text-align:center;
-  background:
-    linear-gradient(
-      145deg,
-      rgba(37,211,102,.12),
-      rgba(37,211,102,.035)
-    );
+  border-radius:18px;
+  background:rgba(37,211,102,.08);
   border:1px solid rgba(37,211,102,.28);
 }
 
 .successCircle{
   width:52px;
   height:52px;
-  margin:0 auto 9px;
   display:flex;
-  align-items:center;
   justify-content:center;
+  align-items:center;
+  margin:0 auto 9px;
   border-radius:50%;
-  color:#fff;
-  font-size:24px;
   background:linear-gradient(135deg,#22c55e,#16a34a);
-  box-shadow:0 0 25px rgba(34,197,94,.35);
+  font-size:24px;
 }
 
-.receiptSuccess h4{
+.success h4{
   color:#7dffb5;
   font-size:14px;
 }
 
-.receiptSuccess p{
+.success p{
   margin-top:5px;
   color:#8f8c99;
   font-size:9px;
-  line-height:1.5;
 }
 
-.receiptFileName{
+.fileName{
   display:block;
   margin-top:9px;
   padding:8px;
   border-radius:9px;
-  background:rgba(255,255,255,.045);
   color:#d6d3df;
+  background:rgba(255,255,255,.045);
   font-size:8px;
   overflow:hidden;
   text-overflow:ellipsis;
   white-space:nowrap;
 }
-
-/* BUTTON */
 
 .paid{
   width:100%;
@@ -836,18 +827,18 @@ input[type="tel"]:focus{
   display:none;
   margin-top:10px;
   padding:13px;
-  border-radius:13px;
   text-align:center;
+  border-radius:13px;
   color:#70ffc0;
-  font-size:10px;
   background:rgba(37,211,102,.07);
   border:1px solid rgba(37,211,102,.18);
+  font-size:10px;
 }
 
 .notice{
   margin-top:12px;
-  color:#6f6c7c;
   text-align:center;
+  color:#6f6c7c;
   font-size:8px;
   line-height:1.5;
 }
@@ -860,16 +851,17 @@ input[type="tel"]:focus{
   line-height:1.7;
 }
 
-/* MOBILE */
-
 @media(max-width:430px){
+
+  .hero h2{
+    font-size:27px;
+  }
 
   .packages{
     grid-template-columns:repeat(2,1fr);
   }
 
   .package label{
-    min-height:145px;
     padding:13px;
   }
 
@@ -878,28 +870,13 @@ input[type="tel"]:focus{
   }
 
   .cardNumber{
-    font-size:12px;
-  }
-
-  .hero h2{
-    font-size:27px;
-  }
-
-  .amount strong{
-    font-size:39px;
-  }
-
-  .total strong{
-    font-size:34px;
+    font-size:11px;
   }
 }
 
 @media(max-width:350px){
 
-  .operators{
-    grid-template-columns:1fr;
-  }
-
+  .operators,
   .packages{
     grid-template-columns:1fr;
   }
@@ -913,20 +890,16 @@ input[type="tel"]:focus{
 
 <header class="header">
 
-  <div class="logoArea">
+  <div class="brand">
+    <div class="brandIcon">⚡</div>
 
-    <div class="mainLogo">⚡</div>
-
-    <div class="logoText">
+    <div>
       <h1>SUPER GB</h1>
-      <span>İnternet Paketləri</span>
+      <p>İnternet Paketləri</p>
     </div>
-
   </div>
 
-  <div class="live">
-    ● AKTİV
-  </div>
+  <div class="live">● AKTİV</div>
 
 </header>
 
@@ -943,7 +916,7 @@ input[type="tel"]:focus{
     internet paketini seç.
   </p>
 
-  <div class="heroBadges">
+  <div class="badges">
     <div class="badge">⚡ Sürətli</div>
     <div class="badge">📱 Mobil uyğun</div>
     <div class="badge">🔒 Təhlükəsiz</div>
@@ -965,8 +938,6 @@ input[type="tel"]:focus{
   <div class="operators">
 
 
-    <!-- AZERCELL -->
-
     <div class="operator">
 
       <input
@@ -979,12 +950,10 @@ input[type="tel"]:focus{
 
       <label for="azercell">
 
-        <div class="operatorLogo">
-
-          <div class="azLogo">
+        <div class="logoBox">
+          <div class="azercellLogo">
             azercell
           </div>
-
         </div>
 
         <div class="operatorName">
@@ -995,8 +964,6 @@ input[type="tel"]:focus{
 
     </div>
 
-
-    <!-- BAKCELL -->
 
     <div class="operator">
 
@@ -1009,13 +976,13 @@ input[type="tel"]:focus{
 
       <label for="bakcell">
 
-        <div class="operatorLogo">
+        <div class="logoBox">
 
-          <div class="bakLogo">
+          <div class="bakcellLogo">
 
-            <div class="bakStar"></div>
+            <div class="bakcellShape"></div>
 
-            <div class="bakText">
+            <div class="bakcellText">
               bakcell
             </div>
 
@@ -1032,8 +999,6 @@ input[type="tel"]:focus{
     </div>
 
 
-    <!-- NAR -->
-
     <div class="operator">
 
       <input
@@ -1045,10 +1010,10 @@ input[type="tel"]:focus{
 
       <label for="nar">
 
-        <div class="operatorLogo">
+        <div class="logoBox">
 
           <div class="narLogo">
-            <span>Nar</span>
+            Nar
           </div>
 
         </div>
@@ -1071,18 +1036,15 @@ input[type="tel"]:focus{
 <section class="section">
 
   <div class="sectionTitle">
-
     <h3>📱 Nömrə</h3>
-
     <span class="step">02</span>
-
   </div>
 
-  <label class="textLabel">
+  <label class="label">
     Mobil nömrənizi daxil edin
   </label>
 
-  <div class="phoneBox">
+  <div class="phone">
 
     <div class="prefix">
       +994
@@ -1106,18 +1068,12 @@ input[type="tel"]:focus{
 <section class="section">
 
   <div class="sectionTitle">
-
     <h3>⚡ Paket seçin</h3>
-
     <span class="step">03</span>
-
   </div>
-
 
   <div class="packages">
 
-
-    <!-- 20 GB -->
 
     <div class="package">
 
@@ -1133,30 +1089,28 @@ input[type="tel"]:focus{
 
       <label for="p20">
 
-        <div class="selectedMark">✓</div>
+        <div class="mark">✓</div>
 
         <div class="gb">
           20 <small>GB</small>
         </div>
 
-        <div class="packageLine">
+        <div class="info">
           📞 200 dəqiqə
         </div>
 
-        <div class="packageDays">
+        <div class="days">
           📅 30 gün
         </div>
 
-        <div class="packagePrice">
-          5 AZN
+        <div class="price">
+          5 <small>AZN</small>
         </div>
 
       </label>
 
     </div>
 
-
-    <!-- 30 GB -->
 
     <div class="package">
 
@@ -1171,30 +1125,28 @@ input[type="tel"]:focus{
 
       <label for="p30">
 
-        <div class="selectedMark">✓</div>
+        <div class="mark">✓</div>
 
         <div class="gb">
           30 <small>GB</small>
         </div>
 
-        <div class="packageLine">
+        <div class="info">
           📞 300 dəqiqə
         </div>
 
-        <div class="packageDays">
+        <div class="days">
           📅 30 gün
         </div>
 
-        <div class="packagePrice">
-          10 AZN
+        <div class="price">
+          10 <small>AZN</small>
         </div>
 
       </label>
 
     </div>
 
-
-    <!-- 40 GB -->
 
     <div class="package">
 
@@ -1209,30 +1161,28 @@ input[type="tel"]:focus{
 
       <label for="p40">
 
-        <div class="selectedMark">✓</div>
+        <div class="mark">✓</div>
 
         <div class="gb">
           40 <small>GB</small>
         </div>
 
-        <div class="packageLine">
+        <div class="info">
           📞 400 dəqiqə
         </div>
 
-        <div class="packageDays">
+        <div class="days">
           📅 30 gün
         </div>
 
-        <div class="packagePrice">
-          15 AZN
+        <div class="price">
+          15 <small>AZN</small>
         </div>
 
       </label>
 
     </div>
 
-
-    <!-- 60 GB -->
 
     <div class="package">
 
@@ -1247,30 +1197,28 @@ input[type="tel"]:focus{
 
       <label for="p60">
 
-        <div class="selectedMark">✓</div>
+        <div class="mark">✓</div>
 
         <div class="gb">
           60 <small>GB</small>
         </div>
 
-        <div class="packageLine">
+        <div class="info">
           📞 500 dəqiqə
         </div>
 
-        <div class="packageDays">
+        <div class="days">
           📅 30 gün
         </div>
 
-        <div class="packagePrice">
-          20 AZN
+        <div class="price">
+          20 <small>AZN</small>
         </div>
 
       </label>
 
     </div>
 
-
-    <!-- 80 GB -->
 
     <div class="package">
 
@@ -1285,22 +1233,22 @@ input[type="tel"]:focus{
 
       <label for="p80">
 
-        <div class="selectedMark">✓</div>
+        <div class="mark">✓</div>
 
         <div class="gb">
           80 <small>GB</small>
         </div>
 
-        <div class="packageLine">
+        <div class="info">
           📞 700 dəqiqə
         </div>
 
-        <div class="packageDays">
+        <div class="days">
           📅 30 gün
         </div>
 
-        <div class="packagePrice">
-          30 AZN
+        <div class="price">
+          30 <small>AZN</small>
         </div>
 
       </label>
@@ -1316,37 +1264,32 @@ input[type="tel"]:focus{
 
 <section class="summary">
 
-  <div class="summaryTop">
-
+  <div class="summaryTitle">
     <h3>📋 Sifariş xülasəsi</h3>
-
-    <span class="summaryLive">
-      ● CANLI
-    </span>
-
+    <span>● CANLI</span>
   </div>
 
-  <div class="summaryRow">
+  <div class="row">
     <span>Operator</span>
     <strong id="summaryOperator">Azercell</strong>
   </div>
 
-  <div class="summaryRow">
+  <div class="row">
     <span>Nömrə</span>
     <strong id="summaryPhone">—</strong>
   </div>
 
-  <div class="summaryRow">
+  <div class="row">
     <span>Paket</span>
     <strong id="summaryPackage">20 GB</strong>
   </div>
 
-  <div class="summaryRow">
+  <div class="row">
     <span>Dəqiqə</span>
     <strong id="summaryMinutes">200 dəqiqə</strong>
   </div>
 
-  <div class="summaryRow">
+  <div class="row">
     <span>Müddət</span>
     <strong>30 gün</strong>
   </div>
@@ -1355,10 +1298,10 @@ input[type="tel"]:focus{
 
     <span>Ödəniləcək məbləğ</span>
 
-    <strong>
-      <span id="total">5</span>
-      AZN
-    </strong>
+    <div class="totalValue">
+      <b id="total">5</b>
+      <small>AZN</small>
+    </div>
 
   </div>
 
@@ -1372,14 +1315,12 @@ input[type="tel"]:focus{
   <div class="paymentTitle">
 
     <div>
-
       <h3>💳 Ödəniş mərkəzi</h3>
 
       <p>
-        Ödəniş məlumatlarını yoxlayın.
-        Sonra qəbzi əlavə edin.
+        Ödəniş məlumatlarını yoxlayın və
+        qəbzi əlavə edin.
       </p>
-
     </div>
 
     <div class="lock">
@@ -1389,23 +1330,19 @@ input[type="tel"]:focus{
   </div>
 
 
-  <!-- BÖYÜK MƏBLƏĞ -->
-
   <div class="amount">
 
-    <span>
-      ÖDƏNİLMƏLİ MƏBLƏĞ
-    </span>
+    <span>ÖDƏNİLMƏLİ MƏBLƏĞ</span>
 
-    <strong>
-      <span id="paymentAmount">5</span>
-      AZN
-    </strong>
+    <div class="amountValue">
+      <b id="paymentAmount">5</b>
+      <small>AZN</small>
+    </div>
 
   </div>
 
 
-  <!-- CARD -->
+  <!-- KART -->
 
   <div class="card">
 
@@ -1434,8 +1371,8 @@ input[type="tel"]:focus{
 
         <button
           class="copy"
-          type="button"
           onclick="copyCard()"
+          type="button"
         >
           ⧉
         </button>
@@ -1448,23 +1385,13 @@ input[type="tel"]:focus{
     <div class="cardBottom">
 
       <div>
-
         <small>KART SAHİBİ</small>
-
-        <strong>
-          SUPER GB
-        </strong>
-
+        <strong>SUPER GB</strong>
       </div>
 
       <div>
-
         <small>VALYUTA</small>
-
-        <strong>
-          AZN
-        </strong>
-
+        <strong>AZN</strong>
       </div>
 
     </div>
@@ -1481,7 +1408,7 @@ input[type="tel"]:focus{
   </div>
 
 
-  <!-- RECEIPT -->
+  <!-- QƏBZ -->
 
   <div class="receipt">
 
@@ -1492,15 +1419,11 @@ input[type="tel"]:focus{
       </div>
 
       <div>
-
-        <h4>
-          Ödəniş qəbzi
-        </h4>
+        <h4>Ödəniş qəbzi</h4>
 
         <span>
           Ödənişdən sonra qəbzi əlavə edin
         </span>
-
       </div>
 
     </div>
@@ -1531,8 +1454,8 @@ input[type="tel"]:focus{
 
 
     <div
-      class="receiptSuccess"
-      id="receiptSuccess"
+      class="success"
+      id="success"
     >
 
       <div class="successCircle">
@@ -1548,8 +1471,8 @@ input[type="tel"]:focus{
       </p>
 
       <span
-        class="receiptFileName"
-        id="receiptFileName"
+        class="fileName"
+        id="fileName"
       ></span>
 
     </div>
@@ -1568,7 +1491,7 @@ input[type="tel"]:focus{
 
   <div
     class="status"
-    id="paymentStatus"
+    id="status"
   >
     ✓ Ödəniş məlumatı qeyd edildi.
   </div>
@@ -1577,18 +1500,14 @@ input[type="tel"]:focus{
 
 
 <div class="notice">
-
-  🔒 Məlumatları göndərməzdən əvvəl
-  operator, nömrə, paket və məbləği yoxlayın.
-
+  🔒 Sifarişi təsdiqləməzdən əvvəl
+  məlumatları yoxlayın.
 </div>
 
 
 <div class="footer">
-
   SUPER GB<br>
   İnternet Paketləri
-
 </div>
 
 </div>
@@ -1596,19 +1515,13 @@ input[type="tel"]:focus{
 
 <script>
 
-/*
-=====================================================
-KART NÖMRƏSİNİ BURADA DƏYİŞ
-=====================================================
-*/
+/* ==========================================
+   ÖZ KART NÖMRƏNİ BURAYA YAZ
+   ========================================== */
 
-const CARD_NUMBER =
-"5315 9921 2761 6081";
+const CARD_NUMBER = "BURAYA_KART_NOMRESI";
 
-
-document.getElementById(
-  "cardNumber"
-).innerText =
+document.getElementById("cardNumber").innerText =
 CARD_NUMBER;
 
 
@@ -1616,112 +1529,54 @@ CARD_NUMBER;
 
 function copyCard(){
 
-  if(
-    CARD_NUMBER ===
-    "BURAYA_KART_NOMRESI"
-  ){
-
-    alert(
-      "Kodda öz kart nömrəni əlavə et."
-    );
-
+  if(CARD_NUMBER === "BURAYA_KART_NOMRESI"){
+    alert("Əvvəlcə kodda öz kart nömrəni əlavə et.");
     return;
   }
 
-  if(
-    navigator.clipboard &&
-    navigator.clipboard.writeText
-  ){
+  if(navigator.clipboard){
 
-    navigator.clipboard
-    .writeText(CARD_NUMBER)
+    navigator.clipboard.writeText(CARD_NUMBER)
     .then(function(){
 
       const info =
-      document.getElementById(
-        "copyInfo"
-      );
+      document.getElementById("copyInfo");
 
       info.innerHTML =
       "✓ Kart nömrəsi yaddaşa kopyalandı";
 
-      info.style.color =
-      "#70ffc0";
+      info.style.color="#70ffc0";
 
       setTimeout(function(){
 
         info.innerHTML =
         "💳 Kart nömrəsini kopyalamaq üçün düyməyə toxunun.";
 
-        info.style.color =
-        "";
+        info.style.color="";
 
       },2500);
-
-    })
-    .catch(function(){
-
-      fallbackCopy();
 
     });
 
   }else{
 
-    fallbackCopy();
+    const area =
+    document.createElement("textarea");
 
-  }
+    area.value=CARD_NUMBER;
 
-}
+    document.body.appendChild(area);
 
-
-/* FALLBACK */
-
-function fallbackCopy(){
-
-  const textarea =
-  document.createElement("textarea");
-
-  textarea.value =
-  CARD_NUMBER;
-
-  textarea.style.position =
-  "fixed";
-
-  textarea.style.opacity =
-  "0";
-
-  document.body.appendChild(
-    textarea
-  );
-
-  textarea.select();
-
-  try{
+    area.select();
 
     document.execCommand("copy");
 
-    const info =
-    document.getElementById(
-      "copyInfo"
-    );
+    area.remove();
 
-    info.innerHTML =
+    document.getElementById("copyInfo").innerHTML =
     "✓ Kart nömrəsi yaddaşa kopyalandı";
 
-    info.style.color =
-    "#70ffc0";
-
-  }catch(e){
-
-    alert(
-      "Kart nömrəsini əl ilə kopyalaya bilərsiniz."
-    );
-
   }
-
-  document.body.removeChild(
-    textarea
-  );
 
 }
 
@@ -1748,131 +1603,72 @@ function getOperator(){
 }
 
 
-/* NÖMRƏ */
+/* TELEFON */
 
-document
-.getElementById("phone")
-.addEventListener(
-  "input",
-  function(){
+document.getElementById("phone")
+.addEventListener("input",function(){
 
-    let value =
-    this.value.replace(
-      /\D/g,
-      ""
-    );
+  let value =
+  this.value.replace(/\D/g,"");
 
-    if(value.length > 9){
+  value=value.substring(0,9);
 
-      value =
-      value.substring(0,9);
+  let result="";
 
-    }
+  if(value.length>0)
+    result=value.substring(0,2);
 
-    let result = "";
+  if(value.length>2)
+    result+=" "+value.substring(2,5);
 
-    if(value.length > 0){
+  if(value.length>5)
+    result+=" "+value.substring(5,7);
 
-      result +=
-      value.substring(0,2);
+  if(value.length>7)
+    result+=" "+value.substring(7,9);
 
-    }
+  this.value=result;
 
-    if(value.length > 2){
+  updateSummary();
 
-      result +=
-      " " +
-      value.substring(2,5);
-
-    }
-
-    if(value.length > 5){
-
-      result +=
-      " " +
-      value.substring(5,7);
-
-    }
-
-    if(value.length > 7){
-
-      result +=
-      " " +
-      value.substring(7,9);
-
-    }
-
-    this.value =
-    result;
-
-    updateSummary();
-
-  }
-);
+});
 
 
 /* XÜLASƏ */
 
 function updateSummary(){
 
-  const operator =
-  getOperator();
+  const operator=getOperator();
+  const pack=getPackage();
+  const phone=document.getElementById("phone").value;
 
-  const pack =
-  getPackage();
+  document.getElementById("summaryOperator")
+  .innerText=operator.value;
 
-  const phone =
-  document.getElementById(
-    "phone"
-  ).value;
+  document.getElementById("summaryPhone")
+  .innerText=phone || "—";
 
+  document.getElementById("summaryPackage")
+  .innerText=pack.value;
 
-  document.getElementById(
-    "summaryOperator"
-  ).innerText =
-  operator.value;
+  document.getElementById("summaryMinutes")
+  .innerText=
+  pack.dataset.minutes+" dəqiqə";
 
+  document.getElementById("total")
+  .innerText=pack.dataset.price;
 
-  document.getElementById(
-    "summaryPhone"
-  ).innerText =
-  phone || "—";
-
-
-  document.getElementById(
-    "summaryPackage"
-  ).innerText =
-  pack.value;
-
-
-  document.getElementById(
-    "summaryMinutes"
-  ).innerText =
-  pack.dataset.minutes +
-  " dəqiqə";
-
-
-  document.getElementById(
-    "total"
-  ).innerText =
-  pack.dataset.price;
-
-
-  document.getElementById(
-    "paymentAmount"
-  ).innerText =
-  pack.dataset.price;
+  document.getElementById("paymentAmount")
+  .innerText=pack.dataset.price;
 
 }
 
 
-/* DƏYİŞİKLİKLƏR */
+/* SEÇİMLƏR */
 
-document
-.querySelectorAll(
+document.querySelectorAll(
   'input[name="operator"],input[name="package"]'
-)
-.forEach(function(item){
+).forEach(function(item){
 
   item.addEventListener(
     "change",
@@ -1886,73 +1682,38 @@ document
 
 function receiptSelected(){
 
-  const input =
-  document.getElementById(
-    "receiptFile"
-  );
+  const input=
+  document.getElementById("receiptFile");
 
-  const success =
-  document.getElementById(
-    "receiptSuccess"
-  );
+  const success=
+  document.getElementById("success");
 
-  const fileName =
-  document.getElementById(
-    "receiptFileName"
-  );
-
+  const fileName=
+  document.getElementById("fileName");
 
   if(!input.files.length){
 
-    success.style.display =
-    "none";
+    success.style.display="none";
+    return;
+
+  }
+
+  const file=input.files[0];
+
+  if(file.size > 10*1024*1024){
+
+    alert("Qəbz 10 MB-dan böyük ola bilməz.");
+
+    input.value="";
+    success.style.display="none";
 
     return;
 
   }
 
+  fileName.innerText="📎 "+file.name;
 
-  const file =
-  input.files[0];
-
-
-  if(
-    file.size >
-    10 * 1024 * 1024
-  ){
-
-    alert(
-      "Qəbz 10 MB-dan böyük ola bilməz."
-    );
-
-    input.value =
-    "";
-
-    success.style.display =
-    "none";
-
-    return;
-
-  }
-
-
-  fileName.innerText =
-  "📎 " + file.name;
-
-  success.style.display =
-  "block";
-
-
-  document.querySelector(
-    ".upload strong"
-  ).innerText =
-  "Qəbz seçildi ✓";
-
-
-  document.querySelector(
-    ".upload small"
-  ).innerText =
-  "Başqa qəbz seçmək üçün toxunun";
+  success.style.display="block";
 
 }
 
@@ -1961,34 +1722,24 @@ function receiptSelected(){
 
 function paymentDone(){
 
-  const status =
-  document.getElementById(
-    "paymentStatus"
-  );
+  const receipt=
+  document.getElementById("receiptFile");
 
-  const receipt =
-  document.getElementById(
-    "receiptFile"
-  );
-
+  const status=
+  document.getElementById("status");
 
   if(!receipt.files.length){
 
-    alert(
-      "Əvvəlcə ödəniş qəbzini əlavə edin."
-    );
+    alert("Əvvəlcə ödəniş qəbzini əlavə edin.");
 
     return;
 
   }
 
+  status.style.display="block";
 
-  status.style.display =
-  "block";
-
-  status.innerHTML =
-  "✓ Ödəniş məlumatı qeyd edildi.<br>" +
-  "✓ Qəbz əlavə olundu.";
+  status.innerHTML=
+  "✓ Ödəniş məlumatı qeyd edildi.<br>✓ Qəbz əlavə olundu.";
 
 }
 
