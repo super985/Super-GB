@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="theme-color" content="#07111d">
+<meta name="theme-color" content="#050b13">
 
 <title>PaketPay — Mobil Paketlər</title>
 
@@ -51,52 +51,233 @@ body{
         linear-gradient(180deg,rgba(7,22,35,.97),rgba(5,11,19,.99));
 }
 
-/* HEADER */
+/* =========================
+   PREMIUM PAKETPAY LOGO
+========================= */
 
 .header{
     text-align:center;
-    padding-top:28px;
+    padding-top:30px;
+}
+
+.logo-wrap{
+    position:relative;
+    display:inline-flex;
+    flex-direction:column;
+    align-items:center;
+    justify-content:center;
+    padding:8px 18px 12px;
+}
+
+.logo-wrap::before{
+    content:"";
+    position:absolute;
+    width:190px;
+    height:70px;
+    left:50%;
+    top:25px;
+    transform:translateX(-50%);
+    background:rgba(49,225,192,.16);
+    filter:blur(30px);
+    border-radius:50%;
+    z-index:0;
+    animation:logoGlow 2.5s ease-in-out infinite;
 }
 
 .logo{
+    position:relative;
+    z-index:2;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    font-size:52px;
+    font-weight:1000;
+    letter-spacing:-3.5px;
+    line-height:1;
+    white-space:nowrap;
+    filter:drop-shadow(0 5px 15px rgba(0,0,0,.35));
+}
+
+.logo .bolt{
     display:inline-flex;
     align-items:center;
     justify-content:center;
-    font-size:50px;
-    font-weight:900;
-    letter-spacing:-3px;
-    line-height:1;
+    margin-right:4px;
+    color:#ffe45c;
+    font-size:42px;
+    text-shadow:
+        0 0 6px #ffe45c,
+        0 0 15px rgba(255,220,65,.9),
+        0 0 30px rgba(255,180,40,.65);
+    animation:boltFlash 1.7s ease-in-out infinite;
 }
 
 .logo .p{
-    color:#fff;
+    color:#ffffff;
+    text-shadow:
+        0 0 5px rgba(255,255,255,.8),
+        0 0 15px rgba(255,255,255,.25),
+        0 5px 12px rgba(0,0,0,.4);
 }
 
 .logo .pay{
-    color:var(--green);
-    text-shadow:
-        0 0 12px rgba(49,225,192,.4),
-        0 0 30px rgba(49,225,192,.25),
-        0 0 55px rgba(49,225,192,.12);
+    position:relative;
+    margin-left:2px;
+    color:#31e1c0;
+    background:linear-gradient(
+        180deg,
+        #ffffff 0%,
+        #65ffe3 25%,
+        #31e1c0 55%,
+        #0da98f 100%
+    );
+    -webkit-background-clip:text;
+    background-clip:text;
+    -webkit-text-fill-color:transparent;
+    text-shadow:none;
+    filter:
+        drop-shadow(0 0 5px rgba(49,225,192,.9))
+        drop-shadow(0 0 16px rgba(49,225,192,.55))
+        drop-shadow(0 0 30px rgba(49,225,192,.25));
+}
+
+.logo .pay::after{
+    content:"";
+    position:absolute;
+    left:5%;
+    right:0;
+    bottom:-7px;
+    height:3px;
+    border-radius:50%;
+    background:linear-gradient(
+        90deg,
+        transparent,
+        #31e1c0,
+        #ffffff,
+        #31e1c0,
+        transparent
+    );
+    box-shadow:
+        0 0 8px #31e1c0,
+        0 0 18px rgba(49,225,192,.7);
+    animation:lineMove 2.2s linear infinite;
 }
 
 .logo-badge{
-    display:inline-block;
-    margin-left:8px;
+    position:absolute;
+    z-index:4;
+    right:-18px;
+    top:-7px;
     padding:5px 9px;
     border-radius:9px;
-    background:linear-gradient(135deg,#31e1c0,#17bfa6);
+    background:
+        linear-gradient(135deg,#fff06a,#31e1c0 55%,#16a58f);
     color:#031218;
-    font-size:11px;
+    font-size:10px;
+    font-weight:1000;
+    letter-spacing:1px;
+    box-shadow:
+        0 0 8px rgba(255,238,80,.7),
+        0 0 20px rgba(49,225,192,.4);
+    animation:badgePulse 2s ease-in-out infinite;
+}
+
+.logo-subtitle{
+    position:relative;
+    z-index:2;
+    margin-top:13px;
+    padding:5px 14px;
+    border-radius:20px;
+    border:1px solid rgba(49,225,192,.18);
+    background:rgba(49,225,192,.055);
+    color:#a9bacd;
+    font-size:10px;
     font-weight:900;
-    vertical-align:top;
-    box-shadow:0 0 20px rgba(49,225,192,.25);
+    letter-spacing:4px;
+    text-transform:uppercase;
+    box-shadow:
+        inset 0 0 15px rgba(49,225,192,.03),
+        0 0 15px rgba(49,225,192,.04);
+}
+
+.logo-subtitle::before,
+.logo-subtitle::after{
+    content:"";
+    display:inline-block;
+    width:17px;
+    height:1px;
+    vertical-align:middle;
+    margin:0 7px;
+    background:linear-gradient(
+        90deg,
+        transparent,
+        #31e1c0
+    );
+}
+
+.logo-subtitle::after{
+    background:linear-gradient(
+        90deg,
+        #31e1c0,
+        transparent
+    );
+}
+
+@keyframes logoGlow{
+    0%,100%{
+        opacity:.55;
+        transform:translateX(-50%) scale(.9);
+    }
+    50%{
+        opacity:1;
+        transform:translateX(-50%) scale(1.15);
+    }
+}
+
+@keyframes boltFlash{
+    0%,100%{
+        transform:scale(1) rotate(0deg);
+    }
+    50%{
+        transform:scale(1.12) rotate(-4deg);
+    }
+}
+
+@keyframes lineMove{
+    0%{
+        opacity:.3;
+        transform:scaleX(.65);
+    }
+    50%{
+        opacity:1;
+        transform:scaleX(1);
+    }
+    100%{
+        opacity:.3;
+        transform:scaleX(.65);
+    }
+}
+
+@keyframes badgePulse{
+    0%,100%{
+        transform:scale(1);
+        box-shadow:
+            0 0 8px rgba(255,238,80,.7),
+            0 0 20px rgba(49,225,192,.4);
+    }
+    50%{
+        transform:scale(1.08);
+        box-shadow:
+            0 0 13px rgba(255,238,80,.9),
+            0 0 30px rgba(49,225,192,.55);
+    }
 }
 
 .tagline{
     margin-top:14px;
     color:#a8b5c8;
     font-size:17px;
+    line-height:1.4;
 }
 
 /* WELCOME */
@@ -553,7 +734,7 @@ body{
     transform:none;
 }
 
-/* PAYMENT MODERN */
+/* PAYMENT */
 
 .payment-card{
     position:relative;
@@ -806,8 +987,6 @@ body{
     font-weight:700;
 }
 
-/* PAY BUTTON */
-
 .pay-btn{
     width:100%;
     height:64px;
@@ -865,8 +1044,6 @@ body{
     line-height:1.6;
 }
 
-/* FOOTER */
-
 .footer{
     text-align:center;
     padding:42px 0 10px;
@@ -874,13 +1051,11 @@ body{
     font-size:13px;
 }
 
-/* HIDDEN */
-
 .hidden{
     display:none!important;
 }
 
-/* RESPONSIVE */
+/* MOBILE */
 
 @media(max-width:500px){
 
@@ -889,8 +1064,30 @@ body{
         padding-right:18px;
     }
 
+    .header{
+        padding-top:25px;
+    }
+
     .logo{
-        font-size:43px;
+        font-size:42px;
+        letter-spacing:-3px;
+    }
+
+    .logo .bolt{
+        font-size:34px;
+    }
+
+    .logo-badge{
+        right:-15px;
+        top:-5px;
+        font-size:8px;
+        padding:4px 7px;
+    }
+
+    .logo-subtitle{
+        font-size:8px;
+        letter-spacing:3px;
+        margin-top:11px;
     }
 
     .tagline{
@@ -1019,22 +1216,46 @@ body{
 <div class="app">
 
 <header class="header">
-    <div class="logo">
-        <span class="p">Paket</span><span class="pay">Pay</span>
-        <span class="logo-badge">PRO</span>
+
+    <div class="logo-wrap">
+
+        <div class="logo">
+
+            <span class="bolt">⚡</span>
+
+            <span class="p">Paket</span>
+
+            <span class="pay">Pay</span>
+
+            <span class="logo-badge">
+                PRO
+            </span>
+
+        </div>
+
+        <div class="logo-subtitle">
+            MOBİL PAKETLƏR
+        </div>
+
     </div>
 
     <div class="tagline">
         Mobil paketini saniyələr içində seç.
     </div>
+
 </header>
 
 <div class="welcome">
-    <div class="welcome-icon">📣</div>
+
+    <div class="welcome-icon">
+        📣
+    </div>
 
     <div class="welcome-text">
-        Xoş gəlmisiniz! <b>PaketPay</b> ilə uyğun internet paketini asanlıqla seç.
+        Xoş gəlmisiniz!
+        <b>PaketPay</b> ilə uyğun internet paketini asanlıqla seç.
     </div>
+
 </div>
 
 <div class="features">
@@ -1091,47 +1312,84 @@ body{
 
 <section id="operatorPage">
 
-    <h1 class="section-title">Operatoru seçin</h1>
+    <h1 class="section-title">
+        Operatoru seçin
+    </h1>
 
     <div class="operator-card"
          onclick="selectOperator('Azercell','050 • 051 • 010','azercell','A')">
 
-        <div class="operator-logo azercell">A</div>
-
-        <div class="operator-info">
-            <div class="operator-name">Azercell</div>
-            <div class="operator-prefix">050 • 051 • 010</div>
+        <div class="operator-logo azercell">
+            A
         </div>
 
-        <div class="operator-arrow">→</div>
+        <div class="operator-info">
+
+            <div class="operator-name">
+                Azercell
+            </div>
+
+            <div class="operator-prefix">
+                050 • 051 • 010
+            </div>
+
+        </div>
+
+        <div class="operator-arrow">
+            →
+        </div>
 
     </div>
+
 
     <div class="operator-card"
          onclick="selectOperator('Bakcell','055 • 099','bakcell','★')">
 
-        <div class="operator-logo bakcell">★</div>
-
-        <div class="operator-info">
-            <div class="operator-name">Bakcell</div>
-            <div class="operator-prefix">055 • 099</div>
+        <div class="operator-logo bakcell">
+            ★
         </div>
 
-        <div class="operator-arrow">→</div>
+        <div class="operator-info">
+
+            <div class="operator-name">
+                Bakcell
+            </div>
+
+            <div class="operator-prefix">
+                055 • 099
+            </div>
+
+        </div>
+
+        <div class="operator-arrow">
+            →
+        </div>
 
     </div>
+
 
     <div class="operator-card"
          onclick="selectOperator('Nar','070 • 077','nar','N')">
 
-        <div class="operator-logo nar">N</div>
-
-        <div class="operator-info">
-            <div class="operator-name">Nar</div>
-            <div class="operator-prefix">070 • 077</div>
+        <div class="operator-logo nar">
+            N
         </div>
 
-        <div class="operator-arrow">→</div>
+        <div class="operator-info">
+
+            <div class="operator-name">
+                Nar
+            </div>
+
+            <div class="operator-prefix">
+                070 • 077
+            </div>
+
+        </div>
+
+        <div class="operator-arrow">
+            →
+        </div>
 
     </div>
 
@@ -1142,29 +1400,42 @@ body{
 
 <section id="numberPage" class="hidden">
 
-    <div class="back" onclick="goToOperator()">← Geri</div>
+    <div class="back" onclick="goToOperator()">
+        ← Geri
+    </div>
 
     <div class="selected-operator">
 
-        <div id="smallLogo" class="small-logo azercell">A</div>
+        <div id="smallLogo"
+             class="small-logo azercell">
+            A
+        </div>
 
         <div>
-            <div class="selected-label" id="selectedLabel">
+
+            <div class="selected-label"
+                 id="selectedLabel">
                 AZERCELL
             </div>
 
-            <div class="selected-name" id="selectedPrefix">
+            <div class="selected-name"
+                 id="selectedPrefix">
                 050 • 051 • 010
             </div>
+
         </div>
 
     </div>
 
-    <h1 class="section-title">Nömrənizi daxil edin</h1>
+    <h1 class="section-title">
+        Nömrənizi daxil edin
+    </h1>
 
     <div class="input-box">
 
-        <label>Mobil nömrə</label>
+        <label>
+            Mobil nömrə
+        </label>
 
         <input
             id="phone"
@@ -1193,25 +1464,36 @@ body{
 
 <section id="packagePage" class="hidden">
 
-    <div class="back" onclick="goToNumber()">← Geri</div>
+    <div class="back" onclick="goToNumber()">
+        ← Geri
+    </div>
 
     <div class="selected-operator">
 
-        <div id="packageLogo" class="small-logo azercell">A</div>
+        <div id="packageLogo"
+             class="small-logo azercell">
+            A
+        </div>
 
         <div>
-            <div class="selected-label" id="packageOperator">
+
+            <div class="selected-label"
+                 id="packageOperator">
                 AZERCELL
             </div>
 
-            <div class="selected-name" id="packagePhone">
+            <div class="selected-name"
+                 id="packagePhone">
                 050 000 00 00
             </div>
+
         </div>
 
     </div>
 
-    <h1 class="section-title">Paketini seçin</h1>
+    <h1 class="section-title">
+        Paketini seçin
+    </h1>
 
 
     <!-- 5 AZN -->
@@ -1222,11 +1504,15 @@ body{
     >
 
         <div class="package-top">
-            <div class="package-price">5 AZN</div>
+
+            <div class="package-price">
+                5 AZN
+            </div>
 
             <div class="duration">
                 📅 30 gün
             </div>
+
         </div>
 
         <div class="package-gb">
@@ -1247,7 +1533,9 @@ body{
 
         </div>
 
-        <div class="check">✓</div>
+        <div class="check">
+            ✓
+        </div>
 
     </div>
 
@@ -1260,11 +1548,15 @@ body{
     >
 
         <div class="package-top">
-            <div class="package-price">10 AZN</div>
+
+            <div class="package-price">
+                10 AZN
+            </div>
 
             <div class="duration">
                 📅 30 gün
             </div>
+
         </div>
 
         <div class="package-gb">
@@ -1285,7 +1577,9 @@ body{
 
         </div>
 
-        <div class="check">✓</div>
+        <div class="check">
+            ✓
+        </div>
 
     </div>
 
@@ -1298,11 +1592,15 @@ body{
     >
 
         <div class="package-top">
-            <div class="package-price">20 AZN</div>
+
+            <div class="package-price">
+                20 AZN
+            </div>
 
             <div class="duration">
                 📅 30 gün
             </div>
+
         </div>
 
         <div class="package-gb">
@@ -1323,7 +1621,9 @@ body{
 
         </div>
 
-        <div class="check">✓</div>
+        <div class="check">
+            ✓
+        </div>
 
     </div>
 
@@ -1336,11 +1636,15 @@ body{
     >
 
         <div class="package-top">
-            <div class="package-price">30 AZN</div>
+
+            <div class="package-price">
+                30 AZN
+            </div>
 
             <div class="duration">
                 📅 30 gün
             </div>
+
         </div>
 
         <div class="package-gb">
@@ -1361,7 +1665,9 @@ body{
 
         </div>
 
-        <div class="check">✓</div>
+        <div class="check">
+            ✓
+        </div>
 
     </div>
 
@@ -1382,9 +1688,13 @@ body{
 
 <section id="paymentPage" class="hidden">
 
-    <div class="back" onclick="goToPackages()">← Geri</div>
+    <div class="back" onclick="goToPackages()">
+        ← Geri
+    </div>
 
-    <h1 class="section-title">Ödəniş</h1>
+    <h1 class="section-title">
+        Ödəniş
+    </h1>
 
     <div class="payment-card">
 
@@ -1395,6 +1705,7 @@ body{
             </div>
 
             <div>
+
                 <div class="payment-title">
                     PaketPay Ödəniş
                 </div>
@@ -1402,6 +1713,7 @@ body{
                 <div class="payment-subtitle">
                     Məlumatları yoxlayın və ödənişi tamamlayın.
                 </div>
+
             </div>
 
         </div>
@@ -1409,7 +1721,9 @@ body{
 
         <div class="amount">
 
-            <span>Seçilmiş paket</span>
+            <span>
+                Seçilmiş paket
+            </span>
 
             <strong id="payPackage">
                 20 GB
@@ -1420,7 +1734,9 @@ body{
 
         <div class="amount">
 
-            <span>Mobil nömrə</span>
+            <span>
+                Mobil nömrə
+            </span>
 
             <strong id="payPhone">
                 050 000 00 00
@@ -1431,7 +1747,9 @@ body{
 
         <div class="amount">
 
-            <span>Ödəniləcək məbləğ</span>
+            <span>
+                Ödəniləcək məbləğ
+            </span>
 
             <strong id="payAmount">
                 5 AZN
@@ -1439,8 +1757,6 @@ body{
 
         </div>
 
-
-        <!-- CARD -->
 
         <div class="card-section">
 
@@ -1472,6 +1788,7 @@ body{
                 <div class="card-bottom">
 
                     <div>
+
                         <div class="card-label">
                             Ödəniş kartı
                         </div>
@@ -1479,6 +1796,7 @@ body{
                         <div class="card-value">
                             PAKETPAY
                         </div>
+
                     </div>
 
                     <button
@@ -1495,8 +1813,6 @@ body{
 
         </div>
 
-
-        <!-- RECEIPT -->
 
         <div class="upload">
 
@@ -1602,17 +1918,24 @@ let selectedPackage = {
 
 /* OPERATOR */
 
-function selectOperator(name,prefix,className,icon){
+function selectOperator(
+    name,
+    prefix,
+    className,
+    icon
+){
 
     selectedOperator.name = name;
     selectedOperator.prefix = prefix;
     selectedOperator.className = className;
     selectedOperator.icon = icon;
 
-    document.getElementById("selectedLabel").textContent =
+    document.getElementById("selectedLabel")
+        .textContent =
         name.toUpperCase();
 
-    document.getElementById("selectedPrefix").textContent =
+    document.getElementById("selectedPrefix")
+        .textContent =
         prefix;
 
     const smallLogo =
@@ -1621,7 +1944,8 @@ function selectOperator(name,prefix,className,icon){
     smallLogo.className =
         "small-logo " + className;
 
-    smallLogo.textContent = icon;
+    smallLogo.textContent =
+        icon;
 
     document.getElementById("operatorPage")
         .classList.add("hidden");
@@ -1630,6 +1954,11 @@ function selectOperator(name,prefix,className,icon){
         .classList.remove("hidden");
 
     setStep(2);
+
+    window.scrollTo({
+        top:0,
+        behavior:"smooth"
+    });
 }
 
 
@@ -1641,7 +1970,8 @@ function formatPhone(input){
         input.value.replace(/\D/g,"");
 
     if(value.length > 10){
-        value = value.substring(0,10);
+        value =
+            value.substring(0,10);
     }
 
     input.value = value;
@@ -1657,7 +1987,9 @@ function continueToPackages(){
 
     if(phone.length !== 10){
 
-        alert("Zəhmət olmasa 10 rəqəmli mobil nömrə daxil edin.");
+        alert(
+            "Zəhmət olmasa 10 rəqəmli mobil nömrə daxil edin."
+        );
 
         return;
     }
@@ -1687,6 +2019,11 @@ function continueToPackages(){
         .classList.remove("hidden");
 
     setStep(3);
+
+    window.scrollTo({
+        top:0,
+        behavior:"smooth"
+    });
 }
 
 
@@ -1726,11 +2063,20 @@ function selectPackage(
 
     element.classList.add("selected");
 
-    selectedPackage.gb = gb;
-    selectedPackage.price = price;
-    selectedPackage.minutes = minutes;
-    selectedPackage.sms = sms;
-    selectedPackage.duration = duration;
+    selectedPackage.gb =
+        gb;
+
+    selectedPackage.price =
+        price;
+
+    selectedPackage.minutes =
+        minutes;
+
+    selectedPackage.sms =
+        sms;
+
+    selectedPackage.duration =
+        duration;
 
     document.getElementById("packageContinue")
         .disabled = false;
@@ -1767,6 +2113,11 @@ function continueToPayment(){
         .classList.remove("hidden");
 
     setStep(4);
+
+    window.scrollTo({
+        top:0,
+        behavior:"smooth"
+    });
 }
 
 
@@ -1804,13 +2155,19 @@ function copyCard(){
         })
         .catch(function(){
 
-            fallbackCopy(card,button);
+            fallbackCopy(
+                card,
+                button
+            );
 
         });
 
     }else{
 
-        fallbackCopy(card,button);
+        fallbackCopy(
+            card,
+            button
+        );
 
     }
 }
@@ -1818,17 +2175,26 @@ function copyCard(){
 
 /* FALLBACK COPY */
 
-function fallbackCopy(text,button){
+function fallbackCopy(
+    text,
+    button
+){
 
     const textarea =
         document.createElement("textarea");
 
-    textarea.value = text;
+    textarea.value =
+        text;
 
-    textarea.style.position = "fixed";
-    textarea.style.opacity = "0";
+    textarea.style.position =
+        "fixed";
 
-    document.body.appendChild(textarea);
+    textarea.style.opacity =
+        "0";
+
+    document.body.appendChild(
+        textarea
+    );
 
     textarea.select();
 
@@ -1839,14 +2205,18 @@ function fallbackCopy(text,button){
         button.textContent =
             "✓ Kopyalandı";
 
-        button.classList.add("copied");
+        button.classList.add(
+            "copied"
+        );
 
         setTimeout(function(){
 
             button.textContent =
                 "📋 Kopyala";
 
-            button.classList.remove("copied");
+            button.classList.remove(
+                "copied"
+            );
 
         },1800);
 
@@ -1858,7 +2228,9 @@ function fallbackCopy(text,button){
 
     }
 
-    document.body.removeChild(textarea);
+    document.body.removeChild(
+        textarea
+    );
 }
 
 
@@ -1869,14 +2241,19 @@ function showFile(input){
     const fileName =
         document.getElementById("fileName");
 
-    if(input.files && input.files.length > 0){
+    if(
+        input.files &&
+        input.files.length > 0
+    ){
 
         fileName.textContent =
-            "✓ " + input.files[0].name;
+            "✓ " +
+            input.files[0].name;
 
     }else{
 
-        fileName.textContent = "";
+        fileName.textContent =
+            "";
 
     }
 }
@@ -1889,8 +2266,10 @@ function finishPayment(){
     const receipt =
         document.getElementById("receipt");
 
-    if(!receipt.files ||
-       receipt.files.length === 0){
+    if(
+        !receipt.files ||
+        receipt.files.length === 0
+    ){
 
         alert(
             "Zəhmət olmasa əvvəlcə ödəniş qəbzini seçin."
@@ -1906,6 +2285,11 @@ function finishPayment(){
         .classList.remove("hidden");
 
     setStep(4);
+
+    window.scrollTo({
+        top:0,
+        behavior:"smooth"
+    });
 }
 
 
@@ -1920,6 +2304,11 @@ function goToOperator(){
         .classList.remove("hidden");
 
     setStep(1);
+
+    window.scrollTo({
+        top:0,
+        behavior:"smooth"
+    });
 }
 
 
@@ -1932,6 +2321,11 @@ function goToNumber(){
         .classList.remove("hidden");
 
     setStep(2);
+
+    window.scrollTo({
+        top:0,
+        behavior:"smooth"
+    });
 }
 
 
@@ -1944,6 +2338,11 @@ function goToPackages(){
         .classList.remove("hidden");
 
     setStep(3);
+
+    window.scrollTo({
+        top:0,
+        behavior:"smooth"
+    });
 }
 
 
@@ -1954,20 +2353,31 @@ function setStep(active){
     for(let i=1;i<=4;i++){
 
         const step =
-            document.getElementById("step"+i);
+            document.getElementById(
+                "step"+i
+            );
 
-        step.classList.remove("active");
-        step.classList.remove("done");
+        step.classList.remove(
+            "active"
+        );
+
+        step.classList.remove(
+            "done"
+        );
 
         if(i < active){
 
-            step.classList.add("done");
+            step.classList.add(
+                "done"
+            );
 
         }
 
         if(i === active){
 
-            step.classList.add("active");
+            step.classList.add(
+                "active"
+            );
 
         }
 
